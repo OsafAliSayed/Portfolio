@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="util.css">
+    <title>Welcome!</title>
+</head>
+
+<body class="overflow-x-hidden">
+    <div class="container">
+        <div class="page">
+            <!-- navbar -->
+            <header class="mx-3">
+                <nav class="navbar">
+                    <h1 class="logo">Osaf Ali</h1>
+                    <ul class="navbar-links">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Aboutme">About me</a></li>
+                        <li><a href="#Skills">Skills</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                    <div class="toggle-button">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+
+                </nav>
+            </header>
+            <!-- page -->
+            <main class="mx-3">
+                <!-- Home section -->
+                <div class="Home d-flex" id="Home">
+                    <div class="left d-flex d-flex-column justify-content-center align-items-center">
+                        <h1 class="title-size text-center">My name is Osaf Ali</h1>
+                        <h2 class="clr-tertiary mt-1">Web Developer</h2>
+                    </div>
+                    <div class="right bg1">
+                        <img src="./images/bg1-cropped.jpeg" alt="Portfolio Image">
+                    </div>
+                </div>
+
+                <!-- skills section -->
+                <div class="skills d-flex align-items-center d-flex-column mt-3" id="Skills">
+                    <div class="skill-heading mt-3 mb-2">
+                        <h1> My Skills</h1>
+                    </div>
+                    <div class="skill-board d-flex">
+                        <div class="d-flex d-flex-column align-items-center justify-content-center">
+                            <div class="circles">
+                                <p class="percentage" data-percentage="90">
+                                    HTML & CSS
+                                </p>
+                            </div>
+                            <div class="circles">
+                                <p class="percentage" data-percentage="70">
+                                    JavaScript
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex d-flex-column align-items-center justify-content-center">
+                            <div class="circles">
+                                <p class="percentage" data-percentage="90">
+                                    C++
+                                </p>
+                            </div>
+                            <div class="circles">
+                                <p class="percentage" data-percentage="70">
+                                    Python
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex d-flex-column align-items-center justify-content-center">
+                            <div class="circles">
+                                <p class="percentage" data-percentage="80">
+                                    Django
+                                </p>
+                            </div>
+                            <div class="circles">
+                                <p class="percentage" data-percentage="80">
+                                    Flask
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About me section -->
+                <div class="about-me d-flex d-flex-column align-items-center mt-5" id="Aboutme">
+                    <h1 class="mt-3">Who am I?</h1>
+                    <div class="about-section d-flex">
+                        <div class="left">
+                            <img src="./images/aboutme-cropped.jpg" alt="About-me image" class="align-left slide-in">
+                        </div>
+                        <div class="right d-flex justify-content-center align-items-center">
+                            <p>
+                                Hi there! My name is Osaf Ali and I am a Full Stack Web developer. I work with
+                                technologies
+                                such as <span class="clr-tertiary">HTML</span>, <span class="clr-tertiary">CSS</span>,
+                                <span class="clr-tertiary">Javascript</span>, and <span
+                                    class="clr-tertiary">Bootstrap</span> on the frontend and <span
+                                    class="clr-tertiary">Django</span>, and <span class="clr-tertiary">Flask</span> on
+                                the
+                                backend. I have created several complex projects such as a portfolio website, eCommerce
+                                site, wiki site, etc.<br><br> I guarantee 100% satisfaction and I am looking forward to
+                                working with
+                                you all.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- projects section -->
+                <div class="projects d-flex d-flex-column align-items-center justify-content-center" id="Projects">
+                    <h1>Projects</h1>
+                    <div class="project-element">
+                        <div class="project-img d-flex justify-content-center align-items-center">
+                            <img src="./images/project-section/student-g78774e848_1920.jpg" alt=""
+                                class="project-image align-right slide-in">
+                        </div>
+                        <div class="project-desc d-flex d-flex-column justify-content-center align-items-center">
+                            <p>
+                                <b>Market Website (20 December, 2021 - 28 December, 2021)</b>
+                                <br>
+                                The website allows us to perform simple CRUD operations on products. It relies on a
+                                budget system. It was built using Flask as a backend.
+                                <br><br>
+                                Technology Stack:
+                                <br>
+                                HTML, CSS, Bootstrap, Flask, SQLAlchemy
+                            </p>
+                            <a href="#" class="mt-3 btn">See Project on Github</a>
+                        </div>
+                    </div>
+                    <div class="project-element">
+                        <div class="project-img d-flex justify-content-center align-items-center">
+                            <img src="./images/project-section/student-g78774e848_1920.jpg" alt=""
+                                class="project-image align-left slide-in">
+                        </div>
+                        <div class="project-desc d-flex d-flex-column justify-content-center align-items-center">
+                            <p>
+                                <b>E-commerce Auction site (17 March, 2022 - 10 April, 2022)</b>
+                                <br>
+                                Built an e-commerce auction website that allows users to bid, create a listing, comment,
+                                and purchase a product. It also allowed users to add items to their watchlists to help
+                                them
+                                keep track of the product.
+                                <br><br>
+                                Technology Stack:
+                                <br>
+                                HTML, CSS, Bootstrap, Django
+                            </p>
+                            <a href="#" class="mt-3 btn">See Project on Github</a>
+                        </div>
+                    </div>
+                    <div class="project-element">
+                        <div class="project-img d-flex justify-content-center align-items-center">
+                            <img src="./images/project-section/student-g78774e848_1920.jpg" alt=""
+                                class="project-image align-right slide-in">
+                        </div>
+                        <div class="project-desc d-flex d-flex-column justify-content-center align-items-center">
+                            <p>
+                                <b>Personal Wiki (1 March, 2022 - 17 March, 2022)</b>
+                                <br>
+                                This website allows users to create, update, delete, and edit wiki pages. Users can
+                                create a
+                                page that is written in markdown language and It can be rendered properly in HTML using
+                                the backend from Django. All of the data is stored in local storage.
+                                <br><br>
+                                Technology Stack:
+                                <br>
+                                HTML, CSS, Bootstrap, Django
+                            </p>
+                            <a href="#" class="mt-3 btn">See Project on Github</a>
+                        </div>
+                    </div>
+                    <div class="project-element">
+                        <div class="project-img d-flex justify-content-center align-items-center">
+                            <img src="./images/project-section/student-g78774e848_1920.jpg" alt=""
+                                class="project-image align-left slide-in">
+                        </div>
+                        <div class="project-desc d-flex d-flex-column justify-content-center align-items-center">
+                            <p>
+                                <b>Gmail Clone (11 April, 2022 - 20 April, 2022)</b>
+                                <br>
+                                Built a single-page Gmail Clone using a Django-based backend API that updates the page
+                                regularly. It allows users to send mail to multiple users, reply to a mail, compose a
+                                new mail, etc.
+                                <br><br>
+                                Technology Stack:
+                                <br>
+                                HTML, CSS, Javascript, Bootstrap, Django
+                            </p>
+                            <a href="#" class="mt-3 btn">See Project on Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- contact me section -->
+                <div class="contact d-flex d-flex-column align-items-center justify-content-center mt-4" id="Contact">
+                    <h1>Contact Me</h1>
+                    <div class="contact-section d-flex">
+                        <div class="left contact-desc d-flex d-flex-column align-items-center justify-content-center">
+                            <p>Let’s get in touch and discuss your requirements!</p>
+                            <p>Mobile: +91 7727934703</p>
+                            <p>Email: aousafalisayedb2@gmail.com</p>
+                            <div class="social-links">
+                            </div>
+                        </div>
+                        <div class="right contact-form d-flex d-flex-column justify-content-center">
+                            <form action="" class="d-flex d-flex-column justify-content-center">
+                                <div class="input-group">
+                                    <input type="text" id="name" required class="input">
+                                    <label for="name" class="input-label">Name</label>
+                                </div>
+                                <div class="input-group mt-2">
+                                    <input type="text" id="email" required class="input">
+                                    <label for="email" class="input-label">Email</label>
+                                </div>
+                                <div class="input-group mt-2">
+                                    <input type="text" id="subject" required class="input">
+                                    <label for="subject" class="input-label">Subject</label>
+                                </div>
+                                <div class="input-group mt-2">
+                                    <textarea type="text" id="message" required class="input"></textarea>
+                                    <label for="message" class="input-label">Message</label>
+                                </div>
+                                <div class="button">
+                                    <button type="submit" class="mt-3 btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- page footer -->
+            <footer class="mx-3 p-1 text-center">
+                Copyright &copy; Osaf Ali Sayed | All right reserved
+            </footer>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
