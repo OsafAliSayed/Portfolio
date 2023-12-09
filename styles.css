@@ -168,13 +168,13 @@ body {
     flex: 1;
 }
 
-.project-img > img {
+.project-img > a >  img {
     object-fit: contain;
     width: 90%;
     height: 90%;
 }
 
-.project-img > img:hover {
+.project-img > a > img:hover {
     transform: scale(1.1);
     cursor:pointer;
 }
