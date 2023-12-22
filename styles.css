@@ -12,9 +12,7 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-    font-size: 30px;
-}
+
 
 li {
     font-size: 20px;
@@ -27,15 +25,19 @@ body, html {
     height: 100%;
 }
 
+.clr-tertiary {
+    color: var(--tertiary);
+}
+
+.header-font {
+    font-family: 'Satisfy', cursive;
+}
+
 .content {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr auto;
-}
-
-.content > * {
-    /* border: 2px solid green; */
 }
 
 .navbar {
@@ -60,6 +62,9 @@ body, html {
     padding: 15px 35px 15px 35px;
     font-family: 'Satisfy', cursive;
     transition: color 500ms ease;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 3px;
 }
 
 .navbar-logo-h1::before, .navbar-logo-h1::after {
@@ -137,7 +142,7 @@ body, html {
     width: 0;
     height: 100%;
     right: 0;
-    transition: width 200ms ease;
+    transition: width 250ms ease-in-out;
     z-index: -1;
 }
 
@@ -153,14 +158,92 @@ body, html {
     display: flex;
     justify-content: center;
 }
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
+.home-info {
+    flex: 3;
+    padding-left: 30px;
+}
+
+.home-info > *{
+    margin-bottom: 20px;
+}
+
+.photo {
+    height: 100%;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.photo-container {
+    width: 70%;
+    height: 60%;
+    position: relative;
+    padding: 30px;
+}
+.photo-container::before, .photo-container::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    --thickness: 10px;
+    transition: all 500ms ease;
+}
+/* top left element */
+.photo-container::before {   
+    left: 0;
+    top: 0;
+    border-left: var(--thickness) solid var(--tertiary);
+    border-top: var(--thickness) solid var(--tertiary);
+}
+
+/* bottom right element */
+.photo-container::after {   
+    right: 0;
+    bottom: 0;
+    border-right: var(--thickness) solid var(--tertiary);
+    border-bottom: var(--thickness) solid var(--tertiary);
+}
+
+.photo-container > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+button {
+    border: none;
+    padding: 15px 25px 15px 25px;
+    background-color: var(--tertiary);
+    color: var(--white);
+    font-size: 16px;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+button:hover {
+    background-color: var(--white);
+    color: var(--tertiary);
+    cursor: pointer;
+}
 .about, .services, .skills, .projects, .contact {
     display: none;
 }
 
 /* remove default padding of elements */
-h1, ul, p {
+h1, h2, span, ul, p {
     padding : 0px;
     margin: 0px;
+}
+
+
+/* Class to show border for analysis */
+.show-border{
+    border: 2px solid green;
 }
