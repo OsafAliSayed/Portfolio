@@ -8,7 +8,7 @@
     
 }
 html {
-    overflow-y: hidden;
+    overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -23,6 +23,7 @@ body, html {
     background-color: var(--primary);
     color: var(--white);
     height: 100%;
+    overflow: hidden;
 }
 
 .clr-tertiary {
@@ -35,18 +36,20 @@ body, html {
 
 .content {
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr auto;
+    display: flex;
+
 }
 
 .navbar {
+    width: 20%;
     background-color: var(--secondary);
-    grid-column: 1/ 2;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    height: 100vh;
 }
 
 .navbar-logo {
@@ -148,20 +151,21 @@ body, html {
 
 .navbar-items:hover:after {
     width: 100%;
-
 }
 
 
 .main {
+    flex: 3;
     background-color: var(--primary);
-    grid-column: 2 / 6;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
 }
+
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 800px;
 }
 
 
@@ -232,10 +236,44 @@ button:hover {
     color: var(--tertiary);
     cursor: pointer;
 }
-.about, .services, .skills, .projects, .contact {
+
+.typewriter {
+    position: relative;
+}
+.typewriter::after {
+    content : "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    border-left: 2px solid var(--tertiary);
+    left: 0;
+    animation: typing 3s steps(20) infinite;
+}
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -15px 0 15px;
+    }
+}
+.home, .services, .skills, .projects, .contact {
+    border: 2px solid green;
+    height: 100vh;
     display: none;
 }
 
+
+.display-flex {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    transition: visibility 1s ease, opacity 1s linear;
+}
+.display-flex.visibility {
+    visibility: visible;
+    opacity: 1;
+}
 /* remove default padding of elements */
 h1, h2, span, ul, p {
     padding : 0px;
@@ -247,3 +285,6 @@ h1, h2, span, ul, p {
 .show-border{
     border: 2px solid green;
 }
+
+
+/* About Section */

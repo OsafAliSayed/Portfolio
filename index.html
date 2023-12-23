@@ -11,27 +11,26 @@
     <title>Welcome!</title>
 </head>
 
-<body class="overflow-x-hidden">
+<body>
     <div class="content">
         <nav class="navbar">
             <div class="navbar-logo">
                 <h1 class="navbar-logo-h1">Osaf Ali</h1>
             </div>
             <ul class="navbar-list">
-                <li class="navbar-items"><i class="bi bi-house-fill"></i><p>Home</p></li>
-                <li class="navbar-items"><i class="bi bi-person-fill"></i><p>About</p></li>
-                <li class="navbar-items"><i class="bi bi-list-task"></i><p>Services</p></li>
-                <li class="navbar-items"><i class="bi bi-tools"></i><p>Skills</p></li>
-                <li class="navbar-items"><i class="bi bi-folder-fill"></i><p>Projects</p></li>
-                <li class="navbar-items"><i class="bi bi-person-vcard-fill"></i><p>Contact</p></li>
+                <li class="navbar-items" data-page="home"><i class="bi bi-house-fill"></i><p>Home</p></li>
+                <li class="navbar-items" data-page="about"><i class="bi bi-person-fill"></i><p>About</p></li>
+                <li class="navbar-items" data-page="services"><i class="bi bi-list-task"></i><p>Services</p></li>
+                <li class="navbar-items" data-page="skills"><i class="bi bi-tools"></i><p>Skills</p></li>
+                <li class="navbar-items" data-page="projects"><i class="bi bi-folder-fill"></i><p>Projects</p></li>
+                <li class="navbar-items" data-page="contact"><i class="bi bi-person-vcard-fill"></i><p>Contact</p></li>
             </ul>
         </nav>
         <div class="main">
-            <div class="home">
-                          
+            <div class="home">        
                 <div class="home-info">
                     <h1>Hello, my name is <span class="clr-tertiary header-font">Osaf Ali Sayed</span></h1>
-                    <h2>I'm a <span class="clr-tertiary">Full Stack Developer</span></h2>
+                    <h2>I'm a <span class="typewriter clr-tertiary">Full Stack Developer</span></h2>
                     <p class="headline">
                         I'm a Full Stack Web Developer with 2 years of freelancing experience. I have created multiple projects using various tools. I'm also Third year Student at Indian Institute of Information Technology, Pune (IIITP)
                     </p>
@@ -39,18 +38,24 @@
                 </div>
                 <div class="photo">
                     <div class="photo-container">
-                        <img src="images/aboutme.jpg" alt="">
+                        <img src="images/home-portfolio-img.jpg" alt="">
                     </div>
                 </div>
 
             </div>
-            <div class="about">About</div>
+            <div class="about">
+                <div class="heading">
+                    <h1>About me</h1>
+                </div>
+            </div>
             <div class="services">Services</div>
             <div class="skills">Skills</div>
             <div class="projects">Projects</div>
             <div class="contact">Contact</div>
+            
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
