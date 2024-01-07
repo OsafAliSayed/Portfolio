@@ -14,11 +14,20 @@ html, body {
     display: flex;
     overflow-x:hidden;
     background-color: var(--primary);
+    scroll-behavior: smooth;
 }
 h1 {
     font-size: 50px;
 }
+h2 {
+    padding: 0px;
+    margin: 0px;
+}
 
+h3 {
+    padding: 0px;
+    margin: 0px;
+}
 p {
     padding: 0px; 
     margin: 0px;
@@ -114,16 +123,7 @@ p {
     flex-direction: column;
 }
 
-.section h2 {
-    padding: 2rem 0 2rem 0;
-    margin: 0rem;
-    position: sticky;
-    top: 0rem;
-    font-size: 24px;
-    margin-bottom: 1rem;
-    background-color: var(--primary);
-    
-}
+
 
 /* add circle in before element of Home */
 .page-heading {
@@ -339,4 +339,240 @@ p {
 .card-logo {
     font-size: 4rem;
     padding-top: 1rem;
+}
+
+/* About section */
+
+#about {
+    height: 1000px;
+}
+
+.summary {
+    display: flex;
+}
+
+.summary > * {
+    position: relative;
+}
+.education > * {
+    margin: 1rem;
+}
+
+.experience > * {
+    margin: 1rem;
+}
+
+.about-title {
+    font-size: 30px;
+}
+
+/* about card styling */
+/* generate styling for about section  */
+.about-card {
+    padding: 1rem;
+}
+.about-heading {
+    font-size: 24px;
+    position: relative;
+}
+.about-heading::before {
+    content: '';
+    position: absolute;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    /* top: 1rem; */
+    left: -2.7rem;
+    z-index: 1;
+}
+
+.about-heading::after {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    top: .4rem;
+    left: -2.3rem;
+    z-index: 2;
+}
+.about-sub-heading {
+    font-size: 24px;
+    opacity: .7;
+    margin-top: 1rem;
+}
+
+.about-date-group {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calendar-icon {
+    font-size: 20px;
+}
+.about-text {
+    margin-top: 1rem;
+    font-size: 20px;
+    text-align: justify;
+
+}
+.about-sub-text {
+    font-size: 20px;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+
+.about-date {
+    opacity: .7;
+    font-size: 20px;
+}
+
+.about-line {
+    height: 85%;
+    width: .3rem;
+    position: absolute;
+    background-color: var(--secondary);
+    bottom: 0;
+    left: -1rem;
+    z-index: 0;
+}
+
+/* styling project */
+#projects {
+    height: 1400px;
+}
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.project-cards .project-card{ 
+    position: relative;
+}
+
+.project-cards .project-card .face {
+    border: 2px solid green;
+    width: 300px;
+    height: 300px;
+    transition: 0.5s;
+}
+
+.project-cards .project-card .face.face1 {
+    position: relative;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.project-cards .project-card:hover .face.face1{
+    transform: translateY(0);
+}
+.project-cards .project-card .face.face1 .project-content {
+    transition: 0.5s;
+}
+
+.project-cards .project-card:hover .face.face1 .project-content {
+    opacity: 1;
+}
+.project-cards .project-card:hover .face.face1 .project-content img {
+    filter: grayscale(0);
+}
+.project-cards .project-card .face.face1 .project-content img {
+    max-width: 300px;
+    filter:grayscale(1);
+}
+.project-cards .project-card .face.face1 .project-content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: var(--secondary);
+    text-align: center;
+    font-size: 24px;
+}
+.project-cards .project-card .face.face2 {
+    position: relative;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-150px);
+    transition: 0.5s;
+    
+}
+
+.project-cards .project-card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+.project-cards .project-card .face.face2 .project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.project-cards .project-card .face.face2 .project-content p {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#contact p {
+    margin-top: 1rem;
+}
+#contact a {
+    text-decoration: none;
+    color: var(--secondary);
+    position: relative;
+}
+
+#contact a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease-in-out;
+}
+
+#contact a:hover::after {
+    transform: scaleX(1);
+}
+
+.contact-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.contact-input {
+    padding: .5rem;
+    margin-top: 1rem;
+}
+
+.contact-form > *:focus {
+    outline: none;
+}
+
+.contact-button {
+    width: 20%;
+    margin-top: 1rem;
+}
+
+textarea {
+    overflow-x: hidden;
+    resize: vertical;
 }
