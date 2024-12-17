@@ -25,6 +25,7 @@ h2 {
 }
 
 h3 {
+    font-size: 30px;
     padding: 0px;
     margin: 0px;
 }
@@ -297,6 +298,7 @@ p {
 
 /* skills section height */
 #skills {
+    margin-top: 2rem;
     height: 990px;
     width: 100%;
 }
@@ -444,87 +446,47 @@ p {
 
 /* styling project */
 #projects {
-    height: 1400px;
+    height: 1500px;
 }
 .project-cards {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
 }
-.project-cards .project-card{ 
+
+.project-card {
+    display: flex;
+
+    margin: 2rem;
     position: relative;
 }
-
-.project-cards .project-card .face {
-    border: 2px solid green;
-    width: 300px;
-    height: 300px;
-    transition: 0.5s;
+.project-img {
+    padding: 1rem;
+    width: 50%;
+}
+.project-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.project-cards .project-card .face.face1 {
-    position: relative;
-    background: var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transform: translateY(100px);
-}
-.project-cards .project-card:hover .face.face1{
-    transform: translateY(0);
-}
-.project-cards .project-card .face.face1 .project-content {
-    transition: 0.5s;
-}
-
-.project-cards .project-card:hover .face.face1 .project-content {
-    opacity: 1;
-}
-.project-cards .project-card:hover .face.face1 .project-content img {
-    filter: grayscale(0);
-}
-.project-cards .project-card .face.face1 .project-content img {
-    max-width: 300px;
-    filter:grayscale(1);
-}
-.project-cards .project-card .face.face1 .project-content h3 {
-    margin: 10px 0 0;
-    padding: 0;
-    color: var(--secondary);
-    text-align: center;
-    font-size: 24px;
-}
-.project-cards .project-card .face.face2 {
-    position: relative;
-    background: var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    transform: translateY(-150px);
-    transition: 0.5s;
-    
-}
-
-.project-cards .project-card:hover .face.face2 {
-    transform: translateY(0);
-}
-
-.project-cards .project-card .face.face2 .project-content {
-    display: flex;
+.project-content {
+    width: 50%;
+    margin-top: 1rem;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.project-cards .project-card .face.face2 .project-content p {
-    font-size: 20px;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    gap: 1rem;
 }
 
+.project-content > p {
+    font-size: 20px;
+    text-align: center;
+}
+/* select even cards */
+.project-cards > *:nth-child(even) {
+    flex-direction: row-reverse;
+}
 #contact p {
     margin-top: 1rem;
 }
