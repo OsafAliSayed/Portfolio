@@ -1,30 +1,77 @@
+import { useState } from 'react';
+import '../styles/pages/Contact.css';
+
 const Contact = () => {
-    return (
-      <section className="min-h-screen px-6 py-12">
-        <h2 className="text-4xl font-bold mb-8 text-white">Get In Touch</h2>
-        <form className="max-w-lg mx-auto space-y-5 bg-glass p-6 rounded-xl">
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Here you would typically send the form data to your backend or email service
+    // Reset form after submission
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
+  };
+
+  return (
+    <section className="contact-section">
+      <div className="container">
+        <h2 className="contact-title">Contact Me</h2>
+        <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Name"
-            className="w-full p-3 rounded input-field"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            required
+            className="contact-input"
           />
+          
           <input
             type="email"
-            placeholder="Email"
-            className="w-full p-3 rounded input-field"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your Email"
+            required
+            className="contact-input"
           />
+          
           <textarea
-            rows="4"
-            placeholder="Message"
-            className="w-full p-3 rounded input-field"
-          ></textarea>
-          <button className="w-full py-3 bg-[#E50914] text-white font-semibold rounded hover:bg-red-700 transition">
-            Send
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            required
+            className="contact-textarea"
+          />
+          
+          <button 
+            type="submit"
+            className="contact-button"
+          >
+            Send Message
           </button>
         </form>
-      </section>
-    );
-  };
-  
-  export default Contact;
-  
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

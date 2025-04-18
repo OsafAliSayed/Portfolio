@@ -33,7 +33,8 @@
   }
 }
 
-.card {
+/* Renamed from .card to avoid conflict with Card component styles */
+.vite-card {
   padding: 2em;
 }
 

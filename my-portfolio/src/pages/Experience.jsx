@@ -1,38 +1,50 @@
-import Card from "../components/Card";
+import Card from '../components/Card';
+import '../styles/pages/Experience.css';
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Algo Trading",
-      subtitle: "Python Developer Intern",
-      content: "Implemented and maintained trading algorithms, developed Python code using libraries like Pandas and NumPy, and contributed to real-time monitoring systems.",
-      date: "Dec 2023 - Feb 2024",
-      tags: ["Python", "Pandas", "NumPy", "API Integration"]
+      id: 1,
+      title: "Senior Frontend Developer",
+      subtitle: "TechCorp Inc.",
+      content: "Led the development of responsive web applications using React, Redux, and TypeScript. Collaborated with cross-functional teams to deliver high-quality software solutions on time.",
+      date: "2022 - Present",
+      tags: ["React", "Redux", "TypeScript", "SASS", "Jest"]
     },
     {
-      title: "SuperProf",
-      subtitle: "Freelance CSE Tutor",
-      content: "Taught more than 30 students individually, ranked in top 10 web development teachers, and taught various subjects including DSA, C, C++, Java, Python, and JavaScript.",
-      date: "Jun 2022 - Dec 2022",
-      tags: ["Teaching", "Web Development", "DSA", "Programming Languages"]
+      id: 2,
+      title: "Full Stack Developer",
+      subtitle: "InnovateX",
+      content: "Developed and maintained full-stack web applications using React, Node.js, and MongoDB. Implemented RESTful APIs and integrated third-party services for enhanced functionality.",
+      date: "2020 - 2022",
+      tags: ["React", "Node.js", "Express", "MongoDB", "AWS"]
+    },
+    {
+      id: 3,
+      title: "Web Developer",
+      subtitle: "Digital Solutions Co.",
+      content: "Created responsive and dynamic websites for clients across various industries. Utilized modern frameworks and libraries to build user-friendly interfaces with optimal performance.",
+      date: "2018 - 2020",
+      tags: ["JavaScript", "HTML", "CSS", "jQuery", "Bootstrap"]
     }
   ];
 
   return (
-    <section className="min-h-screen px-6 py-12">
-      <h2 className="text-4xl font-bold mb-8 text-white">Experience</h2>
-      <div className="space-y-6 max-w-4xl mx-auto">
-        {experiences.map((experience, index) => (
-          <Card
-            key={index}
-            title={experience.title}
-            subtitle={experience.subtitle}
-            content={experience.content}
-            date={experience.date}
-            tags={experience.tags}
-            className="hover:shadow-xl"
-          />
-        ))}
+    <section className="experience-section">
+      <div className="container">
+        <h2 className="experience-title">My Experience</h2>
+        <div className="experience-container">
+          {experiences.map((experience) => (
+            <Card
+              key={experience.id}
+              title={experience.title}
+              subtitle={experience.subtitle}
+              content={experience.content}
+              date={experience.date}
+              tags={experience.tags}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

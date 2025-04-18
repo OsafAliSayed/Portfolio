@@ -1,11 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   background-color: #141414;
   color: white;
   font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .bg-glass {
@@ -15,10 +14,10 @@ body {
 
 .input-field {
   background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid #4b5563; /* gray-600 */
+  border: 1px solid #4b5563; 
   color: white;
 }
 
 .input-field::placeholder {
-  color: #9ca3af; /* gray-400 */
+  color: #9ca3af; 
 }

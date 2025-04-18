@@ -6,6 +6,8 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Education from "./pages/Education";
 import Contact from "./pages/Contact";
+import "./App.css";
+import "./styles/global.css";
 
 function App() {
   return (

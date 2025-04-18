@@ -1,38 +1,50 @@
-import Card from "../components/Card";
+import Card from '../components/Card';
+import '../styles/pages/Education.css';
 
 const Education = () => {
-  const educationList = [
+  const educations = [
     {
-      title: "Indian Institute of Information Technology, Pune",
-      subtitle: "Computer Science and Engineering (B.Tech)",
-      content: "Activities and societies: R.O.F.I.E.S | Robotics club of IIIT Pune. The competitive environment here allows me to push harder everyday.",
-      date: "2021 - 2025",
-      tags: ["Computer Science", "CGPA: 7.62/10"]
+      id: 1,
+      title: "Master of Science in Computer Science",
+      subtitle: "Stanford University",
+      content: "Specialized in artificial intelligence and machine learning. Conducted research on natural language processing and developed deep learning models for text analysis.",
+      date: "2018 - 2020",
+      tags: ["Artificial Intelligence", "Machine Learning", "Data Science", "NLP"]
     },
     {
-      title: "International Indian School, Tabuk",
-      subtitle: "High School (Upto 12th grade)",
-      content: "Completed senior secondary school from Saudi Arabia, Tabuk. Spent over 10 years studying in this school.",
-      date: "2007 - 2020",
-      tags: ["High School", "Percentage: 85.6/100"]
+      id: 2,
+      title: "Bachelor of Science in Software Engineering",
+      subtitle: "MIT",
+      content: "Studied core computer science principles and software development methodologies. Participated in various hackathons and coding competitions.",
+      date: "2014 - 2018",
+      tags: ["Software Development", "Algorithms", "Data Structures", "Web Development"]
+    },
+    {
+      id: 3,
+      title: "Full Stack Development Bootcamp",
+      subtitle: "Coding Academy",
+      content: "Intensive 12-week bootcamp focused on modern web development technologies and best practices. Developed several real-world projects with agile methodologies.",
+      date: "2013 - 2014",
+      tags: ["JavaScript", "React", "Node.js", "MongoDB", "Express"]
     }
   ];
 
   return (
-    <section className="min-h-screen px-6 py-12">
-      <h2 className="text-4xl font-bold mb-8 text-white">Education</h2>
-      <div className="space-y-6 max-w-4xl mx-auto">
-        {educationList.map((education, index) => (
-          <Card
-            key={index}
-            title={education.title}
-            subtitle={education.subtitle}
-            content={education.content}
-            date={education.date}
-            tags={education.tags}
-            className="hover:shadow-xl"
-          />
-        ))}
+    <section className="education-section">
+      <div className="container">
+        <h2 className="education-title">My Education</h2>
+        <div className="education-container">
+          {educations.map((education) => (
+            <Card
+              key={education.id}
+              title={education.title}
+              subtitle={education.subtitle}
+              content={education.content}
+              date={education.date}
+              tags={education.tags}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

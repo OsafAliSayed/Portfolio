@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/components/Card.css';
 
 const Card = ({ 
   title, 
@@ -15,40 +16,35 @@ const Card = ({
   
   return (
     <div 
-      className={`
-        bg-glass p-6 rounded-xl shadow-lg transition-all duration-300
-        transform ${isHovered ? 'scale-105 -translate-y-2' : ''}
-        border border-transparent ${isHovered ? 'border-white/20' : ''}
-        ${className}
-      `}
+      className={`card ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {image && (
-        <div className="mb-4 overflow-hidden rounded-lg h-48">
+        <div className="card-image-container">
           <img 
             src={image} 
             alt={title} 
-            className={`w-full h-full object-cover transition-all duration-500 ${isHovered ? 'scale-110' : ''}`}
+            className="card-image"
           />
         </div>
       )}
       
-      <div className="space-y-3">
-        {title && <h3 className="text-xl font-semibold text-white">{title}</h3>}
+      <div className="card-content">
+        {title && <h3 className="card-title">{title}</h3>}
         
-        {subtitle && <p className="text-gray-300">{subtitle}</p>}
+        {subtitle && <p className="card-subtitle">{subtitle}</p>}
         
-        {content && <p className="text-gray-400">{content}</p>}
+        {content && <p className="card-description">{content}</p>}
         
-        {date && <span className="text-sm text-gray-500 block">{date}</span>}
+        {date && <span className="card-date">{date}</span>}
         
         {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-3">
+          <div className="card-tags">
             {tags.map((tag, index) => (
               <span 
                 key={index} 
-                className="bg-white/10 text-white/80 text-xs px-2 py-1 rounded"
+                className="card-tag"
               >
                 {tag}
               </span>
@@ -57,16 +53,12 @@ const Card = ({
         )}
         
         {link && (
-          <div className="pt-3">
+          <div>
             <a 
               href={link.url} 
               target={link.external ? "_blank" : "_self"}
               rel={link.external ? "noopener noreferrer" : ""}
-              className={`
-                inline-block px-4 py-2 rounded bg-[#E50914] text-white 
-                font-semibold text-sm transition-all duration-300
-                hover:bg-red-700 ${isHovered ? 'shadow-lg' : ''}
-              `}
+              className="card-link"
             >
               {link.text || "Learn More"}
             </a>
@@ -75,13 +67,7 @@ const Card = ({
       </div>
       
       {/* Subtle gradient background effect */}
-      <div 
-        className={`
-          absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10
-          opacity-0 transition-opacity duration-300 pointer-events-none
-          ${isHovered ? 'opacity-100' : ''}
-        `}
-      ></div>
+      <div className={`card-gradient ${isHovered ? 'visible' : ''}`}></div>
     </div>
   );
 };

@@ -1,61 +1,79 @@
-import Card from "../components/Card";
+import Card from '../components/Card';
+import '../styles/pages/Projects.css';
 
 const Projects = () => {
-  const projectsList = [
+  const projects = [
     {
-      title: "Trading Platform",
-      subtitle: "Full Stack Web Application",
-      content: "Fully functioning e-commerce platform that allows users to perform trades.",
+      id: 1,
+      title: "E-Commerce Platform",
+      subtitle: "MERN Stack Application",
+      content: "A full-stack e-commerce platform with user authentication, product catalog, cart functionality, and payment integration.",
+      image: "/images/project-section/p1.png",
+      tags: ["React", "Node.js", "MongoDB", "Express", "Redux"],
+      link: {
+        url: "https://github.com/yourusername/ecommerce-platform",
+        text: "View Project",
+        external: true
+      }
+    },
+    {
+      id: 2,
+      title: "Task Management System",
+      subtitle: "React & Firebase Application",
+      content: "A real-time task management system with collaborative features, deadline tracking, and notification system.",
       image: "/images/project-section/p2.png",
-      tags: ["HTML", "CSS", "JavaScript", "Django", "Bootstrap"],
+      tags: ["React", "Firebase", "Material UI", "Context API"],
       link: {
-        url: "#",
+        url: "https://github.com/yourusername/task-manager",
         text: "View Project",
         external: true
       }
     },
     {
-      title: "Wikipedia Clone",
-      subtitle: "Web Application",
-      content: "Maintain your own wiki by linking different pages together.",
+      id: 3,
+      title: "AI Image Generator",
+      subtitle: "Next.js & OpenAI",
+      content: "An application that generates unique images based on text prompts using OpenAI's DALL-E API integration.",
       image: "/images/project-section/p3.png",
-      tags: ["HTML", "CSS", "JavaScript", "Python", "Django"],
+      tags: ["Next.js", "OpenAI", "TailwindCSS", "Vercel"],
       link: {
-        url: "#",
+        url: "https://github.com/yourusername/ai-image-generator",
         text: "View Project",
         external: true
       }
     },
     {
-      title: "Gmail Clone",
-      subtitle: "API-based Mailing System",
-      content: "An API-based mailing system that allows users to send and receive mails with features like reply and archive.",
+      id: 4,
+      title: "Personal Finance Tracker",
+      subtitle: "Vue.js & Chart.js",
+      content: "A personal finance tracker with expense categorization, budget setting, and visual representations of spending habits.",
       image: "/images/project-section/p4.png",
-      tags: ["HTML", "CSS", "JavaScript", "Python", "Django", "Selenium", "Redis"],
+      tags: ["Vue.js", "Chart.js", "Vuex", "Firebase"],
       link: {
-        url: "#",
-        text: "View Project", 
+        url: "https://github.com/yourusername/finance-tracker",
+        text: "View Project",
         external: true
       }
     }
   ];
 
   return (
-    <section className="min-h-screen px-6 py-12">
-      <h2 className="text-4xl font-bold mb-8 text-white">My Projects</h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projectsList.map((project, index) => (
-          <Card
-            key={index}
-            title={project.title}
-            subtitle={project.subtitle}
-            content={project.content}
-            image={project.image}
-            tags={project.tags}
-            link={project.link}
-            className="relative h-full"
-          />
-        ))}
+    <section className="projects-section">
+      <div className="container">
+        <h2 className="projects-title">My Projects</h2>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <Card
+              key={project.id}
+              title={project.title}
+              subtitle={project.subtitle}
+              content={project.content}
+              image={project.image}
+              tags={project.tags}
+              link={project.link}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
