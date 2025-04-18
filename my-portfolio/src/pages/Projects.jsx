@@ -5,11 +5,11 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      subtitle: "MERN Stack Application",
-      content: "A full-stack e-commerce platform with user authentication, product catalog, cart functionality, and payment integration.",
-      image: "/images/project-section/p1.png",
-      tags: ["React", "Node.js", "MongoDB", "Express", "Redux"],
+      title: "AI Kaatib",
+      subtitle: "AI bulk blog generator",
+      content: "An AI-powered platform that generates bulk blog posts using OpenAI's GPT-3.5 API, with user authentication and a responsive design.",
+      image: "/images/project_section/01_ai_kaatib.png",
+      tags: ["React", "Next.js", "Supabase", "AWS", "Django", "DRF", "OpenAI"],
       link: {
         url: "https://github.com/yourusername/ecommerce-platform",
         text: "View Project",
@@ -18,11 +18,11 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Task Management System",
-      subtitle: "React & Firebase Application",
+      title: "Gsorcerer",
+      subtitle: "GSoC Issue finder",
       content: "A real-time task management system with collaborative features, deadline tracking, and notification system.",
-      image: "/images/project-section/p2.png",
-      tags: ["React", "Firebase", "Material UI", "Context API"],
+      image: "/images/project_section/02_gsorcerer.png",
+      tags: ["JavaScript", "Django", "Redis", "Github API"],
       link: {
         url: "https://github.com/yourusername/task-manager",
         text: "View Project",
@@ -31,26 +31,13 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "AI Image Generator",
-      subtitle: "Next.js & OpenAI",
-      content: "An application that generates unique images based on text prompts using OpenAI's DALL-E API integration.",
-      image: "/images/project-section/p3.png",
-      tags: ["Next.js", "OpenAI", "TailwindCSS", "Vercel"],
+      title: "Gmail Clone",
+      subtitle: "Gmail clone with custom backend API",
+      content: "A Gmail clone with a custom backend API, featuring email sending, receiving, and a user-friendly interface.",
+      image: "/images/project_section/03_mail.png",
+      tags: ["Python", "JavaScript", "SQLite3", "Django", "DRF"],
       link: {
         url: "https://github.com/yourusername/ai-image-generator",
-        text: "View Project",
-        external: true
-      }
-    },
-    {
-      id: 4,
-      title: "Personal Finance Tracker",
-      subtitle: "Vue.js & Chart.js",
-      content: "A personal finance tracker with expense categorization, budget setting, and visual representations of spending habits.",
-      image: "/images/project-section/p4.png",
-      tags: ["Vue.js", "Chart.js", "Vuex", "Firebase"],
-      link: {
-        url: "https://github.com/yourusername/finance-tracker",
         text: "View Project",
         external: true
       }
