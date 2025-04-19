@@ -24,6 +24,9 @@ jobs:
           cache: 'npm'
           cache-dependency-path: './my-portfolio/package-lock.json'
 
+      - name: Print working directory
+        run: pwd
+        
       - name: Install dependencies
         run: npm install
 
