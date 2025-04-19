@@ -1,0 +1,117 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root {
+    --primary-color: #141414;
+    --secondary-color: #e50914;
+    --text-color: #ffffff;
+    --text-secondary: #9ca3af;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --border-color: #4b5563;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Sora', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0f1b;
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--primary-color);
+}
+
+.bg-glass {
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(10px);
+}
+
+.input-field {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.input-field::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Common section styles */
+section {
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+}
+
+/* Common heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Common utility classes */
+.logo-primary {
+    color: var(--secondary-color);
+}
+
+.logo-secondary {
+    color: white;
+}
+
+/* Utility classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Padding utilities */
+.pt-20 {
+    padding-top: 5rem; /* 80px or 5rem is equivalent to pt-20 in tailwind */
+}
+
+/* For proper spacing when navbar is fixed */
+.page-container {
+    padding-top: 5rem;
+}
