@@ -37,7 +37,7 @@ export default function HeroSection({ scrollToSection }) {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-6 md:mb-8">
           <motion.div variants={item} className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/20">
             <Image
-              src="/images/home-portfolio-img.jpg"
+              src="/images/home-portfolio-img.webp"
               alt="Profile"
               fill
               className="object-cover"
