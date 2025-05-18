@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Osaf Ali Sayed | Full Stack Developer',
   description: 'Portfolio of Osaf Ali Sayed, Full Stack Developer',
+  icons: {
+    icon: '/favicon.jpeg',
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
+  },
 };
 
 export default function RootLayout({ children }) {
