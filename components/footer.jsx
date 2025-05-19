@@ -28,7 +28,7 @@ export default function Footer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="text-center text-sm text-muted-foreground"
+            className="mb-4 md:mb-0 text-center text-sm text-muted-foreground"
           >
             © {new Date().getFullYear()} Osaf Ali Sayed. All rights reserved.
           </motion.div>
