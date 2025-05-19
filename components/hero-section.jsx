@@ -66,27 +66,6 @@ export default function HeroSection({ scrollToSection }) {
           </div>
         </div>
         
-        <motion.div 
-          variants={item}
-          className="flex flex-wrap justify-center gap-4 mb-8 sm:mb-12"
-        >
-          <a href="mailto:osafalisayed@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-            <Mail className="w-4 h-4 mr-2" />
-            <span>osafalisayed@gmail.com</span>
-          </a>
-          <a href="tel:+918890530727" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-            <Phone className="w-4 h-4 mr-2" />
-            <span>+91 8890530727</span>
-          </a>
-          <a href="https://www.github.com/osafalisayed" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-            <Github className="w-4 h-4 mr-2" />
-            <span>github.com/osafalisayed</span>
-          </a>
-          <a href="https://www.linkedin.com/in/osafalisayed/" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-            <Linkedin className="w-4 h-4 mr-2" />
-            <span>linkedin.com/in/osafalisayed</span>
-          </a>
-        </motion.div>
         
         <motion.div variants={item} className="mb-8 sm:mb-4">
           <Button
@@ -95,13 +74,12 @@ export default function HeroSection({ scrollToSection }) {
             size="lg"
           >
             View My Work
-            <ArrowDown className="ml-2 h-4 w-4" />
           </Button>
         </motion.div>
       </motion.div>
       
       <motion.div 
-        className="m-auto mb-2 pointer-events-none"
+        className="m-auto mb-2 mt-20 pointer-events-none"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}

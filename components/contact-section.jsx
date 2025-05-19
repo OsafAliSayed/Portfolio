@@ -1,36 +1,67 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Copy, Check } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export default function ContactSection() {
+  const { toast } = useToast();
+  const [copiedItem, setCopiedItem] = useState(null);
+
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
       label: 'Email',
       value: 'osafalisayed@gmail.com',
-      link: 'mailto:osafalisayed@gmail.com'
+      copyValue: 'osafalisayed@gmail.com'
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: 'Phone',
       value: '+91 8890530727',
-      link: 'tel:+918890530727'
+      copyValue: '+918890530727'
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: 'GitHub',
       value: 'github.com/osafalisayed',
-      link: 'https://www.github.com/osafalisayed'
+      copyValue: 'github.com/osafalisayed'
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/osafalisayed',
-      link: 'https://www.linkedin.com/in/osafalisayed'
+      copyValue: 'linkedin.com/in/osafalisayed'
     }
   ];
+
+  const handleCopy = (value, index) => {
+    navigator.clipboard.writeText(value)
+      .then(() => {
+        setCopiedItem(index);
+        toast({
+          title: "Copied to clipboard",
+          description: `${value} has been copied to your clipboard.`,
+          duration: 2000,
+        });
+        
+        // Reset the copied state after 2 seconds
+        setTimeout(() => {
+          setCopiedItem(null);
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('Failed to copy text: ', error);
+        toast({
+          title: "Failed to copy",
+          description: "Could not copy to clipboard. Please try again.",
+          variant: "destructive",
+          duration: 2000,
+        });
+      });
+  };
 
   return (
     <section className="py-20">
@@ -52,26 +83,31 @@ export default function ContactSection() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {contactInfo.map((item, index) => (
-                <motion.a
+                <motion.div
                   key={index}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-colors duration-300"
+                  className="flex items-center p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-colors duration-300 relative group cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02 }}
+                  onClick={() => handleCopy(item.copyValue, index)}
                 >
                   <div className="text-primary mr-4">
                     {item.icon}
                   </div>
-                  <div>
+                  <div className="flex-grow">
                     <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
                     <div className="font-medium">{item.value}</div>
                   </div>
-                </motion.a>
+                  <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {copiedItem === index ? (
+                      <Check className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <Copy className="h-5 w-5 text-primary" />
+                    )}
+                  </div>
+                </motion.div>
               ))}
             </div>
           </CardContent>

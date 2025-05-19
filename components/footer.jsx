@@ -24,6 +24,15 @@ export default function Footer() {
             <span className="text-primary font-semibold">Osaf</span> Ali Sayed
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-center text-sm text-muted-foreground"
+          >
+            © {new Date().getFullYear()} Osaf Ali Sayed. All rights reserved.
+          </motion.div>
+
           <div className="flex space-x-4">
             {socialLinks.map((link, index) => (
               <motion.a
@@ -42,15 +51,6 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-sm text-muted-foreground mt-8"
-        >
-          © {new Date().getFullYear()} Osaf Ali Sayed. All rights reserved.
-        </motion.div>
       </div>
     </footer>
   );

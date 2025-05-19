@@ -20,7 +20,7 @@ export default function SkillsSection() {
       name: 'Backend',
       items: [
         { name: 'Django', logo: '/images/logos/django.svg' },
-        { name: 'Flask', logo: '/images/logos/flask-white.svg' },
+        { name: 'Flask', logo: '/images/logos/flask.svg', ismonochrome: true },
         { name: 'Fast APi', logo: '/images/logos/fastapi.svg' },
         { name: 'DRF', logo: '/images/logos/djangorest.svg' },
       ]
@@ -79,10 +79,10 @@ export default function SkillsSection() {
       >
         <h2 className="text-3xl font-bold mb-2">Skills</h2>
         <div className="w-20 h-1 bg-primary mb-8"></div>
-        
+
         <div className="space-y-6">
           {categories.map((category, catIndex) => (
-            <motion.div 
+            <motion.div
               key={category.name}
               initial="hidden"
               whileInView="visible"
@@ -101,7 +101,8 @@ export default function SkillsSection() {
                             src={item.logo}
                             alt={item.name}
                             fill
-                            className="object-contain"
+                            className={item.ismonochrome ? "object-contain filter invert hover:brightness-150" : "object-contain"}
+                            style={item.ismonochrome ? { filter: 'brightness(0) invert(1)' } : {}}
                           />
                         </div>
                         <span className="text-sm text-muted-foreground">{item.name}</span>
