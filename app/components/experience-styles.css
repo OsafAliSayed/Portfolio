@@ -56,7 +56,7 @@
 
 /* List item hover effects */
 .experience-item {
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: color 0.15s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .experience-item:hover {

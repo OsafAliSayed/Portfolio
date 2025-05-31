@@ -36,7 +36,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+
+    <main className="min-h-screen">
       <Header scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
       <motion.div

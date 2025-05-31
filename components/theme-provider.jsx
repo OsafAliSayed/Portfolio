@@ -24,6 +24,10 @@ export function ThemeProvider({
       root.classList.add(systemTheme);
       return;
     }
+    if (theme === "light" || theme === "dark") {
+      root.classList.add(theme);
+      return;
+    }
 
     root.classList.add(theme);
   }, [theme]);
