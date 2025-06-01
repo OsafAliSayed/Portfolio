@@ -32,7 +32,7 @@ export default function ContactSection() {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/osafalisayed',
+      value: '/in/osafalisayed',
       copyValue: 'linkedin.com/in/osafalisayed'
     }
   ];
