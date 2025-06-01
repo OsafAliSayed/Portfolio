@@ -64,7 +64,7 @@ export default function Header({ scrollToSection }) {
   }, []);
   return (
     <motion.header
-      className={`fixed ${isMobile ? 'bottom-0 left-0 right-0 top-auto px-0 py-1 w-full max-w-full justify-center' : 'top-3 left-0 right-0 mx-auto max-w-3xl py-2 px-10'} z-50 transition-all duration-300 transform rounded-full ${
+      className={`fixed ${isMobile ? 'bottom-5 left-0 right-0 top-auto px-0 py-1 w-[95%] justify-center' : 'top-3 left-0 right-0 mx-auto max-w-3xl py-2 px-10'} z-50 transition-all duration-300 transform rounded-full ${
         isScrolled && !isMobile
           ? 'bg-background/80 backdrop-blur-md shadow-md border border-primary/10'
           : 'bg-background/40 backdrop-blur-sm'

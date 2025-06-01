@@ -22,7 +22,7 @@ export default function HeroSection({ scrollToSection }) {
   };
 
   return (
-    <section className="min-h-screen pt-20 md:pt-16 flex items-center justify-center px-6 relative overflow-hidden pb-5">
+    <section className="min-h-screen md:pt-16 flex items-center justify-center px-2 sm:px-6 relative overflow-hidden pb-5">
       
       <motion.div
         className="min-w lg:w-[50%] px-10 mx-auto text-center"
@@ -83,13 +83,18 @@ export default function HeroSection({ scrollToSection }) {
         </motion.div>
         
         <motion.div variants={item} className="mb-8 sm:mb-4">
-          <Button
-            onClick={() => scrollToSection('about')}
-            className="rounded-full"
-            size="lg"
+          <a
+            href="https://drive.google.com/file/d/1gND_DXWZ3b-EpgS_T3JEqAKnGkLk4A45/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            View My Work
-          </Button>
+            <Button
+              className="rounded-full"
+              size="lg"
+            >
+              Download CV
+            </Button>
+          </a>
         </motion.div>
         
         <motion.div 
