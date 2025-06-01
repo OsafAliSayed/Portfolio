@@ -10,21 +10,18 @@ import ExperienceSection from '@/components/experience-section';
 import ProjectsSection from '@/components/projects-section';
 import EducationSection from '@/components/education-section';
 import ContactSection from '@/components/contact-section';
+import WorkProjectsSection from '@/components/work-projects-section';
 import Footer from '@/components/footer';
 
 export default function Home() {
-  const aboutRef = useRef(null);
   const skillsRef = useRef(null);
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
   const educationRef = useRef(null);
   const contactRef = useRef(null);
+  const workProjectRef = useRef(null);
 
   const sections = {
-    about: aboutRef,
+    "work-project": workProjectRef,
     skills: skillsRef,
-    experience: experienceRef,
-    projects: projectsRef,
     education: educationRef,
     contact: contactRef,
   };
@@ -46,17 +43,12 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="container mx-auto px-4 pb-20"
       >
-        <div ref={aboutRef} id="about">
-          <AboutSection />
+        <div ref={workProjectRef} id="work-project">
+          <WorkProjectsSection />
         </div>
+        
         <div ref={skillsRef} id="skills">
           <SkillsSection />
-        </div>
-        <div ref={experienceRef} id="experience">
-          <ExperienceSection />
-        </div>
-        <div ref={projectsRef} id="projects">
-          <ProjectsSection />
         </div>
         <div ref={educationRef} id="education">
           <EducationSection />

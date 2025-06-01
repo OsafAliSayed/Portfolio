@@ -64,16 +64,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-20">
+    <section className="pt-20 pb-5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, margin: "-100px" }}
+        className="max-w-2xl mx-auto"
       >
-        <h2 className="text-3xl font-bold mb-2">Get In Touch</h2>
-        <div className="w-20 h-1 bg-primary mb-8"></div>
-
         <Card>
           <CardContent className="p-6">
             <p className="text-lg mb-8">
