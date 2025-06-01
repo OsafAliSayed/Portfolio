@@ -1,10 +1,7 @@
 import './globals.css';
 import './components/nav-styles.css';
 import './components/experience-styles.css';
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Osaf Ali Sayed | Full Stack Developer',
@@ -22,7 +19,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={inter.className}>
+      <body style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif' }}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

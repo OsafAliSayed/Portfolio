@@ -87,10 +87,6 @@
   }
 }
 
-.header-font {
-  font-family: 'Regalia Monarch', sans-serif;
-}
-
 @media (max-width: 640px) {
   html {
     font-size: 14px;
