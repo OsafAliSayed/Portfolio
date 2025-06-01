@@ -74,7 +74,11 @@
 }
 
 
+
 @layer base {
+  html {
+    font-size: 16px;
+  }
   * {
     @apply border-border;
   }
@@ -88,23 +92,19 @@
 }
 
 @media (max-width: 640px) {
-  body {
-    font-size: 14px; /* Decrease base font size for mobile devices */
+  html {
+    font-size: 14px;
   }
-
   h1 {
-    font-size: 1.5rem; /* Adjust heading sizes */
+    font-size: 1.5rem;
   }
-
   h2 {
     font-size: 1.25rem;
   }
-
   h3 {
     font-size: 1.125rem;
   }
-
   p, li {
-    font-size: 0.875rem; /* Adjust paragraph and list item sizes */
+    font-size: 0.875rem;
   }
 }
