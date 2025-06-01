@@ -8,6 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@font-face {
+  font-family: 'Regalia Monarch';
+  src: url('/fonts/RegaliaMonarch.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -72,6 +79,7 @@
   }
 }
 
+
 @layer base {
   * {
     @apply border-border;
@@ -79,6 +87,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.header-font {
+  font-family: 'Regalia Monarch', sans-serif;
 }
 
 @media (max-width: 640px) {
