@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Briefcase, Award, GraduationCap, Mail } from 'lucide-react';
+import { Menu, X, Briefcase, Award, GraduationCap, Mail, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
 
@@ -22,7 +22,7 @@ export default function Header({ scrollToSection }) {
       }
       
       // Determine active section based on scroll position
-      const sections = ['work-project', 'skills', 'education', 'contact'];
+      const sections = ['work', 'projects', 'skills', 'education', 'contact'];
       const viewportHeight = window.innerHeight;
       const viewportMidpoint = viewportHeight / 3;
       
@@ -48,7 +48,8 @@ export default function Header({ scrollToSection }) {
 
   // Navigation items with icons
   const navItems = [
-    { name: 'Work/Projects', key: 'work-project', icon: Briefcase },
+    { name: 'Work', key: 'work', icon: Briefcase },
+    { name: 'Projects', key: 'projects', icon: ExternalLink },
     { name: 'Skills', key: 'skills', icon: Award },
     { name: 'Education', key: 'education', icon: GraduationCap },
     { name: 'Contact', key: 'contact', icon: Mail },
