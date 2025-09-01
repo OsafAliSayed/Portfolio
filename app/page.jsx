@@ -44,9 +44,9 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto px-4 pb-20"
       >
-        <div ref={workRef} id="work">
+        {/* <div ref={workRef} id="work">
           <ExperienceSection />
-        </div>
+        </div> */}
         
         <div ref={projectsRef} id="projects">
           <ProjectsSection />
