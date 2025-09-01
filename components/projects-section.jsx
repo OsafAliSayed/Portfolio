@@ -155,7 +155,7 @@ export default function ProjectsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="max-w-4xl mx-auto relative"
+        className="max-w-2xl mx-auto relative"
       >
         {/* Background decorative elements */}
         <div className="absolute -z-10 top-40 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />

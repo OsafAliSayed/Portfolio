@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Briefcase, Award, GraduationCap, Mail, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
+import Icons from './icons';
 
 export default function Header({ scrollToSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,11 +48,11 @@ export default function Header({ scrollToSection }) {
 
   // Navigation items with icons
   const navItems = [
-    { name: 'Work', key: 'work', icon: Briefcase },
-    { name: 'Projects', key: 'projects', icon: ExternalLink },
-    { name: 'Skills', key: 'skills', icon: Award },
-    { name: 'Education', key: 'education', icon: GraduationCap },
-    { name: 'Contact', key: 'contact', icon: Mail },
+    { name: 'Work', key: 'work', icon: Icons.Experience },
+    { name: 'Projects', key: 'projects', icon: Icons.Project },
+    { name: 'Skills', key: 'skills', icon: Icons.Skills },
+    { name: 'Education', key: 'education', icon: Icons.Education },
+    { name: 'Contact', key: 'contact', icon: Icons.Contact },
   ];
 
   // Responsive state
