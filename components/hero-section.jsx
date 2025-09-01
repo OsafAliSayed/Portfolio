@@ -56,17 +56,18 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div variants={item} className="flex items-center gap-3 mb-4">
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <Button
-                className="text-xs px-4 py-1 h-auto bg-transparent hover:bg-transparent border border-gray-700 hover:border-[#89d957] text-gray-300 hover:text-[#89d957] transition-colors rounded"
-                variant="outline"
-                size="sm"
-              >
-                <Icons.Download className="w-3 h-3 mr-1.5" />
-                Resume
-              </Button>
+            
+           
+            <Link href="https://www.upwork.com/freelancers/osafalisayed" target="_blank" rel="noopener noreferrer">
+              <div className="p-1.5 rounded-sm text-gray-400 hover:text-[#89d957] transition-colors">
+                <Icons.Upwork className="w-4 h-4" />
+              </div>
             </Link>
-
+             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="p-1.5 rounded-sm text-gray-400 hover:text-[#89d957] transition-colors">
+                <Icons.Document className="w-4 h-4" />
+              </div>
+            </Link>
             <Link href="https://linkedin.com/in/osaf-ali-sayed" target="_blank" rel="noopener noreferrer">
               <div className="p-1.5 rounded-sm text-gray-400 hover:text-[#89d957] transition-colors">
                 <Icons.LinkedIn className="w-4 h-4" />
@@ -88,12 +89,6 @@ export default function HeroSection() {
             <Link href="https://twitter.com/osafalisayed" target="_blank" rel="noopener noreferrer">
               <div className="p-1.5 rounded-sm text-gray-400 hover:text-[#89d957] transition-colors">
                 <Icons.TwitterX className="w-4 h-4" />
-              </div>
-            </Link>
-            
-            <Link href="https://www.upwork.com/freelancers/osafalisayed" target="_blank" rel="noopener noreferrer">
-              <div className="p-1.5 rounded-sm text-gray-400 hover:text-[#89d957] transition-colors">
-                <Icons.Upwork className="w-4 h-4" />
               </div>
             </Link>
           </motion.div>

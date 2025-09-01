@@ -13,10 +13,8 @@ import {
   FaLaptopCode,
   FaServer,
   FaDatabase,
-  FaProjectDiagram,
   FaGraduationCap,
   FaBriefcase,
-  FaTools,
   FaUser,
   FaPhone,
   FaTwitter
@@ -27,14 +25,16 @@ import {
 } from 'react-icons/fa6';
 
 
-import { BsMoonStars, BsSun, BsMoonFill, BsBrightnessHighFill, BsCodeSlash, BsGear, BsLaptop, BsTwitterX } from 'react-icons/bs';
-import { HiOutlineSun, HiOutlineMoon, HiOutlineCode } from 'react-icons/hi';
-import { IoSunnyOutline, IoMoonOutline, IoCodeSlashOutline, IoHammerOutline, IoLaptopOutline } from 'react-icons/io5';
-import { RiSunLine, RiMoonClearLine, RiCodeSSlashLine, RiCodeBoxLine, RiToolsFill, RiMacbookLine } from 'react-icons/ri';
-import { VscProject, VscTools } from 'react-icons/vsc';
-import { AiOutlineProject, AiOutlineTool, AiOutlineLaptop } from 'react-icons/ai';
-import { MdOutlineWorkOutline, MdWorkOutline, MdLaptopMac } from 'react-icons/md';
-import { GoProject } from 'react-icons/go';
+import { 
+  BsTwitterX 
+} from 'react-icons/bs';
+
+import { 
+  HiOutlineSun, 
+  HiOutlineMoon 
+} from 'react-icons/hi';
+
+
 import { 
     LuAward,
     LuLaptop
@@ -58,6 +58,11 @@ import {
   SiGit
 } from 'react-icons/si';
 
+
+import {
+  IoDocument
+} from 'react-icons/io5';
+
 // Define your icon mapping
 const Icons = {
   // Social media and contact
@@ -69,7 +74,7 @@ const Icons = {
   TwitterX: BsTwitterX,
   Upwork: FaUpwork,
   ExternalLink: FaExternalLinkAlt,
-  
+  Document: IoDocument,
 
   // dark and light mode icon   
   Moon: HiOutlineMoon,
