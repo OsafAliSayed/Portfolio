@@ -1,7 +1,9 @@
 import './globals.css';
 import './components/nav-styles.css';
 import './components/experience-styles.css';
-import { ThemeProvider } from '@/components/theme-provider';
+import './components/project-styles.css';
+
+import { Providers } from './provider';
 
 export const metadata = {
   title: 'Osaf Ali Sayed | Full Stack Developer',
@@ -20,14 +22,9 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif' }}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+          <Providers>
+            {children}
+          </Providers>
       </body>
     </html>
   );

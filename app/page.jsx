@@ -1,16 +1,15 @@
-'use client';
-
+"use client"
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/header';
 import HeroSection from '@/components/hero-section';
-import AboutSection from '@/components/about-section';
 import SkillsSection from '@/components/skills-section';
 import ExperienceSection from '@/components/experience-section';
 import ProjectsSection from '@/components/projects-section';
 import EducationSection from '@/components/education-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
+
 
 export default function Home() {
   const skillsRef = useRef(null);
@@ -34,7 +33,6 @@ export default function Home() {
   };
 
   return (
-
     <main className="min-h-screen">
       <Header scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
@@ -44,9 +42,9 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto px-4 pb-20"
       >
-        {/* <div ref={workRef} id="work">
+        <div ref={workRef} id="work">
           <ExperienceSection />
-        </div> */}
+        </div>
         
         <div ref={projectsRef} id="projects">
           <ProjectsSection />

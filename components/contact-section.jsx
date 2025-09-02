@@ -95,7 +95,7 @@ export default function ContactSection() {
                     {item.icon}
                   </div>
                   <div className="flex-grow">
-                    <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
+                    <div className="text-sm text-text-dark mb-1">{item.label}</div>
                     <div className="font-medium">{item.value}</div>
                   </div>
                   <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">

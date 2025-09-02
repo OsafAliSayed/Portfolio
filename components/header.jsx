@@ -89,7 +89,7 @@ export default function Header({ scrollToSection }) {
                 className={`px-7 py-1 text-sm rounded-md flex items-center gap-2 transition-all ${
                   activeSection === item.key
                     ? 'bg-primary/10 text-primary font-medium'
-                    : 'text-muted-foreground hover:text-foreground'
+                    : 'text-text-dark hover:text-foreground'
                 }`}
                 onClick={() => {
                   if (typeof scrollToSection === 'function') {
@@ -126,7 +126,7 @@ export default function Header({ scrollToSection }) {
                   className={`flex flex-col items-center justify-center flex-1 px-1 py-1 rounded-md text-xs transition-all ${
                     activeSection === item.key
                       ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-muted-foreground hover:text-foreground'
+                      : 'text-text-dark hover:text-foreground'
                   }`}
                   onClick={() => {
                     scrollToSection(item.key);
@@ -156,7 +156,7 @@ export default function Header({ scrollToSection }) {
                     className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm ${
                       activeSection === item.key
                         ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-muted-foreground'
+                        : 'text-text-dark'
                     }`}
                     onClick={() => {
                       scrollToSection(item.key);

@@ -8,6 +8,17 @@
   display: none; /* Chrome, Safari and Opera */
 }
 
+/* Project gradient overlay */
+.project-gradient-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.group:hover .project-gradient-overlay {
+  opacity: 1;
+}
+
 /* Line clamp utilities */
 .line-clamp-1 {
   display: -webkit-box;

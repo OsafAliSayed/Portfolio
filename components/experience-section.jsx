@@ -81,18 +81,18 @@ export default function ExperienceSection() {
                       </div>
                       <div className="flex-grow text-left">
                         <h3 className="text-xl font-bold">{experience.title}</h3>
-                        <div className="flex items-center text-muted-foreground">
+                        <div className="flex items-center text-text-dark">
                           <Building2 className="h-4 w-4 mr-1" />
                           <span>{experience.company}</span>
                         </div>
                       </div>
-                      <div className="flex items-center text-muted-foreground">
+                      <div className="flex items-center text-text-dark">
                         <Calendar className="h-4 w-4 mr-1" />
                         <span>{experience.period}</span>
                       </div>
                     </div>
                     
-                    <ul className="space-y-2 list-disc pl-5 text-muted-foreground">
+                    <ul className="space-y-2 list-disc pl-5 text-text-dark">
                       {experience.description.map((item, itemIndex) => (
                         <li key={itemIndex} className="experience-item">{item}</li>
                       ))}
