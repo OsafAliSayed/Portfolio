@@ -45,7 +45,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   --quaternary: 201, 226, 101;
   --text: 255, 255, 255;
   --foreground: 255, 255, 255;
-  --background: 0, 0, 0;
+  --background: 31, 31, 29;
   
   /* Transparent variations for dark mode */
   --primary-transparent-05: rgba(0, 0, 0, 0.05);

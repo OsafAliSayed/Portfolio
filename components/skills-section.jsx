@@ -2,49 +2,37 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
+import SkillTag from '@/components/ui/skills-tag';
+import Icons from './icons';
 
 
 export default function SkillsSection() {
   // Grouped skills by type, not as separate sections
   const skills = {
     'Frontend': [
-      { name: 'HTML/CSS', logo: '/images/logos/html5.svg' },
-      { name: 'JavaScript', logo: '/images/logos/javascript.svg' },
-      { name: 'React', logo: '/images/logos/react.svg' },
-      { name: 'Vue.js', logo: '/images/logos/vuejs.svg' },
-      { name: 'Next.js', logo: '/images/logos/nextjs.svg' },
+      { name: 'HTML/CSS', icon: 'Code' },
+      { name: 'JavaScript', icon: 'JavaScript' },
+      { name: 'TypeScript', icon: 'TypeScript' },
+      { name: 'React', icon: 'React' },
+      { name: 'Next.js', icon: 'NextJs' },
+      { name: 'Tailwind CSS', icon: 'TailwindCSS' },
     ],
     'Backend': [
-      { name: 'Django', logo: '/images/logos/django.svg' },
-      { name: 'Flask', logo: '/images/logos/flask.svg', ismonochrome: true },
-      { name: 'Fast APi', logo: '/images/logos/fastapi.svg' },
-      { name: 'DRF', logo: '/images/logos/djangorest.svg' },
+      { name: 'Python', icon: 'Python' },
+      { name: 'Django', icon: 'Django' },
+      { name: 'Flask', icon: 'Flask' },
+      { name: 'FastAPI', icon: 'FastAPI' },
     ],
     'DevOps': [
-      { name: 'Docker', logo: '/images/logos/docker.svg' },
-      { name: 'Github Actions', logo: '/images/logos/githubactions.svg' },
-      { name: 'Jenkins', logo: '/images/logos/jenkins.svg' },
-      { name: 'Kubernetes', logo: '/images/logos/kubernetes.svg' },
-      { name: 'AWS', logo: '/images/logos/aws.svg' }
-    ],
-    'Version Control': [
-      { name: 'Git', logo: '/images/logos/git.svg' },
-      { name: 'Github', logo: '/images/logos/github.svg' }
+      { name: 'Docker', icon: 'Docker' },
+      { name: 'Git', icon: 'Git' },
+      { name: 'GitHub', icon: 'GitHub' },
+      { name: 'Kubernetes', icon: 'Kubernetes' },
+      { name: 'AWS', icon: 'AWS' }
     ],
     'Databases': [
-      { name: 'MySQL', logo: '/images/logos/mysql.svg' },
-      { name: 'MongoDB', logo: '/images/logos/mongodb.svg' },
-      { name: 'PostgreSQL', logo: '/images/logos/postgresql.svg' },
-      { name: 'SQLite3', logo: '/images/logos/sqlite.svg' }
-    ],
-    'Libraries & Tools': [
-      { name: 'Pytest', logo: '/images/logos/pytest.svg' },
-      { name: 'selenium', logo: '/images/logos/selenium.svg' },
-      { name: 'Postman', logo: '/images/logos/postman.svg' },
-      { name: 'Cypress', logo: '/images/logos/cypressio.svg' },
-      { name: 'Tailwind CSS', logo: '/images/logos/tailwind.svg' },
-      { name: 'Ant Design', logo: '/images/logos/antdesign.svg' }
+      { name: 'MongoDB', icon: 'MongoDB' },
+      { name: 'PostgreSQL', icon: 'PostgreSQL' }
     ]
   };
 
@@ -66,26 +54,19 @@ export default function SkillsSection() {
         viewport={{ once: true, margin: "-100px" }}
         className="max-w-2xl mx-auto"
       >
-        <Card className="overflow-hidden card-glossy border border-border">
+        <Card className="overflow-hidden card-glossy border border-tertiary">
           <CardContent>
             <div className="py-6 backdrop-blur-sm">
               {Object.entries(skills).map(([group, items], idx) => (
                 <div key={group} className={idx !== 0 ? 'mt-8' : ''}>
-                  <h3 className="text-lg font-bold mb-3 text-primary/90">{group}</h3>
+                  <h3 className="text-lg font-bold mb-3 text-secondary/90">{group}</h3>
                   <div className="flex flex-wrap gap-2">
                     {items.map(item => (
-                      <div key={item.name} className="flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium shadow-sm hover:bg-primary/20 transition-colors">
-                        <div className="relative w-6 h-6">
-                          <Image
-                            src={item.logo}
-                            alt={item.name}
-                            fill
-                            className={item.ismonochrome ? "object-contain filter invert hover:brightness-150" : "object-contain"}
-                            style={item.ismonochrome ? { filter: 'brightness(0) invert(1)' } : {}}
-                          />
-                        </div>
-                        <span>{item.name}</span>
-                      </div>
+                      <SkillTag 
+                        key={item.name} 
+                        name={item.name} 
+                        icon={Icons[item.icon]} 
+                      />
                     ))}
                   </div>
                 </div>

@@ -17,7 +17,8 @@ import {
   FaBriefcase,
   FaUser,
   FaPhone,
-  FaTwitter
+  FaTwitter,
+  FaAws
 } from 'react-icons/fa';
 
 import {
@@ -108,7 +109,7 @@ const Icons = {
   Flask: SiFlask,
   Docker: SiDocker,
   Kubernetes: SiKubernetes,
-  AWS: SiAmazonaws,
+  AWS: FaAws,
   MongoDB: SiMongodb,
   PostgreSQL: SiPostgresql,
   Git: SiGit
