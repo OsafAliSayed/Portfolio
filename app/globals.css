@@ -23,6 +23,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     --foreground: #ffffff;   
     --background: #000000;
     
+
     /* Transparent variations for overlays and effects */
     --primary-transparent-05: rgba(255, 255, 255, 0.05);
     --primary-transparent-10: rgba(255, 255, 255, 0.1);
@@ -38,15 +39,13 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   }
   
 .dark {
-  --primary: #000000;
-  --secondary: #ffffff;
-  --tertiary: #89d957;
-  --quaternary: #c9e265;
-  --text: #ffffff;
-  --text-dark: rgba(255, 255, 255, 0.7);
-  --border: rgba(255, 255, 255, 0.2);
-  --foreground: #ffffff;
-  --background: #000000;
+  --primary: 31, 31, 29;
+  --secondary: 255, 255, 255;
+  --tertiary: 137, 217, 87;
+  --quaternary: 201, 226, 101;
+  --text: 255, 255, 255;
+  --foreground: 255, 255, 255;
+  --background: 0, 0, 0;
   
   /* Transparent variations for dark mode */
   --primary-transparent-05: rgba(0, 0, 0, 0.05);

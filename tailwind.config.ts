@@ -10,15 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        tertiary: 'var(--tertiary)',
-        quaternary: 'var(--quaternary)',
-        text: 'var(--text)',
-        'text-dark': 'var(--text-dark)',
-        border: 'var(--border)',
-        foreground: 'var(--foreground)',
-        background: 'var(--background)',
+        primary: 'rgba(var(--primary), <alpha-value>)',
+        secondary: 'rgba(var(--secondary), <alpha-value>)',
+        tertiary: 'rgba(var(--tertiary), <alpha-value>)',
+        quaternary: 'rgba(var(--quaternary), <alpha-value>)',
+        text: 'rgba(var(--text), <alpha-value>)',
+        foreground: 'rgba(var(--foreground), <alpha-value>)',
+        background: 'rgba(var(--background), <alpha-value>)',
       },
     },
   },
