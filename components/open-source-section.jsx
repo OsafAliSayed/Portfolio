@@ -47,15 +47,7 @@ export default function OpenSourceSection() {
     }
   ];
 
-  const getStatusColor = (status) => {
-    const colors = {
-      'Merged': 'bg-green-500/10 text-green-400 border-green-500/20',
-      'Closed': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-      'Open': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-      'Draft': 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
-    };
-    return colors[status] || 'bg-white/5 text-foreground/70 border-white/10';
-  };
+
 
   const container = {
     hidden: { opacity: 0 },
@@ -79,7 +71,6 @@ export default function OpenSourceSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="mb-12"
       >
         <h2 className="font-bold text-start mb-4 text-foreground">
           Open Source
@@ -103,40 +94,37 @@ export default function OpenSourceSection() {
               variants={item}
               className="relative"
             >
-              <motion.div className="bg-transparent  rounded-r-lg">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-4">
+              <motion.div className="bg-transparent py-4 sm:py-8 rounded-r-lg">
+                <div className="mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                     {/* Company logo */}
-                    <div className="w-20 h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 flex">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 self-start">
                       <Image
                         src={contribution.logo}
                         alt={contribution.company}
-                        width={48}
-                        height={48}
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="flex flex-col justify-around h-full">
-                      <div className="flex items-center space-x-3">
-                        <h3 className="text-foreground">
+                    <div className="flex flex-col justify-start min-w-0 flex-1">
+                      <div className="mb-2">
+                        <h3 className="text-base sm:text-lg font-semibold text-foreground leading-tight">
                           {contribution.title}
                         </h3>
-                        <div className={`px-3 py-1 rounded-2xl text-xs font-medium border ${getStatusColor(contribution.status)}`}>
-                          {contribution.status}
-                        </div>
                       </div>
                       
                       <Link
                         href={contribution.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-foreground/60 hover:text-foreground/80 font-medium inline-flex items-center group"
+                        className="text-sm sm:text-base text-foreground/60 hover:text-foreground/80 font-medium inline-flex items-center group mb-2"
                       >
                         {contribution.repository}
                         <Icons.ExternalLink className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                       
-                      <p className="text-foreground/60">
+                      <p className="text-sm text-foreground/60">
                         {contribution.date}
                       </p>
                     </div>
@@ -147,7 +135,7 @@ export default function OpenSourceSection() {
                   <div className="mb-4">
                     <ul className="space-y-2">
                       {contribution.contribution_details.slice(0, 3).map((detail, idx) => (
-                        <li key={idx} className="text-foreground/70">
+                        <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
                           {highlightKeywords(detail)}
                         </li>
                       ))}
@@ -161,10 +149,10 @@ export default function OpenSourceSection() {
                     return (
                       <div
                         key={tech}
-                        className="flex items-center space-x-2 px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
+                        className="flex items-center space-x-2 px-2 sm:px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
                       >
                         <IconComponent className="w-3 h-3" />
-                        <span>{tech}</span>
+                        <span className="text-xs">{tech}</span>
                       </div>
                     );
                   })}

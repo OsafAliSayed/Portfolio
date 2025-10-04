@@ -15,9 +15,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 :root {
     --primary: 255, 255, 255;     /* Pure white */
-    --secondary: 99, 102, 241;    /* Single accent color - indigo */   
-    --tertiary: 99, 102, 241;     /* Same as secondary for consistency */
-    --quaternary: 99, 102, 241;   /* Same as secondary for consistency */
+    --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
+    --tertiary: 96, 165, 250;     /* Same as secondary for consistency */
+    --quaternary: 96, 165, 250;   /* Same as secondary for consistency */
     --text: 255, 255, 255;        /* White text */
     --text-muted: 156, 163, 175;  /* Muted white */
     --border: 55, 65, 81;         /* Dark border */      
@@ -32,21 +32,23 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     --primary-transparent-20: rgba(255, 255, 255, 0.2);
     --primary-transparent-30: rgba(255, 255, 255, 0.3);
     --primary-transparent-80: rgba(255, 255, 255, 0.8);
-    --secondary-transparent-05: rgba(99, 102, 241, 0.05);
-    --secondary-transparent-10: rgba(99, 102, 241, 0.1); 
-    --secondary-transparent-12: rgba(99, 102, 241, 0.12);
-    --secondary-transparent-20: rgba(99, 102, 241, 0.2);
-    --tertiary-transparent-10: rgba(99, 102, 241, 0.1);
-    --tertiary-transparent-20: rgba(99, 102, 241, 0.2);
-    --quaternary-transparent-10: rgba(99, 102, 241, 0.1);
-    --quaternary-transparent-20: rgba(99, 102, 241, 0.2);
+    --secondary-transparent-05: rgba(96, 165, 250, 0.05);
+    --secondary-transparent-10: rgba(96, 165, 250, 0.1); 
+    --secondary-transparent-12: rgba(96, 165, 250, 0.12);
+    --secondary-transparent-20: rgba(96, 165, 250, 0.2);
+    --tertiary-transparent-10: rgba(96, 165, 250, 0.1);
+    --tertiary-transparent-20: rgba(96, 165, 250, 0.2);
+    --quaternary-transparent-10: rgba(96, 165, 250, 0.1);
+    --quaternary-transparent-20: rgba(96, 165, 250, 0.2);
 }
   
 .dark {
+
+  /* rgb(6,13,25) */
   --primary: 255, 255, 255;     /* White */
-  --secondary: 99, 102, 241;    /* Single accent color */   
-  --tertiary: 99, 102, 241;     /* Same as secondary */
-  --quaternary: 99, 102, 241;   /* Same as secondary */
+  --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
+  --tertiary: 96, 165, 250;     /* Same as secondary */
+  --quaternary: 96, 165, 250;   /* Same as secondary */
   --text: 255, 255, 255;        /* White text */
   --text-muted: 156, 163, 175;  /* Muted white */
   --border: 55, 65, 81;         /* Dark border */      
@@ -61,14 +63,14 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   --primary-transparent-20: rgba(255, 255, 255, 0.2);
   --primary-transparent-30: rgba(255, 255, 255, 0.3);
   --primary-transparent-80: rgba(255, 255, 255, 0.8);
-  --secondary-transparent-05: rgba(99, 102, 241, 0.05);
-  --secondary-transparent-10: rgba(99, 102, 241, 0.1);
-  --secondary-transparent-12: rgba(99, 102, 241, 0.12);
-  --secondary-transparent-20: rgba(99, 102, 241, 0.2);
-  --tertiary-transparent-10: rgba(99, 102, 241, 0.1);
-  --tertiary-transparent-20: rgba(99, 102, 241, 0.2);
-  --quaternary-transparent-10: rgba(99, 102, 241, 0.1);
-  --quaternary-transparent-20: rgba(99, 102, 241, 0.2);
+  --secondary-transparent-05: rgba(96, 165, 250, 0.05);
+  --secondary-transparent-10: rgba(96, 165, 250, 0.1);
+  --secondary-transparent-12: rgba(96, 165, 250, 0.12);
+  --secondary-transparent-20: rgba(96, 165, 250, 0.2);
+  --tertiary-transparent-10: rgba(96, 165, 250, 0.1);
+  --tertiary-transparent-20: rgba(96, 165, 250, 0.2);
+  --quaternary-transparent-10: rgba(96, 165, 250, 0.1);
+  --quaternary-transparent-20: rgba(96, 165, 250, 0.2);
 }
 
 /* Typography System - Modern font stacks and improved hierarchy */
@@ -168,6 +170,14 @@ ul {
   list-style-type: disc;
   padding-left: 1.5rem; /* Indent for list items */
   margin: 0;
+}
+
+/* Remove list styling on small screens */
+@media (max-width: 767px) {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
 }
 
 /* List items */

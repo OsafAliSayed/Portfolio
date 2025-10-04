@@ -7,19 +7,42 @@ import SkillsSection from '@/components/skills-section';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background h-full ">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex items-center gap-3 h-screen ">
-        {/* Hero Section */}
-        <div className="w-full md:w-1/3 lg:w-1/4 sticky top-0 h-fit">
-          <HeroSection />
+    <main className="min-h-screen bg-background">
+      {/* Mobile Layout: Stack vertically */}
+      <div className="block lg:hidden">
+        <div className="container mx-auto px-4 sm:px-6 py-6">
+          {/* Hero Section - Mobile */}
+          <div className="mb-8">
+            <HeroSection />
+          </div>
+          
+          {/* Main Content - Mobile */}
+          <div className="space-y-12">
+            <SkillsSection />
+            <ExperienceTimeline />
+            <OpenSourceSection />
+            <ProjectsSection />
+          </div>
         </div>
-        
-        {/* Main Content */}
-        <div className="w-full md:w-2/3 lg:w-3/4 space-y-12 md:space-y-16 lg:space-y-18 h-screen ">
-          <SkillsSection />
-          <ExperienceTimeline />
-          <OpenSourceSection />
-          <ProjectsSection />
+      </div>
+
+      {/* Desktop Layout: Side by side */}
+      <div className="hidden lg:block">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex gap-8">
+          {/* Hero Section - Desktop */}
+          <div className="w-full lg:w-1/4 xl:w-1/3">
+            <div className="sticky top-10">
+              <HeroSection />
+            </div>
+          </div>
+          
+          {/* Main Content - Desktop */}
+          <div className="w-full lg:w-3/4 xl:w-2/3 space-y-16">
+            <SkillsSection />
+            <ExperienceTimeline />
+            <OpenSourceSection />
+            <ProjectsSection />
+          </div>
         </div>
       </div>
     </main>

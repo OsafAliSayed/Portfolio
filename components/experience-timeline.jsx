@@ -100,28 +100,28 @@ export default function ExperienceTimeline() {
             >
               
               <motion.div
-                className="border-secondary bg-transparent py-8 rounded-r-lg"
+                className="border-secondary bg-transparent py-4 sm:py-8 rounded-r-lg"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-4">
+                <div className="mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                     {/* Company logo inside card */}
-                    <div className="w-20 h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 flex ">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 self-start">
                       <Image
                         src={exp.logo}
                         alt={exp.company}
-                        width={48}
-                        height={48}
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="flex flex-col justify-around">
-                      <h3 className="text-foreground">
+                    <div className="flex flex-col justify-start min-w-0 flex-1">
+                      <h3 className="text-lg sm:text-xl font-semibold text-foreground">
                         {exp.company}
                       </h3>
-                      <p className="text-foreground/60 ">
+                      <p className="text-sm sm:text-base text-foreground/60">
                         {exp.position}
                       </p>
-                      <p className="text-foreground/60">
+                      <p className="text-sm sm:text-base text-foreground/60">
                         {exp.duration}
                       </p>
                     </div>
@@ -131,23 +131,23 @@ export default function ExperienceTimeline() {
                 <div className="mb-6">
                   <ul className="space-y-3">
                     {exp.highlights.map((highlight, idx) => (
-                      <li key={idx} className="text-foreground/70">
+                      <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
                         {highlightKeywords(highlight)}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                 <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech) => {
                     const IconComponent = Icons[tech] || Icons.Code
                     return (
                       <div
                         key={tech}
-                        className="flex items-center space-x-2 px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
+                        className="flex items-center space-x-2 px-2 sm:px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
                       >
                         <IconComponent className="w-3 h-3" />
-                        <span>{tech}</span>
+                        <span className="text-xs">{tech}</span>
                       </div>
                     );
                   })}

@@ -147,13 +147,13 @@ export default function ProjectsSection() {
               variants={item}
               className="relative"
             >
-              <motion.div className="bg-transparent py-8 rounded-r-lg">
-                <div className="flex gap-6">
-                  {/* Project image carousel - 25% */}
-                  <div className="w-1/3 flex-shrink-0">
+              <motion.div className="bg-transparent py-4 sm:py-8 rounded-r-lg">
+                <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
+                  {/* Project image carousel */}
+                  <div className="w-full lg:w-1/3 flex-shrink-0">
                     <div className="relative">
                       <div 
-                        className="w-full aspect-square rounded-lg overflow-hidden bg-background border-2 border-white/10 relative cursor-pointer"
+                        className="w-full aspect-video lg:aspect-square rounded-lg overflow-hidden bg-background border-2 border-white/10 relative cursor-pointer"
                         onMouseMove={(e) => handleImageHover(e, project)}
                       >
                         {/* Invisible hover zones for visual feedback */}
@@ -179,8 +179,8 @@ export default function ProjectsSection() {
                             <Image
                               src={getProjectImages(project)[getCurrentImageIndex(project.id)]}
                               alt={`${project.title} - Image ${getCurrentImageIndex(project.id) + 1}`}
-                              width={200}
-                              height={200}
+                              width={400}
+                              height={300}
                               className="w-full h-full object-cover"
                             />
                           </motion.div>
@@ -207,11 +207,11 @@ export default function ProjectsSection() {
                     </div>
                   </div>
 
-                  {/* Project details - 75% */}
+                  {/* Project details */}
                   <div className="flex-1">
                     <div className="mb-4">
                       <div className="mb-3">
-                        <h3 className="text-foreground">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-foreground mb-2">
                           {project.title}
                         </h3>
                         
@@ -219,7 +219,7 @@ export default function ProjectsSection() {
                           href={project.repoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-foreground/60 hover:text-foreground/80 font-medium inline-flex items-center group"
+                          className="text-sm sm:text-base text-foreground/60 hover:text-foreground/80 font-medium inline-flex items-center group"
                         >
                           {project.repoUrl.replace('https://github.com/', '')}
                           <Icons.ExternalLink className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" />
@@ -228,7 +228,7 @@ export default function ProjectsSection() {
                       <div className="mb-4">
                         <ul className="space-y-2">
                           {project.features.slice(0, 3).map((feature, idx) => (
-                            <li key={idx} className="text-foreground/70">
+                            <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
                               {highlightKeywords(feature)}
                             </li>
                           ))}
@@ -242,10 +242,10 @@ export default function ProjectsSection() {
                         return (
                           <div
                             key={tech}
-                            className="flex items-center space-x-2 px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
+                            className="flex items-center space-x-2 px-2 sm:px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
                           >
                             <IconComponent className="w-3 h-3" />
-                            <span>{tech}</span>
+                            <span className="text-xs sm:text-xs">{tech}</span>
                           </div>
                         );
                       })}
