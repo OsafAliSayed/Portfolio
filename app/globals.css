@@ -44,7 +44,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   
 .dark {
 
-  /* rgb(6,13,25) */
   --primary: 255, 255, 255;     /* White */
   --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
   --tertiary: 96, 165, 250;     /* Same as secondary */
