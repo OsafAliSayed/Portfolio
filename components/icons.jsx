@@ -18,7 +18,15 @@ import {
   FaUser,
   FaPhone,
   FaTwitter,
-  FaAws
+  FaAws,
+  FaCheck,
+  FaChartBar,
+  FaRobot,
+  FaPlug,
+  FaLightbulb,
+  FaBug,
+  FaComment,
+  FaThumbsUp
 } from 'react-icons/fa';
 
 import {
@@ -56,7 +64,10 @@ import {
   SiAmazonaws,
   SiMongodb,
   SiPostgresql,
-  SiGit
+  SiGit,
+  SiNodedotjs,
+  SiExpress,
+  SiMaterialui
 } from 'react-icons/si';
 
 
@@ -70,12 +81,18 @@ const Icons = {
   GitHub: FaGithub,
   LinkedIn: FaLinkedin,
   Email: FaEnvelope,
+  Mail: FaEnvelope,
   Download: FaDownload,
   Twitter: FaTwitter,
   TwitterX: BsTwitterX,
   Upwork: FaUpwork,
   ExternalLink: FaExternalLinkAlt,
   Document: IoDocument,
+  Check: FaCheck,
+  LightBulb: FaLightbulb,
+  Bug: FaBug,
+  Comment: FaComment,
+  ThumbsUp: FaThumbsUp,
 
   // dark and light mode icon   
   Moon: HiOutlineMoon,
@@ -96,7 +113,10 @@ const Icons = {
   Skills: LuAward,  // Changed to Award icon from Lucide
   About: FaUser,
   Contact: FaPhone,
-  
+  Phone: FaPhone,
+  OpenSource: FaCode,
+
+
   // Technology icons
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
@@ -112,7 +132,13 @@ const Icons = {
   AWS: FaAws,
   MongoDB: SiMongodb,
   PostgreSQL: SiPostgresql,
-  Git: SiGit
+  Git: SiGit,
+  NodeJs: SiNodedotjs,
+  Express: SiExpress,
+  MaterialUI: SiMaterialui,
+  Chart: FaChartBar,
+  AI: FaRobot,
+  API: FaPlug
 };
 
 export default Icons;

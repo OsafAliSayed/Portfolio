@@ -35,7 +35,7 @@ This is a personal portfolio website built with Next.js 13.5.1, React 18.2.0, an
 - **Form Handling**:
   - React Hook Form
   - Zod for validation
-- **Theming**: next-themes
+- **Theming**: Always use the custom variables defined in `globals.css` for colors and themes. such as `var(--primary)`, `var(--secondary)`, etc. You can also use Tailwind CSS classes for colors like `bg-primary`, `text-secondary`, etc.
 
 ## Coding Standards
 

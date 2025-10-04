@@ -1,66 +1,27 @@
 "use client"
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import Header from '@/components/header';
-import HeroSection from '@/components/hero-section';
+import HeroSection from '@/components/hero-sidebar';
+import ProjectsSection from '@/components/projects-section-new';
+import ExperienceTimeline from '@/components/experience-timeline';
+import OpenSourceSection from '@/components/open-source-section';
 import SkillsSection from '@/components/skills-section';
-import ExperienceSection from '@/components/experience-section';
-import ProjectsSection from '@/components/projects-section';
-import EducationSection from '@/components/education-section';
-import ContactSection from '@/components/contact-section';
-import Footer from '@/components/footer';
-
 
 export default function Home() {
-  const skillsRef = useRef(null);
-  const educationRef = useRef(null);
-  const contactRef = useRef(null);
-  const workRef = useRef(null);
-  const projectsRef = useRef(null);
-
-  const sections = {
-    work: workRef,
-    projects: projectsRef,
-    skills: skillsRef,
-    education: educationRef,
-    contact: contactRef,
-  };
-
-  const scrollToSection = (sectionKey) => {
-    sections[sectionKey].current?.scrollIntoView({
-      behavior: 'smooth',
-    });
-  };
-
   return (
-    <main className="min-h-screen">
-      <Header scrollToSection={scrollToSection} />
-      <HeroSection scrollToSection={scrollToSection} />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-3xl mx-auto px-4 pb-20"
-      >
-        <div ref={workRef} id="work">
-          <ExperienceSection />
+    <main className="min-h-screen bg-background h-full ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex items-center gap-3 h-screen ">
+        {/* Hero Section */}
+        <div className="w-full md:w-1/3 lg:w-1/4 sticky top-0 h-fit">
+          <HeroSection />
         </div>
         
-        <div ref={projectsRef} id="projects">
+        {/* Main Content */}
+        <div className="w-full md:w-2/3 lg:w-3/4 space-y-12 md:space-y-16 lg:space-y-18 h-screen ">
+          <SkillsSection />
+          <ExperienceTimeline />
+          <OpenSourceSection />
           <ProjectsSection />
         </div>
-        
-        <div ref={skillsRef} id="skills">
-          <SkillsSection />
-        </div>
-        <div ref={educationRef} id="education">
-          <EducationSection />
-        </div>
-        <div ref={contactRef} id="contact">
-          <ContactSection />
-        </div>
-      </motion.div>
-      <Footer />
+      </div>
     </main>
   );
 }

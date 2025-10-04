@@ -22,7 +22,7 @@ export default function Header({ scrollToSection }) {
       }
       
       // Determine active section based on scroll position
-      const sections = ['work', 'projects', 'skills', 'education', 'contact'];
+      const sections = ['work', 'projects', 'open-source', 'skills', 'education', 'contact'];
       const viewportHeight = window.innerHeight;
       const viewportMidpoint = viewportHeight / 3;
       
@@ -50,6 +50,7 @@ export default function Header({ scrollToSection }) {
   const navItems = [
     { name: 'Work', key: 'work', icon: Icons.Experience },
     { name: 'Projects', key: 'projects', icon: Icons.Project },
+    { name: 'Contributions', key: 'open-source', icon: Icons.OpenSource },
     { name: 'Skills', key: 'skills', icon: Icons.Skills },
     { name: 'Education', key: 'education', icon: Icons.Education },
     { name: 'Contact', key: 'contact', icon: Icons.Contact },
@@ -88,8 +89,8 @@ export default function Header({ scrollToSection }) {
                 key={item.key}
                 className={`px-7 py-1 text-sm rounded-md flex items-center gap-2 transition-all ${
                   activeSection === item.key
-                    ? 'bg-secondary/10 text-tertiary font-medium'
-                    : 'text-text-dark hover:text-foreground'
+                    ? 'bg-secondary/20 text-tertiary font-medium'
+                    : 'hover:text-tertiary'
                 }`}
                 onClick={() => {
                   if (typeof scrollToSection === 'function') {

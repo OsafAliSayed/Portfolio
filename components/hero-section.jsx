@@ -7,6 +7,8 @@ import Link from 'next/link';
 import Icons from './icons';
 import HoverableTag from '@/components/ui/hoverable-tag';
 import SocialIcon from '@/components/ui/social-icon';
+import GithubStats from '@/components/github-stats';
+
 
 export default function HeroSection() {
   const container = {
@@ -26,9 +28,9 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="pt-24 pb-16 flex justify-between">
-      <div className="container max-w-2xl mx-auto">
+      <div className="container max-w-2xl mx-auto flex justify-center">
         <motion.div
-          className="mx-auto h-[100%] flex flex-col md:flex-row justify-center  items-start"
+          className="w-full h-[100%] flex flex-col md:flex-row justify-center  items-start"
           variants={container}
           initial="hidden"
           animate="show"
@@ -48,9 +50,14 @@ export default function HeroSection() {
               <HoverableTag className="text-tertiary" icon="💼">Available for hire</HoverableTag>
             </div>
           </motion.div>
+          
+          {/* Github stats */}
+          <motion.div variants={item} className="mb-4">
+            <GithubStats />
+          </motion.div>
 
           {/* Skills Summary */}
-          <motion.div variants={item}>
+          {/* <motion.div variants={item}>
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <HoverableTag>React.JS</HoverableTag>
               <HoverableTag>Next.JS</HoverableTag>
@@ -60,7 +67,7 @@ export default function HeroSection() {
               <HoverableTag>Python</HoverableTag>
               <HoverableTag>DevOps</HoverableTag>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div variants={item} className="flex items-center gap-3 mb-4">
             <SocialIcon href="https://www.upwork.com/freelancers/osafalisayed" icon={Icons.Upwork} label="Upwork Profile" />
@@ -71,8 +78,8 @@ export default function HeroSection() {
             <SocialIcon href="https://twitter.com/osafalisayed" icon={Icons.TwitterX} label="Twitter Profile" />
           </motion.div>
         </div>
-        
-        <motion.div variants={item} className="relative h-48 w-48">
+
+        <motion.div variants={item} className="relative h-full w-[50%] md:ml-6 md:mt-0 p-4">
           <Image
             src="/images/home-portfolio-img.webp"
             alt="Profile"

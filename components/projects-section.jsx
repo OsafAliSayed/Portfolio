@@ -24,7 +24,6 @@ export default function ProjectsSection() {
       technologies: ['Next.js', 'OpenAI API', 'Supabase', 'Django', 'Django REST Framework', 'PyTest', 'Docker', 'AWS'],
       github: 'https://github.com/osafalisayed/aikaatib',
       live: null,
-      status: 'Coming Soon',
       thumbnail: '/images/projects/aikaatib-combined.png',
       images: [
         '/images/projects/aikaatib-combined.png',
@@ -158,10 +157,8 @@ export default function ProjectsSection() {
         className="max-w-2xl mx-auto relative"
       >
         {/* Background decorative elements */}
-        <div className="absolute -z-10 top-40 -left-20 w-40 h-40 bg-tertiary/5 rounded-full blur-3xl" />
-        <div className="absolute -z-10 bottom-20 -right-20 w-60 h-60 bg-quaternary/5 rounded-full blur-3xl" />
-        <div className="absolute -z-10 top-60 right-10 w-24 h-24 border border-tertiary/10 rounded-full" />
-        <div className="absolute -z-10 bottom-40 left-10 w-16 h-16 border border-tertiary/20 rounded-full" />
+        <div className="absolute -z-10 top-40 -left-20 w-60 h-60 bg-tertiary/20 rounded-full blur-3xl" />
+        <div className="absolute -z-10 bottom-20 -right-20 w-60 h-60 bg-quaternary/20 rounded-full blur-3xl" />
         
         {/* Bento grid layout for projects */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 auto-rows-[180px] md:auto-rows-[160px]">
