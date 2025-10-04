@@ -1,57 +1,56 @@
-/* Experience section styling */
-
 /* Glossy card styles */
 .card-glossy {
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 100%
+    var(--secondary-transparent-20) 0%,
+    var(--secondary-transparent-05) 100%
   );
+
   backdrop-filter: blur(8px);
   box-shadow: 
-    0 8px 32px 0 rgba(31, 38, 135, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    0 8px 32px 0 var(--secondary-transparent-12),
+    inset 0 0 0 1px var(--secondary-transparent-05);
+  border: 1px solid var(--secondary-transparent-10);
   transition: all 0.3s ease;
 }
 
 .dark .card-glossy {
   background-image: linear-gradient(
     135deg,
-    rgba(50, 50, 50, 0.25) 0%,
-    rgba(30, 30, 30, 0.08) 100%
+    var(--primary-transparent-20) 0%,
+    var(--primary-transparent-05) 100%
   );
   box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.25),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+    0 8px 32px 0 var(--primary-transparent-30),
+    inset 0 0 0 1px var(--secondary-transparent-05);
+  border: 1px solid var(--secondary-transparent-10);
 }
 
 .card-glossy:hover {
   box-shadow: 
-    0 10px 40px 0 rgba(31, 38, 135, 0.18),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+    0 10px 40px 0 var(--secondary-transparent-20),
+    inset 0 0 0 1px var(--secondary-transparent-10);
   transform: translateY(-2px);
 }
 
 .dark .card-glossy:hover {
   box-shadow: 
-    0 10px 40px 0 rgba(0, 0, 0, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 10px 40px 0 var(--primary-transparent-30),
+    inset 0 0 0 1px var(--secondary-transparent-05);
 }
 
 /* Company logo container */
 .company-logo-container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--secondary-transparent-10);
   border-radius: 6px;
   padding: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px var(--secondary-transparent-10);
   transition: all 0.3s ease;
 }
 
 .dark .company-logo-container {
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-transparent-10);
+  box-shadow: 0 2px 6px var(--primary-transparent-20);
 }
 
 /* List item hover effects */
@@ -60,7 +59,7 @@
 }
 
 .experience-item:hover {
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   transform: translateX(2px);
 }
 
@@ -69,8 +68,8 @@
   .card-glossy {
     background-image: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.03) 100%
+      var(--secondary-transparent-20) 0%,
+      var(--secondary-transparent-05) 100%
     );
   }
 }

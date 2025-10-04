@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Briefcase, Award, GraduationCap, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
+import Icons from './icons';
 
 export default function Header({ scrollToSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +22,7 @@ export default function Header({ scrollToSection }) {
       }
       
       // Determine active section based on scroll position
-      const sections = ['work-project', 'skills', 'education', 'contact'];
+      const sections = ['work', 'projects', 'open-source', 'skills', 'education', 'contact'];
       const viewportHeight = window.innerHeight;
       const viewportMidpoint = viewportHeight / 3;
       
@@ -48,10 +48,12 @@ export default function Header({ scrollToSection }) {
 
   // Navigation items with icons
   const navItems = [
-    { name: 'Work/Projects', key: 'work-project', icon: Briefcase },
-    { name: 'Skills', key: 'skills', icon: Award },
-    { name: 'Education', key: 'education', icon: GraduationCap },
-    { name: 'Contact', key: 'contact', icon: Mail },
+    { name: 'Work', key: 'work', icon: Icons.Experience },
+    { name: 'Projects', key: 'projects', icon: Icons.Project },
+    { name: 'Contributions', key: 'open-source', icon: Icons.OpenSource },
+    { name: 'Skills', key: 'skills', icon: Icons.Skills },
+    { name: 'Education', key: 'education', icon: Icons.Education },
+    { name: 'Contact', key: 'contact', icon: Icons.Contact },
   ];
 
   // Responsive state
@@ -64,10 +66,10 @@ export default function Header({ scrollToSection }) {
   }, []);
   return (
     <motion.header
-      className={`fixed ${isMobile ? 'bottom-5 left-0 right-0 top-auto px-0 py-1 w-[95%] justify-center' : 'top-3 left-0 right-0 mx-auto max-w-3xl py-2 px-10'} z-50 transition-all duration-300 transform rounded-full ${
+      className={`fixed ${isMobile ? 'bottom-7 left-0 right-0 top-auto px-1 py-3 w-[50%] justify-center' : 'top-3 left-0 right-0 mx-auto max-w-3xl py-2 px-10'} z-50 transition-all duration-300 transform rounded-full ${
         isScrolled && !isMobile
-          ? 'bg-background/80 backdrop-blur-md shadow-md border border-primary/10'
-          : 'bg-background/40 backdrop-blur-sm'
+          ? 'bg-background/60 border border-tertiary/30'
+          : 'bg-background backdrop-blur-sm'
       } nav-floating header-glossy`}
       style={isMobile ? {} : {}}
       initial={{ y: -50, opacity: 0 }}
@@ -87,8 +89,8 @@ export default function Header({ scrollToSection }) {
                 key={item.key}
                 className={`px-7 py-1 text-sm rounded-md flex items-center gap-2 transition-all ${
                   activeSection === item.key
-                    ? 'bg-primary/10 text-primary font-medium'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'bg-secondary/20 text-tertiary font-medium'
+                    : 'hover:text-tertiary'
                 }`}
                 onClick={() => {
                   if (typeof scrollToSection === 'function') {
@@ -122,10 +124,10 @@ export default function Header({ scrollToSection }) {
               return (
                 <button
                   key={item.key}
-                  className={`flex flex-col items-center justify-center flex-1 px-1 py-1 rounded-md text-xs transition-all ${
+                  className={`flex flex-col items-center justify-center flex-1 py-2 rounded-md text-xs transition-all ${
                     activeSection === item.key
-                      ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-muted-foreground hover:text-foreground'
+                      ? 'bg-tertiary text-primary font-medium'
+                      : 'text-text-dark hover:text-foreground'
                   }`}
                   onClick={() => {
                     scrollToSection(item.key);
@@ -155,7 +157,7 @@ export default function Header({ scrollToSection }) {
                     className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm ${
                       activeSection === item.key
                         ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-muted-foreground'
+                        : 'text-text-dark'
                     }`}
                     onClick={() => {
                       scrollToSection(item.key);

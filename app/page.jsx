@@ -1,63 +1,50 @@
-'use client';
-
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import Header from '@/components/header';
-import HeroSection from '@/components/hero-section';
-import AboutSection from '@/components/about-section';
+"use client"
+import HeroSection from '@/components/hero-sidebar';
+import ProjectsSection from '@/components/projects-section-new';
+import ExperienceTimeline from '@/components/experience-timeline';
+import OpenSourceSection from '@/components/open-source-section';
 import SkillsSection from '@/components/skills-section';
-import ExperienceSection from '@/components/experience-section';
-import ProjectsSection from '@/components/projects-section';
-import EducationSection from '@/components/education-section';
-import ContactSection from '@/components/contact-section';
-import WorkProjectsSection from '@/components/work-projects-section';
-import Footer from '@/components/footer';
 
 export default function Home() {
-  const skillsRef = useRef(null);
-  const educationRef = useRef(null);
-  const contactRef = useRef(null);
-  const workProjectRef = useRef(null);
-
-  const sections = {
-    "work-project": workProjectRef,
-    skills: skillsRef,
-    education: educationRef,
-    contact: contactRef,
-  };
-
-  const scrollToSection = (sectionKey) => {
-    sections[sectionKey].current?.scrollIntoView({
-      behavior: 'smooth',
-    });
-  };
-
   return (
+    <main className="min-h-screen bg-background">
+      {/* Mobile Layout: Stack vertically */}
+      <div className="block lg:hidden">
+        <div className="container mx-auto px-4 sm:px-6 py-6">
+          {/* Hero Section - Mobile */}
+          <div className="mb-8">
+            <HeroSection />
+          </div>
+          
+          {/* Main Content - Mobile */}
+          <div className="space-y-12">
+            <SkillsSection />
+            <ExperienceTimeline />
+            <OpenSourceSection />
+            <ProjectsSection />
+          </div>
+        </div>
+      </div>
 
-    <main className="min-h-screen">
-      <Header scrollToSection={scrollToSection} />
-      <HeroSection scrollToSection={scrollToSection} />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="container mx-auto px-4 pb-20"
-      >
-        <div ref={workProjectRef} id="work-project">
-          <WorkProjectsSection />
+      {/* Desktop Layout: Side by side */}
+      <div className="hidden lg:block">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex gap-8">
+          {/* Hero Section - Desktop */}
+          <div className="w-full lg:w-1/4 xl:w-1/3">
+            <div className="sticky top-10">
+              <HeroSection />
+            </div>
+          </div>
+          
+          {/* Main Content - Desktop */}
+          <div className="w-full lg:w-3/4 xl:w-2/3 space-y-16">
+            <SkillsSection />
+            <ExperienceTimeline />
+            <OpenSourceSection />
+            <ProjectsSection />
+          </div>
         </div>
-        
-        <div ref={skillsRef} id="skills">
-          <SkillsSection />
-        </div>
-        <div ref={educationRef} id="education">
-          <EducationSection />
-        </div>
-        <div ref={contactRef} id="contact">
-          <ContactSection />
-        </div>
-      </motion.div>
-      <Footer />
+      </div>
     </main>
   );
 }

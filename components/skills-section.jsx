@@ -1,99 +1,176 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
-
+import Icons from './icons';
 
 export default function SkillsSection() {
   // Grouped skills by type, not as separate sections
   const skills = {
     'Frontend': [
-      { name: 'HTML/CSS', logo: '/images/logos/html5.svg' },
-      { name: 'JavaScript', logo: '/images/logos/javascript.svg' },
-      { name: 'React', logo: '/images/logos/react.svg' },
-      { name: 'Vue.js', logo: '/images/logos/vuejs.svg' },
-      { name: 'Next.js', logo: '/images/logos/nextjs.svg' },
+      { name: 'HTML', icon: 'HTML5' },
+      { name: 'CSS', icon: 'Code' },
+      { name: 'JavaScript', icon: 'JavaScript' },
+      { name: 'React', icon: 'React' },
+      { name: 'Vite.js', icon: 'Code' },
+      { name: 'Next.js', icon: 'NextJs' },
+      { name: 'Tailwind CSS', icon: 'TailwindCSS' },
+      { name: 'Ant Design', icon: 'AntDesign' },
     ],
     'Backend': [
-      { name: 'Django', logo: '/images/logos/django.svg' },
-      { name: 'Flask', logo: '/images/logos/flask.svg', ismonochrome: true },
-      { name: 'Fast APi', logo: '/images/logos/fastapi.svg' },
-      { name: 'DRF', logo: '/images/logos/djangorest.svg' },
+      { name: 'Django', icon: 'Django' },
+      { name: 'Flask', icon: 'Flask' },
+      { name: 'FastAPI', icon: 'FastAPI' },
+      { name: 'Django Rest Framework', icon: 'DjangoRest' },
     ],
     'DevOps': [
-      { name: 'Docker', logo: '/images/logos/docker.svg' },
-      { name: 'Github Actions', logo: '/images/logos/githubactions.svg' },
-      { name: 'Jenkins', logo: '/images/logos/jenkins.svg' },
-      { name: 'Kubernetes', logo: '/images/logos/kubernetes.svg' },
-      { name: 'AWS', logo: '/images/logos/aws.svg' }
+      { name: 'Docker', icon: 'Docker' },
+      { name: 'Github Actions', icon: 'GitHubActions' },
+      { name: 'Jenkins', icon: 'Jenkins' },
+      { name: 'Kubernetes', icon: 'Kubernetes' },
+      { name: 'AWS', icon: 'AWS' }
     ],
     'Version Control': [
-      { name: 'Git', logo: '/images/logos/git.svg' },
-      { name: 'Github', logo: '/images/logos/github.svg' }
+      { name: 'Git', icon: 'Git' },
+      { name: 'Github', icon: 'GitHub' }
     ],
-    'Databases': [
-      { name: 'MySQL', logo: '/images/logos/mysql.svg' },
-      { name: 'MongoDB', logo: '/images/logos/mongodb.svg' },
-      { name: 'PostgreSQL', logo: '/images/logos/postgresql.svg' },
-      { name: 'SQLite3', logo: '/images/logos/sqlite.svg' }
+    'Database': [
+      { name: 'MySQL', icon: 'MySQL' },
+      { name: 'MongoDB', icon: 'MongoDB' },
+      { name: 'PostgreSQL', icon: 'PostgreSQL' },
+      { name: 'SQLite3', icon: 'SQLite' }
     ],
-    'Libraries & Tools': [
-      { name: 'Pytest', logo: '/images/logos/pytest.svg' },
-      { name: 'selenium', logo: '/images/logos/selenium.svg' },
-      { name: 'Postman', logo: '/images/logos/postman.svg' },
-      { name: 'Cypress', logo: '/images/logos/cypressio.svg' },
-      { name: 'Tailwind CSS', logo: '/images/logos/tailwind.svg' },
-      { name: 'Ant Design', logo: '/images/logos/antdesign.svg' }
+    'Libraries and Tools': [
+      { name: 'Pytest', icon: 'Pytest' },
+      { name: 'Selenium', icon: 'Selenium' },
+      { name: 'Postman', icon: 'Postman' },
+      { name: 'Cypress', icon: 'Cypress' },
+      { name: 'Django Silk', icon: 'Code' },
     ]
   };
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  // Color schemes for each category
+  const getCategoryColors = (category) => {
+    const colorSchemes = {
+      'Frontend': {
+        bg: 'bg-blue-500/10',
+        border: 'border-blue-500/20',
+        text: 'text-blue-400',
+        leftBorder: 'border-blue-500'
+      },
+      'Backend': {
+        bg: 'bg-green-500/10',
+        border: 'border-green-500/20',
+        text: 'text-green-400',
+        leftBorder: 'border-green-500'
+      },
+      'DevOps': {
+        bg: 'bg-purple-500/10',
+        border: 'border-purple-500/20',
+        text: 'text-purple-400',
+        leftBorder: 'border-purple-500'
+      },
+      'Version Control': {
+        bg: 'bg-indigo-500/10',
+        border: 'border-indigo-500/20',
+        text: 'text-indigo-400',
+        leftBorder: 'border-indigo-500'
+      },
+      'Database': {
+        bg: 'bg-orange-500/10',
+        border: 'border-orange-500/20',
+        text: 'text-orange-400',
+        leftBorder: 'border-orange-500'
+      },
+      'Libraries and Tools': {
+        bg: 'bg-pink-500/10',
+        border: 'border-pink-500/20',
+        text: 'text-pink-400',
+        leftBorder: 'border-pink-500'
+      }
+    };
+    return colorSchemes[category] || {
+      bg: 'bg-white/5',
+      border: 'border-white/10',
+      text: 'text-foreground/70',
+      leftBorder: 'border-secondary'
+    };
   };
-  const hoverEffect = {
-    whileHover: { y: -5, transition: { duration: 0.2 } },
-    whileTap: { y: 0 }
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0 }
   };
 
   return (
-    <section className="pt-20 pb-5">
+    <section className="pt-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="max-w-2xl mx-auto"
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mb-12"
       >
-        <Card className="overflow-hidden card-glossy border border-border">
-          <CardContent>
-            <div className="py-6 backdrop-blur-sm">
-              {Object.entries(skills).map(([group, items], idx) => (
-                <div key={group} className={idx !== 0 ? 'mt-8' : ''}>
-                  <h3 className="text-lg font-bold mb-3 text-primary/90">{group}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map(item => (
-                      <div key={item.name} className="flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium shadow-sm hover:bg-primary/20 transition-colors">
-                        <div className="relative w-6 h-6">
-                          <Image
-                            src={item.logo}
-                            alt={item.name}
-                            fill
-                            className={item.ismonochrome ? "object-contain filter invert hover:brightness-150" : "object-contain"}
-                            style={item.ismonochrome ? { filter: 'brightness(0) invert(1)' } : {}}
-                          />
-                        </div>
-                        <span>{item.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <h2 className="font-bold text-start mb-4 text-foreground">
+          Skills
+        </h2>
+        <p className="text-start text-foreground/70 max-w-2xl">
+          Technologies and tools I use to bring ideas to life and build scalable solutions.
+        </p>
       </motion.div>
+
+      <div className="relative">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
+          {Object.entries(skills).map(([group, items], index) => {
+            const colors = getCategoryColors(group);
+            return (
+              <motion.div
+                key={group}
+                variants={item}
+                className="relative"
+              >
+                <motion.div className={`bg-transparent rounded-r-lg`}>
+                  <div>
+                    <h3 className='mb-1'>
+                      {group}
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill) => {
+                      const IconComponent = Icons[skill.icon] || Icons.Code;
+                      return (
+                        <div
+                          key={skill.name}
+                          className={`flex items-center space-x-2 px-3 py-1 rounded-2xl ${colors.bg} ${colors.border} text-xs font-medium ${colors.text}`}
+                        >
+                          <IconComponent className="w-3 h-3" />
+                          <span>{skill.name}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
     </section>
   );
 }

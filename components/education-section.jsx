@@ -10,7 +10,7 @@ export default function EducationSection() {
     institution: 'Indian Institute of Information Technology, Pune',
     degree: 'B.Tech in CSE',
     period: '2021 - 2025',
-    gpa: '7.77'
+    gpa: '7.95'
   };
 
   const achievements = [
@@ -53,9 +53,9 @@ export default function EducationSection() {
                   </div>
                   
                   <h4 className="text-lg font-semibold mb-2">{education.institution}</h4>
-                  <p className="text-muted-foreground mb-1">{education.degree}</p>
+                  <p className="text-text-dark mb-1">{education.degree}</p>
                   
-                  <div className="flex items-center text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center text-sm text-text-dark mb-4">
                     <Calendar className="h-4 w-4 mr-1" />
                     <span>{education.period}</span>
                   </div>
@@ -101,7 +101,7 @@ export default function EducationSection() {
                             <path d="M20 6 9 17l-5-5" />
                           </svg>
                         </div>
-                        <span className="text-muted-foreground">{achievement}</span>
+                        <span className="text-text-dark">{achievement}</span>
                       </motion.li>
                     ))}
                   </ul>

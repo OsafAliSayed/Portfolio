@@ -1,114 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Hide scrollbars for all browsers */
 html, body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
 }
+
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --primary: 255, 255, 255;     /* Pure white */
+    --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
+    --tertiary: 96, 165, 250;     /* Same as secondary for consistency */
+    --quaternary: 96, 165, 250;   /* Same as secondary for consistency */
+    --text: 255, 255, 255;        /* White text */
+    --text-muted: 156, 163, 175;  /* Muted white */
+    --border: 55, 65, 81;         /* Dark border */      
+    --foreground: 255, 255, 255;  /* White foreground */
+    --background: 0, 0, 0;        /* Pure black background */
+    --card: 17, 24, 39;           /* Dark card background */
+    --card-border: 55, 65, 81;    /* Dark card border */
+    
+    /* Transparent variations */
+    --primary-transparent-05: rgba(255, 255, 255, 0.05);
+    --primary-transparent-10: rgba(255, 255, 255, 0.1);
+    --primary-transparent-20: rgba(255, 255, 255, 0.2);
+    --primary-transparent-30: rgba(255, 255, 255, 0.3);
+    --primary-transparent-80: rgba(255, 255, 255, 0.8);
+    --secondary-transparent-05: rgba(96, 165, 250, 0.05);
+    --secondary-transparent-10: rgba(96, 165, 250, 0.1); 
+    --secondary-transparent-12: rgba(96, 165, 250, 0.12);
+    --secondary-transparent-20: rgba(96, 165, 250, 0.2);
+    --tertiary-transparent-10: rgba(96, 165, 250, 0.1);
+    --tertiary-transparent-20: rgba(96, 165, 250, 0.2);
+    --quaternary-transparent-10: rgba(96, 165, 250, 0.1);
+    --quaternary-transparent-20: rgba(96, 165, 250, 0.2);
+}
+  
+.dark {
+
+  --primary: 255, 255, 255;     /* White */
+  --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
+  --tertiary: 96, 165, 250;     /* Same as secondary */
+  --quaternary: 96, 165, 250;   /* Same as secondary */
+  --text: 255, 255, 255;        /* White text */
+  --text-muted: 156, 163, 175;  /* Muted white */
+  --border: 55, 65, 81;         /* Dark border */      
+  --foreground: 255, 255, 255;  /* White foreground */
+  --background: 0, 0, 0;        /* Pure black background */
+  --card: 17, 24, 39;           /* Dark card background */
+  --card-border: 55, 65, 81;    /* Dark card border */
+  
+  /* Transparent variations for dark mode */
+  --primary-transparent-05: rgba(255, 255, 255, 0.05);
+  --primary-transparent-10: rgba(255, 255, 255, 0.1);
+  --primary-transparent-20: rgba(255, 255, 255, 0.2);
+  --primary-transparent-30: rgba(255, 255, 255, 0.3);
+  --primary-transparent-80: rgba(255, 255, 255, 0.8);
+  --secondary-transparent-05: rgba(96, 165, 250, 0.05);
+  --secondary-transparent-10: rgba(96, 165, 250, 0.1);
+  --secondary-transparent-12: rgba(96, 165, 250, 0.12);
+  --secondary-transparent-20: rgba(96, 165, 250, 0.2);
+  --tertiary-transparent-10: rgba(96, 165, 250, 0.1);
+  --tertiary-transparent-20: rgba(96, 165, 250, 0.2);
+  --quaternary-transparent-10: rgba(96, 165, 250, 0.1);
+  --quaternary-transparent-20: rgba(96, 165, 250, 0.2);
 }
 
+/* Typography System - Modern font stacks and improved hierarchy */
+html {
+  font-size: 16px;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+section, a{
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Headings with Inter for modern readability */
+h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.25rem; /* 36px - Large hero title */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.875rem; /* 30px - Section headings */
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.5rem; /* 24px - Company/organization names */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.25rem; /* 20px - Job titles/subtitles */
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.125rem; /* 18px - Small headings */
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem; /* 16px - Smallest headings */
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body text with Inter for readability */
+p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem; /* 16px - Default paragraph text */
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+/* Spans for inline text - inherits from parent by default */
+span {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smaller text for captions, labels, etc */
+small {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Indent for list items */
+  margin: 0;
+}
+
+/* Remove list styling on small screens */
+@media (max-width: 767px) {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
   }
 }
 
-@layer base {  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-rgb: 23, 23, 23;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+/* List items */
+li {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
+/* Alternative: Use ::marker pseudo-element to color just the disc */
+li::marker {
+  color: rgb(var(--foreground), 0.6); /* Colors only the disc/bullet point */
+}
 
+/* Divs inherit from parent but have consistent font family */
+div {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-@layer base {
+/* Monospace for code */
+code, pre {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* Laptop screens (1024px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
   html {
-    font-size: 16px;
+    font-size: 15px;
   }
-  * {
-    @apply border-border;
+  
+  h1 {
+    font-size: 2.13rem; /* 32px */
   }
-  body {
-    @apply bg-background text-foreground;
+  
+  h2 {
+    font-size: 1.73rem; /* 26px */
+  }
+  
+  h3 {
+    font-size: 1.33rem; /* 20px */
+  }
+  
+  h4 {
+    font-size: 1.13rem; /* 17px */
+  }
+  
+  h5 {
+    font-size: 1rem; /* 15px */
+  }
+  
+  h6 {
+    font-size: 0.875rem; /* 13px */
   }
 }
 
-@media (max-width: 640px) {
+/* Tablets (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
   html {
     font-size: 14px;
   }
+  
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.86rem; /* 26px */
   }
+  
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.57rem; /* 22px */
   }
+  
   h3 {
-    font-size: 1.125rem;
+    font-size: 1.29rem; /* 18px */
   }
-  p, li {
-    font-size: 0.875rem;
+  
+  h4 {
+    font-size: 1.14rem; /* 16px */
   }
+  
+  h5 {
+    font-size: 1rem; /* 14px */
+  }
+  
+  h6 {
+    font-size: 0.875rem; /* 12.25px */
+  }
+}
+
+/* Phones (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.71rem; /* 24px */
+  }
+  
+  h2 {
+    font-size: 1.43rem; /* 20px */
+  }
+  
+  h3 {
+    font-size: 1.14rem; /* 16px */
+  }
+  
+  h4 {
+    font-size: 1rem; /* 14px */
+  }
+  
+  h5 {
+    font-size: 1rem; /* 14px */
+  }
+  
+  h6 {
+    font-size: 0.875rem; /* 12.25px */
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.57rem; /* 22px */
+  }
+  
+  h2 {
+    font-size: 1.29rem; /* 18px */
+  }
+  
+  h3 {
+    font-size: 1.14rem; /* 16px */
+  }
+  
+  h4 {
+    font-size: 1rem; /* 14px */
+  }
+  
+  h5 {
+    font-size: 1rem; /* 14px */
+  }
+  
+  h6 {
+    font-size: 0.875rem; /* 12.25px */
+  }
+}
+
+/* Custom utility classes */
+
+/* Typography utilities */
+.text-heading-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-heading-primary {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.text-heading-secondary {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-body-large {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.text-body-small {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* Card and layout utilities */
+.card-modern {
+  background: rgba(var(--card));
+  border: 1px solid rgba(var(--card-border));
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.text-gradient {
+  background: rgb(var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+  background: rgba(var(--card));
+  border-radius: 12px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: rgb(var(--secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Utility class to hide scrollbars */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
 }

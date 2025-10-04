@@ -15,7 +15,7 @@ export default function WorkProjectsSection() {
     `px-7 py-1 w-[50%] text-sm rounded-md transition-all font-medium ${
       activeTab === tab
         ? 'bg-primary/10 text-primary' // active tab
-        : 'text-muted-foreground hover:text-foreground' // inactive tab
+        : 'text-text-dark hover:text-foreground' // inactive tab
     }`;
 
   const work = [
@@ -114,15 +114,15 @@ export default function WorkProjectsSection() {
                       </div>
                       <div className="flex-grow text-left">
                         <h3 className="text-xl font-bold">{item.title}</h3>
-                        <div className="text-muted-foreground text-sm flex items-center">
+                        <div className="text-text-dark text-sm flex items-center">
                           <span>{item.company}</span>
                         </div>
                       </div>
-                      <div className="flex items-center text-muted-foreground text-sm">
+                      <div className="flex items-center text-text-dark text-sm">
                         <span>{item.period}</span>
                       </div>
                     </div>
-                    <ul className="space-y-2 list-disc pl-5 text-muted-foreground mb-2">
+                    <ul className="space-y-2 list-disc pl-5 text-text-dark mb-2">
                       {item.description.map((desc, i) => (
                         <li key={i} className="experience-item">{desc}</li>
                       ))}
@@ -149,7 +149,7 @@ export default function WorkProjectsSection() {
                     <div className="flex flex-col sm:flex-row gap-4 mb-2 items-center">
                       <div className="flex-grow text-left">
                         <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                        <div className="text-muted-foreground text-sm mb-2">{project.description}</div>
+                        <div className="text-text-dark text-sm mb-2">{project.description}</div>
                         <div className="flex flex-wrap gap-2 mb-2">
                           {project.technologies.map((tech, i) => (
                             <span key={i} className="inline-block px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs font-medium">
@@ -165,7 +165,7 @@ export default function WorkProjectsSection() {
                             <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-primary underline text-xs font-medium">Live</a>
                           )}
                           {project.status && (
-                            <span className="text-xs text-muted-foreground">{project.status}</span>
+                            <span className="text-xs text-text-dark">{project.status}</span>
                           )}
                         </div>
                       </div>
