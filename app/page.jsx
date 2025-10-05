@@ -1,9 +1,9 @@
 "use client"
 import HeroSection from '@/components/hero-sidebar';
-import ProjectsSection from '@/components/projects-section-new';
-import ExperienceTimeline from '@/components/experience-timeline';
-import OpenSourceSection from '@/components/open-source-section';
-import SkillsSection from '@/components/skills-section';
+import ProjectsSection from '@/components/projects';
+import ExperienceTimeline from '@/components/experience';
+import OpenSourceSection from '@/components/open-source';
+import SkillsSection from '@/components/skills';
 
 export default function Home() {
   return (
