@@ -26,7 +26,9 @@ import {
   FaLightbulb,
   FaBug,
   FaComment,
-  FaThumbsUp
+  FaThumbsUp,
+  FaChevronDown,
+  FaStar
 } from 'react-icons/fa';
 
 import {
@@ -101,6 +103,7 @@ const Icons = {
   // Navigation
   Menu: FaBars,
   Close: FaTimes,
+  ChevronDown: FaChevronDown,
   
   // Section icons
   Code: FaCode,
@@ -115,6 +118,7 @@ const Icons = {
   Contact: FaPhone,
   Phone: FaPhone,
   OpenSource: FaCode,
+  Star: FaStar,
 
 
   // Technology icons

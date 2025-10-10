@@ -95,7 +95,6 @@ export default function HeroSection() {
         {/* Location */}
         <motion.div variants={item} className="self-start sm:self-center">
           <p className="flex items-center justify-start sm:justify-center space-x-2 text-sm sm:text-base text-foreground/60">
-            <span>📍</span>
             <span>Rajasthan, India 🇮🇳</span>
           </p>
         </motion.div>
@@ -119,7 +118,7 @@ export default function HeroSection() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full transition-all duration-300 hover:bg-secondary/10"
+                className="rounded-full transition-all duration-300"
                 aria-label={link.name}
               >
                 <link.icon 

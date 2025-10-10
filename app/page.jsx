@@ -1,9 +1,11 @@
 "use client"
 import HeroSection from '@/components/hero-sidebar';
-import ProjectsSection from '@/components/projects-section-new';
-import ExperienceTimeline from '@/components/experience-timeline';
-import OpenSourceSection from '@/components/open-source-section';
-import SkillsSection from '@/components/skills-section';
+import ProjectsSection from '@/components/projects';
+import ExperienceTimeline from '@/components/experience';
+import OpenSourceSection from '@/components/open-source';
+import EducationSection from '@/components/education';
+import ReviewsSection from '@/components/reviews-section';
+import SkillsSection from '@/components/skills';
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
             <ExperienceTimeline />
             <OpenSourceSection />
             <ProjectsSection />
+            <EducationSection />
+            <ReviewsSection />
           </div>
         </div>
       </div>
@@ -39,9 +43,11 @@ export default function Home() {
           {/* Main Content - Desktop */}
           <div className="w-full lg:w-3/4 xl:w-2/3 space-y-16">
             <SkillsSection />
+            <ReviewsSection />
             <ExperienceTimeline />
-            <OpenSourceSection />
             <ProjectsSection />
+            <OpenSourceSection />
+            <EducationSection />
           </div>
         </div>
       </div>
