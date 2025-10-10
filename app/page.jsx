@@ -4,7 +4,7 @@ import ProjectsSection from '@/components/projects';
 import ExperienceTimeline from '@/components/experience';
 import OpenSourceSection from '@/components/open-source';
 import EducationSection from '@/components/education';
-import ReviewsSection from '@/components/reviews-section';
+import ReviewsSection from '@/components/reviews';
 import SkillsSection from '@/components/skills';
 
 export default function Home() {
