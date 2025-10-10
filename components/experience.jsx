@@ -8,8 +8,29 @@ import { highlightKeywords } from '../lib/highlight-utils';
 export default function ExperienceTimeline() {
 
   const experiences = [
-    {
+     {
       id: 1,
+      company: "Ecomlytix",
+      position: "Full Stack Developer",
+      type: "Freelance",
+      duration: "Aug 2022 - Present",
+      location: "Remote",
+      logo: "/images/experience/algofinancials_logo.jpg",
+      highlights: [
+        "Built the entire application from scratch using Next.js (frontend) and Nest.js (backend), ensuring a modular, scalable, and maintainable architecture",
+        "Designed and implemented RESTful APIs with Nest.js, integrating PostgreSQL databases for reliable data flow and performance.",
+        "Configured and deployed infrastructure on DigitalOcean Droplets, managing Nginx, SSL (Certbot), and environment setup for production and staging environments.",
+        "Set up CI/CD pipelines using GitHub Actions to automate testing, building, and deployment of both frontend and backend services.",
+        "Implemented secure environment variable management and CORS policies to streamline communication between microservices.",
+        "Designed and optimized database schemas for performance and scalability using PostgreSQL.",
+        "Automated daily scheduler jobs using Nest.js for backend data synchronization and updates.",
+        "Managed domain, DNS, and HTTPS configuration for seamless frontend–backend integration under custom domains."
+  
+      ],
+      technologies: ["NX", "Node.js", "Next.JS", "Tailwind-CSS", "Nest.JS", "DigitalOcean", "PostgreSQL", "GitHub Actions"],
+    },
+    {
+      id: 2,
       company: "Zenduty",
       position: "Software Engineer",
       type: "Internship",
@@ -26,7 +47,7 @@ export default function ExperienceTimeline() {
       technologies: ["Python", "Django", "React", "PostgreSQL", "Docker", "AWS"],
     },
     {
-      id: 2,
+      id: 3,
       company: "Algo Financials",
       position: "Python Developer",
       type: "Internship",
