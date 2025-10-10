@@ -15,7 +15,7 @@ export default function ExperienceTimeline() {
       type: "Freelance",
       duration: "Aug 2022 - Present",
       location: "Remote",
-      logo: "/images/experience/algofinancials_logo.jpg",
+      logo: "/images/experience/ecomlytix_logo.png",
       highlights: [
         "Built the entire application from scratch using Next.js (frontend) and Nest.js (backend), ensuring a modular, scalable, and maintainable architecture",
         "Designed and implemented RESTful APIs with Nest.js, integrating PostgreSQL databases for reliable data flow and performance.",
@@ -126,13 +126,13 @@ export default function ExperienceTimeline() {
                 <div className="mb-6">
                   <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                     {/* Company logo inside card */}
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 self-start">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 self-start flex items-center justify-center">
                       <Image
                         src={exp.logo}
                         alt={exp.company}
                         width={80}
                         height={80}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${exp.company === "Ecomlytix" ? "object-contain p-1 bg-white" : "object-cover"}`}
                       />
                     </div>
                     <div className="flex flex-col justify-start min-w-0 flex-1">
