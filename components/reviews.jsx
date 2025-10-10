@@ -30,7 +30,7 @@ export default function ReviewsSection() {
       id: 2,
       name: 'Carl Johan Larrson',
       title: '',
-      company: 'Upwork',
+      company: 'Mock Service in Supabase - Upwork',
       rating: 5,
       date: 'September 2025'
     }

@@ -20,7 +20,7 @@ export default function HeroSection() {
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/OsafAliSayed',
+      url: 'https://twitter.com/sayedosafali',
       icon: Icons.Twitter,
     },
     {
@@ -30,14 +30,14 @@ export default function HeroSection() {
     },
     {
       name: 'Resume',
-      url: '/resume',
+      url: 'https://drive.google.com/file/d/1i3H9MvB4cjPAbquU6966-lPs4RsbkKxj/view?usp=sharing',
       icon: Icons.Document,
-    },
-    {
-      name: 'Upwork',
-      url: 'https://www.upwork.com/freelancers/osafalisayed',
-      icon: Icons.Upwork,
     }
+    // {
+    //   name: 'Upwork',
+    //   url: 'https://www.upwork.com/freelancers/osafalisayed',
+    //   icon: Icons.Upwork,
+    // }
   ];
 
   const container = {
@@ -106,6 +106,19 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
+        {/* CTA Button */}
+        <motion.div variants={item} className="self-start sm:self-center w-full">
+          <Link 
+            href="mailto:osafalisayed@gmail.com" 
+            className="w-full block text-center py-2.5 px-4 bg-secondary text-white font-medium rounded-lg transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:shadow-secondary/20 transform hover:-translate-y-0.5"
+          >
+            <span className="flex items-center justify-center gap-2">
+              <Icons.Mail className="w-4 h-4" />
+              <span>Let's Work Together</span>
+            </span>
+          </Link>
+        </motion.div>
+        
         {/* Social Links */}
         <motion.div variants={item} className="flex justify-start sm:justify-center flex-wrap gap-2 sm:gap-4 pt-2 sm:pt-4 self-start sm:self-center">
           {socialLinks.map((link, index) => (
