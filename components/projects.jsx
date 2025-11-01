@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import Icons from './icons';
-import { highlightKeywords } from '../lib/highlight-utils';
+import  highlightKeywords from '../lib/highlight-utils';
 
 export default function ProjectsSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState({});
@@ -22,11 +22,23 @@ export default function ProjectsSection() {
       ],
       techStack: ["JavaScript", "Next.js", "TailwindCSS", "Django", "Django REST Framework", "PostgreSQL", "AWS", "OpenAI", "PyTest"],
       repoUrl: "https://github.com/OsafAliSayed/ai-kaatib",
-      features: [
-        "Generates 100+ SEO-ready blogs in under 5 minutes using OpenAI APIs.",
-        "Engineered a scalable backend with Django and a high-performance frontend with Next.js (40% faster SSR).",
-        "Deployed via Docker and GitHub Actions, cutting release time by 70%.",
-        "Achieved 95% test coverage with PyTest; integrated linting for code quality."
+      description: [
+        {
+          text: "Generates 100+ SEO-ready blogs in under 5 minutes using OpenAI APIs.",
+          highlights: ["100+", "SEO-ready", "OpenAI APIs"]
+        },
+        {
+          text: "Engineered a scalable backend with Django and a high-performance frontend with Next.js (40% faster SSR).",
+          highlights: ["Django", "Next.js", "40% faster SSR"]
+        },
+        {
+          text: "Deployed via Docker and GitHub Actions, cutting release time by 70%.",
+          highlights: ["Docker", "GitHub Actions", "70%"]
+        },
+        {
+          text: "Achieved 95% test coverage with PyTest; integrated linting for code quality.",
+          highlights: ["95%", "PyTest", "linting"]
+        }
       ],
     },
     {
@@ -40,11 +52,23 @@ export default function ProjectsSection() {
       ],
       techStack: ["JavaScript (ES6+)", "ShadCN UI", "Supabase", "CoinGecko API", "Chart.js/Recharts", "Electron"],
       repoUrl: "https://github.com/OsafAliSayed/crypto-dashboard",
-      features: [
-        "Authentication: Integrated Supabase email/password authentication with secure Row Level Security (RLS) policies.",
-        "Live Crypto Data: Connected to the CoinGecko API to fetch and display top 5 cryptocurrencies by market cap with real-time price, logo, 24h % change, and market cap.",
-        "Auto-Refresh: Set up live updates every 30 seconds for crypto prices without page reloads.",
-        "Cross-Platform: Packaged as both web app and Electron desktop app (.exe & Linux build) with native-like performance."
+      description: [
+        {
+          text: "Authentication: Integrated Supabase email/password authentication with secure Row Level Security (RLS) policies.",
+          highlights: ["Supabase", "Row Level Security (RLS)"]
+        },
+        {
+          text: "Live Crypto Data: Connected to the CoinGecko API to fetch and display top 5 cryptocurrencies by market cap with real-time price, logo, 24h % change, and market cap.",
+          highlights: ["CoinGecko API", "real-time", "24h % change"]
+        },
+        {
+          text: "Auto-Refresh: Set up live updates every 30 seconds for crypto prices without page reloads.",
+          highlights: ["live updates", "30 seconds"]
+        },
+        {
+          text: "Cross-Platform: Packaged as both web app and Electron desktop app (.exe & Linux build) with native-like performance.",
+          highlights: ["web app", "Electron", "native-like performance"]
+        }
       ],
     }
   ];
@@ -147,13 +171,13 @@ export default function ProjectsSection() {
               variants={item}
               className="relative"
             >
-              <motion.div className="bg-transparent py-4 sm:py-8 rounded-r-lg">
+              <motion.div className="bg-transparent py-4 rounded-r-lg">
                 <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
                   {/* Project image carousel */}
-                  <div className="w-full lg:w-1/3 flex-shrink-0">
+                  <div className="w-full lg:w-1/2 flex-shrink-0">
                     <div className="relative">
                       <div 
-                        className="w-full aspect-video lg:aspect-square rounded-lg overflow-hidden bg-background border-2 border-white/10 relative cursor-pointer"
+                        className="w-full h-auto min-h-[400px] rounded-lg overflow-hidden bg-background border-2 border-white/10 relative cursor-pointer"
                         onMouseMove={(e) => handleImageHover(e, project)}
                       >
                         {/* Invisible hover zones for visual feedback */}
@@ -174,14 +198,14 @@ export default function ProjectsSection() {
                             initial="enter"
                             animate="center"
                             exit="exit"
-                            className="absolute inset-0"
+                            className="absolute inset-0 h-full w-full"
                           >
                             <Image
                               src={getProjectImages(project)[getCurrentImageIndex(project.id)]}
                               alt={`${project.title} - Image ${getCurrentImageIndex(project.id) + 1}`}
                               width={400}
                               height={300}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-contain lg:object-cover"
                             />
                           </motion.div>
                         </AnimatePresence>
@@ -227,9 +251,9 @@ export default function ProjectsSection() {
                       </div>
                       <div className="mb-4">
                         <ul className="space-y-2">
-                          {project.features.slice(0, 3).map((feature, idx) => (
+                          {project.description.map((description, idx) => (
                             <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                              {highlightKeywords(feature)}
+                              {highlightKeywords(description.text, description.highlights)}
                             </li>
                           ))}
                         </ul>

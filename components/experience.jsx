@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Icons from './icons';
-import { highlightKeywords } from '../lib/highlight-utils';
+import highlightKeywords from '../lib/highlight-utils';
+
 
 export default function ExperienceTimeline() {
 
@@ -16,16 +17,39 @@ export default function ExperienceTimeline() {
       duration: "Aug 2022 - Present",
       location: "Remote",
       logo: "/images/experience/ecomlytix_logo.png",
-      highlights: [
-        "Built the entire application from scratch using Next.js (frontend) and Nest.js (backend), ensuring a modular, scalable, and maintainable architecture",
-        "Designed and implemented RESTful APIs with Nest.js, integrating PostgreSQL databases for reliable data flow and performance.",
-        "Configured and deployed infrastructure on DigitalOcean Droplets, managing Nginx, SSL (Certbot), and environment setup for production and staging environments.",
-        "Set up CI/CD pipelines using GitHub Actions to automate testing, building, and deployment of both frontend and backend services.",
-        "Implemented secure environment variable management and CORS policies to streamline communication between microservices.",
-        "Designed and optimized database schemas for performance and scalability using PostgreSQL.",
-        "Automated daily scheduler jobs using Nest.js for backend data synchronization and updates.",
-        "Managed domain, DNS, and HTTPS configuration for seamless frontend–backend integration under custom domains."
-  
+      description: [
+        {
+          text: "Built the entire application from scratch using Next.js (frontend) and Nest.js (backend), ensuring a modular, scalable, and maintainable architecture",
+          highlights: ["Next.js", "Nest.js"]
+        },
+        {
+          text: "Designed and implemented RESTful APIs with Nest.js, integrating PostgreSQL databases for reliable data flow and performance.",
+          highlights: ["Nest.js", "PostgreSQL"]
+        },
+        {
+          text: "Configured and deployed infrastructure on DigitalOcean Droplets, managing Nginx, SSL (Certbot), and environment setup for production and staging environments.",
+          highlights: ["DigitalOcean", "Nginx", "SSL"]
+        },
+        {
+          text: "Set up CI/CD pipelines using GitHub Actions to automate testing, building, and deployment of both frontend and backend services.",
+          highlights: ["GitHub Actions"]
+        },
+        {
+          text: "Implemented secure environment variable management and CORS policies to streamline communication between microservices.",
+          highlights: ["CORS", "Environment Variables"]
+        },
+        {
+          text: "Designed and optimized database schemas for performance and scalability using PostgreSQL.",
+          highlights: ["PostgreSQL"]
+        },
+        {
+          text: "Automated daily scheduler jobs using Nest.js for backend data synchronization and updates.",
+          highlights: ["Nest.js"]
+        },
+        {
+          text: "Managed domain, DNS, and HTTPS configuration for seamless frontend–backend integration under custom domains.",
+          highlights: ["DNS", "HTTPS"]
+        }
       ],
       technologies: ["NX", "Node.js", "Next.JS", "Tailwind-CSS", "Nest.JS", "DigitalOcean", "PostgreSQL", "GitHub Actions"],
     },
@@ -37,12 +61,27 @@ export default function ExperienceTimeline() {
       duration: "Jan 2025 - Aug 2025 (8 Months)",
       location: "Remote",
       logo: "/images/experience/zenduty_logo.jpg",
-      highlights: [
-        "Built serializers, viewsets and endpoints in Django and Django REST Framework powering 10+ interactive dashboard features.",
-        "Minimized database hits through query optimization, improving API response times by 75%.",
-        "Developed reusable Ant Design components to display key data for sales and technical teams.",
-        "Created a custom scheduler to run tests sequentially, and parallelly, reducing the overall runtime by 60%.",
-        "Enhanced Zenduty website reliability by developing a comprehensive PyTest and Cypress suite. Used daily by 8+ developers and QA engineers for code validation."
+      description: [
+        {
+          text: "Built serializers, viewsets and endpoints in Django and Django REST Framework powering 10+ interactive dashboard features.",
+          highlights: ["Django", "Django REST Framework"]
+        },
+        {
+          text: "Minimized database hits through query optimization, improving API response times by 75%.",
+          highlights: ["query optimization", "API response times", "75%"]
+        },
+        {
+          text: "Developed reusable Ant Design components to display key data for sales and technical teams.",
+          highlights: ["Ant Design", "components", "key data"]
+        },
+        {
+          text: "Created a custom scheduler to run tests sequentially, and parallelly, reducing the overall runtime by 60%.",
+          highlights: ["custom scheduler", "tests", "60%"]
+        },
+        {
+          text: "Enhanced Zenduty website reliability by developing a comprehensive PyTest and Cypress suite. Used daily by 8+ developers and QA engineers for code validation.",
+          highlights: ["PyTest", "Cypress", "8+", "developers", "QA engineers"]
+        }
       ],
       technologies: ["Python", "Django", "React", "PostgreSQL", "Docker", "AWS"],
     },
@@ -54,11 +93,23 @@ export default function ExperienceTimeline() {
       duration: "Aug 2022 - Dec 2022 (3 Months)",
       location: "Remote",
       logo: "/images/experience/algofinancials_logo.jpg",
-      highlights: [
-        "Launched an asynchronous API utilizing FastAPI and MongoDB, accelerating data processing speeds by 90% compared to previous synchronous systems, reducing server latency by 30 milliseconds.",
-        "Established seamless connectivity between FastAPI and MongoDB using Pydantic and Beanie.",
-        "Implemented 15 new API endpoints, controller and services for enhanced data querying capabilities.",
-        "Orchestrated the refactoring of order history storage using Redis, accelerating query response times by 75% and enabling faster retrieval of customer purchase information for support teams."
+      description: [
+        {
+          text: "Launched an asynchronous API utilizing FastAPI and MongoDB, accelerating data processing speeds by 90% compared to previous synchronous systems, reducing server latency by 30 milliseconds.",
+          highlights: ["FastAPI", "MongoDB", "90%", "30 milliseconds"]
+        },
+        {
+          text: "Established seamless connectivity between FastAPI and MongoDB using Pydantic and Beanie.",
+          highlights: ["Pydantic", "Beanie"]
+        },
+        {
+          text: "Implemented 15 new API endpoints, controller and services for enhanced data querying capabilities.",
+          highlights: ["15", "API endpoints", "controller", "services"]
+        },
+        {
+          text: "Orchestrated the refactoring of order history storage using Redis, accelerating query response times by 75% and enabling faster retrieval of customer purchase information for support teams.",
+          highlights: ["Redis", "75%"]
+        }
       ],
       technologies: ["React", "TypeScript", "Material-UI", "WebSocket", "Chart.js"],
     }
@@ -151,9 +202,9 @@ export default function ExperienceTimeline() {
 
                 <div className="mb-6">
                   <ul className="space-y-3">
-                    {exp.highlights.map((highlight, idx) => (
+                    {exp.description.map((description, idx) => (
                       <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                        {highlightKeywords(highlight)}
+                        {highlightKeywords(description["text"], description["highlights"])}
                       </li>
                     ))}
                   </ul>
