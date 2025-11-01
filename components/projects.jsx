@@ -171,13 +171,13 @@ export default function ProjectsSection() {
               variants={item}
               className="relative"
             >
-              <motion.div className="bg-transparent py-4 sm:py-8 rounded-r-lg">
+              <motion.div className="bg-transparent py-4 rounded-r-lg">
                 <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
                   {/* Project image carousel */}
-                  <div className="w-full lg:w-1/3 flex-shrink-0">
+                  <div className="w-full lg:w-1/2 flex-shrink-0">
                     <div className="relative">
                       <div 
-                        className="w-full aspect-video lg:aspect-square rounded-lg overflow-hidden bg-background border-2 border-white/10 relative cursor-pointer"
+                        className="w-full h-auto min-h-[400px] rounded-lg overflow-hidden bg-background border-2 border-white/10 relative cursor-pointer"
                         onMouseMove={(e) => handleImageHover(e, project)}
                       >
                         {/* Invisible hover zones for visual feedback */}
@@ -198,14 +198,14 @@ export default function ProjectsSection() {
                             initial="enter"
                             animate="center"
                             exit="exit"
-                            className="absolute inset-0"
+                            className="absolute inset-0 h-full w-full"
                           >
                             <Image
                               src={getProjectImages(project)[getCurrentImageIndex(project.id)]}
                               alt={`${project.title} - Image ${getCurrentImageIndex(project.id) + 1}`}
                               width={400}
                               height={300}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-contain lg:object-cover"
                             />
                           </motion.div>
                         </AnimatePresence>
