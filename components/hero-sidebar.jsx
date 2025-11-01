@@ -24,20 +24,10 @@ export default function HeroSection() {
       icon: Icons.Twitter,
     },
     {
-      name: 'Email',
-      url: 'mailto:osafalisayed@gmail.com',
-      icon: Icons.Mail,
-    },
-    {
       name: 'Resume',
       url: 'https://drive.google.com/file/d/1i3H9MvB4cjPAbquU6966-lPs4RsbkKxj/view?usp=sharing',
       icon: Icons.Document,
     }
-    // {
-    //   name: 'Upwork',
-    //   url: 'https://www.upwork.com/freelancers/osafalisayed',
-    //   icon: Icons.Upwork,
-    // }
   ];
 
   const container = {
@@ -102,7 +92,7 @@ export default function HeroSection() {
         {/* Tagline */}
         <motion.div variants={item} className="self-start sm:self-center">
           <p className="max-w-xs text-left sm:text-center leading-relaxed text-sm sm:text-base text-foreground/70">
-            Building Real Products For Real Clients, Not Just More Projects
+            I am the guy who keeps those server up and running!
           </p>
         </motion.div>
 
