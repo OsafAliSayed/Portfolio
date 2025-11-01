@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import Icons from './icons';
-import { highlightKeywords } from '../lib/highlight-utils';
+import highlightKeywords from '../lib/highlight-utils';
 
 export default function OpenSourceSection() {
 
@@ -20,10 +20,19 @@ export default function OpenSourceSection() {
       link: "https://github.com/frappe/lms/pull/1565/",
       status: "Merged",
       technologies: ["Python", "Frappe Framework", "Vue", "JavaScript", "Frappe UI"],
-      contribution_details: [
-        "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery",
-        "Displayed contextually similar courses on the course page using Vue.js and Frappe's Python backend logic",
-        "Enhanced user experience and course discoverability for educational platforms"
+      description: [
+        {
+          text: "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery",
+          highlights: ["Frappe LMS v2.31.0", "'Related Courses'", "course discovery"]
+        },
+        {
+          text: "Displayed contextually similar courses on the course page using Vue.js and Frappe's Python backend logic",
+          highlights: ["Vue.js", "Frappe", "Python", "backend"]
+        },
+        {
+          text: "Enhanced user experience and course discoverability for educational platforms",
+          highlights: []
+        }
       ],
       date: "2025"
     },
@@ -38,10 +47,19 @@ export default function OpenSourceSection() {
       link: "https://github.com/wagtail/wagtail/pull/11756/",
       status: "Merged",
       technologies: ["Python", "Django", "Wagtail CMS", "React", "SCSS"],
-      contribution_details: [
-        "Replaced outdated branding assets across the admin panel, documentation, and email templates with new SVG logos and favicons",
-        "Modified React+SCSS components to update the Wagtail admin sidebar logo and implemented a new hover animation for improved UX",
-        "Enhanced the overall visual consistency and user experience of the Wagtail admin interface"
+      description: [
+        {
+          text: "Replaced outdated branding assets across the admin panel, documentation, and email templates with new SVG logos and favicons",
+          highlights: []
+        },
+        {
+          text: "Modified React+SCSS components to update the Wagtail admin sidebar logo and implemented a new hover animation for improved UX",
+          highlights: ["React+SCSS"]
+        },
+        {
+          text: "Enhanced the overall visual consistency and user experience of the Wagtail admin interface",
+          highlights: []
+        }
       ],
       date: "2025"
     }
@@ -134,9 +152,9 @@ export default function OpenSourceSection() {
                 <div className="mb-6">
                   <div className="mb-4">
                     <ul className="space-y-2">
-                      {contribution.contribution_details.slice(0, 3).map((detail, idx) => (
+                      {contribution.description.map((description, idx) => (
                         <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                          {highlightKeywords(detail)}
+                          {highlightKeywords(description.text, description.highlights)}
                         </li>
                       ))}
                     </ul>
