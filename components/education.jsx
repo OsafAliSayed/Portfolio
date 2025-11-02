@@ -75,7 +75,7 @@ export default function EducationSection() {
     {
       id: 2,
       title: 'Harvard University',
-      description: 'CS50 Web: Programming with Python and JavaScript',
+      description: 'CS50 Web: Programming with Python and JS',
       period: '2022',
       gpa: 'Certificate',
       logo: '/images/education/harvarduniversity.png',
