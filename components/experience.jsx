@@ -12,46 +12,46 @@ export default function ExperienceTimeline() {
      {
       id: 1,
       company: "Ecomlytix",
-      position: "Full Stack Developer",
+      position: "Freelance Full Stack Developer",
       type: "Freelance",
       duration: "Aug 2022 - Present",
       location: "Remote",
       logo: "/images/experience/ecomlytix_logo.png",
       description: [
         {
-          text: "Built the entire application from scratch using Next.js (frontend) and Nest.js (backend), ensuring a modular, scalable, and maintainable architecture",
+          text: "Built the entire application from scratch using Next.js and Nest.js, ensuring a modular, scalable, and maintainable architecture",
           highlights: ["Next.js", "Nest.js"]
         },
         {
           text: "Designed and implemented RESTful APIs with Nest.js, integrating PostgreSQL databases for reliable data flow and performance.",
-          highlights: ["Nest.js", "PostgreSQL"]
+          highlights: ["RESTful APIs", "Nest.js", "PostgreSQL"]
         },
         {
           text: "Configured and deployed infrastructure on DigitalOcean Droplets, managing Nginx, SSL (Certbot), and environment setup for production and staging environments.",
-          highlights: ["DigitalOcean", "Nginx", "SSL"]
+          highlights: ["DigitalOcean", "Droplets", "Nginx", "SSL"]
         },
         {
           text: "Set up CI/CD pipelines using GitHub Actions to automate testing, building, and deployment of both frontend and backend services.",
-          highlights: ["GitHub Actions"]
+          highlights: ["CI/CD pipelines", "GitHub Actions"]
         },
         {
           text: "Implemented secure environment variable management and CORS policies to streamline communication between microservices.",
-          highlights: ["CORS", "Environment Variables"]
+          highlights: ["CORS"]
         },
         {
           text: "Designed and optimized database schemas for performance and scalability using PostgreSQL.",
           highlights: ["PostgreSQL"]
         },
         {
-          text: "Automated daily scheduler jobs using Nest.js for backend data synchronization and updates.",
-          highlights: ["Nest.js"]
+          text: "Automated daily scheduler jobs using BullMQ for backend data synchronization and updates.",
+          highlights: ["BullMQ"]
         },
         {
-          text: "Managed domain, DNS, and HTTPS configuration for seamless frontend–backend integration under custom domains.",
-          highlights: ["DNS", "HTTPS"]
+          text: "Managed Domain, DNS, and HTTPS configuration for seamless frontend–backend integration.",
+          highlights: ["Domain", "DNS", "HTTPS"]
         }
       ],
-      technologies: ["NX", "Node.js", "Next.JS", "Tailwind-CSS", "Nest.JS", "DigitalOcean", "PostgreSQL", "GitHub Actions"],
+      technologies: ["NodeJs", "NextJs", "NestJs", "TailwindCSS", "PostgreSQL", "GitHubActions"],
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ export default function ExperienceTimeline() {
       description: [
         {
           text: "Built serializers, viewsets and endpoints in Django and Django REST Framework powering 10+ interactive dashboard features.",
-          highlights: ["Django", "Django REST Framework"]
+          highlights: ["Django REST Framework", "Django"]
         },
         {
           text: "Minimized database hits through query optimization, improving API response times by 75%.",
@@ -72,7 +72,7 @@ export default function ExperienceTimeline() {
         },
         {
           text: "Developed reusable Ant Design components to display key data for sales and technical teams.",
-          highlights: ["Ant Design", "components", "key data"]
+          highlights: ["Ant Design"]
         },
         {
           text: "Created a custom scheduler to run tests sequentially, and parallelly, reducing the overall runtime by 60%.",
@@ -100,7 +100,7 @@ export default function ExperienceTimeline() {
         },
         {
           text: "Established seamless connectivity between FastAPI and MongoDB using Pydantic and Beanie.",
-          highlights: ["Pydantic", "Beanie"]
+          highlights: ["FastAPI", "MongoDB", "Pydantic", "Beanie"]
         },
         {
           text: "Implemented 15 new API endpoints, controller and services for enhanced data querying capabilities.",
@@ -111,7 +111,7 @@ export default function ExperienceTimeline() {
           highlights: ["Redis", "75%"]
         }
       ],
-      technologies: ["React", "TypeScript", "Material-UI", "WebSocket", "Chart.js"],
+      technologies: ["React", "TypeScript", "MaterialUI", "API", "ChartJS"],
     }
   ];
 
@@ -212,13 +212,13 @@ export default function ExperienceTimeline() {
 
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech) => {
-                    const IconComponent = Icons[tech] || Icons.Code
+                    const IconComponent = Icons[tech];
                     return (
                       <div
                         key={tech}
                         className="flex items-center space-x-2 px-2 sm:px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
                       >
-                        <IconComponent className="w-3 h-3" />
+                        {IconComponent && <IconComponent className="w-3 h-3" />}
                         <span className="text-xs">{tech}</span>
                       </div>
                     );

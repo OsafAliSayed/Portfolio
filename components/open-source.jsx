@@ -1,26 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import Icons from './icons';
-import highlightKeywords from '../lib/highlight-utils';
+import { useState } from 'react';
+import CollapsibleInfo from './ui/collapsible-info';
+
 
 export default function OpenSourceSection() {
+  const [openDescription, setOpenDescription] = useState({});
+
+  const toggleDescription = (contributionId) => {
+    setOpenDescription((prev) => ({
+      ...prev,
+      [contributionId]: !prev[contributionId],
+    }));
+  };
 
   const contributions = [
     {
       id: 1,
-      title: "Related Courses Feature Implementation",
+      title: "Frappe LMS",
       type: "Pull Request",
       repository: "frappe/lms",
       company: "Frappe",
       logo: "/images/opensource/frappe.png", // Using Python logo as placeholder for Frappe
-      description: "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery and user engagement.",
+      description: "Related Courses Feature Implementation",
       link: "https://github.com/frappe/lms/pull/1565/",
       status: "Merged",
-      technologies: ["Python", "Frappe Framework", "Vue", "JavaScript", "Frappe UI"],
-      description: [
+      technologies: ["Python", "Frappe", "Vue", "JavaScript"],
+      list: [
         {
           text: "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery",
           highlights: ["Frappe LMS v2.31.0", "'Related Courses'", "course discovery"]
@@ -38,16 +45,16 @@ export default function OpenSourceSection() {
     },
     {
       id: 2,
-      title: "Branding Assets Update & Admin Panel Enhancement",
+      title: "Wagtail CMS",
       type: "Pull Request",
       repository: "wagtail/wagtail",
       company: "Wagtail",
       logo: "/images/opensource/wagtail.png", // Using Django logo since Wagtail is Django-based
-      description: "Updated Wagtail CMS branding across admin panel, documentation, and email templates with new visual identity and improved UX.",
+      description: "Branding Assets Update & Admin Panel Enhancement",
       link: "https://github.com/wagtail/wagtail/pull/11756/",
       status: "Merged",
-      technologies: ["Python", "Django", "Wagtail CMS", "React", "SCSS"],
-      description: [
+      technologies: ["Python", "Django", "Wagtail", "React", "SCSS"],
+      list: [
         {
           text: "Replaced outdated branding assets across the admin panel, documentation, and email templates with new SVG logos and favicons",
           highlights: []
@@ -98,7 +105,7 @@ export default function OpenSourceSection() {
         </p>
       </motion.div>
 
-      <div className="relative">
+      <div className="relative mt-8">
         <motion.div
           variants={container}
           initial="hidden"
@@ -112,70 +119,12 @@ export default function OpenSourceSection() {
               variants={item}
               className="relative"
             >
-              <motion.div className="bg-transparent py-4 sm:py-8 rounded-r-lg">
-                <div className="mb-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                    {/* Company logo */}
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 self-start">
-                      <Image
-                        src={contribution.logo}
-                        alt={contribution.company}
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-start min-w-0 flex-1">
-                      <div className="mb-2">
-                        <h3 className="text-base sm:text-lg font-semibold text-foreground leading-tight">
-                          {contribution.title}
-                        </h3>
-                      </div>
-                      
-                      <Link
-                        href={contribution.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm sm:text-base text-foreground/60 hover:text-foreground/80 font-medium inline-flex items-center group mb-2"
-                      >
-                        {contribution.repository}
-                        <Icons.ExternalLink className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                      
-                      <p className="text-sm text-foreground/60">
-                        {contribution.date}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <div className="mb-4">
-                    <ul className="space-y-2">
-                      {contribution.description.map((description, idx) => (
-                        <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                          {highlightKeywords(description.text, description.highlights)}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {contribution.technologies.map((tech) => {
-                    const IconComponent = Icons[tech] || Icons.Code;
-                    return (
-                      <div
-                        key={tech}
-                        className="flex items-center space-x-2 px-2 sm:px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
-                      >
-                        <IconComponent className="w-3 h-3" />
-                        <span className="text-xs">{tech}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.div>
+              <CollapsibleInfo
+                data={contribution}
+                isOpen={!!openDescription[contribution.id]}
+                useHighlight={true}
+                onToggle={toggleDescription}
+              />
             </motion.div>
           ))}
         </motion.div>
