@@ -27,7 +27,8 @@ export default function SkillsSection() {
       { name: 'Github Actions', icon: 'GitHubActions' },
       { name: 'Jenkins', icon: 'Jenkins' },
       { name: 'Kubernetes', icon: 'Kubernetes' },
-      { name: 'AWS', icon: 'AWS' }
+      { name: 'AWS', icon: 'AWS' },
+      { name: 'DigitalOcean', icon: 'DigitalOcean' }
     ],
     'Version Control': [
       { name: 'Git', icon: 'Git' },
@@ -44,7 +45,7 @@ export default function SkillsSection() {
       { name: 'Selenium', icon: 'Selenium' },
       { name: 'Postman', icon: 'Postman' },
       { name: 'Cypress', icon: 'Cypress' },
-      { name: 'Django Silk', icon: 'Code' },
+      { name: 'Django Silk', icon: '' },
     ]
   };
 
@@ -52,37 +53,37 @@ export default function SkillsSection() {
   const getCategoryColors = (category) => {
     const colorSchemes = {
       'Frontend': {
-        bg: 'bg-blue-500/10',
+        bg: 'bg-blue-500/20',
         border: 'border-blue-500/20',
         text: 'text-blue-400',
         leftBorder: 'border-blue-500'
       },
       'Backend': {
-        bg: 'bg-green-500/10',
+        bg: 'bg-green-500/20',
         border: 'border-green-500/20',
         text: 'text-green-400',
         leftBorder: 'border-green-500'
       },
       'DevOps': {
-        bg: 'bg-purple-500/10',
+        bg: 'bg-purple-500/20',
         border: 'border-purple-500/20',
         text: 'text-purple-400',
         leftBorder: 'border-purple-500'
       },
       'Version Control': {
-        bg: 'bg-indigo-500/10',
+        bg: 'bg-indigo-500/20',
         border: 'border-indigo-500/20',
         text: 'text-indigo-400',
         leftBorder: 'border-indigo-500'
       },
       'Database': {
-        bg: 'bg-orange-500/10',
+        bg: 'bg-orange-500/20',
         border: 'border-orange-500/20',
         text: 'text-orange-400',
         leftBorder: 'border-orange-500'
       },
       'Libraries and Tools': {
-        bg: 'bg-pink-500/10',
+        bg: 'bg-pink-500/20',
         border: 'border-pink-500/20',
         text: 'text-pink-400',
         leftBorder: 'border-pink-500'
@@ -145,11 +146,6 @@ export default function SkillsSection() {
                 className="relative"
               >
                 <motion.div className={`bg-transparent rounded-r-lg`}>
-                  <div>
-                    <h3 className='mb-1'>
-                      {group}
-                    </h3>
-                  </div>
 
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => {
@@ -157,7 +153,7 @@ export default function SkillsSection() {
                       return (
                         <div
                           key={skill.name}
-                          className={`flex items-center space-x-2 px-3 py-1 rounded-2xl ${colors.bg} ${colors.border} text-xs font-medium ${colors.text}`}
+                          className={`flex items-center space-x-2 px-3 py-1 rounded-2xl ${colors.bg} ${colors.border}  ${colors.text}`}
                         >
                           {IconComponent && <IconComponent className="w-3 h-3" />}
                           <span>{skill.name}</span>

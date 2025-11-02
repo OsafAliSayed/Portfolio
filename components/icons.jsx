@@ -31,7 +31,8 @@ import {
   FaStar,
   FaCss3Alt,
   FaSass,
-  FaVuejs
+  FaVuejs,
+  FaDigitalOcean
 } from 'react-icons/fa';
 
 import {
@@ -180,7 +181,8 @@ const Icons = {
   Frappe: SiFrappe,
   Vue: FaVuejs,
   Wagtail: SiWagtail,
-  NestJs: SiNestjs
+  NestJs: SiNestjs,
+  DigitalOcean: FaDigitalOcean
 };
 
 export default Icons;
