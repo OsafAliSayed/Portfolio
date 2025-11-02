@@ -16,7 +16,7 @@ export default function CollapsibleInfo({ data, isOpen, useHighlight=false, onTo
   return (
     <motion.div className="bg-transparent rounded-r-lg">
       <div className="mb-6">
-        <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+        <div className="flex  sm:items-start gap-4">
           {/* Institution logo */}
           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white border-2 border-white/10 flex-shrink-0 self-start flex items-center justify-center">
             <Image
