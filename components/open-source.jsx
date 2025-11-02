@@ -19,7 +19,7 @@ export default function OpenSourceSection() {
       description: "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery and user engagement.",
       link: "https://github.com/frappe/lms/pull/1565/",
       status: "Merged",
-      technologies: ["Python", "Frappe Framework", "Vue", "JavaScript", "Frappe UI"],
+      technologies: ["Python", "Frappe", "Vue", "JavaScript"],
       description: [
         {
           text: "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery",
@@ -46,7 +46,7 @@ export default function OpenSourceSection() {
       description: "Updated Wagtail CMS branding across admin panel, documentation, and email templates with new visual identity and improved UX.",
       link: "https://github.com/wagtail/wagtail/pull/11756/",
       status: "Merged",
-      technologies: ["Python", "Django", "Wagtail CMS", "React", "SCSS"],
+      technologies: ["Python", "Django", "Wagtail", "React", "SCSS"],
       description: [
         {
           text: "Replaced outdated branding assets across the admin panel, documentation, and email templates with new SVG logos and favicons",

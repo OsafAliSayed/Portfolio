@@ -20,7 +20,7 @@ export default function ProjectsSection() {
         "/images/projects/aikaatib-combined.png",
         "/images/projects/aikaatib-phone.png"
       ],
-      techStack: ["JavaScript", "Next.js", "TailwindCSS", "Django", "Django REST Framework", "PostgreSQL", "AWS", "OpenAI", "PyTest"],
+      techStack: ["JavaScript", "NextJs", "TailwindCSS", "Django", "Python", "PostgreSQL", "AWS", "AI", "Pytest"],
       repoUrl: "https://github.com/OsafAliSayed/ai-kaatib",
       description: [
         {
@@ -50,7 +50,7 @@ export default function ProjectsSection() {
         "/images/projects/cryptodash-combined.png",
         "/images/projects/cryptodash-phone.png"
       ],
-      techStack: ["JavaScript (ES6+)", "ShadCN UI", "Supabase", "CoinGecko API", "Chart.js/Recharts", "Electron"],
+      techStack: ["JavaScript", "React", "PostgreSQL", "ChartJS"],
       repoUrl: "https://github.com/OsafAliSayed/crypto-dashboard",
       description: [
         {

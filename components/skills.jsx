@@ -8,10 +8,10 @@ export default function SkillsSection() {
   const skills = {
     'Frontend': [
       { name: 'HTML', icon: 'HTML5' },
-      { name: 'CSS', icon: 'Code' },
+      { name: 'CSS', icon: 'CSS3' },
       { name: 'JavaScript', icon: 'JavaScript' },
       { name: 'React', icon: 'React' },
-      { name: 'Vite.js', icon: 'Code' },
+      { name: 'Vite.js', icon: 'Vite' },
       { name: 'Next.js', icon: 'NextJs' },
       { name: 'Tailwind CSS', icon: 'TailwindCSS' },
       { name: 'Ant Design', icon: 'AntDesign' },
@@ -153,13 +153,13 @@ export default function SkillsSection() {
 
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => {
-                      const IconComponent = Icons[skill.icon] || Icons.Code;
+                      const IconComponent = Icons[skill.icon];
                       return (
                         <div
                           key={skill.name}
                           className={`flex items-center space-x-2 px-3 py-1 rounded-2xl ${colors.bg} ${colors.border} text-xs font-medium ${colors.text}`}
                         >
-                          <IconComponent className="w-3 h-3" />
+                          {IconComponent && <IconComponent className="w-3 h-3" />}
                           <span>{skill.name}</span>
                         </div>
                       );

@@ -28,7 +28,10 @@ import {
   FaComment,
   FaThumbsUp,
   FaChevronDown,
-  FaStar
+  FaStar,
+  FaCss3Alt,
+  FaSass,
+  FaVuejs
 } from 'react-icons/fa';
 
 import {
@@ -52,6 +55,10 @@ import {
 } from 'react-icons/lu';
 
 import {
+  TbBrandMysql,
+  TbBrandCypress
+} from 'react-icons/tb';
+import {
   SiJavascript,
   SiTypescript,
   SiReact,
@@ -69,12 +76,26 @@ import {
   SiGit,
   SiNodedotjs,
   SiExpress,
-  SiMaterialui
+  SiMaterialui,
+  SiVite,
+  SiAntdesign,
+  SiGithubactions,
+  SiJenkins,
+  SiSqlite,
+  SiPytest,
+  SiSelenium,
+  SiPostman,
+  SiMui,
+  SiChartdotjs,
+  SiFrappe,
+  SiWagtail,
+  SiNestjs
 } from 'react-icons/si';
 
 
 import {
-  IoDocument
+  IoDocument,
+  IoLogoHtml5
 } from 'react-icons/io5';
 
 // Define your icon mapping
@@ -122,10 +143,14 @@ const Icons = {
 
 
   // Technology icons
+  HTML5: IoLogoHtml5,
+  CSS3: FaCss3Alt,
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
   React: SiReact,
   NextJs: SiNextdotjs,
+  Vite: SiVite,
+  AntDesign: SiAntdesign,
   TailwindCSS: SiTailwindcss,
   Python: SiPython,
   Django: SiDjango,
@@ -139,10 +164,23 @@ const Icons = {
   Git: SiGit,
   NodeJs: SiNodedotjs,
   Express: SiExpress,
-  MaterialUI: SiMaterialui,
   Chart: FaChartBar,
   AI: FaRobot,
-  API: FaPlug
+  GitHubActions: SiGithubactions,
+  Jenkins: SiJenkins,
+  MySQL: TbBrandMysql,
+  SQLite: SiSqlite,
+  Cypress: TbBrandCypress,
+  Pytest: SiPytest,
+  Selenium: SiSelenium,
+  Postman: SiPostman,
+  MaterialUI: SiMui,
+  ChartJS: SiChartdotjs,
+  SCSS: FaSass,
+  Frappe: SiFrappe,
+  Vue: FaVuejs,
+  Wagtail: SiWagtail,
+  NestJs: SiNestjs
 };
 
 export default Icons;
