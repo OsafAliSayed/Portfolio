@@ -21,11 +21,11 @@ export default function Home() {
           {/* Main Content - Mobile */}
           <div className="space-y-12">
             <SkillsSection />
+            <ReviewsSection />
             <ExperienceTimeline />
             <OpenSourceSection />
             <ProjectsSection />
             <EducationSection />
-            <ReviewsSection />
           </div>
         </div>
       </div>
