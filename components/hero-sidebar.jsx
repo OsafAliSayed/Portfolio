@@ -104,7 +104,7 @@ export default function HeroSection() {
           >
             <span className="flex items-center justify-center gap-2">
               <Icons.Mail className="w-4 h-4" />
-              <span>Let's Work Together</span>
+              <span>Let&apos;s Work Together</span>
             </span>
           </Link>
         </motion.div>
