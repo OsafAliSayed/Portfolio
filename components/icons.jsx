@@ -99,6 +99,10 @@ import {
   IoLogoHtml5
 } from 'react-icons/io5';
 
+import {
+  MdArticle
+} from 'react-icons/md';
+
 // Define your icon mapping
 const Icons = {
   // Social media and contact
@@ -112,6 +116,7 @@ const Icons = {
   Upwork: FaUpwork,
   ExternalLink: FaExternalLinkAlt,
   Document: IoDocument,
+  FileText: MdArticle,
   Check: FaCheck,
   LightBulb: FaLightbulb,
   Bug: FaBug,
