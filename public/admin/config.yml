@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: osafalisayed/portfolio
+  branch: main
+  base_url: https://decap-cms-github-proxy.onrender.com
+  auth_scope: repo
+  client_id: Ov23lidgHhOcOeqHbOpY   # <-- paste your client ID here
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
