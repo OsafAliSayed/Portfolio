@@ -1,5 +1,5 @@
 import Navbar from '@/components/navbar';
-import HeroSection from '@/components/hero-sidebar';
+import HeroSection from '@/components/hero-section';
 import BlogSection from '@/components/blog-section';
 import ProjectsSection from '@/components/projects-section';
 import WorkSection from '@/components/work-section';
