@@ -1,56 +1,37 @@
-"use client"
+import Navbar from '@/components/navbar';
 import HeroSection from '@/components/hero-sidebar';
-import ProjectsSection from '@/components/projects';
-import ExperienceTimeline from '@/components/experience';
-import OpenSourceSection from '@/components/open-source';
-import EducationSection from '@/components/education';
-import ReviewsSection from '@/components/reviews';
-import SkillsSection from '@/components/skills';
+import BlogSection from '@/components/blog-section';
+import ProjectsSection from '@/components/projects-section';
+import WorkSection from '@/components/work-section';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      {/* Mobile Layout: Stack vertically */}
-      <div className="block lg:hidden">
-        <div className="container mx-auto px-4 sm:px-6 py-6">
-          {/* Hero Section - Mobile */}
-          <div className="mb-8">
-            <HeroSection />
-          </div>
-          
-          {/* Main Content - Mobile */}
-          <div className="space-y-12">
-            <SkillsSection />
-            <ReviewsSection />
-            <ExperienceTimeline />
-            <OpenSourceSection />
-            <ProjectsSection />
-            <EducationSection />
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-blue-500/30 selection:text-blue-200 pb-20">
+      {/* Grid background */}
+      <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
+      
+      {/* Floating Navbar */}
+      <Navbar />
 
-      {/* Desktop Layout: Side by side */}
-      <div className="hidden lg:block">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex gap-8">
-          {/* Hero Section - Desktop */}
-          <div className="w-full lg:w-1/4 xl:w-1/3">
-            <div className="sticky top-10">
-              <HeroSection />
-            </div>
-          </div>
-          
-          {/* Main Content - Desktop */}
-          <div className="w-full lg:w-3/4 xl:w-2/3 space-y-16">
-            <SkillsSection />
-            <ReviewsSection />
-            <ExperienceTimeline />
-            <ProjectsSection />
-            <OpenSourceSection />
-            <EducationSection />
-          </div>
-        </div>
+      {/* Main Content */}
+      <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+        {/* Hero Section */}
+        <HeroSection />
+        
+        {/* Writing Section */}
+        <BlogSection />
+        
+        {/* Projects Section */}
+        <ProjectsSection />
+        
+        {/* Work Section */}
+        <WorkSection />
+        
+        {/* Footer */}
+        <footer className="py-10 text-center text-neutral-700 text-xs">
+          <p>© 2025 Osaf Ali Sayed.</p>
+        </footer>
       </div>
-    </main>
+    </div>
   );
 }
