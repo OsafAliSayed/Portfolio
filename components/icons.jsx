@@ -1,5 +1,3 @@
-'use client';
-
 // Import icons you want to use throughout your project
 import {
   FaGithub,
@@ -32,7 +30,10 @@ import {
   FaCss3Alt,
   FaSass,
   FaVuejs,
-  FaDigitalOcean
+  FaDigitalOcean,
+  FaHome,
+  FaPen,
+  FaTh
 } from 'react-icons/fa';
 
 import {
@@ -146,6 +147,12 @@ const Icons = {
   Phone: FaPhone,
   OpenSource: FaCode,
   Star: FaStar,
+
+  // Navigation icons
+  Home: FaHome,
+  Pen: FaPen,
+  Grid3X3: FaTh,
+  Briefcase: FaBriefcase,
 
 
   // Technology icons
