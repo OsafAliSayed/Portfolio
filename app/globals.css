@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* Hide scrollbars for all browsers */
-html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+/* Custom scrollbar styling */
+::-webkit-scrollbar { 
+  width: 6px; 
+}
+
+::-webkit-scrollbar-track { 
+  background: #000; 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: #333; 
+  border-radius: 10px; 
+}
+
+/* Subtle Grid Background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #1f1f1f 1px, transparent 1px),
+                    linear-gradient(to bottom, #1f1f1f 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
 }
 
 @tailwind base;
@@ -15,16 +33,16 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 :root {
     --primary: 255, 255, 255;     /* Pure white */
-    --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
-    --tertiary: 96, 165, 250;     /* Same as secondary for consistency */
-    --quaternary: 96, 165, 250;   /* Same as secondary for consistency */
+    --secondary: 96, 165, 250;    /* Blue accent color */   
+    --tertiary: 147, 51, 234;     /* Purple accent - for writing section */
+    --quaternary: 34, 197, 94;    /* Green accent - for experience section */
     --text: 255, 255, 255;        /* White text */
-    --text-muted: 156, 163, 175;  /* Muted white */
-    --border: 55, 65, 81;         /* Dark border */      
+    --text-muted: 163, 163, 163;  /* Neutral-400 muted text */
+    --border: 38, 38, 38;         /* Neutral-800 border */      
     --foreground: 255, 255, 255;  /* White foreground */
     --background: 0, 0, 0;        /* Pure black background */
-    --card: 17, 24, 39;           /* Dark card background */
-    --card-border: 55, 65, 81;    /* Dark card border */
+    --card: 10, 10, 10;           /* Very dark card background */
+    --card-border: 38, 38, 38;    /* Neutral-800 card border */
     
     /* Transparent variations */
     --primary-transparent-05: rgba(255, 255, 255, 0.05);
@@ -36,25 +54,24 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     --secondary-transparent-10: rgba(96, 165, 250, 0.1); 
     --secondary-transparent-12: rgba(96, 165, 250, 0.12);
     --secondary-transparent-20: rgba(96, 165, 250, 0.2);
-    --tertiary-transparent-10: rgba(96, 165, 250, 0.1);
-    --tertiary-transparent-20: rgba(96, 165, 250, 0.2);
-    --quaternary-transparent-10: rgba(96, 165, 250, 0.1);
-    --quaternary-transparent-20: rgba(96, 165, 250, 0.2);
+    --tertiary-transparent-10: rgba(147, 51, 234, 0.1);
+    --tertiary-transparent-20: rgba(147, 51, 234, 0.2);
+    --quaternary-transparent-10: rgba(34, 197, 94, 0.1);
+    --quaternary-transparent-20: rgba(34, 197, 94, 0.2);
 }
   
 .dark {
-
-  --primary: 255, 255, 255;     /* White */
-  --secondary: 96, 165, 250;    /* Single accent color - blue-400 */   
-  --tertiary: 96, 165, 250;     /* Same as secondary */
-  --quaternary: 96, 165, 250;   /* Same as secondary */
+  --primary: 255, 255, 255;     /* Pure white */
+  --secondary: 96, 165, 250;    /* Blue accent color */   
+  --tertiary: 147, 51, 234;     /* Purple accent - for writing section */
+  --quaternary: 34, 197, 94;    /* Green accent - for experience section */
   --text: 255, 255, 255;        /* White text */
-  --text-muted: 156, 163, 175;  /* Muted white */
-  --border: 55, 65, 81;         /* Dark border */      
+  --text-muted: 163, 163, 163;  /* Neutral-400 muted text */
+  --border: 38, 38, 38;         /* Neutral-800 border */      
   --foreground: 255, 255, 255;  /* White foreground */
   --background: 0, 0, 0;        /* Pure black background */
-  --card: 17, 24, 39;           /* Dark card background */
-  --card-border: 55, 65, 81;    /* Dark card border */
+  --card: 10, 10, 10;           /* Very dark card background */
+  --card-border: 38, 38, 38;    /* Neutral-800 card border */
   
   /* Transparent variations for dark mode */
   --primary-transparent-05: rgba(255, 255, 255, 0.05);
@@ -66,10 +83,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   --secondary-transparent-10: rgba(96, 165, 250, 0.1);
   --secondary-transparent-12: rgba(96, 165, 250, 0.12);
   --secondary-transparent-20: rgba(96, 165, 250, 0.2);
-  --tertiary-transparent-10: rgba(96, 165, 250, 0.1);
-  --tertiary-transparent-20: rgba(96, 165, 250, 0.2);
-  --quaternary-transparent-10: rgba(96, 165, 250, 0.1);
-  --quaternary-transparent-20: rgba(96, 165, 250, 0.2);
+  --tertiary-transparent-10: rgba(147, 51, 234, 0.1);
+  --tertiary-transparent-20: rgba(147, 51, 234, 0.2);
+  --quaternary-transparent-10: rgba(34, 197, 94, 0.1);
+  --quaternary-transparent-20: rgba(34, 197, 94, 0.2);
 }
 
 /* Typography System - Modern font stacks and improved hierarchy */
