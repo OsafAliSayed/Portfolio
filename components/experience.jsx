@@ -1,15 +1,31 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
-import Icons from './icons';
 import highlightKeywords from '../lib/highlight-utils';
+import Icons from './icons';
 
+const ExperienceTimeline = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
-export default function ExperienceTimeline() {
+  // Debounced hover handlers to prevent flickering
+  const handleMouseEnter = useCallback((index) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+    }
+    setHoveredIndex(index);
+  }, [hoverTimeout]);
+
+  const handleMouseLeave = useCallback(() => {
+    const timeout = setTimeout(() => {
+      setHoveredIndex(null);
+    }, 100); // 100ms delay to prevent flickering
+    setHoverTimeout(timeout);
+  }, []);
 
   const experiences = [
-     {
+    {
       id: 1,
       company: "Ecomlytix",
       position: "Freelance Full Stack Developer",
@@ -115,122 +131,74 @@ export default function ExperienceTimeline() {
     }
   ];
 
-  const getWorkTypeColor = (type) => {
-    const colors = {
-      'Full-time': 'bg-secondary/10 text-secondary border-secondary/20',
-      'Freelance': 'bg-secondary/10 text-secondary border-secondary/20',
-      'Contract': 'bg-secondary/10 text-secondary border-secondary/20',
-      'Internship': 'bg-secondary/10 text-secondary border-secondary/20'
-    };
-    return colors[type] || 'bg-secondary/10 text-secondary border-secondary/20';
-  };
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0 }
-  };
-
   return (
-    <section>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="font-bold text-start mb-4 text-foreground">
-          Work
-        </h2>
-        <p className="text-start text-foreground/70 max-w-2xl ">
-          My professional journey building innovative solutions and leading development teams.
-        </p>
-      </motion.div>
-
-      <div className="relative">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              variants={item}
-              className="relative"
-            >
-              
-              <motion.div
-                className="border-secondary bg-transparent py-4 sm:py-8 rounded-r-lg"
-              >
-                <div className="mb-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                    {/* Company logo inside card */}
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-background border-2 border-white/10 flex-shrink-0 self-start flex items-center justify-center">
-                      <Image
-                        src={exp.logo}
-                        alt={exp.company}
-                        width={80}
-                        height={80}
-                        className={`w-full h-full ${exp.company === "Ecomlytix" ? "object-contain p-1 bg-white" : "object-cover"}`}
-                      />
-                    </div>
-                    <div className="flex flex-col justify-start min-w-0 flex-1">
-                      <h3 className="text-lg sm:text-xl font-semibold text-foreground">
-                        {exp.company}
-                      </h3>
-                      <p className="text-sm sm:text-base text-foreground/60">
-                        {exp.position}
-                      </p>
-                      <p className="text-sm sm:text-base text-foreground/60">
-                        {exp.duration}
-                      </p>
-                    </div>
-                  </div>
+    <section id="work" className="mb-10 scroll-mt-24">
+      <h2 className="text-sm font-bold text-neutral-100 mb-6 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Experience
+      </h2>
+      
+      <div className="space-y-8 border-l border-white/10 ml-2 pl-8 relative">
+        {experiences.map((job, i) => (
+          <div 
+            key={i} 
+            className="relative transition-all duration-400 ease-in-out cursor-pointer group"
+            onMouseEnter={() => handleMouseEnter(i)}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Company logo in timeline dot */}
+            <div className="absolute -left-[41px] lg:-left-[47px] top-0.5 w-8 h-8 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+              <Image
+                src={job.logo}
+                alt={job.company}
+                width={28}
+                height={28}
+                className={`w-full h-full ${job.company === "Ecomlytix" ? "object-contain p-0.5" : "object-cover"}`}
+              />
+            </div>
+            
+            {/* Basic Info (Always Visible) */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1">
+              <h3 className="text-white font-medium text-sm">{job.company}</h3>
+              <span className="text-xs text-neutral-500 font-mono">{job.duration}</span>
+            </div>
+            <p className="text-xs italic mb-2">{job.position}</p>
+            
+            {/* Expanded Details (Only on Hover) */}
+            <div className={`overflow-hidden transition-all duration-300 ${
+              hoveredIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            }`}>
+              <div className="pt-3 space-y-3">
+                {/* Description */}
+                <div className="space-y-2">
+                  {job.description.map((desc, idx) => (
+                    <p key={idx} className="text-xs text-neutral-400 leading-relaxed">
+                      • {highlightKeywords(desc.text, desc.highlights)}
+                    </p>
+                  ))}
                 </div>
-
-                <div className="mb-6">
-                  <ul className="space-y-3">
-                    {exp.description.map((description, idx) => (
-                      <li key={idx} className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                        {highlightKeywords(description["text"], description["highlights"])}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => {
+                
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-1 pt-2">
+                  {job.technologies.map((tech) => {
                     const IconComponent = Icons[tech];
                     return (
-                      <div
+                      <span
                         key={tech}
-                        className="flex items-center space-x-2 px-2 sm:px-3 py-1 rounded-2xl bg-blue-500/10 border-blue-500/20 text-xs font-medium text-blue-400"
+                        className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800 text-neutral-300 rounded-md border border-neutral-700"
                       >
                         {IconComponent && <IconComponent className="w-3 h-3" />}
-                        <span className="text-xs">{tech}</span>
-                      </div>
+                        {tech}
+                      </span>
                     );
                   })}
                 </div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-
     </section>
   );
-}
+};
+
+export default ExperienceTimeline;

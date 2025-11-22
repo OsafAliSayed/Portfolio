@@ -2,7 +2,7 @@ import Navbar from '@/components/navbar';
 import HeroSection from '@/components/hero-section';
 import BlogSection from '@/components/blog-section';
 import ProjectsSection from '@/components/projects-section';
-import WorkSection from '@/components/work-section';
+import ExperienceTimeline from '@/components/experience';
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         <ProjectsSection />
         
         {/* Work Section */}
-        <WorkSection />
+        <ExperienceTimeline />
         
         {/* Footer */}
         <footer className="py-10 text-center text-neutral-700 text-xs">

@@ -33,7 +33,8 @@ import {
   FaDigitalOcean,
   FaHome,
   FaPen,
-  FaTh
+  FaTh,
+  FaSearch
 } from 'react-icons/fa';
 
 import {
@@ -131,7 +132,9 @@ const Icons = {
   // Navigation
   Menu: FaBars,
   Close: FaTimes,
+  X: FaTimes,  // Add X as alias for Close
   ChevronDown: FaChevronDown,
+  Search: FaSearch,  // Add Search explicitly
   
   // Section icons
   Code: FaCode,
