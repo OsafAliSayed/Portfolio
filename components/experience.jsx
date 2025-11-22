@@ -11,6 +11,9 @@ const ExperienceTimeline = () => {
 
   // Debounced hover handlers to prevent flickering
   const handleMouseEnter = useCallback((index) => {
+    // Disable hover on touch devices to prevent conflict with click
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
+
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
     }
@@ -18,11 +21,25 @@ const ExperienceTimeline = () => {
   }, [hoverTimeout]);
 
   const handleMouseLeave = useCallback(() => {
+    // Disable hover on touch devices
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
+
     const timeout = setTimeout(() => {
       setHoveredIndex(null);
     }, 100); // 100ms delay to prevent flickering
     setHoverTimeout(timeout);
   }, []);
+
+  // Click handler for touch devices
+  const handleClick = useCallback((index) => {
+    if (hoveredIndex === index) {
+      // If already expanded, collapse it
+      setHoveredIndex(null);
+    } else {
+      // Expand the clicked item
+      setHoveredIndex(index);
+    }
+  }, [hoveredIndex]);
 
   const experiences = [
     {
@@ -144,6 +161,7 @@ const ExperienceTimeline = () => {
             className="relative transition-all duration-400 ease-in-out cursor-pointer group"
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
             <div className="absolute -left-[41px] lg:-left-[47px] top-0.5 w-8 h-8 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">

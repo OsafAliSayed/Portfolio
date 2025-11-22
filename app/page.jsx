@@ -3,6 +3,7 @@ import HeroSection from '@/components/hero-section';
 import BlogSection from '@/components/blog-section';
 import ProjectsSection from '@/components/projects-section';
 import ExperienceTimeline from '@/components/experience';
+import ReviewsSection from '@/components/reviews';
 
 export default function Home() {
   return (
@@ -17,15 +18,20 @@ export default function Home() {
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
         {/* Hero Section */}
         <HeroSection />
+
+        {/* Reviews Section */}
+        <ReviewsSection />
         
+          
+        {/* Work Section */}
+        <ExperienceTimeline />
+
         {/* Writing Section */}
         <BlogSection />
         
         {/* Projects Section */}
         <ProjectsSection />
-        
-        {/* Work Section */}
-        <ExperienceTimeline />
+      
         
         {/* Footer */}
         <footer className="py-10 text-center text-neutral-700 text-xs">
