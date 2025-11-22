@@ -51,7 +51,7 @@ export default function BlogSection() {
           ))
         ) : (
           <div className="py-8 text-center text-neutral-500">
-            <p className="text-sm">No blog posts found.</p>
+            <p className="text-sm">Blog Posts Coming Soon!</p>
           </div>
         )}
       </div>
