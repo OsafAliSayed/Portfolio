@@ -40,7 +40,7 @@ export default function ReviewsSection() {
 
   return (
     <section id="reviews" className="mb-10 scroll-mt-24">
-      <h2 className="text-sm font-bold text-neutral-100 mb-6 flex items-center gap-2">
+      <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Reviews
       </h2>
 

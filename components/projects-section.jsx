@@ -143,7 +143,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="mb-20 scroll-mt-24">
-      <h2 className="text-sm font-bold text-neutral-100 mb-6 flex items-center gap-2">
+      <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Selected Projects
       </h2>
       

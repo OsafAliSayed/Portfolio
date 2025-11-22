@@ -150,11 +150,11 @@ const ExperienceTimeline = () => {
 
   return (
     <section id="work" className="mb-10 scroll-mt-24">
-      <h2 className="text-sm font-bold text-neutral-100 mb-6 flex items-center gap-2">
+      <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Experience
       </h2>
       
-      <div className="space-y-8 border-l border-white/10 ml-2 pl-8 relative">
+      <div className="space-y-8 border-l border-white/10 ml-4 pl-6 relative">
         {experiences.map((job, i) => (
           <div 
             key={i} 
@@ -164,7 +164,7 @@ const ExperienceTimeline = () => {
             onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
-            <div className="absolute -left-[41px] lg:-left-[47px] top-0.5 w-8 h-8 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+            <div className="absolute -left-[37px] lg:-left-[41px] top-0.5 w-8 h-8 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
               <Image
                 src={job.logo}
                 alt={job.company}
