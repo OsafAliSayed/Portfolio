@@ -40,7 +40,7 @@ html {
     --text-muted: 163, 163, 163;  /* Neutral-400 muted text */
     --border: 38, 38, 38;         /* Neutral-800 border */      
     --foreground: 255, 255, 255;  /* White foreground */
-    --background: 0, 0, 0;        /* Pure black background */
+    --background: 255, 255, 255;        /* Pure black background */
     --card: 10, 10, 10;           /* Very dark card background */
     --card-border: 38, 38, 38;    /* Neutral-800 card border */
     
