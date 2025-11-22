@@ -1,110 +1,143 @@
 'use client';
 
-import { useRef } from 'react';
+import { useState } from 'react';
 import Icons from './icons';
 
-const ProjectCard = ({ title, desc, tags, imageSrc, videoSrc, link, className }) => {
-  const videoRef = useRef(null);
+const ProjectCard = ({ title, desc, tags, images, link, className }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset to start
-    }
+  const goToImage = (index, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (index === currentImageIndex || isTransitioning) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImageIndex(index);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   return (
-    <a 
-      href={link} 
-      className={`group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-500 ${className}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Media Layer (Image + Video) */}
-      <div className="absolute inset-0 z-0">
-        {/* Static Image (Fades out on hover) */}
-        <img 
-          src={imageSrc} 
-          alt={title} 
-          className="w-full h-full object-cover opacity-60 group-hover:opacity-0 transition-opacity duration-500"
-        />
+    <div className={`group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-500 min-h-[280px] ${className || ''}`}>
+      {/* Main project link */}
+      <a 
+        href={link} 
+        className="absolute inset-0 z-5"
+      >
+      </a>
+
+      {/* Image Carousel */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div 
+          className="flex transition-transform duration-300 ease-in-out h-full"
+          style={{ 
+            transform: `translateX(-${currentImageIndex * 100}%)`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative flex-shrink-0 h-full w-full"
+            >
+              <img 
+                src={image} 
+                alt={`${title} - Image ${index + 1}`} 
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-300"
+              />
+            </div>
+          ))}
+        </div>
         
-        {/* Video (Hidden by default, shown on hover) */}
-        <video 
-          ref={videoRef}
-          src={videoSrc}
-          muted 
-          loop 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-60 transition-opacity duration-500"
-        />
-        
-        {/* Gradient Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90"></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 group-hover:opacity-30 transition-opacity duration-300"></div>
       </div>
 
+      {/* Carousel Controls - Outside the anchor tag */}
+      {images.length > 1 && (
+        <>
+          {/* Dots Indicator */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+            {images.map((_, index) => (
+              <button
+                type="button"
+                key={index}
+                onClick={(e) => goToImage(index, e)}
+                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                  index === currentImageIndex 
+                    ? 'bg-white' 
+                    : 'bg-white/40 hover:bg-white/60'
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* External Link Icon - always visible and clickable */}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 right-4 z-30 flex items-center justify-center w-9 h-9 bg-black/50 backdrop-blur-md rounded-full border border-white/10 text-neutral-300 hover:text-white hover:bg-white/20 hover:border-white/30 hover:scale-110 transition-all duration-300"
+        aria-label={`Open ${title} project link`}
+      >
+        <Icons.ExternalLink className="w-4 h-4" />
+      </a>
+
       {/* Content Layer */}
-      <div className="relative z-10 h-full flex flex-col justify-between p-6">
+      <div className="relative z-10 h-full flex flex-col justify-between p-6 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
         <div className="flex justify-between items-start">
-          <div className="p-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/10 text-white">
-             <Icons.Grid3X3 className="w-4 h-4" />
-          </div>
-          <div className="translate-x-2 -translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 text-white">
-             <Icons.ExternalLink className="w-3.5 h-3.5" />
-          </div>
         </div>
 
         <div className="mt-20">
-          <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-          <p className="text-sm text-neutral-400 leading-relaxed mb-4 line-clamp-2">{desc}</p>
+          <h3 className="text-base font-medium text-white mb-2">{title}</h3>
+          <p className="text-xs text-neutral-400 leading-relaxed mb-4 line-clamp-2">{desc}</p>
           
           <div className="flex flex-wrap gap-2">
-            {tags.map(t => (
-              <span key={t} className="px-2 py-1 rounded-md text-[10px] font-mono bg-white/5 border border-white/10 text-neutral-300">
-                {t}
-              </span>
-            ))}
+            {tags.map((tag) => {
+              const IconComponent = Icons[tag];
+              return (
+                <span 
+                  key={tag} 
+                  className="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs bg-white/5 border border-white/10 text-neutral-300"
+                >
+                  {IconComponent && <IconComponent className="w-3 h-3" />}
+                  {tag}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Al Kaatib",
+      title: "AI Kaatib",
       desc: "Automated SEO content engine using OpenAI & Celery.",
-      tags: ['Django', 'OpenAI', 'Redis'],
-      imageSrc: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1000&auto=format&fit=crop",
-      videoSrc: "https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190301_1_25_11_preview.mp4",
-      link: "#",
-      className: "md:col-span-2 min-h-[280px]"
+      tags: ['Django', 'Python', 'React'],
+      images: [
+        "/images/projects/aikaatib-combined.png",
+        "/images/projects/aikaatib-pc.png",
+        "/images/projects/aikaatib-phone.png"
+      ],
+      link: "www.github.com/osafalisayed/aikaatib"
     },
     {
       title: "CryptoDash",
       desc: "Real-time market tracking with WebSockets.",
-      tags: ['Next.js', 'Supabase'],
-      imageSrc: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1000&auto=format&fit=crop",
-      videoSrc: "https://joy1.videvo.net/videvo_files/video/free/2015-08/large_watermarked/Stock_Market_01_preview.mp4",
-      link: "#",
-      className: "min-h-[280px]"
-    },
-    {
-      title: "DevSpace",
-      desc: "A social network for developers.",
-      tags: ['React', 'GraphQL'],
-      imageSrc: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1000&auto=format&fit=crop",
-      videoSrc: "https://joy1.videvo.net/videvo_files/video/free/2014-12/large_watermarked/Typing_dark_04_preview.mp4",
-      link: "#",
-      className: "min-h-[280px]"
+      tags: ['NextJs', 'TypeScript', 'React'],
+      images: [
+        "/images/projects/cryptodash-combined.png",
+        "/images/projects/cryptodash-pc.png",
+        "/images/projects/cryptodash-phone.png"
+      ],
+      link: "www.github.com/osafalisayed/cryptodash"
     }
   ];
 
