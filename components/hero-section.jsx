@@ -30,8 +30,8 @@ export default function HeroSection() {
           />
         </div>
         <div className="flex-1">
-          <h1 className="text-2xl font-bold text-white tracking-tight">Osaf Ali Sayed</h1>
-          <p className="text-neutral-500">Full Stack Developer</p>
+          <h1 className="text-2xl  font-bold text-white tracking-tight">Osaf Ali Sayed</h1>
+          <p className="text-sm text-neutral-400">Full Stack Developer</p>
         </div>
         <div className="flex gap-3">
           {socialLinks.map((link) => (
