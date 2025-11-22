@@ -2,9 +2,10 @@ import Icons from './icons';
 
 const Navbar = () => {
   const navItems = [
-    { icon: <Icons.Home />, label: "Home", href: "#home" },
-    { icon: <Icons.Pen />, label: "Writing", href: "#writing" },
-    { icon: <Icons.Grid3X3 />, label: "Projects", href: "#projects" },
+    { icon: <Icons.Home />, label: "Home", href: "/" },
+    { icon: <Icons.Pen />, label: "Writing", href: "/blog" },
+    { icon: <Icons.Grid3X3 />, label: "Projects", href: "/projects" },
+    { icon: <Icons.OpenSource />, label: "Open Source", href: "/opensource" },
     { icon: <Icons.Briefcase />, label: "Work", href: "#work" }
   ];
 
