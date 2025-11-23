@@ -1,5 +1,3 @@
-'use client';
-
 // Import icons you want to use throughout your project
 import {
   FaGithub,
@@ -32,7 +30,11 @@ import {
   FaCss3Alt,
   FaSass,
   FaVuejs,
-  FaDigitalOcean
+  FaDigitalOcean,
+  FaHome,
+  FaPen,
+  FaTh,
+  FaSearch
 } from 'react-icons/fa';
 
 import {
@@ -99,6 +101,10 @@ import {
   IoLogoHtml5
 } from 'react-icons/io5';
 
+import {
+  MdArticle
+} from 'react-icons/md';
+
 // Define your icon mapping
 const Icons = {
   // Social media and contact
@@ -112,6 +118,7 @@ const Icons = {
   Upwork: FaUpwork,
   ExternalLink: FaExternalLinkAlt,
   Document: IoDocument,
+  FileText: MdArticle,
   Check: FaCheck,
   LightBulb: FaLightbulb,
   Bug: FaBug,
@@ -125,7 +132,9 @@ const Icons = {
   // Navigation
   Menu: FaBars,
   Close: FaTimes,
+  X: FaTimes,  // Add X as alias for Close
   ChevronDown: FaChevronDown,
+  Search: FaSearch,  // Add Search explicitly
   
   // Section icons
   Code: FaCode,
@@ -134,6 +143,7 @@ const Icons = {
   Database: FaDatabase,
   Project: LuLaptop,         // Changed to Laptop icon from Lucide
   Education: FaGraduationCap,
+  GraduationCap: FaGraduationCap,
   Experience: FaBriefcase,
   Skills: LuAward,  // Changed to Award icon from Lucide
   About: FaUser,
@@ -141,6 +151,12 @@ const Icons = {
   Phone: FaPhone,
   OpenSource: FaCode,
   Star: FaStar,
+
+  // Navigation icons
+  Home: FaHome,
+  Pen: FaPen,
+  Grid3X3: FaTh,
+  Briefcase: FaBriefcase,
 
 
   // Technology icons

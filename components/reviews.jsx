@@ -1,26 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Icons from './icons';
-import { useState } from 'react';
 
 export default function ReviewsSection() {
-  // Store expanded review states
-  const [expandedReviews, setExpandedReviews] = useState({});
-
-  // Toggle a specific review's expanded state
-  const toggleReviewExpansion = (reviewId) => {
-    setExpandedReviews(prev => ({
-      ...prev,
-      [reviewId]: !prev[reviewId]
-    }));
-  };
-
   const reviews = [
     {
       id: 1,
       name: 'Kenny Joseph',
-      title: '',
       company: 'Cryptodashboard - Upwork',
       rating: 5,
       review: 'Great work from Osaf. He did the project exactly as requested',
@@ -29,7 +15,6 @@ export default function ReviewsSection() {
     {
       id: 2,
       name: 'Carl Johan Larrson',
-      title: '',
       company: 'Mock Service in Supabase - Upwork',
       rating: 5,
       date: 'September 2025'
@@ -42,104 +27,54 @@ export default function ReviewsSection() {
       stars.push(
         <Icons.Star 
           key={i} 
-          className={`w-4 h-4 ${i < rating ? 'text-secondary' : 'text-foreground/30'}`}
+          className={`w-3 h-3 ${i < rating ? 'text-yellow-500' : 'text-neutral-800'}`}
         />
       );
     }
     return (
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-0.5">
         {stars}
       </div>
     );
   };
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0 }
-  };
-
   return (
-    <section>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="font-bold text-start mb-4 text-foreground">
-          Reviews
-        </h2>
-        <p className="text-start text-foreground/70">
-          Feedback from clients and collaborators on my work and professional engagements.
-        </p>
-      </motion.div>
+    <section id="reviews" className="mb-10 scroll-mt-24">
+      <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Reviews
+      </h2>
 
-      <div className="relative">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="space-y-8 mt-8"
-        >
-          {reviews.map((review) => (
-            <motion.div
-              key={review.id}
-              variants={item}
-              className="relative"
-            >
-              <motion.div className="bg-transparent rounded-r-lg">
-                <div className="mb-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex flex-col justify-start min-w-0 flex-1">
-                      <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-1">
-                        {review.name}
-                      </h3>
-                      <p className="text-sm sm:text-base text-foreground/60">
-                        {review.title && `${review.title} at `}{review.company}
-                      </p>
-                      <div className="flex items-center gap-3 mt-2">
-                        {renderRating(review.rating)}
-                        <span className="text-sm text-foreground/60">{review.date}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <div className="grid grid-cols-1 gap-4">
+        {reviews.map((review) => (
+          <div 
+            key={review.id}
+            className="p-4 rounded-xl bg-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-300"
+          >
+            <div className="flex justify-between items-start mb-3">
+              <div>
+                <h3 className="text-sm font-medium text-white mb-0.5">
+                  {review.name}
+                </h3>
+                <p className="text-xs text-neutral-500">
+                  {review.company}
+                </p>
+              </div>
+              {renderRating(review.rating)}
+            </div>
 
-                {/* Review Text - Only show if review exists */}
-                {review.review && (
-                  <div className="mt-4">
-                    <div className="relative">
-                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                        {expandedReviews[review.id] || review.review.length <= 200 
-                          ? review.review 
-                          : review.review.substring(0, 200) + '...'}
-                      </p>
-                      {review.review.length > 200 && (
-                        <button 
-                          onClick={() => toggleReviewExpansion(review.id)}
-                          className="text-sm text-secondary hover:text-secondary/80 font-medium mt-2 focus:outline-none"
-                        >
-                          {expandedReviews[review.id] ? 'Show less' : 'Read more'}
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
+            {review.review && (
+              <p className="text-xs text-neutral-400 leading-relaxed italic">
+                &quot;{review.review}&quot;
+              </p>
+            )}
+            
+            {!review.review && (
+              <p className="text-xs text-neutral-600 italic">
+                No written review provided
+              </p>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );
