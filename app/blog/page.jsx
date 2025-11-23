@@ -1,4 +1,4 @@
-import Link from 'next/link';
+  import Link from 'next/link';
 import { getAllPosts } from '../../lib/blog';
 import Navbar from '../../components/navbar';
 import Icons from '../../components/icons';
@@ -33,9 +33,7 @@ export default function BlogPage({ searchParams }) {
   // Filter posts based on search term
   const filteredPosts = searchTerm
     ? posts.filter((post) =>
-        post.metadata.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.metadata.excerpt?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.content?.toLowerCase().includes(searchTerm.toLowerCase())
+        post.metadata.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : posts;
 
