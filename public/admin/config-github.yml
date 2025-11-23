@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: OsafAliSayed/Portfolio
   branch: main
-
-# Local development backend
-local_backend: true
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
