@@ -64,7 +64,7 @@ export default function ReviewsSection() {
 
             {review.review && (
               <p className="text-xs text-neutral-400 leading-relaxed italic">
-                "{review.review}"
+                &quot;{review.review}&quot;
               </p>
             )}
             

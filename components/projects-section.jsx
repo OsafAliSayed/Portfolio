@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Icons from './icons';
 
 const ProjectCard = ({ title, desc, tags, images, link, className }) => {
@@ -41,10 +42,12 @@ const ProjectCard = ({ title, desc, tags, images, link, className }) => {
               key={index}
               className="relative flex-shrink-0 h-full w-full"
             >
-              <img 
+              <Image 
                 src={image} 
                 alt={`${title} - Image ${index + 1}`} 
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-300"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-300"
               />
             </div>
           ))}

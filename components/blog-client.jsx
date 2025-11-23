@@ -70,7 +70,7 @@ function BlogContent({ posts }) {
         <div className="space-y-0">
           {filteredPosts.length === 0 && searchTerm ? (
             <div className="py-12 text-center">
-              <p className="text-neutral-500 text-sm">No articles found matching "{searchTerm}".</p>
+              <p className="text-neutral-500 text-sm">No articles found matching &quot;{searchTerm}&quot;.</p>
             </div>
           ) : filteredPosts.length === 0 ? (
             <div className="py-12 text-center">
