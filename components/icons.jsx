@@ -143,6 +143,7 @@ const Icons = {
   Database: FaDatabase,
   Project: LuLaptop,         // Changed to Laptop icon from Lucide
   Education: FaGraduationCap,
+  GraduationCap: FaGraduationCap,
   Experience: FaBriefcase,
   Skills: LuAward,  // Changed to Award icon from Lucide
   About: FaUser,

@@ -126,7 +126,7 @@ const ProjectsSection = () => {
         "/images/projects/aikaatib-pc.png",
         "/images/projects/aikaatib-phone.png"
       ],
-      link: "www.github.com/osafalisayed/aikaatib"
+      link: "https://www.github.com/osafalisayed/aikaatib"
     },
     {
       title: "CryptoDash",
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
         "/images/projects/cryptodash-pc.png",
         "/images/projects/cryptodash-phone.png"
       ],
-      link: "www.github.com/osafalisayed/cryptodash"
+      link: "https://www.github.com/osafalisayed/crypto-dashboard"
     }
   ];
 
