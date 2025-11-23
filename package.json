@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out",
+    "cms": "npx decap-server",
+    "dev:cms": "concurrently \"npm run dev\" \"npm run cms\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -78,6 +80,9 @@
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
-    "frontmatter-markdown-loader": "^3.7.0"
+    "concurrently": "^9.2.1",
+    "decap-server": "^3.4.0",
+    "frontmatter-markdown-loader": "^3.7.0",
+    "netlify-cms-proxy-server": "^1.3.24"
   }
 }
