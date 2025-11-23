@@ -1,5 +1,5 @@
 import './globals.css';
-import { Providers } from './provider';
+import{ PostHogProvider } from './provider';
 import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 
 const inter = Inter({
@@ -40,9 +40,9 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
         <body className={`${inter.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} font-inter bg-background text-foreground h-full`}>
-          <Providers>
+          <PostHogProvider>
             {children}
-          </Providers>
+          </PostHogProvider>
       </body>
     </html>
   );
