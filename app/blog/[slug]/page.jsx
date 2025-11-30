@@ -93,6 +93,17 @@ export default async function BlogPost({ params }) {
 
             </div>
           </header>
+          
+          {/* Cover Image */}
+          {post.metadata.image && (
+            <div className="my-6">
+              <img
+                src={post.metadata.image}
+                alt={post.metadata.title}
+                className="w-full h-auto  border border-white/10"
+              />
+            </div>
+          )}
 
           {/* Article content */}
           <div className="border-t border-white/5 pt-2">
