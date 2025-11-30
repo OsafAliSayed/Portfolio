@@ -1,133 +1,47 @@
-# GitHub Copilot Instructions for Portfolio Project
+# Copilot / AI agent instructions — Portfolio (Next.js)
 
-## Project Overview
+This repo is a small Next.js (App Router) portfolio that uses Tailwind, Shadcn UI primitives, and a file-based blog.
+Keep instructions concise and only provide code that follows existing patterns (server components by default, centralized icons, Tailwind classes, and gray-matter for blog parsing).
 
-This is a personal portfolio website built with Next.js 13.5.1, React 18.2.0, and Tailwind CSS 3.3.3. The portfolio showcases projects, skills, education, work experience, and includes a blog section. It features a clean, responsive design with dark/light mode support powered by next-themes. The project includes content management capabilities for blog posts using markdown files.
+Key files and where to look
+- App router & theme: `app/layout.jsx`, `app/provider.jsx` (wraps PostHog + theme)
+- Blog model: `lib/blog.js` — uses `public/content/blog/*.md` and `gray-matter` (examples: frontmatter `title`, `date`, `views`).
+- Components: `components/` and `components/ui/` (shadcn primitives). Examples: `components/blog-section.jsx`, `components/icons.jsx` (centralized icon map).
+- Static content: blog posts and CMS config under `public/content/blog/` and `public/admin/`.
+- Scripts & dev: `package.json` (dev, build, deploy via gh-pages, local CMS via `decap-server`).
 
-## Project Structure
+Small contract for changes you suggest or implement
+- Inputs: new/edited component files or markdown files under `public/content/blog/`.
+- Outputs: follow existing export/usage patterns (e.g., `getAllPosts()` API in `lib/blog.js`), use Tailwind classes and `components/ui/*` primitives when available.
+- Error modes: if reading files under `public/content/blog/` may be absent; `lib/blog.js` guards for missing directory — keep same defensive style.
 
-- `app/`: Next.js app directory (App Router)
-  - `layout.jsx`: Root layout with theme provider
-  - `page.jsx`: Main page component
-  - `globals.css`: Global CSS styles
-  - `provider.jsx`: Theme and context providers
-  - `blog/`: Blog-related pages
-    - `page.jsx`: Blog listing page
-    - `[slug]/`: Dynamic blog post pages
+Project-specific patterns to follow
+- Server vs Client components: prefer server components. Only add `"use client"` when using hooks or browser-only APIs. Many top-level components (sections) are server components that call `lib/*` directly (see `components/blog-section.jsx`).
+- Icons: use `components/icons.jsx` for mapping icon names to react-icons; import that single module instead of ad-hoc react-icon imports.
+- Blog content: add markdown files to `public/content/blog/` with frontmatter similar to `welcome.md`. `lib/blog.js` reads `slug.md` and expects `metadata.title`, `metadata.date`, `metadata.views`.
+- Styling: prefer Tailwind utility classes and the theme variables in `app/globals.css` (use `bg-background`, `text-foreground`, etc.). Use `components/ui/*` for common patterns (buttons, cards).
+- Analytics: PostHog wiring lives in `app/provider.jsx` and `lib/posthog.js` — keep instrumentation minimal and consistent with current calls.
 
-- `components/`: React components
-  - `ui/`: Shadcn UI components
-  - Section components (hero, about, projects, blog, etc.)
-  - `icons.jsx`: Centralized icon mapping
-  - `navbar.jsx`: Navigation component
-  - Theme-related components
+Developer workflows / commands (explicit)
+- Start dev server: `npm run dev` (runs `next dev`).
+- Build for production: `npm run build` (runs `next build`).
+- Serve static export: repository uses `npm run start` which serves the `out` directory (after `next export` if used). For normal preview of build use `next start` if needed.
+- Deploy to GH Pages: `npm run deploy` (uses `gh-pages -d out`). Note: ensure `next export` is run if you rely on `out`.
+- Local CMS: `npm run cms` (decap-server); run both with `npm run dev:cms` which runs concurrently.
 
-- `lib/`: Utility functions and configurations
-  - `blog.js`: Blog post management functions
-  - `utils.ts`: General utility functions
+Examples to copy from repo
+- Read posts: `lib/blog.js` (getAllPostSlugs, getAllPosts). When writing code that lists posts, mirror `components/blog-section.jsx` which maps `metadata` fields to UI props.
+- Layout/provider: `app/layout.jsx` wraps the app in `PostHogProvider` and includes `globals.css`. Follow this structure for providers.
 
-- `public/`: Static assets
-  - `images/`: Images for projects, experience, and skills
-  - `content/blog/`: Markdown files for blog posts
-  - `favicon.jpeg`: Site favicon
-  - `admin/`: CMS configuration files
+When updating or adding files, keep changes minimal and consistent
+- Preserve default exports for components already used by layout/page imports.
+- Avoid changing global theme variables. If necessary, update `app/globals.css` and reference variables like `var(--primary)`.
 
-## Tech Stack
+When you are unsure
+- If a change touches build/deploy behavior, mention the exact `package.json` script to update and test locally (`npm run build` then `npm run start` or `next start`).
+- If adding remote services (new analytics, CMS provider), add configuration to `public/admin/` and document environment variables in the repo README — but do not commit secrets.
 
-- **Frontend Framework**: Next.js 13.5.1
-- **UI Library**: React 18.2.0
-- **Styling**: 
-  - Tailwind CSS 3.3.3
-  - CSS Modules
-- **UI Components**:
-  - Shadcn UI (Radix UI primitives)
-  - Framer Motion for animations
-  - React Icons for comprehensive icon library
-- **Content Management**:
-  - Markdown files for blog posts with frontmatter
-  - Gray-matter for parsing markdown frontmatter
-  - File-based CMS approach
-- **Theming**: Always use the custom variables defined in `globals.css` for colors and themes. such as `var(--primary)`, `var(--secondary)`, etc. You can also use Tailwind CSS classes for colors like `bg-primary`, `text-secondary`, etc.
+If you make edits, run the dev server locally and verify pages that render server-side (e.g., the home page and `/blog`) and confirm there are no filesystem-read errors when reading `public/content/blog/`.
 
-## Coding Standards
+— End of agent instructions —
 
-### Components
-- Use functional components with hooks
-- Follow JSX best practices
-- Keep components modular and focused on a single responsibility
-- Use prop destructuring for clarity
-- **Server vs Client Components**: Be mindful of Next.js App Router distinctions
-  - Use Server Components by default for data fetching and static content always avoid `"use client"` directive unless necessary
-
-### Icon Management
-- Use the centralized `icons.jsx` component for all icons
-- Import icons from react-icons and map them in the Icons object
-- Reference icons as `<Icons.IconName />` throughout the application
-
-### Styling
-- Use Tailwind CSS classes as primary styling method
-- Maintain consistent color scheme using the theme
-- Use CSS modules for complex component-specific styling
-- Follow mobile-first responsive design principles
-
-### File Naming
-- Use kebab-case for files: `component-name.jsx`
-- Use PascalCase for component names: `ComponentName`
-
-### State Management
-- Use React hooks (useState, useEffect, etc.) for state management
-- Consider context API for theme and global state
-
-## Development Workflow
-
-### Adding New Components
-1. Create component file in appropriate directory
-2. Import necessary dependencies and UI components
-3. Implement component using existing styling patterns
-4. Export component and import where needed
-
-### Adding New Sections
-1. Create new section component in `/components`
-2. Add to main page in appropriate order
-3. Ensure responsive design for all screen sizes
-
-### Blog Management
-When working with blog posts:
-1. Create markdown files in `/public/content/blog/`
-2. Use frontmatter for metadata (title, date, views, etc.)
-3. Blog posts are processed server-side using the functions in `/lib/blog.js`
-4. Ensure proper error handling for missing or malformed blog content
-
-### Updating Projects
-When adding new projects to the portfolio:
-1. Add project data to the projects array in `projects-section.jsx`
-2. Add project images to `/public/images/projects/`
-3. Ensure consistent image sizing and formatting
-
-## Best Practices
-
-### Performance
-- Use Next.js Image component for optimized images
-- Implement lazy loading where appropriate
-- Keep component re-renders to a minimum
-
-### Accessibility
-- Use semantic HTML elements
-- Ensure proper contrast ratios for text
-- Add appropriate ARIA attributes when necessary
-- Ensure keyboard navigation works correctly
-
-### SEO
-- Use appropriate meta tags in layout
-- Use semantic HTML structure
-- Ensure content is crawlable
-
-## Deployment
-- Project is built with `next build`
-- Outputs static files with `next export`
-- Deployed using GitHub Pages
-
-## Additional Notes
-- Theme switching functionality should always be preserved
-- Maintain responsive design for all screen sizes (mobile, tablet, desktop)
-- Keep dependencies updated but avoid breaking changes
