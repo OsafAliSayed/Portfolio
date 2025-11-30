@@ -6,7 +6,7 @@ tags:
 - welcome
 - introduction
 title: Welcome to My Blog
-views: '22'
+views: '0'
 ---
 # Welcome to My Blog
 
