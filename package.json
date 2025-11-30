@@ -10,8 +10,8 @@
     "deploy": "gh-pages -d out",
     "cms": "npx decap-server",
     "dev:cms": "concurrently \"npm run start\" \"npm run cms\"",
-    "test:blog-views": "node scripts/test-blog-views.js",
-    "update:blog-views": "node scripts/update-blog-views.js"
+    "update:blog-views": ".venv/bin/python scripts/update-views.py",
+    "update:blog-views:dry": ".venv/bin/python scripts/update-views.py --dry-run"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

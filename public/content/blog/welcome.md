@@ -1,11 +1,13 @@
 ---
-title: "Welcome to My Blog"
-date: "2025-11-23"
-excerpt: "Welcome to my personal blog where I share insights about software development, technology, and my journey as a developer."
-tags: ["welcome", "introduction"]
-views: "0"
+date: '2025-11-23'
+excerpt: Welcome to my personal blog where I share insights about software development,
+  technology, and my journey as a developer.
+tags:
+- welcome
+- introduction
+title: Welcome to My Blog
+views: '22'
 ---
-
 # Welcome to My Blog
 
 Thank you for visiting my blog! This space is dedicated to sharing my thoughts, experiences, and learnings in the world of software development.
