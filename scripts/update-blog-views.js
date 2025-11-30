@@ -1,150 +1,119 @@
-const fs = require('fs');
-const path = require('path');
-const matter = require('gray-matter');
+#!/usr/bin/env node
 
-// PostHog configuration
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
 const POSTHOG_PROJECT_ID = process.env.POSTHOG_PROJECT_ID;
 const POSTHOG_API_KEY = process.env.POSTHOG_API_KEY;
-const POSTHOG_HOST = 'https://us.i.posthog.com';
-
-if (!POSTHOG_PROJECT_ID || !POSTHOG_API_KEY) {
-  console.error('Missing required environment variables: POSTHOG_PROJECT_ID, POSTHOG_API_KEY');
-  process.exit(1);
-}
+const POSTHOG_API_URL = `https://us.posthog.com/api/projects/${POSTHOG_PROJECT_ID}/query/`;
 
 const postsDirectory = path.join(process.cwd(), 'public/content/blog');
 
-// Function to query PostHog for page views
-async function queryPostHog(slug) {
-  const query = {
-    query: {
-      kind: 'EventsQuery',
-      select: ['count()'],
-      event: '$pageview',
-      where: [`properties.$pathname = '/blog/${slug}'`],
-      dateRange: {
-        date_from: null, // All time
-        date_to: null
-      }
-    }
-  };
-
+async function fetchBlogViews() {
   try {
-    const response = await fetch(`${POSTHOG_HOST}/api/projects/${POSTHOG_PROJECT_ID}/query/`, {
+    const response = await fetch(POSTHOG_API_URL, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${POSTHOG_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(query)
+      body: JSON.stringify({
+        query: {
+          kind: 'HogQLQuery',
+          query: "SELECT properties.$pathname as page, COUNT(*) as views FROM events WHERE event = '$pageview' AND properties.$pathname LIKE '/blog/%' GROUP BY properties.$pathname ORDER BY views DESC"
+        }
+      })
     });
 
     if (!response.ok) {
-      console.error(`PostHog API error for slug ${slug}:`, response.status, response.statusText);
-      return null;
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
     
-    // Extract the count from the response
-    if (data.results && data.results.length > 0 && data.results[0].length > 0) {
-      return data.results[0][0]; // The count is the first element of the first result
-    }
-    
-    return 0; // Default to 0 if no results
-  } catch (error) {
-    console.error(`Error querying PostHog for slug ${slug}:`, error);
-    return null;
-  }
-}
-
-// Function to update a blog post's view count
-function updatePostViews(slug, viewCount) {
-  try {
-    const filePath = path.join(postsDirectory, `${slug}.md`);
-    
-    if (!fs.existsSync(filePath)) {
-      console.warn(`File not found: ${filePath}`);
-      return false;
+    if (data.error) {
+      throw new Error(`PostHog API error: ${data.error}`);
     }
 
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    // Update the views field
-    data.views = viewCount.toString();
-
-    // Write back to file
-    const updatedContent = matter.stringify(content, data);
-    fs.writeFileSync(filePath, updatedContent, 'utf8');
+    return data.results || [];
+  } catch (error) {
+    console.error('Error fetching blog views from PostHog:', error);
     
-    console.log(`Updated ${slug}: ${viewCount} views`);
-    return true;
-  } catch (error) {
-    console.error(`Error updating post ${slug}:`, error);
-    return false;
-  }
-}
-
-// Function to get all blog post slugs
-function getAllPostSlugs() {
-  try {
-    if (!fs.existsSync(postsDirectory)) {
-      console.error('Posts directory does not exist');
-      return [];
-    }
-
-    const fileNames = fs.readdirSync(postsDirectory);
-    return fileNames
-      .filter(name => name.endsWith('.md') && !name.startsWith('.'))
-      .map(name => name.replace(/\.md$/, ''));
-  } catch (error) {
-    console.error('Error reading posts directory:', error);
+    // For testing purposes, you can uncomment this section to use mock data
+    // console.log('Using mock data for testing...');
+    // return [
+    //   ["/blog/welcome/", 22],
+    //   ["/blog/", 9]
+    // ];
+    
     return [];
   }
 }
 
-// Main function
-async function updateBlogViews() {
-  console.log('Starting blog view count update...');
-  
-  const slugs = getAllPostSlugs();
-  console.log(`Found ${slugs.length} blog posts:`, slugs);
+function parsePathToSlug(pathname) {
+  // Convert "/blog/welcome/" or "/blog/welcome" to "welcome"
+  const match = pathname.match(/^\/blog\/([^\/]+)\/?$/);
+  return match ? match[1] : null;
+}
 
-  if (slugs.length === 0) {
-    console.log('No blog posts found');
+async function updateBlogViews() {
+  console.log('Fetching blog views from PostHog...');
+  
+  const viewsData = await fetchBlogViews();
+  
+  if (viewsData.length === 0) {
+    console.log('No blog views data found or error occurred');
     return;
   }
 
-  let updatedCount = 0;
-  let totalViews = 0;
+  console.log(`Found ${viewsData.length} blog view entries`);
 
-  for (const slug of slugs) {
-    console.log(`Querying views for: ${slug}`);
-    
-    const viewCount = await queryPostHog(slug);
-    
-    if (viewCount !== null) {
-      const success = updatePostViews(slug, viewCount);
-      if (success) {
-        updatedCount++;
-        totalViews += viewCount;
-      }
-    } else {
-      console.warn(`Skipping ${slug} due to API error`);
+  // Create a map of slug to views
+  const viewsMap = new Map();
+  
+  for (const [pathname, views] of viewsData) {
+    const slug = parsePathToSlug(pathname);
+    if (slug) {
+      viewsMap.set(slug, views);
+      console.log(`${slug}: ${views} views`);
     }
-
-    // Add a small delay to avoid rate limiting
-    await new Promise(resolve => setTimeout(resolve, 1000));
   }
 
-  console.log(`\nUpdate completed:`);
-  console.log(`- Posts updated: ${updatedCount}/${slugs.length}`);
-  console.log(`- Total views across all posts: ${totalViews}`);
+  // Update each blog file
+  if (!fs.existsSync(postsDirectory)) {
+    console.error('Blog directory does not exist');
+    return;
+  }
+
+  const blogFiles = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
+  
+  for (const file of blogFiles) {
+    const slug = file.replace('.md', '');
+    const filePath = path.join(postsDirectory, file);
+    
+    try {
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const { data: frontmatter, content } = matter(fileContent);
+      
+      const views = viewsMap.get(slug) || 0;
+      
+      // Update views in frontmatter
+      
+      frontmatter.views = views.toString();
+      // Reconstruct the file with updated frontmatter
+      const updatedContent = matter.stringify(content, frontmatter);
+      
+      fs.writeFileSync(filePath, updatedContent, 'utf8');
+      
+      console.log(`Updated ${slug}: ${views} views`);
+    } catch (error) {
+      console.error(`Error updating ${file}:`, error);
+    }
+  }
+  
+  console.log('Blog views update completed!');
 }
 
 // Run the script
-updateBlogViews().catch(error => {
-  console.error('Script failed:', error);
-  process.exit(1);
-});
+updateBlogViews().catch(console.error);
