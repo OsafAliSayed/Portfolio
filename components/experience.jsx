@@ -5,7 +5,7 @@ import Image from 'next/image';
 import highlightKeywords from '../lib/highlight-utils';
 import Icons from './icons';
 
-const ExperienceTimeline = () => {
+const   ExperienceTimeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverTimeout, setHoverTimeout] = useState(null);
 
@@ -47,7 +47,7 @@ const ExperienceTimeline = () => {
       company: "Ecomlytix",
       position: "Freelance Full Stack Developer",
       type: "Freelance",
-      duration: "Aug 2022 - Present",
+      duration: "Aug 2025 - Present",
       location: "Remote",
       logo: "/images/experience/ecomlytix_logo.png",
       description: [
