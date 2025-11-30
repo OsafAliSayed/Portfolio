@@ -3,7 +3,7 @@ title: "Welcome to My Blog"
 date: "2025-11-23"
 excerpt: "Welcome to my personal blog where I share insights about software development, technology, and my journey as a developer."
 tags: ["welcome", "introduction"]
-views: "0 views"
+views: "0"
 ---
 
 # Welcome to My Blog

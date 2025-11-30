@@ -176,15 +176,32 @@ const ExperienceTimeline = () => {
             
             {/* Basic Info (Always Visible) */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1">
-              <h3 className="text-white font-medium text-sm">{job.company}</h3>
-              <span className="text-xs text-neutral-500 font-mono">{job.duration}</span>
+              <h3 className="text-white font-medium text-sm mb-1">{job.company}</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-neutral-500 font-mono">{job.duration}</span>
+                <button
+                  type="button"
+                  aria-expanded={hoveredIndex === i}
+                  aria-controls={`exp-details-${job.id}`}
+                  onClick={(e) => { e.stopPropagation(); handleClick(i); }}
+                  className="p-1 rounded-md text-neutral-300 bg-neutral-900/40 hover:bg-neutral-800 transition"
+                  title={hoveredIndex === i ? 'Collapse' : 'Expand'}
+                >
+                  {Icons.ChevronDown && (
+                    <Icons.ChevronDown className={`text-neutral-500 w-4 h-4 transition-transform ${hoveredIndex === i ? 'rotate-180' : ''}`} />
+                  )}
+                </button>
+              </div>
             </div>
             <p className="text-xs italic mb-2">{job.position}</p>
             
             {/* Expanded Details (Only on Hover) */}
-            <div className={`overflow-hidden transition-all duration-300 ${
-              hoveredIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-            }`}>
+            <div
+              id={`exp-details-${job.id}`}
+              className={`overflow-hidden transition-all duration-300 ${
+                hoveredIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
               <div className="pt-3 space-y-3">
                 {/* Description */}
                 <div className="space-y-2">

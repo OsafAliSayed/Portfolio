@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "next lint",
     "deploy": "gh-pages -d out",
     "cms": "npx decap-server",
-    "dev:cms": "concurrently \"npm run dev\" \"npm run cms\""
+    "dev:cms": "concurrently \"npm run start\" \"npm run cms\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
