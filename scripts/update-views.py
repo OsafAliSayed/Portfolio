@@ -58,7 +58,10 @@ def query_posthog_views() -> Dict[str, int]:
                 view_counts[path] = views
         
         print(f"Retrieved view counts for {len(view_counts)} blog pages")
-        return view_counts
+        
+        # Aggregate views for paths with and without trailing slashes
+        aggregated_view_counts = aggregate_views(view_counts)
+        return aggregated_view_counts
         
     except requests.exceptions.RequestException as e:
         print(f"Error querying PostHog: {e}")
@@ -66,6 +69,29 @@ def query_posthog_views() -> Dict[str, int]:
     except Exception as e:
         print(f"Error processing PostHog response: {e}")
         return {}
+
+def aggregate_views(view_counts: Dict[str, int]) -> Dict[str, int]:
+    """
+    Aggregate views for paths with and without trailing slashes.
+
+    Args:
+        view_counts: Dictionary mapping paths to view counts
+
+    Returns:
+        Aggregated dictionary mapping paths to total view counts
+    """
+    aggregated = {}
+
+    for path, views in view_counts.items():
+        # Normalize path by removing trailing slash
+        normalized_path = path.rstrip('/')
+
+        if normalized_path in aggregated:
+            aggregated[normalized_path] += views
+        else:
+            aggregated[normalized_path] = views
+
+    return aggregated
 
 def extract_frontmatter_and_content(content: str) -> Tuple[Dict, str]:
     """
