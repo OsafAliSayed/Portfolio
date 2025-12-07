@@ -46,3 +46,9 @@ jobs:
             git commit -m "Update blog post view counts [automated]"
             git push
           fi
+
+      - name: Trigger Deploy Workflow
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: trigger-deploy
