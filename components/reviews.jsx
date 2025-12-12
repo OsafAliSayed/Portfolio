@@ -1,42 +1,28 @@
-'use client';
+"use client";
 
-import Icons from './icons';
+import Link from 'next/link';
+import Icons from "./icons";
+import { MouseFollowTooltip } from "@/components/ui/tooltip";
+import { reviews } from "@/lib/constants";
 
 export default function ReviewsSection() {
-  const reviews = [
-    {
-      id: 1,
-      name: 'Kenny Joseph',
-      company: 'Cryptodashboard - Upwork',
-      rating: 5,
-      review: 'Great work from Osaf. He did the project exactly as requested',
-      date: 'August 2025'
-    },
-    {
-      id: 2,
-      name: 'Carl Johan Larrson',
-      company: 'Mock Service in Supabase - Upwork',
-      rating: 5,
-      date: 'September 2025'
-    }
-  ];
-
   const renderRating = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       stars.push(
-        <Icons.Star 
-          key={i} 
-          className={`w-3 h-3 ${i < rating ? 'text-yellow-500' : 'text-neutral-800'}`}
+        <Icons.Star
+          key={i}
+          className={`w-3 h-3 ${
+            i < rating ? "text-yellow-500" : "text-neutral-800"
+          }`}
         />
       );
     }
-    return (
-      <div className="flex items-center gap-0.5">
-        {stars}
-      </div>
-    );
+    return <div className="flex items-center gap-0.5">{stars}</div>;
   };
+
+  // Show only the first 3 reviews in the section
+  const displayedReviews = reviews.slice(0, 4);
 
   return (
     <section id="reviews" className="mb-10 scroll-mt-24">
@@ -44,37 +30,54 @@ export default function ReviewsSection() {
         <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Reviews
       </h2>
 
-      <div className="grid grid-cols-1 gap-4">
-        {reviews.map((review) => (
-          <div 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {displayedReviews.map((review) => (
+          <MouseFollowTooltip
             key={review.id}
-            className="p-4 rounded-xl bg-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-300"
+            content={review.review || ""}
+            showCondition={() => review.review && review.review.length > 40}
+            className="p-4 bg-[#0a0a0a] border border-white/10 hover:border-white/50 transition-all duration-300 flex flex-col cursor-pointer"
           >
-            <div className="flex justify-between items-start mb-3">
-              <div>
+            {renderRating(review.rating)}
+
+            <div className="flex flex-col flex-grow">
+              {review.review ? (
+                <>
+                  {/* Mobile: Show full review */}
+                  <p className="text-xs text-neutral-400 leading-relaxed italic mt-3 md:hidden">
+                    &quot;{review.review}&quot;
+                  </p>
+                  {/* Desktop: Show truncated review */}
+                  <p className="text-xs text-neutral-400 leading-relaxed italic mt-3 hidden md:block">
+                    &quot;{review.review.length > 50 ? `${review.review.substring(0, 40)}...` : review.review}&quot;
+                  </p>
+                </>
+              ) : (
+                <p className="text-xs text-neutral-600 italic mt-3">
+                  No written review provided
+                </p>
+              )}
+
+              <div className="pt-3">
                 <h3 className="text-sm font-medium text-white mb-0.5">
                   {review.name}
                 </h3>
-                <p className="text-xs text-neutral-500">
-                  {review.company}
-                </p>
+                <p className="text-xs text-neutral-500">{review.company}</p>
               </div>
-              {renderRating(review.rating)}
             </div>
-
-            {review.review && (
-              <p className="text-xs text-neutral-400 leading-relaxed italic">
-                &quot;{review.review}&quot;
-              </p>
-            )}
-            
-            {!review.review && (
-              <p className="text-xs text-neutral-600 italic">
-                No written review provided
-              </p>
-            )}
-          </div>
+          </MouseFollowTooltip>
         ))}
+      </div>
+
+      {/* Read all reviews link */}
+      <div className="mt-6 text-center">
+        <Link 
+          href="/reviews"
+          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors duration-200 group"
+        >
+          Read all reviews
+          <Icons.ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+        </Link>
       </div>
     </section>
   );
