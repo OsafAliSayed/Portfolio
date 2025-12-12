@@ -134,7 +134,7 @@ export default function OpenSourcePage() {
                   return (
                     <span
                       key={tech}
-                      className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800/50 text-neutral-400 rounded-md border border-white/5"
+                      className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800/50 text-neutral-400 border border-white/5"
                     >
                       {IconComponent && <IconComponent className="w-3 h-3" />}
                       {tech}
