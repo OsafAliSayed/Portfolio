@@ -151,6 +151,7 @@ const Icons = {
   Phone: FaPhone,
   OpenSource: FaCode,
   Star: FaStar,
+  Reviews: FaThumbsUp,
 
   // Navigation icons
   Home: FaHome,
@@ -198,7 +199,10 @@ const Icons = {
   Vue: FaVuejs,
   Wagtail: SiWagtail,
   NestJs: SiNestjs,
-  DigitalOcean: FaDigitalOcean
+  DigitalOcean: FaDigitalOcean,
+
+  Bot: FaRobot,
+  TrendingUp: FaChartBar
 };
 
 export default Icons;

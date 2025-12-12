@@ -7,6 +7,7 @@ const Navbar = () => {
     { icon: <Icons.Pen />, label: "Writing", href: "/blog" },
     // { icon: <Icons.Grid3X3 />, label: "Projects", href: "/projects" },
     { icon: <Icons.OpenSource />, label: "Open Source", href: "/open-source" },
+    { icon: <Icons.Star />, label: "Reviews", href: "/reviews" },
     // { icon: <Icons.GraduationCap />, label: "Education", href: "/education" },
     // { icon: <Icons.Briefcase />, label: "Work", href: "/#work" }
   ];
