@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import CopyButton from './copy-button';
+import CopyButton from '@components/ui/copy-button';
 
 export default function BlogContent({ contentHtml }) {
   const contentRef = useRef(null);

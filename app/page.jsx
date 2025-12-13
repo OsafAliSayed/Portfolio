@@ -1,8 +1,8 @@
 import Navbar from '@/components/navbar';
-import HeroSection from '@/components/hero-section';
-import BlogSection from '@/components/blog-section';
-import ProjectsSection from '@/components/projects-section';
-import ExperienceTimeline from '@/components/experience';
+import HeroSection from '@/components/section/hero-section';
+import BlogSection from '@/components/section/blog-section';
+import ProjectsSection from '@/components/section/projects-section';
+import ExperienceTimeline from '@/components/section/experience-section';
 import ReviewsSection from '@/components/reviews';
 
 export default function Home() {

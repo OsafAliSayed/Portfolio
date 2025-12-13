@@ -2,8 +2,8 @@
 
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
-import highlightKeywords from '../lib/highlight-utils';
-import Icons from './icons';
+import highlightKeywords from '@/lib/highlight-utils';
+import Icons from '@/components/icons';
 
 const   ExperienceTimeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -219,7 +219,7 @@ const   ExperienceTimeline = () => {
                     return (
                       <span
                         key={tech}
-                        className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800 text-neutral-300 rounded-md border border-neutral-700"
+                        className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800 text-neutral-300 border border-neutral-700"
                       >
                         {IconComponent && <IconComponent className="w-3 h-3" />}
                         {tech}

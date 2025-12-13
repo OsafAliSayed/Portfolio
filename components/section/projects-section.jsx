@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Icons from './icons';
+import Icons from '@/components/icons';
 
 const ProjectCard = ({ title, desc, tags, images, link, className }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
