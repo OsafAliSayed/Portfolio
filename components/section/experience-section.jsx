@@ -164,7 +164,7 @@ const   ExperienceTimeline = () => {
             onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
-            <div className="absolute -left-[37px] lg:-left-[44px] top-2 lg:top-0 w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+            <div className="absolute -left-[39px] lg:-left-[44px] w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
               <Image
                 src={job.logo}
                 alt={job.company}
@@ -193,7 +193,7 @@ const   ExperienceTimeline = () => {
                 </button>
               </div>
             </div>
-            <p className="pl-3 text-xs italic mb-2">{job.position}</p>
+            <p className="pl-3 text-xs italic mb-1">{job.position}</p>
             
             {/* Expanded Details (Only on Hover) */}
             <div
