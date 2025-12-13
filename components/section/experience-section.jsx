@@ -154,17 +154,17 @@ const   ExperienceTimeline = () => {
         <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Experience
       </h2>
       
-      <div className="space-y-8 border-l border-white/10 ml-4 pl-6 relative">
+      <div className="space-y-8  border-l-2 border-white/30 ml-5 pl-5 relative">
         {experiences.map((job, i) => (
           <div 
             key={i} 
-            className="relative transition-all duration-400 ease-in-out cursor-pointer group"
+            className="relative transition-all duration-400 ease-in-out cursor-pointer group flex flex-col justify-between"
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
-            <div className="absolute -left-[37px] lg:-left-[41px] top-0.5 w-8 h-8 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+            <div className="absolute -left-[37px] lg:-left-[44px] top-2 lg:top-0 w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
               <Image
                 src={job.logo}
                 alt={job.company}
@@ -175,8 +175,8 @@ const   ExperienceTimeline = () => {
             </div>
             
             {/* Basic Info (Always Visible) */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1">
-              <h3 className="text-white font-medium text-sm mb-1">{job.company}</h3>
+            <div className="pl-3 flex flex-col sm:flex-row sm:items-center justify-between mt-1">
+              <h3 className="text-white font-medium text-sm">{job.company}</h3>
               <div className="flex items-center gap-2">
                 <span className="text-xs text-neutral-500 font-mono">{job.duration}</span>
                 <button
@@ -184,7 +184,7 @@ const   ExperienceTimeline = () => {
                   aria-expanded={hoveredIndex === i}
                   aria-controls={`exp-details-${job.id}`}
                   onClick={(e) => { e.stopPropagation(); handleClick(i); }}
-                  className="p-1 rounded-md text-neutral-300 bg-neutral-900/40 hover:bg-neutral-800 transition"
+                  className="p-1 rounded-md text-neutral-300  hover:bg-neutral-800 transition"
                   title={hoveredIndex === i ? 'Collapse' : 'Expand'}
                 >
                   {Icons.ChevronDown && (
@@ -193,7 +193,7 @@ const   ExperienceTimeline = () => {
                 </button>
               </div>
             </div>
-            <p className="text-xs italic mb-2">{job.position}</p>
+            <p className="pl-3 text-xs italic mb-2">{job.position}</p>
             
             {/* Expanded Details (Only on Hover) */}
             <div

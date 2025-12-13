@@ -58,9 +58,8 @@ export default function HeroSection() {
       </div>
 
       <p className="text-neutral-400 text-base leading-relaxed">
-        I specialize in building robust backend systems and fluid frontend
-        interfaces. Based in India, currently solving data problems at{" "}
-        <span className="text-white font-medium">Ecomlytix</span>.
+        Full-stack engineer transitioning into AI engineering, building intelligent systems end-to-end{" "}
+        <span className="text-white font-medium">@Ecomlytix</span>.
       </p>
     </section>
   );
