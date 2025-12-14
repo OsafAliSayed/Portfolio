@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Icons from './icons';
+import Icons from '@/components/icons';
 
 const Navbar = () => {
   const navItems = [

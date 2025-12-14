@@ -3,8 +3,16 @@
 import Image from 'next/image';
 import Icons from '@/components/icons';
 import Link from 'next/link';
-import { Card, CardTitle, CardHeader, CardDescription, CardContent } from '../ui/card';
 import { projects } from '@/lib/constants';
+import { 
+  Card, 
+  CardTitle, 
+  CardHeader, 
+  CardDescription, 
+  CardContent 
+} from '@/components/ui/card';
+
+
 const ProjectCard = ({ title, desc, tags, link, logo }) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer" className="block">
