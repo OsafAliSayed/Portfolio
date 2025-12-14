@@ -58,7 +58,7 @@ export default function HeroSection() {
       </div>
 
       <p className="text-neutral-400 text-base leading-relaxed">
-        Full-stack engineer transitioning into AI engineering, building intelligent systems end-to-end{" "}
+        Full-stack engineer transitioning into AI engineering, building scalable systems end-to-end{" "}
         <span className="text-white font-medium">@Ecomlytix</span>.
       </p>
     </section>
