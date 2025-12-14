@@ -1,19 +1,40 @@
-import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import Icons from './icons';
+'use client';
 
-const ProjectCard = ({ title, desc, tags, link }) => {
+import Image from 'next/image';
+import Icons from '@/components/icons';
+import Link from 'next/link';
+import { projects } from '@/lib/constants';
+import { 
+  Card, 
+  CardTitle, 
+  CardHeader, 
+  CardDescription, 
+  CardContent 
+} from '@/components/ui/card';
+
+
+const ProjectCard = ({ title, desc, tags, link, logo }) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer" className="block">
       <Card className="group bg-[rgb(10,10,10)] border-[rgb(38,38,38)] hover:border-white/50 transition-all duration-300 rounded-none cursor-pointer">
         <CardHeader className="pb-4">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <CardTitle className="text-lg font-semibold transition-colors">
+              {logo && (
+                <div className="mb-3">
+                  <Image
+                    src={logo}
+                    alt={`${title} logo`}
+                    width={32}
+                    height={32}
+                    className="w-12 h-12 object-contain rounded-[50%] border border-white/10"
+                  />
+                </div>
+              )}
+              <CardTitle className="text-sm font-medium text-white transition-colors">
                 {title}
               </CardTitle>
-              <CardDescription className="mt-2 text-sm text-neutral-400">
+              <CardDescription className="mt-2 text-xs text-neutral-400 leading-relaxed">
                 {desc}
               </CardDescription>
             </div>
@@ -27,7 +48,7 @@ const ProjectCard = ({ title, desc, tags, link }) => {
               return (
                 <span 
                   key={tag} 
-                  className="inline-flex items-center gap-1.5 px-2 py-1 text-xs bg-white/5 border border-white/10 text-neutral-300"
+                  className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-white/5 border border-white/10 text-neutral-300"
                 >
                   {IconComponent && <IconComponent className="w-3 h-3" />}
                   {tag}
@@ -42,21 +63,6 @@ const ProjectCard = ({ title, desc, tags, link }) => {
 };
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "AI Kaatib",
-      desc: "Automated SEO content engine using OpenAI & Celery. Schedule your blog posts and let AI Kaatib handle the rest.",
-      tags: ['Django', 'Python', 'React', 'NextJs', ],
-      link: "https://www.github.com/osafalisayed/aikaatib"
-    },
-    {
-      title: "CryptoDash",
-      desc: "Real-time market tracking with WebSockets. Stay updated with live cryptocurrency prices and trends.",
-      tags: ['NextJs', 'TypeScript', 'React'],
-      link: "https://www.github.com/osafalisayed/crypto-dashboard"
-    }
-  ];
-
   return (
     <section id="projects" className="mb-20 scroll-mt-24">
       <h2 className="text-base font-bold text-white mb-6 flex items-center gap-2">

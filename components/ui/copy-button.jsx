@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Icons from './icons';
+import Icons from '@components/icons';
 
 export default function CopyButton({ code }) {
   const [copied, setCopied] = useState(false);

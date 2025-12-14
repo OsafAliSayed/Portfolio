@@ -1,11 +1,9 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { getPostBySlug, getAllPostSlugs } from "../../../lib/blog";
+import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
 import { remark } from "remark";
 import html from "remark-html";
-import Navbar from "../../../components/navbar";
-import Icons from "../../../components/icons";
-import BlogContent from "../../../components/blog-content";
+import Navbar from "@/components/navbar";
+import BlogContent from "@/components/blog/slug/blog-content";
 
 async function markdownToHtml(markdown) {
   const result = await remark().use(html).process(markdown);

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Icons from "./icons";
+import Icons from "@/components/icons";
 
 export default function HeroSection() {
   const socialLinks = [
@@ -58,9 +58,8 @@ export default function HeroSection() {
       </div>
 
       <p className="text-neutral-400 text-base leading-relaxed">
-        I specialize in building robust backend systems and fluid frontend
-        interfaces. Based in India, currently solving data problems at{" "}
-        <span className="text-white font-medium">Ecomlytix</span>.
+        Full-stack engineer transitioning into AI engineering, building scalable systems end-to-end{" "}
+        <span className="text-white font-medium">@Ecomlytix</span>.
       </p>
     </section>
   );

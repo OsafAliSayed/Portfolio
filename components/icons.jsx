@@ -26,6 +26,8 @@ import {
   FaComment,
   FaThumbsUp,
   FaChevronDown,
+  FaChevronLeft,
+  FaChevronRight,
   FaStar,
   FaCss3Alt,
   FaSass,
@@ -132,8 +134,11 @@ const Icons = {
   // Navigation
   Menu: FaBars,
   Close: FaTimes,
+  Times: FaTimes,
   X: FaTimes,  // Add X as alias for Close
   ChevronDown: FaChevronDown,
+  ChevronLeft: FaChevronLeft,
+  ChevronRight: FaChevronRight,
   Search: FaSearch,  // Add Search explicitly
   
   // Section icons

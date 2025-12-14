@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Navbar from './navbar';
-import SearchForm from './search-form';
+import Navbar from '@/components/navbar'
+import SearchForm from '@/components/search-form';
 
 function BlogPost({ post }) {
   return (

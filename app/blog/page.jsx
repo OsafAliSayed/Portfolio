@@ -1,5 +1,5 @@
-import { getAllPosts } from '../../lib/blog';
-import BlogClient from '../../components/blog-client';
+import { getAllPosts } from '@/lib/blog';
+import BlogClient from '@/components/blog/blog-client';
 
 export default function BlogPage() {
   // Fetch posts server-side
