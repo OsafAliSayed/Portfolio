@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import Icons from "./icons";
+import Icons from "../icons";
 import { MouseFollowTooltip } from "@/components/ui/tooltip";
 import { reviews } from "@/lib/constants";
 
@@ -67,17 +67,6 @@ export default function ReviewsSection() {
             </div>
           </MouseFollowTooltip>
         ))}
-      </div>
-
-      {/* Read all reviews link */}
-      <div className="mt-6 text-center">
-        <Link 
-          href="/reviews"
-          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors duration-200 group"
-        >
-          Read all reviews
-          <Icons.ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-        </Link>
       </div>
     </section>
   );
