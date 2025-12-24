@@ -59,8 +59,7 @@ export default function HeroSection() {
       </div>
 
       <p className="text-neutral-400 text-base leading-relaxed">
-        Full-stack engineer with expertise in Next.JS, Python, Django, Nest.JS. Right now I am focused on building scalable AI Applications {" "}
-        <span className="text-white font-medium">@Ecomlytix</span>.
+        Freelance Full-stack engineer with expertise in <span className="text-secondary font-medium">Next.JS</span>, <span className="text-secondary font-medium">Python</span>, <span className="text-secondary font-medium">Django</span>, <span className="text-secondary font-medium">Nest.JS</span> and <span className="text-secondary font-medium">DigitalOcean</span>. Right now I am focused on building scalable AI applications.
       </p>
     </section>
   );
