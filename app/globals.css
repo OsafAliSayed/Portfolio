@@ -400,6 +400,52 @@ code, pre {
   transition: all 0.3s ease;
 }
 
+/* ------------------------ */
+/* Code block & highlight styles */
+/* Reserve top padding for language badges and add highlight token colors */
+.prose pre {
+  padding-top: 1.25rem; /* make room for language badge */
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.language-badge {
+  position: absolute;
+  top: 0.35rem;
+  left: 0.5rem;
+  z-index: 10;
+  pointer-events: none;
+  font-size: 0.625rem; /* 10px */
+}
+
+/* Minimal highlight.js-like theme (dark) */
+.hljs {
+  background: transparent;
+  color: #e6eef6;
+}
+.hljs-comment,
+.hljs-quote { color: #94a3b8; }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link { color: #7dd3fc; }
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-number { color: #86efac; }
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet { color: #fca5a5; }
+.hljs-built_in,
+.hljs-builtin-name { color: #fbcfe8; }
+
+/* Ensure code blocks scroll horizontally when overflow */
+.prose pre.hljs { overflow-x: auto; border-radius: 8px; }
+
+
 .card-modern:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
