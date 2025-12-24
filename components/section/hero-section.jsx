@@ -40,6 +40,7 @@ export default function HeroSection() {
               Osaf Ali Sayed
             </h1>
             <p className="text-sm text-neutral-400">Full Stack Developer</p>
+            <p className="text-sm text-neutral-400">Rajasthan, India</p>
           </div>
         </div>
         <div className="flex gap-3 mt-6 lg:mt-0">
@@ -58,7 +59,7 @@ export default function HeroSection() {
       </div>
 
       <p className="text-neutral-400 text-base leading-relaxed">
-        Full-stack engineer transitioning into AI engineering, building scalable systems end-to-end{" "}
+        Full-stack engineer with expertise in Next.JS, Python, Django, Nest.JS. Right now I am focused on building scalable AI Applications {" "}
         <span className="text-white font-medium">@Ecomlytix</span>.
       </p>
     </section>
