@@ -158,7 +158,7 @@ const   ExperienceTimeline = () => {
         {experiences.map((job, i) => (
           <div 
             key={i} 
-            className="relative transition-all duration-400 ease-in-out cursor-pointer group flex flex-col justify-between"
+            className="relative transition-all duration-400 ease-in-out group flex flex-col justify-between"
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleClick(i)}

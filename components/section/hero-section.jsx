@@ -50,7 +50,7 @@ export default function HeroSection() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-neutral-500 hover:text-white bg-neutral-900 border border-neutral-800 rounded-md hover:bg-neutral-800 transition-colors"
+              className="p-2 text-neutral-500 hover:text-secondary bg-neutral-900 border border-neutral-800 rounded-md hover:bg-neutral-800 transition-colors"
             >
               <link.icon className="w-4 h-4" />
             </a>

@@ -12,9 +12,8 @@ export default function ReviewsSection() {
       stars.push(
         <Icons.Star
           key={i}
-          className={`w-3 h-3 ${
-            i < rating ? "text-yellow-500" : "text-neutral-800"
-          }`}
+          className={`w-3 h-3 transition-all duration-200 ${i < rating ? "text-white group-hover:text-secondary" : "text-neutral-800 group-hover:text-secondary-800"
+            }`}
         />
       );
     }
@@ -36,20 +35,29 @@ export default function ReviewsSection() {
             key={review.id}
             content={review.review || ""}
             showCondition={() => review.review && review.review.length > 40}
-            className="p-4 bg-[#0a0a0a] border border-white/10 hover:border-white/50 transition-all duration-300 flex flex-col cursor-pointer"
+            className="group p-4 bg-[#0a0a0a] border border-white/10 hover:border-secondary transition-all duration-2F00 flex flex-col "
           >
             {renderRating(review.rating)}
 
             <div className="flex flex-col flex-grow">
+
+
+              <div className="pt-3  ">
+                <h3 className="text-sm font-medium text-white mb-0.5">
+                  {review.name}
+                </h3>
+                <p className="text-xs text-neutral-500">{review.company}</p>
+              </div>
+
               {review.review ? (
                 <>
                   {/* Mobile: Show full review */}
-                  <p className="text-xs text-neutral-400 leading-relaxed italic mt-3 md:hidden">
-                    &quot;{review.review}&quot;
+                  <p className="text-xs text-neutral-400 leading-relaxed italic md:hidden">
+                    {review.review}
                   </p>
                   {/* Desktop: Show truncated review */}
-                  <p className="text-xs text-neutral-400 leading-relaxed italic mt-3 hidden md:block">
-                    &quot;{review.review.length > 50 ? `${review.review.substring(0, 40)}...` : review.review}&quot;
+                  <p className="text-xs text-neutral-400 leading-relaxed italic hidden md:block">
+                    {review.review.length > 50 ? `${review.review.substring(0, 40)}...` : review.review}
                   </p>
                 </>
               ) : (
@@ -57,13 +65,6 @@ export default function ReviewsSection() {
                   No written review provided
                 </p>
               )}
-
-              <div className="pt-3">
-                <h3 className="text-sm font-medium text-white mb-0.5">
-                  {review.name}
-                </h3>
-                <p className="text-xs text-neutral-500">{review.company}</p>
-              </div>
             </div>
           </MouseFollowTooltip>
         ))}

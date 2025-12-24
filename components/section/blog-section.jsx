@@ -5,7 +5,7 @@ import Icons from '@/components/icons';
 
 function BlogRow({ title, date, views, slug }) {
   return (
-    <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/5 hover:bg-white/5 px-4 -mx-4 transition-colors">
+    <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/20 hover:bg-white/5  px-4 -mx-4 transition-all">
       <div className="flex items-center gap-3">
         <span className="text-neutral-300 font-medium text-sm group-hover:text-blue-400 transition-colors">{title}</span>
       </div>
