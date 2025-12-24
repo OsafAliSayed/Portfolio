@@ -1,12 +1,19 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
-import { remark } from "remark";
-import html from "remark-html";
+import { remark } from 'remark';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
 import Navbar from "@/components/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
 
 async function markdownToHtml(markdown) {
-  const result = await remark().use(html).process(markdown);
+  const result = await remark()
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeHighlight)
+    .use(rehypeStringify, { allowDangerousHtml: true })
+    .process(markdown);
+
   return result.toString();
 }
 
