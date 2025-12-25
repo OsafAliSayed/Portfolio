@@ -22,7 +22,7 @@ export default function BlogSection() {
   let blogPosts = [];
   try {
     const allPosts = getAllPosts();
-    blogPosts = allPosts.slice(0, 4).map(post => ({
+    blogPosts = allPosts.slice(0, 5).map(post => ({
       title: post.metadata.title || 'Untitled',
       date: post.metadata.date ? new Date(post.metadata.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'No date',
       views: post.metadata.views || '0 reads',

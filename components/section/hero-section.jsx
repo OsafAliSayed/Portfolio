@@ -26,7 +26,7 @@ export default function HeroSection() {
     <section id="home" className="mb-20">
       <div className="lg:flex items-center gap-5 mb-6">
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-20 h-20 rounded-full bg-neutral-800 overflow-hidden border-2 border-neutral-800 ring-2 ring-white/10">
+          <div className="w-20 h-20 rounded-full bg-neutral-800 overflow-hidden border-2 border-neutral-800 ring-2 ring-secondary/10 hover:ring-secondary transition-all duration-300 flex-shrink-0">
             <Image
               src="/images/home-portfolio-img.webp"
               alt="Osaf Ali Sayed"
