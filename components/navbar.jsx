@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-6 left-0 right-0 z-50">
       <div className="max-w-2xl w-full mx-auto px-6">
-        <nav className="inline-flex items-center gap-1 justify-start navbar-gradient backdrop-blur-md  px-2 py-2 rounded-full shadow-2xl shadow-black/50">
+        <nav className="inline-flex items-center gap-1 justify-start navbar-gradient backdrop-blur-md border border-neutral-800 px-2 py-2 rounded-full shadow-2xl shadow-black/50">
           {navItems.map((item) => {
             const Icon = item.icon;
             return (
