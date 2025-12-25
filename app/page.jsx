@@ -4,6 +4,7 @@ import BlogSection from '@/components/section/blog-section';
 import ProjectsSection from '@/components/section/projects-section';
 import ExperienceTimeline from '@/components/section/experience-section';
 import ReviewsSection from '@/components/section/reviews-section';
+import ContactCTA from '@/components/section/contact-cta';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
       
       {/* Floating Navbar */}
-      <Navbar />
+      <Navbar activeLabel="Home" />
 
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
@@ -31,11 +32,13 @@ export default function Home() {
         
         {/* Projects Section */}
         <ProjectsSection />
-      
-        
+
+        {/* Contact CTA */}
+        <ContactCTA />
+
         {/* Footer */}
         <footer className="py-10 text-center text-neutral-700 text-xs">
-          <p>Inspired by <a href="https://www.manuarora.in" className="text-secondary hover:underline">Manu Arora</a> © 2025 Osaf Ali Sayed.</p>
+          <p>Inspired by <a href="https://manuarora.in" className="text-secondary hover:underline">Manu Arora</a> © 2025 Osaf Ali Sayed.</p>
         </footer>
       </div>
     </div>
