@@ -26,7 +26,7 @@ export default function ReviewsSection() {
   return (
     <section id="reviews" className="mb-10 scroll-mt-24">
       <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Reviews
+        <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Featured Reviews
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
