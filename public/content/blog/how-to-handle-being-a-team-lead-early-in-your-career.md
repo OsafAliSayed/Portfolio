@@ -13,7 +13,7 @@ Stepping into a leadership role can feel surreal. When you’re early in your ca
 
 My journey into engineering leadership began with confusion, a few painful missteps, and ultimately a powerful realization about what it truly means to own responsibility beyond just writing code.
 
-## The Initial Shock: Leadership Is Not Just Coding
+## Leadership Is Not Just Coding
 
 I joined Ecomlytics as a full-stack developer alongside another engineer. Almost immediately, my teammate left the company. Overnight, I found myself stepping into a leadership role I hadn’t planned for.
 
@@ -26,23 +26,21 @@ I was wrong.
 Things started to fall apart when my manager began asking questions like:
 
 ```markdown
-
 “When do you think this task will be completed?”
-
 ```
 
 These weren’t questions about implementation details or architecture - they were about timelines, ownership, and accountability. I often didn’t have clear answers, and that resulted in missed deadlines and uncomfortable feedback.
 
 That moment hit hard. I realized I was no longer evaluated solely on my code. I was now responsible for delivery, clarity, and team progress.
 
-## Taking Ownership: Learning to Lead Instead of Just Build
+## Learning to Lead Instead of Just Building
 
 Once I accepted this shift, I consciously changed how I worked. I began embracing responsibilities I had previously avoided:
 
-- Regular and timely pull request reviews
-- Proactively tracking deadlines and progress
-- Running weekly stand-up meetings
-- Identifying blockers before they became problems
+* Regular and timely pull request reviews
+* Proactively tracking deadlines and progress
+* Running weekly stand-up meetings
+* Identifying blockers before they become problems
 
 More importantly, I reframed how I saw my role. As a tech lead, my impact wasn’t just measured by lines of code—it was reflected in how effectively my team moved forward.
 
@@ -50,8 +48,8 @@ I wanted to create an environment where my teammates could rely on me, learn fro
 
 To strike the right balance, I intentionally split my time:
 
-- 50% on team and task management
-- 50% on technical responsibilities like improving infrastructure, maintaining production systems, ensuring code quality, and reviewing pull requests
+* 50% on team and task management
+* 50% on technical responsibilities like improving infrastructure, maintaining production systems, ensuring code quality, and reviewing pull requests
 
 Plot Twist: Leadership Can Make You Lose Your Coding Edge
 
@@ -63,7 +61,7 @@ So I built a few habits to stay sharp.
 
 ### 1. Staying Technically Curious
 
-I installed daily.dev and made it a habit to read about backend engineering, system design, scalability, big data, and generative AI. These are areas I actively use - or plan to use - in real production systems.
+I installed [daily.dev](https://daily.dev) and made it a habit to read about backend engineering, system design, scalability, big data, and generative AI. These are areas I actively use - or plan to use - in real production systems.
 
 ### 2. Coding Outside of Work
 
@@ -73,9 +71,7 @@ To fight developer FOMO, I spend at least 30 minutes a day coding on personal pr
 
 Whenever possible, I pick up small coding tasks within my team. It helps me stay connected to the codebase and better understand the challenges my teammates face daily.
 
-Final Thoughts: Growing Into Leadership With Gratitude
-
-Looking back, this transition taught me that leadership in tech isn’t about authority - it’s about ownership. It’s about being accountable for people, progress, and outcomes.
+Looking back, this transition taught me that tech leadership isn’t about authority - it’s about ownership. It’s about being accountable for people, progress, and outcomes.
 
 I feel genuinely grateful to work with a team of incredibly talented developers and to be building something that creates real business impact. The journey from full-stack developer to tech lead hasn’t been smooth - but it’s been deeply rewarding.
 

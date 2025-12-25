@@ -1,6 +1,5 @@
 "use client";
 
-import Link from 'next/link';
 import Icons from "../icons";
 import { MouseFollowTooltip } from "@/components/ui/tooltip";
 import { reviews } from "@/lib/constants";
