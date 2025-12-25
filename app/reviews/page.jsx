@@ -24,7 +24,7 @@ export default function ReviewsPage() {
       <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
       
       {/* Floating Navbar */}
-      <Navbar />
+      <Navbar activeLabel="Reviews" />
 
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">

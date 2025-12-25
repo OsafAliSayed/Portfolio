@@ -3,63 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import highlightKeywords from '../../lib/highlight-utils';
 import Icons from '../../components/icons';
-
-const contributions = [
-  {
-    id: 1,
-    title: "Frappe LMS",
-    type: "Pull Request",
-    repository: "frappe/lms",
-    company: "Frappe",
-    logo: "/images/opensource/frappe.png",
-    description: "Related Courses Feature Implementation",
-    link: "https://github.com/frappe/lms/pull/1565/",
-    status: "Merged",
-    technologies: ["Python", "Frappe", "Vue", "JavaScript"],
-    list: [
-      {
-        text: "Contributed to Frappe LMS v2.31.0 by implementing a 'Related Courses' feature to enhance course discovery",
-        highlights: ["Frappe LMS v2.31.0", "'Related Courses'", "course discovery"]
-      },
-      {
-        text: "Displayed contextually similar courses on the course page using Vue.js and Frappe's Python backend logic",
-        highlights: ["Vue.js", "Frappe", "Python", "backend"]
-      },
-      {
-        text: "Enhanced user experience and course discoverability for educational platforms",
-        highlights: []
-      }
-    ],
-    date: "2025"
-  },
-  {
-    id: 2,
-    title: "Wagtail CMS",
-    type: "Pull Request",
-    repository: "wagtail/wagtail",
-    company: "Wagtail",
-    logo: "/images/opensource/wagtail.png",
-    description: "Branding Assets Update & Admin Panel Enhancement",
-    link: "https://github.com/wagtail/wagtail/pull/11756/",
-    status: "Merged",
-    technologies: ["Python", "Django", "Wagtail", "React", "SCSS"],
-    list: [
-      {
-        text: "Replaced outdated branding assets across the admin panel, documentation, and email templates with new SVG logos and favicons",
-        highlights: []
-      },
-      {
-        text: "Modified React+SCSS components to update the Wagtail admin sidebar logo and implemented a new hover animation for improved UX",
-        highlights: ["React+SCSS"]
-      },
-      {
-        text: "Enhanced the overall visual consistency and user experience of the Wagtail admin interface",
-        highlights: []
-      }
-    ],
-    date: "2025"
-  }
-];
+import { contributions } from '@/lib/constants';
 
 export default function OpenSourcePage() {
   return (
@@ -68,7 +12,7 @@ export default function OpenSourcePage() {
       <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
       
       {/* Floating Navbar */}
-      <Navbar />
+      <Navbar activeLabel="Open Source" />
 
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
