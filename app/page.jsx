@@ -35,7 +35,7 @@ export default function Home() {
         
         {/* Footer */}
         <footer className="py-10 text-center text-neutral-700 text-xs">
-          <p>© 2025 Osaf Ali Sayed.</p>
+          <p>Inspired by <a href="https://www.manuarora.in" className="text-secondary hover:underline">Manu Arora</a> © 2025 Osaf Ali Sayed.</p>
         </footer>
       </div>
     </div>
