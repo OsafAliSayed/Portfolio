@@ -26,7 +26,7 @@ export default function HeroSection() {
     <section id="home" className="mb-20">
       <div className="lg:flex items-center gap-5 mb-6">
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-20 h-20 rounded-full bg-neutral-800 overflow-hidden border-2 border-neutral-800 ring-2 ring-white/10">
+          <div className="w-20 h-20 rounded-full bg-neutral-800 overflow-hidden border-2 border-neutral-800 ring-2 ring-secondary/10 hover:ring-secondary transition-all duration-300 flex-shrink-0">
             <Image
               src="/images/home-portfolio-img.webp"
               alt="Osaf Ali Sayed"
@@ -40,6 +40,7 @@ export default function HeroSection() {
               Osaf Ali Sayed
             </h1>
             <p className="text-sm text-neutral-400">Full Stack Developer</p>
+            <p className="text-sm text-neutral-400">Rajasthan, India</p>
           </div>
         </div>
         <div className="flex gap-3 mt-6 lg:mt-0">
@@ -49,7 +50,7 @@ export default function HeroSection() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-neutral-500 hover:text-white bg-neutral-900 border border-neutral-800 rounded-md hover:bg-neutral-800 transition-colors"
+              className="p-2 text-neutral-500 hover:text-secondary bg-neutral-900 border border-neutral-800 rounded-md hover:bg-neutral-800 transition-colors"
             >
               <link.icon className="w-4 h-4" />
             </a>
@@ -58,8 +59,7 @@ export default function HeroSection() {
       </div>
 
       <p className="text-neutral-400 text-base leading-relaxed">
-        Full-stack engineer transitioning into AI engineering, building scalable systems end-to-end{" "}
-        <span className="text-white font-medium">@Ecomlytix</span>.
+        Freelance Full-stack engineer with expertise in <span className="text-secondary font-medium">Next.JS</span>, <span className="text-secondary font-medium">Python</span>, <span className="text-secondary font-medium">Django</span>, <span className="text-secondary font-medium">Nest.JS</span> and <span className="text-secondary font-medium">DigitalOcean</span>. Right now I am focused on building scalable AI applications.
       </p>
     </section>
   );

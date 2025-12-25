@@ -158,13 +158,13 @@ const   ExperienceTimeline = () => {
         {experiences.map((job, i) => (
           <div 
             key={i} 
-            className="relative transition-all duration-400 ease-in-out cursor-pointer group flex flex-col justify-between"
+            className="relative transition-all duration-400 ease-in-out group flex flex-col justify-between"
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
-            <div className="absolute -left-[39px] lg:-left-[44px] w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+            <div className="absolute -left-[39px] lg:-left-[43px] w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
               <Image
                 src={job.logo}
                 alt={job.company}

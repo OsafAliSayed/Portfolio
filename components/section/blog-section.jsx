@@ -5,7 +5,7 @@ import Icons from '@/components/icons';
 
 function BlogRow({ title, date, views, slug }) {
   return (
-    <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/5 hover:bg-white/5 px-4 -mx-4 transition-colors">
+    <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/20 hover:bg-white/5  px-4 -mx-4 transition-all">
       <div className="flex items-center gap-3">
         <span className="text-neutral-300 font-medium text-sm group-hover:text-blue-400 transition-colors">{title}</span>
       </div>
@@ -22,7 +22,7 @@ export default function BlogSection() {
   let blogPosts = [];
   try {
     const allPosts = getAllPosts();
-    blogPosts = allPosts.slice(0, 4).map(post => ({
+    blogPosts = allPosts.slice(0, 5).map(post => ({
       title: post.metadata.title || 'Untitled',
       date: post.metadata.date ? new Date(post.metadata.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'No date',
       views: post.metadata.views || '0 reads',
@@ -36,7 +36,7 @@ export default function BlogSection() {
   return (
     <section id="writing" className="mb-20 scroll-mt-24">
       <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Latest Writing
+        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Latest Writings
       </h2>
       <div className="flex flex-col">
         {blogPosts.length > 0 ? (
@@ -55,17 +55,6 @@ export default function BlogSection() {
           </div>
         )}
       </div>
-      {blogPosts.length > 0 && (
-        <div className="mt-6 text-center">
-          <a 
-            href="/blog" 
-            className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors duration-200 group"
-          >
-            Read all posts
-            <Icons.ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
-      )}
     </section>
   );
 }
