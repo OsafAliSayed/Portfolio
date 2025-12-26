@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar';
 import HeroSection from '@/components/section/hero-section';
-import BlogSection from '@/components/section/blog-section';
+import BlogSection from '@/components/section/writing-section';
 import ProjectsSection from '@/components/section/projects-section';
 import ExperienceTimeline from '@/components/section/experience-section';
 import ReviewsSection from '@/components/section/reviews-section';

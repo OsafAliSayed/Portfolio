@@ -5,7 +5,7 @@ import Icons from '@/components/icons';
 
 function BlogRow({ title, date, views, slug }) {
   return (
-    <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/20 hover:bg-white/5  px-4 -mx-4 transition-all">
+    <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/20 hover:bg-white/5  px-4 transition-all">
       <div className="flex items-center gap-3">
         <span className="text-neutral-300 font-medium text-sm group-hover:text-blue-400 transition-colors">{title}</span>
       </div>
@@ -34,7 +34,7 @@ export default function BlogSection() {
   }
 
   return (
-    <section id="writing" className="mb-20 scroll-mt-24">
+    <section id="writing" className="mb-10 scroll-mt-24">
       <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Latest Writings
       </h2>
