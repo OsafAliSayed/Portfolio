@@ -20,19 +20,18 @@ export default function Home() {
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
         {/* Hero Section */}
         <HeroSection />
+   
+        {/* Work Section */}
+        <ExperienceTimeline />
+
+        {/* Projects Section */}
+        <ProjectsSection />
 
         {/* Reviews Section */}
         <ReviewsSection />
         
-          
-        {/* Work Section */}
-        <ExperienceTimeline />
-
         {/* Writing Section */}
-        <BlogSection />
-        
-        {/* Projects Section */}
-        <ProjectsSection />
+        <BlogSection />        
 
         {/* Contact CTA */}
         <ContactCTA />
