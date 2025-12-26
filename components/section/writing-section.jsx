@@ -1,6 +1,4 @@
-
 import { getAllPosts } from '@/lib/blog';
-import Icons from '@/components/icons';
 
 
 function BlogRow({ title, date, views, slug }) {
