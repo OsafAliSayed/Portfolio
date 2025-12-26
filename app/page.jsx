@@ -4,7 +4,8 @@ import BlogSection from '@/components/section/blog-section';
 import ProjectsSection from '@/components/section/projects-section';
 import ExperienceTimeline from '@/components/section/experience-section';
 import ReviewsSection from '@/components/section/reviews-section';
-import ContactCTA from '@/components/section/contact-cta';
+import ContactCTA from '@/components/section/contact-cta-section';
+import FooterSection from '@/components/section/footer-section';
 
 export default function Home() {
   return (
@@ -37,9 +38,7 @@ export default function Home() {
         <ContactCTA />
 
         {/* Footer */}
-        <footer className="py-10 text-center text-neutral-700 text-xs">
-          <p>Inspired by <a href="https://manuarora.in" className="text-secondary hover:underline">Manu Arora</a> © 2025 Osaf Ali Sayed.</p>
-        </footer>
+        <FooterSection />
       </div>
     </div>
   );
