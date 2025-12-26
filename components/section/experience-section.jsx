@@ -221,7 +221,7 @@ const   ExperienceTimeline = () => {
                         key={tech}
                         className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800 text-neutral-300 border border-neutral-700"
                       >
-                        {IconComponent && <IconComponent className="w-3 h-3" />}
+                        {IconComponent && <IconComponent className="w-3 h-3 text-secondary" />}
                         {tech}
                       </span>
                     );

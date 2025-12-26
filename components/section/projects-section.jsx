@@ -50,7 +50,7 @@ const ProjectCard = ({ title, desc, tags, link, logo }) => {
                   key={tag} 
                   className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-white/5 border border-white/10 text-neutral-300"
                 >
-                  {IconComponent && <IconComponent className="w-3 h-3" />}
+                  {IconComponent && <IconComponent className="w-3 h-3 text-secondary" />}
                   {tag}
                 </span>
               );
