@@ -1,10 +1,9 @@
 import { getAllPosts } from '@/lib/blog';
 import Navbar from '@/components/navbar';
 import FooterSection from '@/components/section/footer-section';
-import ContactCTA from '@/components/section/contact-cta-section';
 import PageHeaderSection from '@/components/section/page-header-section';
 import BlogClient from '@/components/blog/blog-client'
-
+import { Suspense } from 'react';
 // import BlogClient from '@/components/blog/blog-client';
 const pageHeaderProps = {
   title: "My Writings",
@@ -33,7 +32,10 @@ export default async function BlogPage({ searchParams }) {
         <PageHeaderSection props={pageHeaderProps} />
 
         {/* BlogContent */}
-        <BlogClient posts={posts} />
+        <Suspense fallback={<div className="py-6 text-center text-sm text-neutral-500">Loading posts…</div>}>
+          <BlogClient posts={posts} />
+        </Suspense>
+        
 
         {/* Footer */}
         <FooterSection />
