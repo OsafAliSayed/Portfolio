@@ -6,6 +6,8 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import Navbar from "@/components/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
+import ContactCTA from "@/components/section/contact-cta-section";
+import FooterSection from "@/components/section/footer-section";
 
 async function markdownToHtml(markdown) {
   const result = await remark()
@@ -63,7 +65,7 @@ export default async function BlogPost({ params }) {
 
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
-        <article>
+        <article className="mb-6">
           {/* Article header */}
           <header className="space-y-2">
             {/* Meta Information */}
@@ -116,10 +118,11 @@ export default async function BlogPost({ params }) {
           </div>
         </article>
 
+        {/* CTA */}
+        <ContactCTA />
+
         {/* Footer */}
-        <footer className="py-10 text-center text-neutral-700 text-xs mt-20">
-          <p>© 2025 Osaf Ali Sayed.</p>
-        </footer>
+        <FooterSection />
       </div>
     </div>
   );
