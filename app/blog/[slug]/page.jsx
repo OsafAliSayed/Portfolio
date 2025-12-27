@@ -6,7 +6,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import Navbar from "@/components/ui/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
-import ContactCTA from "@/components/common/contact-cta-section";
+import ContactCTA from "@/components/common/contact-cta";
 import FooterSection from "@/components/common/footer";
 
 async function markdownToHtml(markdown) {

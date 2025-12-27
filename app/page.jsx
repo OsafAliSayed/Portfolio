@@ -4,7 +4,7 @@ import BlogSection from '@/components/writing';
 import ProjectsSection from '@/components/projects';
 import ExperienceTimeline from '@/components/experience';
 import ReviewsSection from '@/components/reviews';
-import ContactCTA from '@/components/common/contact-cta-section';
+import ContactCTA from '@/components/common/contact-cta';
 import FooterSection from '@/components/common/footer';
 
 export default function Home() {

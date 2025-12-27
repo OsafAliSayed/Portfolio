@@ -1,5 +1,5 @@
 import Navbar from "@/components/ui/navbar";
-import ContactCTA from "@/components/common/contact-cta-section";
+import ContactCTA from "@/components/common/contact-cta";
 import FooterSection from "@/components/common/footer";
 export default function SnippetsPage() {
 

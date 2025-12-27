@@ -1,10 +1,10 @@
 import { getAllPosts } from '@/lib/blog';
 import Navbar from '@/components/ui/navbar';
 import FooterSection from '@/components/common/footer';
-import PageHeaderSection from '@/components/common/page-header-section';
+import PageHeaderSection from '@/components/common/page-header';
 import BlogClient from '@/components/blog/blog-client'
 import { Suspense } from 'react';
-// import BlogClient from '@/components/blog/blog-client';
+
 const pageHeaderProps = {
   title: "My Writings",
   description: "Thoughts on development, technology, and everything in between."

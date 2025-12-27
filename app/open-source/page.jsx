@@ -4,7 +4,7 @@ import Link from 'next/link';
 import highlightKeywords from '@/lib/highlight-utils';
 import Icons from '@/components/ui/icons';
 import { contributions } from '@/lib/constants';
-import PageHeaderSection from '@/components/common/page-header-section';
+import PageHeaderSection from '@/components/common/page-header';
 import FooterSection from '@/components/common/footer';
 
 const OpenSourceHeaders = {
