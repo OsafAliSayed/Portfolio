@@ -4,7 +4,7 @@ import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/ui/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
 import ContactCTA from "@/components/section/contact-cta-section";
 import FooterSection from "@/components/section/footer-section";

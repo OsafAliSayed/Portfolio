@@ -1,5 +1,5 @@
 import { getAllPosts } from '@/lib/blog';
-import Navbar from '@/components/navbar';
+import Navbar from '@/components/ui/navbar';
 import FooterSection from '@/components/section/footer-section';
 import PageHeaderSection from '@/components/section/page-header-section';
 import BlogClient from '@/components/blog/blog-client'

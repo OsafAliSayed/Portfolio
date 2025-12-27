@@ -1,6 +1,6 @@
 import { reviews } from '@/lib/constants';
 import Icons from '@/components/icons';
-import Navbar from '@/components/navbar';
+import Navbar from '@/components/ui/navbar';
 import PageHeaderSection from '@/components/section/page-header-section';
 import FooterSection from '@/components/section/footer-section';
 

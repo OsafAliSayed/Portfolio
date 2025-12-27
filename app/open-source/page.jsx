@@ -1,4 +1,4 @@
-import Navbar from '../../components/navbar';
+import Navbar from '@/components/ui/navbar';
 import Image from 'next/image';
 import Link from 'next/link';
 import highlightKeywords from '../../lib/highlight-utils';
