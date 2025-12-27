@@ -1,7 +1,7 @@
 import { getAllPosts } from '@/lib/blog';
 import Navbar from '@/components/ui/navbar';
-import FooterSection from '@/components/section/footer-section';
-import PageHeaderSection from '@/components/section/page-header-section';
+import FooterSection from '@/components/common/footer';
+import PageHeaderSection from '@/components/common/page-header-section';
 import BlogClient from '@/components/blog/blog-client'
 import { Suspense } from 'react';
 // import BlogClient from '@/components/blog/blog-client';

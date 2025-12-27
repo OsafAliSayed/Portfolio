@@ -64,6 +64,7 @@ import {
   TbBrandMysql,
   TbBrandCypress
 } from 'react-icons/tb';
+
 import {
   SiJavascript,
   SiTypescript,
@@ -107,6 +108,12 @@ import {
 import {
   MdArticle
 } from 'react-icons/md';
+
+
+import { 
+  DiOpensource 
+} from "react-icons/di";
+
 
 // Define your icon mapping
 const Icons = {
@@ -156,7 +163,7 @@ const Icons = {
   About: FaUser,
   Contact: FaPhone,
   Phone: FaPhone,
-  OpenSource: FaCode,
+  OpenSource: DiOpensource,
   Star: FaStar,
   Reviews: FaThumbsUp,
 

@@ -1,6 +1,6 @@
 "use client";
 
-import Icons from "../icons";
+import Icons from "./ui/icons";
 import { MouseFollowTooltip } from "@/components/ui/tooltip";
 import { reviews } from "@/lib/constants";
 

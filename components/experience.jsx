@@ -3,7 +3,7 @@
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import highlightKeywords from '@/lib/highlight-utils';
-import Icons from '@/components/icons';
+import Icons from '@/components/ui/icons';
 import { experiences } from '@/lib/constants';
 
 const   ExperienceTimeline = () => {

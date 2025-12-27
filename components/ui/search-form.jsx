@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
-import Icons from '@/components/icons';
+import Icons from '@/components/ui/icons';
 
 export default function SearchInput({ initialQuery="" }) {
   const router = useRouter();

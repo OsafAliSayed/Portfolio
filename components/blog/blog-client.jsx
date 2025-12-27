@@ -1,12 +1,8 @@
-// import PageHeaderSection from '@/components/section/page-header-section';
-
-
-
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { useMemo } from "react";
-import SearchInput from "@/components/search-form";
+import SearchInput from "@/components/ui/search-form";
 import PostLink from "@/components/ui/blog-links";
 
 
@@ -29,9 +25,11 @@ export default function SearchClient({ posts }) {
       <SearchInput />
       
       <div className="mt-2 mb-10">
-        {filteredPosts.length > 0 ? (filteredPosts.map(p => (
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map(p => (
           <PostLink key={p.slug} post={p}/>
-        ))) : (
+          ))
+        ) : (
           <div className="text-center mt-10">
             <span>No Posts Found</span>
           </div>

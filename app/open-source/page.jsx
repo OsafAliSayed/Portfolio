@@ -1,15 +1,17 @@
 import Navbar from '@/components/ui/navbar';
 import Image from 'next/image';
 import Link from 'next/link';
-import highlightKeywords from '../../lib/highlight-utils';
-import Icons from '../../components/icons';
+import highlightKeywords from '@/lib/highlight-utils';
+import Icons from '@/components/ui/icons';
 import { contributions } from '@/lib/constants';
-import PageHeaderSection from '@/components/section/page-header-section';
-import FooterSection from '@/components/section/footer-section';
+import PageHeaderSection from '@/components/common/page-header-section';
+import FooterSection from '@/components/common/footer';
+
 const OpenSourceHeaders = {
   title: "Open Source",
   description: "Contributing to the developer community by solving problems and improving tools that developers use every day."
 }
+
 export default function OpenSourcePage() {
   return (
     <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-blue-500/30 selection:text-blue-200 pb-20">

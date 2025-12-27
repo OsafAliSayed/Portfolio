@@ -1,8 +1,8 @@
 import { reviews } from '@/lib/constants';
-import Icons from '@/components/icons';
+import Icons from '@/components/ui/icons';
 import Navbar from '@/components/ui/navbar';
-import PageHeaderSection from '@/components/section/page-header-section';
-import FooterSection from '@/components/section/footer-section';
+import PageHeaderSection from '@/components/common/page-header-section';
+import FooterSection from '@/components/common/footer';
 
 const ReviewsSectionHeader = {
   title: "Reviews",

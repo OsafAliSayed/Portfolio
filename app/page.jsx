@@ -1,11 +1,11 @@
 import Navbar from '@/components/ui/navbar';
-import HeroSection from '@/components/section/hero-section';
-import BlogSection from '@/components/section/writing-section';
-import ProjectsSection from '@/components/section/projects-section';
-import ExperienceTimeline from '@/components/section/experience-section';
-import ReviewsSection from '@/components/section/reviews-section';
-import ContactCTA from '@/components/section/contact-cta-section';
-import FooterSection from '@/components/section/footer-section';
+import HeroSection from '@/components/hero';
+import BlogSection from '@/components/writing';
+import ProjectsSection from '@/components/projects';
+import ExperienceTimeline from '@/components/experience';
+import ReviewsSection from '@/components/reviews';
+import ContactCTA from '@/components/common/contact-cta-section';
+import FooterSection from '@/components/common/footer';
 
 export default function Home() {
   return (
