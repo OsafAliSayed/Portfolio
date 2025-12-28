@@ -62,7 +62,8 @@ import {
 
 import {
   TbBrandMysql,
-  TbBrandCypress
+  TbBrandCypress,
+  TbAutomation,
 } from 'react-icons/tb';
 
 import {
@@ -198,7 +199,7 @@ const Icons = {
   Express: SiExpress,
   Chart: FaChartBar,
   AI: FaRobot,
-  GitHubActions: SiGithubactions,
+  GitHubActions: FaGithub,
   Jenkins: SiJenkins,
   MySQL: TbBrandMysql,
   SQLite: SiSqlite,
@@ -216,7 +217,8 @@ const Icons = {
   DigitalOcean: FaDigitalOcean,
 
   Bot: FaRobot,
-  TrendingUp: FaChartBar
+  TrendingUp: FaChartBar,
+  Automation: TbAutomation
 };
 
 export default Icons;

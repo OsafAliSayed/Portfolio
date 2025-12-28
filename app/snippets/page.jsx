@@ -1,6 +1,13 @@
 import Navbar from "@/components/ui/navbar";
 import ContactCTA from "@/components/common/contact-cta";
 import FooterSection from "@/components/common/footer";
+import PageHeaderSection from "@/components/common/page-header";
+import Snippets from "@/components/snippets/snippets";
+const SnippetsHeader = {
+    title: "Snippets",
+    description: "Few essential pieces of code that may come in handy for a very specific use case. It can be a Component, Github Action, Automation, Scripts etc."
+}
+
 export default function SnippetsPage() {
 
     return (
@@ -10,7 +17,10 @@ export default function SnippetsPage() {
             <Navbar activeLabel="Snippets" />
             {/* Main Content */}
             <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
-                
+                {/* Page Header */}
+                <PageHeaderSection props={SnippetsHeader} />
+
+                <Snippets />
                 {/* Contact CTA */}
                 <ContactCTA />
                 {/* Footer */}

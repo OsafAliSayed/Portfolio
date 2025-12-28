@@ -1,0 +1,39 @@
+name: Create Draft Social Media Posts
+on:
+  workflow_dispatch: # Allow manual trigger
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+   create-social-draft:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true }}
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests openai
+
+      - name: Create social draft from merged PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          OUTPUT_DIR: public/content/social-drafts
+          COMMIT_DRAFT: 'false'
+        run: python scripts/generate-social-draft.py
