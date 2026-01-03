@@ -8,7 +8,7 @@ tags:
 - Frappe
 - LMS
 title: How I Made My First Contribution @Frappe
-views: '54'
+views: '55'
 ---
 # How I Made My First Contribution @Frappe
 Contributing to open source has always been a goal of mine, but finding the right starting point was challenging. During my college years, despite learning development, I lacked the courage to make an open source contribution.ived valuable feedback on my pull request. My foundational knowledge of the Frappe framework and Vue.JS enabled me to implement the necessary changes smoothly.
