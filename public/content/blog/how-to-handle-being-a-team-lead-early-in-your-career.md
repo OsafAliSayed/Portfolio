@@ -1,11 +1,12 @@
 ---
-title: How To Handle Being A Team Lead Early In Your Career
-date: 2025-12-23T17:20:00.000+05:30
 author: Osaf Ali Sayed
+date: 2025-12-23 17:20:00+05:30
 tags:
-  - management
-  - team-lead
-  - development
+- management
+- team-lead
+- development
+title: How To Handle Being A Team Lead Early In Your Career
+views: '73'
 ---
 # From Full-Stack Developer to Tech Lead: Lessons I Learned the Hard Way
 
