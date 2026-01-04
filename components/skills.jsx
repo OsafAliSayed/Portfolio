@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Icons from './icons';
+import Icons from './ui/icons';
 
 export default function SkillsSection() {
   // Grouped skills by type, not as separate sections

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Icons from '@/components/icons';
+import Icons from '@/components/ui/icons';
 
 const Navbar = (props) => {
 
@@ -7,6 +7,7 @@ const Navbar = (props) => {
   const navItems = [
     { icon: Icons.Home, label: "Home", href: "/" },
     { icon: Icons.Pen, label: "Writing", href: "/blog" },
+    { icon: Icons.Code, label: "Snippets", href: "/snippets"},
     // { icon: Icons.Grid3X3, label: "Projects", href: "/projects" },
     { icon: Icons.OpenSource, label: "Open Source", href: "/open-source" },
     { icon: Icons.Star, label: "Reviews", href: "/reviews" },

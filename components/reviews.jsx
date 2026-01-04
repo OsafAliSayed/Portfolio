@@ -1,8 +1,18 @@
 "use client";
 
-import Icons from "../icons";
+import Icons from "./ui/icons";
 import { MouseFollowTooltip } from "@/components/ui/tooltip";
 import { reviews } from "@/lib/constants";
+
+function truncateReview(review, sentenceCount = 2) {
+  if (!review) return "";
+  const sentences = review.split(/[.?!]+/).slice(0, -1);
+  if (sentences.length < sentenceCount) {
+    return review;
+  }
+
+  return sentences.slice(0, sentenceCount).join(".") + (sentences.length > sentenceCount ? "..." : ".");
+}
 
 export default function ReviewsSection() {
   const renderRating = (rating) => {
@@ -50,13 +60,9 @@ export default function ReviewsSection() {
 
               {review.review ? (
                 <>
-                  {/* Mobile: Show full review */}
-                  <p className="text-xs text-neutral-400 leading-relaxed italic md:hidden">
-                    {review.review}
-                  </p>
                   {/* Desktop: Show truncated review */}
-                  <p className="text-xs text-neutral-400 leading-relaxed italic hidden md:block">
-                    {review.review.length > 50 ? `${review.review.substring(0, 40)}...` : review.review}
+                  <p className="text-xs text-neutral-400 leading-relaxed italic">
+                    {truncateReview(review.review)}
                   </p>
                 </>
               ) : (

@@ -62,8 +62,10 @@ import {
 
 import {
   TbBrandMysql,
-  TbBrandCypress
+  TbBrandCypress,
+  TbAutomation,
 } from 'react-icons/tb';
+
 import {
   SiJavascript,
   SiTypescript,
@@ -107,6 +109,12 @@ import {
 import {
   MdArticle
 } from 'react-icons/md';
+
+
+import { 
+  DiOpensource 
+} from "react-icons/di";
+
 
 // Define your icon mapping
 const Icons = {
@@ -156,7 +164,7 @@ const Icons = {
   About: FaUser,
   Contact: FaPhone,
   Phone: FaPhone,
-  OpenSource: FaCode,
+  OpenSource: DiOpensource,
   Star: FaStar,
   Reviews: FaThumbsUp,
 
@@ -191,7 +199,7 @@ const Icons = {
   Express: SiExpress,
   Chart: FaChartBar,
   AI: FaRobot,
-  GitHubActions: SiGithubactions,
+  GitHubActions: FaGithub,
   Jenkins: SiJenkins,
   MySQL: TbBrandMysql,
   SQLite: SiSqlite,
@@ -209,7 +217,8 @@ const Icons = {
   DigitalOcean: FaDigitalOcean,
 
   Bot: FaRobot,
-  TrendingUp: FaChartBar
+  TrendingUp: FaChartBar,
+  Automation: TbAutomation
 };
 
 export default Icons;

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Icons from "@/components/icons";
+import Icons from "@/components/ui/icons";
 
 export default function HeroSection() {
   const socialLinks = [

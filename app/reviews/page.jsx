@@ -1,6 +1,13 @@
 import { reviews } from '@/lib/constants';
-import Icons from '@/components/icons';
-import Navbar from '@/components/navbar';
+import Icons from '@/components/ui/icons';
+import Navbar from '@/components/ui/navbar';
+import PageHeaderSection from '@/components/common/page-header';
+import FooterSection from '@/components/common/footer';
+
+const ReviewsSectionHeader = {
+  title: "Reviews",
+  description: "What clients and colleagues have said about working with me. These reviews reflect my commitment to delivering quality work and building strong professional relationships."
+}
 
 export default function ReviewsPage() {
   const renderRating = (rating) => {
@@ -29,13 +36,7 @@ export default function ReviewsPage() {
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-2xl font-bold text-white tracking-tight mb-2">Reviews</h1>
-          <p className="text-neutral-500 text-sm mb-6">
-            What clients and colleagues have said about working with me. These reviews reflect my commitment to delivering quality work and building strong professional relationships.
-          </p>
-        </div>
-
+        <PageHeaderSection props={ReviewsSectionHeader} />
         
         {/* Reviews List */}
         <div className="space-y-8">
@@ -82,9 +83,7 @@ export default function ReviewsPage() {
         )}
 
         {/* Footer */}
-        <footer className="py-10 text-center text-neutral-700 text-xs mt-20">
-          <p>© 2025 Osaf Ali Sayed.</p>
-        </footer>
+        <FooterSection />
       </div>
     </div>
   );

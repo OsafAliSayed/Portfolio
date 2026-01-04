@@ -1,6 +1,6 @@
 'use client';
 
-import Icons from '@/components/icons';
+import Icons from '@/components/ui/icons';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { contactInfo } from '@/lib/constants';
@@ -12,7 +12,7 @@ import { contactInfo } from '@/lib/constants';
 
 export default function ContactCTA({
   email = contactInfo.email,
-  phone = contactInfo.phone // international format without +, e.g. 15551234567
+  phone = contactInfo.phone 
 }) {
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent("Hi! I'd like to connect about a project.")}`;
 

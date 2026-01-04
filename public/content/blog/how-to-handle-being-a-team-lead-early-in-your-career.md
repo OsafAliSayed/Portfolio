@@ -27,6 +27,7 @@ I was wrong.
 Things started to fall apart when my manager began asking questions like:
 
 ```markdown
+
 “When do you think this task will be completed?”
 ```
 

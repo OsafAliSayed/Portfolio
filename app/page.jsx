@@ -1,10 +1,11 @@
-import Navbar from '@/components/navbar';
-import HeroSection from '@/components/section/hero-section';
-import BlogSection from '@/components/section/blog-section';
-import ProjectsSection from '@/components/section/projects-section';
-import ExperienceTimeline from '@/components/section/experience-section';
-import ReviewsSection from '@/components/section/reviews-section';
-import ContactCTA from '@/components/section/contact-cta';
+import Navbar from '@/components/ui/navbar';
+import HeroSection from '@/components/hero';
+import BlogSection from '@/components/writing';
+import ProjectsSection from '@/components/projects';
+import ExperienceTimeline from '@/components/experience';
+import ReviewsSection from '@/components/reviews';
+import ContactCTA from '@/components/common/contact-cta';
+import FooterSection from '@/components/common/footer';
 
 export default function Home() {
   return (
@@ -19,27 +20,24 @@ export default function Home() {
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
         {/* Hero Section */}
         <HeroSection />
+   
+        {/* Work Section */}
+        <ExperienceTimeline />
+
+        {/* Projects Section */}
+        <ProjectsSection />
 
         {/* Reviews Section */}
         <ReviewsSection />
         
-          
-        {/* Work Section */}
-        <ExperienceTimeline />
-
         {/* Writing Section */}
-        <BlogSection />
-        
-        {/* Projects Section */}
-        <ProjectsSection />
+        <BlogSection />        
 
         {/* Contact CTA */}
         <ContactCTA />
 
         {/* Footer */}
-        <footer className="py-10 text-center text-neutral-700 text-xs">
-          <p>Inspired by <a href="https://manuarora.in" className="text-secondary hover:underline">Manu Arora</a> © 2025 Osaf Ali Sayed.</p>
-        </footer>
+        <FooterSection />
       </div>
     </div>
   );

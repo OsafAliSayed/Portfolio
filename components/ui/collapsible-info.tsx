@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Icons from '../icons';
+import Icons from './icons';
 import React from 'react';
 import highlightKeywords from '@/lib/highlight-utils';
 type Props = {

@@ -1,9 +1,16 @@
-import Navbar from '../../components/navbar';
+import Navbar from '@/components/ui/navbar';
 import Image from 'next/image';
 import Link from 'next/link';
-import highlightKeywords from '../../lib/highlight-utils';
-import Icons from '../../components/icons';
+import highlightKeywords from '@/lib/highlight-utils';
+import Icons from '@/components/ui/icons';
 import { contributions } from '@/lib/constants';
+import PageHeaderSection from '@/components/common/page-header';
+import FooterSection from '@/components/common/footer';
+
+const OpenSourceHeaders = {
+  title: "Open Source",
+  description: "Contributing to the developer community by solving problems and improving tools that developers use every day."
+}
 
 export default function OpenSourcePage() {
   return (
@@ -17,12 +24,7 @@ export default function OpenSourcePage() {
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-2xl font-bold text-white tracking-tight mb-2">Open Source</h1>
-          <p className="text-neutral-500 text-sm mb-6">
-            Contributing to the developer community by solving problems and improving tools that developers use every day.
-          </p>
-        </div>
+        <PageHeaderSection props={OpenSourceHeaders} />
         
         {/* Contributions List */}
         <div className="space-y-12">
@@ -91,9 +93,7 @@ export default function OpenSourcePage() {
         </div>
 
         {/* Footer */}
-        <footer className="py-10 text-center text-neutral-700 text-xs mt-20">
-          <p>© 2025 Osaf Ali Sayed.</p>
-        </footer>
+        <FooterSection />
       </div>
     </div>
   );
