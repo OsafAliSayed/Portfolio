@@ -53,21 +53,21 @@ export default function OpenSourcePage() {
                   <Link 
                     href={contribution.link}
                     target="_blank"
-                    className="text-sm text-neutral-500 hover:text-blue-400 transition-colors flex items-center gap-1 mt-0.5"
+                    className="text-sm text-neutral-500 hover:text-blue-400 transition-colors flex items-center gap-1 "
                   >
                     {contribution.repository}
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                   </Link>
                 </div>
-                <span className="text-xs text-neutral-600 font-mono mt-2 sm:mt-0">{contribution.date}</span>
+                <span className="text-sm text-neutral-600 font-mono sm:mt-0">{contribution.date}</span>
               </div>
 
-              <p className="text-sm text-neutral-300 mb-4 font-medium">{contribution.description}</p>
+              <p className="text-sm text-neutral-300 mb-2 font-medium">{contribution.description}</p>
 
               {/* Details */}
               <div className="space-y-3 mb-4">
                 {contribution.list.map((item, idx) => (
-                  <p key={idx} className="text-xs text-neutral-400 leading-relaxed">
+                  <p key={idx} className="text-sm text-neutral-400 leading-relaxed">
                     • {highlightKeywords(item.text, item.highlights)}
                   </p>
                 ))}
@@ -80,7 +80,7 @@ export default function OpenSourcePage() {
                   return (
                     <span
                       key={tech}
-                      className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800/50 text-neutral-400 border border-white/5"
+                      className="flex items-center gap-1.5 px-2 py-1 text-sm bg-neutral-800/50 text-neutral-400 border border-white/5"
                     >
                       {IconComponent && <IconComponent className="w-3 h-3" />}
                       {tech}

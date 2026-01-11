@@ -25,10 +25,10 @@ export const SnippetCard = ({ title, desc, tags, link, logo }) => {
                   />
                 </div>
               )}
-              <CardTitle className="text-sm font-medium text-white transition-colors">
+              <CardTitle className="text-base font-medium text-white transition-colors">
                 {title}
               </CardTitle>
-              <CardDescription className="mt-2 text-xs text-neutral-400 leading-relaxed">
+              <CardDescription className="mt-2 text-sm text-neutral-400 leading-relaxed">
                 {desc}
               </CardDescription>
             </div>
