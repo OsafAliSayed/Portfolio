@@ -21,7 +21,7 @@ export default function ReviewsSection() {
       stars.push(
         <Icons.Star
           key={i}
-          className={`w-3 h-3 transition-all duration-200 ${i < rating ? "text-white group-hover:text-secondary" : "text-neutral-800 group-hover:text-secondary-800"
+          className={`w-4 h-4 transition-all duration-300 ease-in-out ${i < rating ? "text-orange-500 group-hover:text-secondary" : "text-neutral-800 group-hover:text-secondary-800"
             }`}
         />
       );
@@ -34,9 +34,10 @@ export default function ReviewsSection() {
 
   return (
     <section id="reviews" className="mb-10 scroll-mt-24">
-      <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Featured Reviews
+      <h2 className="font-bold text-neutral-100 mb-6 tracking-tighter relative inline-block">
+        Featured Reviews
       </h2>
+         
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {displayedReviews.map((review) => (
@@ -52,16 +53,16 @@ export default function ReviewsSection() {
 
 
               <div className="pt-3  ">
-                <h3 className="text-sm font-medium text-white mb-0.5">
+                <h3 className="text-lg font-medium text-white mb-0.5">
                   {review.name}
                 </h3>
-                <p className="text-xs text-neutral-500">{review.company}</p>
+                <p className="text-sm text-neutral-500">{review.company}</p>
               </div>
 
               {review.review ? (
                 <>
                   {/* Desktop: Show truncated review */}
-                  <p className="text-xs text-neutral-400 leading-relaxed italic">
+                  <p className="text-sm text-neutral-400 leading-relaxed italic">
                     {truncateReview(review.review)}
                   </p>
                 </>

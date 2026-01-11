@@ -98,7 +98,7 @@ const MouseFollowTooltip: React.FC<MouseFollowTooltipProps> = ({
       {/* Custom Tooltip - Only show on desktop */}
       {tooltip.visible && (
         <div
-          className={`fixed z-50 pointer-events-none bg-neutral-950 border border-neutral-800 rounded-md p-3 text-xs text-neutral-300 shadow-lg italic max-w-xs hidden md:block transition-all duration-200 ease-out ${
+          className={`fixed z-50 pointer-events-none bg-neutral-950 border border-neutral-800 rounded-md p-3 text-sm text-neutral-300 shadow-lg italic max-w-xs hidden md:block transition-all duration-200 ease-out ${
             tooltip.animating 
               ? 'opacity-0 scale-95 translate-y-1' 
               : 'opacity-100 scale-100 translate-y-0'
