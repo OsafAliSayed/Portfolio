@@ -25,7 +25,7 @@ const Navbar = (props) => {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex items-between gap-2 px-4 py-2 text-sm rounded-full font-medium text-neutral-400 hover:bg-white/5 transition-all duration-200 leading-none  ${activeLabel === item.label ? "text-secondary shadow-2xl" : "hover:text-white"}`}
+                className={`flex items-between gap-2 px-4 py-2 text-base rounded-full font-medium text-neutral-400 hover:bg-white/5 transition-all duration-200 leading-none  ${activeLabel === item.label ? "text-secondary shadow-2xl" : "hover:text-white"}`}
               >
                 <Icon className="h-4 w-4 sm:hidden" aria-hidden />
                 <div

@@ -70,7 +70,7 @@ const   ExperienceTimeline = () => {
             
             {/* Basic Info (Always Visible) */}
             <div className="pl-3 flex flex-col sm:flex-row sm:items-center justify-between mt-1">
-              <h3 className="text-white text-lg font-bold">{job.company}</h3>
+              <h3 className="text-white text-lg font-bold tracking-tighter">{job.company}</h3>
               <div className="flex items-center gap-2">
                 <span className="text-sm text-neutral-500 font-mono">{job.duration}</span>
                 <button

@@ -18,11 +18,11 @@ export default function ContactCTA({
 
   return (
     <section id="contact" className="mb-20 scroll-mt-24">
-      <h2 className="text-base font-bold text-neutral-100 mb-3 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-        Get in touch
+      <h2 className="font-bold text-neutral-100 mb-6 tracking-tighter relative inline-block">
+        Get In Touch
       </h2>
-
+       
+      
       <div className="p-4 bg-[#0a0a0a] border border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-sm text-neutral-300 flex-1">
           Interested in working with me? Drop me a mail at <Link href={`mailto:${email}`} className="text-secondary">{email}</Link> or message me on WhatsApp.
