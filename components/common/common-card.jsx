@@ -27,7 +27,7 @@ export const CommonCard = ({ title, desc, tags, link, logo }) => {
                   />
                 </div>
               )}
-              <CardTitle className="text-lg font-bold text-white transition-colors tracking-tighter">
+              <CardTitle className="text-lg font-medium text-white transition-colors tracking-tighter">
                 {title}
               </CardTitle>
             </div>

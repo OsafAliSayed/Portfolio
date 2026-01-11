@@ -5,6 +5,7 @@ import Image from 'next/image';
 import highlightKeywords from '@/lib/highlight-utils';
 import Icons from '@/components/ui/icons';
 import { experiences } from '@/lib/constants';
+import SectionHeader from '@/components/ui/section-header';
 
 const   ExperienceTimeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -44,11 +45,9 @@ const   ExperienceTimeline = () => {
 
   return (
     <section id="work" className="mb-10 scroll-mt-24">
-      <h2 className="font-bold text-neutral-100 mb-6 tracking-tighter relative inline-block">
-        Experience
-      </h2>
+      <SectionHeader>Experience</SectionHeader>
       
-      <div className="space-y-8  border-l-4 border-white/30 ml-5 pl-5 relative">
+      <div className="space-y-8  border-l-4 border-white/30 ml-6 pl-5 relative">
         {experiences.map((job, i) => (
           <div 
             key={i} 
@@ -58,7 +57,7 @@ const   ExperienceTimeline = () => {
             onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
-            <div className="absolute -left-[43px] lg:-left-[49px] w-14 h-14 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+            <div className="absolute -left-[43px] lg:-left-[48px] w-14 h-14 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
               <Image
                 src={job.logo}
                 alt={job.company}
@@ -70,7 +69,7 @@ const   ExperienceTimeline = () => {
             
             {/* Basic Info (Always Visible) */}
             <div className="pl-3 flex flex-col sm:flex-row sm:items-center justify-between mt-1">
-              <h3 className="text-white text-lg font-bold tracking-tighter">{job.company}</h3>
+              <h3 className="text-white text-lg font-medium tracking-tighter">{job.company}</h3>
               <div className="flex items-center gap-2">
                 <span className="text-sm text-neutral-500 font-mono">{job.duration}</span>
                 <button

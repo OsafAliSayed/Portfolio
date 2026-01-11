@@ -1,11 +1,12 @@
 import { getAllPosts } from '@/lib/blog';
+import SectionHeader from '@/components/ui/section-header';
 
 
 function BlogRow({ title, date, views, slug }) {
   return (
     <a href={`/blog/${slug}`} className="flex items-center justify-between py-4 group border-b border-white/20 hover:bg-white/5  px-4 transition-all">
       <div className="flex items-center gap-3">
-        <span className="text-neutral-300 font-bold text-sm group-hover:text-blue-400 transition-colors">{title}</span>
+        <span className="text-neutral-300 font-medium text-sm group-hover:text-blue-400 transition-colors">{title}</span>
       </div>
       <div className="hidden sm:flex items-center gap-4 text-neutral-600 text-sm font-mono">
         <span>{views}</span>
@@ -33,9 +34,7 @@ export default function BlogSection() {
 
   return (
     <section id="writing" className="mb-10 scroll-mt-24">
-      <h2 className="font-bold text-neutral-100 mb-6 tracking-tighter relative inline-block">
-        Latest Writings
-      </h2>
+      <SectionHeader>Latest Writings</SectionHeader>
        
       
       <div className="flex flex-col">

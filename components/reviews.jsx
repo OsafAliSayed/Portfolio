@@ -3,6 +3,7 @@
 import Icons from "./ui/icons";
 import { MouseFollowTooltip } from "@/components/ui/tooltip";
 import { reviews } from "@/lib/constants";
+import SectionHeader from "@/components/ui/section-header";
 
 function truncateReview(review, sentenceCount = 2) {
   if (!review) return "";
@@ -34,9 +35,7 @@ export default function ReviewsSection() {
 
   return (
     <section id="reviews" className="mb-10 scroll-mt-24">
-      <h2 className="font-bold text-neutral-100 mb-6 tracking-tighter relative inline-block">
-        Featured Reviews
-      </h2>
+      <SectionHeader>Featured Reviews</SectionHeader>
          
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -53,7 +52,7 @@ export default function ReviewsSection() {
 
 
               <div className="pt-3 pb-1">
-                <h3 className="text-lg font-bold tracking-tighter text-white">
+                <h3 className="text-lg font-medium tracking-tighter text-white">
                   {review.name}
                 </h3>
                 <p className="text-sm text-neutral-500">{review.company}</p>
