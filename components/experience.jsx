@@ -27,7 +27,7 @@ const   ExperienceTimeline = () => {
 
     const timeout = setTimeout(() => {
       setHoveredIndex(null);
-    }, 100); // 100ms delay to prevent flickering
+    }, 200); // 200ms delay to prevent flickering
     setHoverTimeout(timeout);
   }, []);
 
@@ -44,11 +44,11 @@ const   ExperienceTimeline = () => {
 
   return (
     <section id="work" className="mb-10 scroll-mt-24">
-      <h2 className="text-base font-bold text-neutral-100 mb-6 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Experience
+      <h2 className="font-bold text-neutral-100 mb-6 tracking-tighter relative inline-block">
+        Experience
       </h2>
       
-      <div className="space-y-8  border-l-2 border-white/30 ml-5 pl-5 relative">
+      <div className="space-y-8  border-l-4 border-white/30 ml-5 pl-5 relative">
         {experiences.map((job, i) => (
           <div 
             key={i} 
@@ -58,7 +58,7 @@ const   ExperienceTimeline = () => {
             onClick={() => handleClick(i)}
           >
             {/* Company logo in timeline dot */}
-            <div className="absolute -left-[39px] lg:-left-[43px] w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+            <div className="absolute -left-[43px] lg:-left-[49px] w-14 h-14 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
               <Image
                 src={job.logo}
                 alt={job.company}
@@ -70,9 +70,9 @@ const   ExperienceTimeline = () => {
             
             {/* Basic Info (Always Visible) */}
             <div className="pl-3 flex flex-col sm:flex-row sm:items-center justify-between mt-1">
-              <h3 className="text-white font-medium text-sm">{job.company}</h3>
+              <h3 className="text-white text-lg font-bold">{job.company}</h3>
               <div className="flex items-center gap-2">
-                <span className="text-xs text-neutral-500 font-mono">{job.duration}</span>
+                <span className="text-sm text-neutral-500 font-mono">{job.duration}</span>
                 <button
                   type="button"
                   aria-expanded={hoveredIndex === i}
@@ -87,39 +87,41 @@ const   ExperienceTimeline = () => {
                 </button>
               </div>
             </div>
-            <p className="pl-3 text-xs italic mb-1">{job.position}</p>
+            <p className="pl-3 text-sm italic mb-1 text-neutral-500">{job.position}</p>
             
             {/* Expanded Details (Only on Hover) */}
             <div
               id={`exp-details-${job.id}`}
-              className={`overflow-hidden transition-all duration-300 ${
-                hoveredIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              className={`grid transition-all duration-300 ease-in-out ${
+                hoveredIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
               }`}
             >
-              <div className="pt-3 space-y-3">
+              <div className="min-h-0 overflow-hidden">
+                <div className="pt-3 space-y-3">
                 {/* Description */}
-                <div className="space-y-2">
+                <ul className="space-y-2">
                   {job.description.map((desc, idx) => (
-                    <p key={idx} className="text-xs text-neutral-400 leading-relaxed">
-                      • {highlightKeywords(desc.text, desc.highlights)}
-                    </p>
+                    <li key={idx} className="text-sm text-neutral-400 leading-relaxed">
+                      {highlightKeywords(desc.text, desc.highlights)}
+                    </li>
                   ))}
-                </div>
+                </ul>
                 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-1 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {job.technologies.map((tech) => {
                     const IconComponent = Icons[tech];
                     return (
                       <span
                         key={tech}
-                        className="flex items-center gap-1.5 px-2 py-1 text-xs bg-neutral-800 text-neutral-300 border border-neutral-700"
+                        className="flex items-center gap-1.5 px-2 py-1 font-bold text-xs bg-neutral-800 text-neutral-300 border border-neutral-700"
                       >
-                        {IconComponent && <IconComponent className="w-3 h-3 text-secondary" />}
+                        {IconComponent && <IconComponent className="w-4 h-4 text-secondary" />}
                         {tech}
                       </span>
                     );
                   })}
+                </div>
                 </div>
               </div>
             </div>
