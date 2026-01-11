@@ -52,8 +52,8 @@ export default function ReviewsSection() {
             <div className="flex flex-col flex-grow">
 
 
-              <div className="pt-3  ">
-                <h3 className="text-lg font-medium text-white mb-0.5">
+              <div className="pt-3 pb-1">
+                <h3 className="text-lg font-bold tracking-tighter text-white">
                   {review.name}
                 </h3>
                 <p className="text-sm text-neutral-500">{review.company}</p>
