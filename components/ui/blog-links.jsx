@@ -10,7 +10,7 @@ export default function BlogLink({ post }) {
         </h2>
         <time 
           dateTime={post.metadata.date}
-          className="text-neutral-600 text-xs font-mono"
+          className="text-neutral-600 text-xs font-mono hidden sm:block"
         >
           {new Date(post.metadata.date).toLocaleDateString('en-US', {
             year: 'numeric',
