@@ -47,7 +47,7 @@ export default function ReviewsPage() {
             >
 
               {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2">
                 <div>
                   <h2 className="text-white text-lg flex items-center gap-2">
                     {review.name}
@@ -57,7 +57,7 @@ export default function ReviewsPage() {
                     {review.company}
                   </p>
                 </div>
-                <span className="text-sm text-neutral-600 font-mono mt-2 sm:mt-0">{review.date}</span>
+                <span className="text-md text-neutral-600 font-mono">{review.date}</span>
               </div>
 
               {/* Review content */}
