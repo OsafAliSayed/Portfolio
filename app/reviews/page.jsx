@@ -47,22 +47,22 @@ export default function ReviewsPage() {
             >
 
               {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2">
                 <div>
-                  <h2 className="text-white font-medium text-base flex items-center gap-2">
+                  <h2 className="text-white text-lg flex items-center gap-2">
                     {review.name}
                     {renderRating(review.rating)}
                   </h2>
-                  <p className="text-sm text-neutral-500 mt-0.5">
+                  <p className="text-md text-neutral-500 mt-0.5">
                     {review.company}
                   </p>
                 </div>
-                <span className="text-xs text-neutral-600 font-mono mt-2 sm:mt-0">{review.date}</span>
+                <span className="text-md text-neutral-600 font-mono">{review.date}</span>
               </div>
 
               {/* Review content */}
               {review.review ? (
-                <blockquote className="text-xs text-neutral-400 leading-relaxed italic mb-4">
+                <blockquote className="text-sm text-neutral-400 leading-relaxed italic mb-4">
                   &quot;{review.review}&quot;
                 </blockquote>
               ) : (

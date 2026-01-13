@@ -23,7 +23,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section id="home" className="mb-20">
+    <section id="home" className="mb-10">
       <div className="lg:flex items-center gap-5 mb-6">
         <div className="flex items-center gap-4 flex-1">
           <div className="w-20 h-20 rounded-full bg-neutral-800 overflow-hidden border-2 border-neutral-800 ring-2 ring-secondary/10 hover:ring-secondary transition-all duration-300 flex-shrink-0">
@@ -36,7 +36,7 @@ export default function HeroSection() {
             />
           </div>
           <div className="flex-1">
-            <h1 className="text-2xl  font-bold text-white tracking-tight">
+            <h1 className="text-3xl  font-bold text-white tracking-tight">
               Osaf Ali Sayed
             </h1>
             <p className="text-sm text-neutral-400">Full Stack Developer</p>

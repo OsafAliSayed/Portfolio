@@ -16,7 +16,7 @@ const Navbar = (props) => {
   ];
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50">
+    <div className="fixed top-6 left-0 sm:left-[-5rem] right-0 z-50">
       <div className="max-w-2xl w-full mx-auto px-6">
         <nav className="inline-flex items-center gap-1 justify-start bg-neutral-900 backdrop-blur-md border border-neutral-800 px-2 py-2 rounded-full shadow-2xl shadow-black/50">
           {navItems.map((item) => {
@@ -25,9 +25,9 @@ const Navbar = (props) => {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex items-between gap-2 px-4 py-2 text-sm rounded-full font-medium text-neutral-400 hover:bg-white/5 transition-all duration-200 leading-none  ${activeLabel === item.label ? "text-secondary shadow-2xl" : "hover:text-white"}`}
+                className={`flex items-between gap-2 px-4 py-2 text-base rounded-full font-medium text-neutral-400 hover:bg-white/5 transition-all duration-200 leading-none  ${activeLabel === item.label ? "text-secondary shadow-2xl" : "hover:text-white"}`}
               >
-                <Icon className="h-4 w-4 sm:hidden" aria-hidden />
+                <Icon className="h-5 w-5 sm:hidden" aria-hidden />
                 <div
                   className={`hidden sm:block`}
                 >

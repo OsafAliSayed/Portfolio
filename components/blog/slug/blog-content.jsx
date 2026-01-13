@@ -79,8 +79,10 @@ export default function BlogContent({ contentHtml }) {
     <div 
       ref={contentRef}
       className="prose prose-sm dark:prose-invert max-w-none
-        prose-headings:text-neutral-100 prose-headings:font-medium
-        prose-p:text-neutral-300 prose-p:leading-7
+        prose-headings:text-neutral-100 prose-headings:font-bold prose-headings: tracking-tighter
+        prose-h2:text-2xl
+        prose-h3:text-xl
+        prose-p:text-neutral-300 prose-p:leading-7 prose-p:font-base
         prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline hover:prose-a:text-blue-300
         prose-strong:text-neutral-200
         prose-code:text-neutral-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono
