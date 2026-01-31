@@ -6,6 +6,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import Navbar from "@/components/ui/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
+import ShareButtons from "@/components/blog/slug/share-buttons";
 import ContactCTA from "@/components/common/contact-cta";
 import FooterSection from "@/components/common/footer";
 
@@ -97,8 +98,11 @@ export default async function BlogPost({ params }) {
 
               {/* Views */}
               {post.metadata.views && <span>{post.metadata.views} Views</span>}
-
+              
+              <ShareButtons title={post.metadata.title} />
             </div>
+
+            
           </header>
           
           {/* Cover Image */}
