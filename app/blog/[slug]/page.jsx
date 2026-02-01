@@ -4,6 +4,7 @@ import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
+import { stripHtml } from "@/lib/blog";
 import Navbar from "@/components/ui/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
 import ShareButtons from "@/components/blog/slug/share-buttons";
@@ -27,6 +28,12 @@ export async function generateStaticParams() {
   }));
 }
 
+function generateExcerpt(content, length = 160) {
+  const cleanText = stripHtml(content);
+  const text = cleanText.replace(/\n+/g, ' ').trim();
+  return text.length > length ? text.substring(0, length) + '...' : text;
+}
+
 export async function generateMetadata({ params }) {
   const post = getPostBySlug(params.slug);
 
@@ -36,13 +43,35 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.osafalisayed.com";
+  const postUrl = `${SITE_URL}/blog/${params.slug}/`;
+  const description = post.metadata.excerpt || generateExcerpt(post.content);
+  const image = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : null;
+
   return {
     title: `${post.metadata.title} | Blog`,
-    description: post.metadata.excerpt,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
       title: post.metadata.title,
-      description: post.metadata.excerpt,
-      images: post.metadata.image ? [post.metadata.image] : [],
+      description,
+      type: "article",
+      url: postUrl,
+      siteName: "Osaf Ali Sayed",
+      ...(image && { images: [{ url: image, width: 1200, height: 630, alt: post.metadata.title }] }),
+      authors: post.metadata.author ? [post.metadata.author] : ["Osaf Ali Sayed"],
+      publishedTime: post.metadata.date,
+      tags: post.metadata.tags || [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metadata.title,
+      description,
+      ...(image && { image }),
+      creator: "@osafalisayed",
     },
   };
 }

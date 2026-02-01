@@ -15,7 +15,7 @@ function buildShareLinks(url, title) {
   return {
     whatsapp: `https://wa.me/?text=${encodedText}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedText}`,
-    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedSummary}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
   };
 }
 
@@ -72,11 +72,12 @@ export default function ShareButtons({ title }) {
         >
           <Icons.Share className="h-4 w-4" />
         </button>
-        <div className="absolute bottom-full left-1/2 mb-2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-black/80 px-3 py-2 opacity-0 translate-y-1 transition group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100">
+        <div className="absolute bottom-full left-1/2 mb-2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-black/80 px-3 py-2 opacity-0 translate-y-1 transition group-hover:opacity-100 group-focus-within:opacity-100">
           <button
             type="button"
             aria-label="Share on WhatsApp"
             onClick={() => handleShare(links.whatsapp)}
+            onBlur={() => setCopied(false)}
             className="text-neutral-300 transition hover:text-green-400"
           >
             <Icons.WhatsApp className="h-4 w-4" />
@@ -85,6 +86,7 @@ export default function ShareButtons({ title }) {
             type="button"
             aria-label="Share on Twitter"
             onClick={() => handleShare(links.twitter)}
+            onBlur={() => setCopied(false)}
             className="text-neutral-300 transition hover:text-blue-400"
           >
             <Icons.Twitter className="h-4 w-4" />
@@ -93,6 +95,7 @@ export default function ShareButtons({ title }) {
             type="button"
             aria-label="Share on LinkedIn"
             onClick={() => handleShare(links.linkedin)}
+            onBlur={() => setCopied(false)}
             className="text-neutral-300 transition hover:text-blue-400"
           >
             <Icons.LinkedIn className="h-4 w-4" />
