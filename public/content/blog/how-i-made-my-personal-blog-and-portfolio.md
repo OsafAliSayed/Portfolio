@@ -9,7 +9,6 @@ tags:
   - next.js
   - githubactions
   - devops
-  - ""
 image: /uploads/how-i-built-my-personal-blog-cover.png
 ---
 # How I Built My Personal Blog & Portfolio 
