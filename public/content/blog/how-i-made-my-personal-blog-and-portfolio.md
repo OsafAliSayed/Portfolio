@@ -1,15 +1,16 @@
 ---
-title: How I Built My Personal Blog & Portfolio
-date: 2026-01-21T02:24:00.000+05:30
 author: Osaf Ali Sayed
-tags:
-  - blog
-  - systemdesign
-  - portfolio
-  - next.js
-  - githubactions
-  - devops
+date: 2026-01-21 02:24:00+05:30
 image: /uploads/how-i-built-my-personal-blog-cover.png
+tags:
+- blog
+- systemdesign
+- portfolio
+- next.js
+- githubactions
+- devops
+title: How I Built My Personal Blog & Portfolio
+views: '15'
 ---
 # How I Built My Personal Blog & Portfolio 
 
