@@ -1,6 +1,7 @@
 "use client";
 
 import Icons from "./ui/icons";
+import Link from "next/link";
 import { MouseFollowTooltip } from "@/components/ui/tooltip";
 import { reviews } from "@/lib/constants";
 import SectionHeader from "@/components/ui/section-header";
@@ -39,40 +40,52 @@ export default function ReviewsSection() {
          
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {displayedReviews.map((review) => (
-          <MouseFollowTooltip
-            key={review.id}
-            content={review.review || ""}
-            showCondition={() => review.review && review.review.length > 40}
-            className="group p-4 bg-[#0a0a0a] border border-white/10 hover:border-secondary transition-all duration-2F00 flex flex-col "
-          >
-            {renderRating(review.rating)}
+        {displayedReviews.map((review) => {
+          const reviewSlug = review.name.replace(/\s+/g, "-").toLowerCase();
+          const reviewHref = `/reviews/#${reviewSlug}`;
 
-            <div className="flex flex-col flex-grow">
+          return (
+            <Link
+              key={review.id}
+              href={reviewHref}
+              aria-label={`Read the review from ${review.name}`}
+              className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <MouseFollowTooltip
+                content={review.review || ""}
+                showCondition={() => review.review && review.review.length > 40}
+                className="group p-4 bg-[#0a0a0a] border border-white/10 hover:border-secondary transition-all duration-2F00 flex flex-col"
+              >
+                {renderRating(review.rating)}
 
+                <div className="flex flex-col flex-grow">
+                  <div className="pt-3 pb-1">
+                    <h3
+                      id={`review-${reviewSlug}`}
+                      className="text-lg font-medium tracking-tighter text-white"
+                    >
+                      {review.name}
+                    </h3>
+                    <p className="text-sm text-neutral-500">{review.company}</p>
+                  </div>
 
-              <div className="pt-3 pb-1">
-                <h3 className="text-lg font-medium tracking-tighter text-white">
-                  {review.name}
-                </h3>
-                <p className="text-sm text-neutral-500">{review.company}</p>
-              </div>
-
-              {review.review ? (
-                <>
-                  {/* Desktop: Show truncated review */}
-                  <p className="text-sm text-neutral-400 leading-relaxed italic">
-                    {truncateReview(review.review)}
-                  </p>
-                </>
-              ) : (
-                <p className="text-xs text-neutral-600 italic mt-3">
-                  No written review provided
-                </p>
-              )}
-            </div>
-          </MouseFollowTooltip>
-        ))}
+                  {review.review ? (
+                    <>
+                      {/* Desktop: Show truncated review */}
+                      <p className="text-sm text-neutral-400 leading-relaxed italic">
+                        {truncateReview(review.review)}
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-xs text-neutral-600 italic mt-3">
+                      No written review provided
+                    </p>
+                  )}
+                </div>
+              </MouseFollowTooltip>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );
