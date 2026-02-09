@@ -44,5 +44,5 @@ next-env.d.ts
 .continue/
 
 # ignore posthog config
-./lib/posthog.js
+/lib/posthog.js
 
