@@ -49,7 +49,7 @@ export default function ReviewsPage() {
               {/* Header */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2">
                 <div>
-                  <h2 className="text-white text-lg flex items-center gap-2">
+                  <h2 className="text-white text-lg flex items-center gap-2" id={`${review.name.replace(/\s+/g, '-').toLowerCase()}`}>
                     {review.name}
                     {renderRating(review.rating)}
                   </h2>
