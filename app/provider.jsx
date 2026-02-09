@@ -18,12 +18,20 @@ export function Providers({ children }) {
 
 export function PostHogProvider({ children }) {
   useEffect(() => {
+    if (!POSTHOG_KEY) {
+      return
+    }
+
     posthog.init(POSTHOG_KEY, {
-      api_host: POSTHOG_HOST,
+      ...(POSTHOG_HOST ? { api_host: POSTHOG_HOST } : {}),
       person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
       defaults: '2025-05-24'
     })
   }, [])
+
+  if (!POSTHOG_KEY) {
+    return <>{children}</>
+  }
 
   return (
     <PHProvider client={posthog}>
