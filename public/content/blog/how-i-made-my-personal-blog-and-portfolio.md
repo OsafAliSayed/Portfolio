@@ -10,7 +10,7 @@ tags:
 - githubactions
 - devops
 title: How I Built My Personal Blog & Portfolio
-views: '19'
+views: '21'
 ---
 # How I Built My Personal Blog & Portfolio 
 
