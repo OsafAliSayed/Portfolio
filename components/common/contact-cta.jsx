@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { contactInfo } from '@/lib/constants';
 import SectionHeader from '../ui/section-header';
+import CalendlyEmbed from './calendly-embed';
+
 /**
  * Small contact CTA that offers Email and WhatsApp actions.
  * Replace the default `email` and `phone` props with real values.
@@ -15,7 +17,7 @@ export default function ContactCTA({
   phone = contactInfo.phone 
 }) {
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent("Hi! I'd like to connect about a project.")}`;
-
+  const calendlyLink = "https://calendly.com/osafalisayed/30min";
   return (
     <section id="contact" className="mb-20 scroll-mt-24">
       <SectionHeader>Get In Touch</SectionHeader>      
@@ -35,6 +37,17 @@ export default function ContactCTA({
             >
               <Icons.WhatsApp className="w-4 h-4" />
               WhatsApp
+            </Button>
+          </a>
+           
+           <a href={calendlyLink} target="_blank" rel="noopener noreferrer" aria-label="Schedule a meet" className="inline-flex">
+            <Button
+              variant="ghost"
+              size="default"
+              className="rounded-none border border-white/10 bg-transparent text-blue-400 text-sm px-3 py-2 inline-flex items-center gap-2 hover:border-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <Icons.Calendly className="w-4 h-4" />
+              Schedule a Meet
             </Button>
           </a>
         </div>
