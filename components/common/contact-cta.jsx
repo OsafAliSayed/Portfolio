@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { contactInfo } from '@/lib/constants';
 import SectionHeader from '../ui/section-header';
-import CalendlyEmbed from './calendly-embed';
 
 /**
  * Small contact CTA that offers Email and WhatsApp actions.
