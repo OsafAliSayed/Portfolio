@@ -10,6 +10,7 @@ import BlogContent from "@/components/blog/slug/blog-content";
 import ShareButtons from "@/components/blog/slug/share-buttons";
 import ContactCTA from "@/components/common/contact-cta";
 import FooterSection from "@/components/common/footer";
+import Image from "next/image";
 
 async function markdownToHtml(markdown) {
   const result = await remark()
@@ -137,10 +138,13 @@ export default async function BlogPost({ params }) {
           {/* Cover Image */}
           {post.metadata.image && (
             <div className="my-6">
-              <img
+              <Image
+
                 src={post.metadata.image}
                 alt={post.metadata.title}
                 className="w-full h-auto  border border-white/10"
+                width={1200}
+                height={630}
               />
             </div>
           )}

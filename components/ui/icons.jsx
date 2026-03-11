@@ -68,6 +68,8 @@ import {
 } from 'react-icons/tb';
 
 import {
+
+  SiCalendly,
   SiJavascript,
   SiTypescript,
   SiReact,
@@ -125,6 +127,7 @@ const Icons = {
   Email: FaEnvelope,
   Mail: FaEnvelope,
   WhatsApp: FaWhatsapp,
+  Calendly: SiCalendly,
   Download: FaDownload,
   Twitter: FaTwitter,
   TwitterX: BsTwitterX,
@@ -220,7 +223,7 @@ const Icons = {
 
   Bot: FaRobot,
   TrendingUp: FaChartBar,
-  Automation: TbAutomation
+  Automation: TbAutomation, 
 };
 
 export default Icons;
