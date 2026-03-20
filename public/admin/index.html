@@ -6,19 +6,13 @@
     <title>Decap CMS</title>
   </head>
   <body>
-    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 
     <script>
-      const isLocal =
-        location.hostname === "localhost" ||
-        location.hostname === "127.0.0.1";
-
       CMS.init({
-        config: { load_config_file: true },
-        configFile: isLocal
-          ? "/admin/config-local.yml"
-          : "/admin/config.yml",
+        config: {
+          load_config_file: true,
+        },
       });
     </script>
   </body>
