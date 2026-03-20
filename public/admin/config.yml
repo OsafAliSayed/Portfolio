@@ -19,4 +19,5 @@ collections:
       - { label: "Author", name: "author", widget: "string", default: "Osaf Ali Sayed" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Views", name: "views", widget: "string", required: false, default: "0" }
       - { label: "Body", name: "body", widget: "markdown" }
