@@ -61,19 +61,5 @@ The site is configured for deployment to GitHub Pages:
 npm run deploy
 ```
 
-## Server Proxy For Decap CMS VPS
 
-Run a docker instance on your VPS to verify your login:
-
-```
-docker run -d \
-  -p 3000:3000 \
-  -e OAUTH_CLIENT_ID=your_client_id \
-  -e OAUTH_CLIENT_SECRET=your_client_secret \
-  -e OAUTH_AUTHORIZE_URL=https://github.com/login/oauth/authorize \
-  -e OAUTH_TOKEN_URL=https://github.com/login/oauth/access_token \
-  -e GITHUB_API_URL=https://api.github.com \
-  -e SCOPES=repo \
-  decaporg/decap-cms-github-oauth-provider
-```
 
