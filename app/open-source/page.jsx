@@ -27,48 +27,47 @@ export default function OpenSourcePage() {
         <PageHeaderSection props={OpenSourceHeaders} />
         
         {/* Contributions List */}
-        <div className="space-y-12">
+        <div className="space-y-12 mb-10 px-4">
           {contributions.map((contribution) => (
-            <div key={contribution.id} className="relative border-l border-white/10 pl-8 ml-2">
+            <div key={contribution.id} className="relative border-l-4 border-white/30 pl-9 ml-2">
               {/* Logo on timeline */}
-              <div className="absolute -left-[15px] top-0 w-8 h-8 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
+              <div className="absolute -left-[26px] lg:-left-[31px] top-0 w-14 h-14 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
                  <Image
                     src={contribution.logo}
                     alt={contribution.company}
                     width={28}
                     height={28}
-                    className="object-contain p-0.5"
+                    className="object-contain"
                   />
               </div>
 
               {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between ">
                 <div>
-                  <h2 className="text-white font-medium text-base flex items-center gap-2">
+                  <Link 
+                    href={contribution.link}
+                    target="_blank"
+                    className="text-lg tracking-tighter font-bold hover:text-blue-400 transition-colors flex items-center gap-1 "
+                  >
                     {contribution.title}
                     <span className="text-xs px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
                       {contribution.status}
                     </span>
-                  </h2>
-                  <Link 
-                    href={contribution.link}
-                    target="_blank"
-                    className="text-sm text-neutral-500 hover:text-blue-400 transition-colors flex items-center gap-1 "
-                  >
-                    {contribution.repository}
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                  </Link>
+
+                  </Link>  
+                  <p className="text-base italic text-neutral-600 mb-2">{contribution.description}</p>
+
                 </div>
-                <span className="text-sm text-neutral-600 font-mono sm:mt-0">{contribution.date}</span>
+                <span className="text-sm text-neutral-600 font-mono hidden lg:block">{contribution.date}</span>
+                
               </div>
 
-              <p className="text-sm text-neutral-300 mb-2 font-medium">{contribution.description}</p>
 
               {/* Details */}
-              <div className="space-y-3 mb-4">
+              <div className="space-y-2 mb-4">
                 {contribution.list.map((item, idx) => (
-                  <p key={idx} className="text-sm text-neutral-400 leading-relaxed">
-                    • {highlightKeywords(item.text, item.highlights)}
+                  <p key={idx} className="text-sm text-neutral-400 leading-relaxed p-0 m-0">
+                    {highlightKeywords(item.text, item.highlights)}
                   </p>
                 ))}
               </div>
@@ -82,7 +81,7 @@ export default function OpenSourcePage() {
                       key={tech}
                       className="flex items-center gap-1.5 px-2 py-1 text-sm bg-neutral-800/50 text-neutral-400 border border-white/5"
                     >
-                      {IconComponent && <IconComponent className="w-3 h-3" />}
+                      {IconComponent && <IconComponent className="w-3 h-3 text-secondary" />}
                       {tech}
                     </span>
                   );
