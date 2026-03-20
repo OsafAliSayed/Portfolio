@@ -1,9 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: OsafAliSayed/Portfolio
   branch: main
-
-# Local development backend
-local_backend: true
+  base_url: https://decap-auth.osafalisayed.com
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
