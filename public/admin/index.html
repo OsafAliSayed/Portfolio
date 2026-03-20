@@ -6,15 +6,20 @@
     <title>Decap CMS</title>
   </head>
   <body>
-    <!-- Include the script that enables Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Include the Decap CMS script -->
+    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
-    <!-- Include the local backend script for local development -->
+
     <script>
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        CMS.registerPreviewStyle('/globals.css');
-      }
+      const isLocal =
+        location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1";
+
+      CMS.init({
+        config: { load_config_file: true },
+        configFile: isLocal
+          ? "/admin/config-local.yml"
+          : "/admin/config.yml",
+      });
     </script>
   </body>
 </html>
