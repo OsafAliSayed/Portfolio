@@ -1,14 +1,14 @@
 ---
-title: How I Made My First Contribution @Frappe
-date: 2025-08-06 00:06:00+05:30
 author: Osaf Ali Sayed
-tags:
-  - Vue.JS
-  - Python
-  - Frappe
-  - LMS
+date: 2025-08-06 00:06:00+05:30
 image: /uploads/frappe-open-source-contribution.png
-views: "61"
+tags:
+- Vue.JS
+- Python
+- Frappe
+- LMS
+title: How I Made My First Contribution @Frappe
+views: '61'
 ---
 # How I Made My First Contribution @Frappe
 
