@@ -1,16 +1,17 @@
 ---
-author: Osaf Ali Sayed
-date: 2025-08-06 00:06:00+05:30
-image: /uploads/frappe-open-source-contribution.png
-tags:
-- Vue.JS
-- Python
-- Frappe
-- LMS
 title: How I Made My First Contribution @Frappe
-views: '61'
+date: 2025-08-06 00:06:00+05:30
+author: Osaf Ali Sayed
+tags:
+  - Vue.JS
+  - Python
+  - Frappe
+  - LMS
+image: /uploads/frappe-open-source-contribution.png
+views: "61"
 ---
 # How I Made My First Contribution @Frappe
+
 Contributing to open source has always been a goal of mine, but finding the right starting point was challenging. During my college years, despite learning development, I lacked the courage to make an open source contribution.ived valuable feedback on my pull request. My foundational knowledge of the Frappe framework and Vue.JS enabled me to implement the necessary changes smoothly.
 
 Recently, I joined [Zenduty](https://zenduty.com/), a startup specializing in IT Service Management. At Zenduty, we heavily utilize Python for backend development, and JavaScript, React.JS, and Vite.JS for frontend work. This experience exposed me to various technologies like Docker, Docker Compose, and GitHub Actions, significantly boosting my confidence.
