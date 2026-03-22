@@ -1,5 +1,5 @@
 ---
-title: I bought a VPS! and Now I am Self-hosting everything someone stop me
+title: How My VPS Went From Useless to "I Feel Invincible!"
 date: 2026-03-22T08:49:00.000+05:30
 author: Osaf Ali Sayed
 tags:
@@ -10,21 +10,58 @@ tags:
 image: /uploads/gemini_generated_image_7z6vhe7z6vhe7z6v.webp
 views: "0"
 ---
-A lot of you, who are reading this from LinkedIn and are following me, know that I bought a VPS server a while back. I paid for a year so that I don't have to worry about it until next year.
+A lot of you who follow me on LinkedIn probably remember that I bought a VPS server a while back. I paid for a full year upfront—mainly so future me wouldn’t have to think about it (great decision, by the way).
 
-For a while, this server was just sitting there eating dust, not doing anything significant because I could not get around doing anything about it.
+For the longest time, that server just sat there… existing. No real purpose. Just quietly burning money and collecting digital dust because I couldn’t get around to setting things up.
 
-This is what I did once I got time to fix it.
+But recently, I finally carved out some time - and here’s what I ended up doing. 
 
 ![Architecture Diagram](/uploads/diagram-export-3-22-2026-7_28_19-am.webp "Architecture Diagram for VPS Server.")
 
-Firstly, I set up a reverse proxy using [traefik](https://traefik.io/traefik). I use this reverse proxy to make sure everything is centralized to my VPS server. Any traffic that comes to my VPS will get routed by Traefik. It rejects everything that is unnecessary, offering a small layer of protection for natural scans that hit your applications.
+## Getting Started: Reverse Proxy with Traefik
 
-This step sounds easy and very fun to do, but OMG! what a nightmare. I couldn't set this up properly for a week. When I had it running, I thought the dashboard needed to be exposed, and it would make my reverse proxy journey easier. After bypassing all the security TRAEFIK set up to make sure we DO NOT SELF HOST THE dashboard on production, I did so anyway, and luckily found it in the documentation that this is not how you are supposed to do it. STOP USING AI, and write the Docker file yourself, you bafoon.
+The first thing I set up was a reverse proxy using Traefik.
 
-Anyways, after struggling for a month with Traefik's documentation, I started to realize how things are actually working. \
-\
-You basically set up a container for Traefik, and then THAT's it. Later on, when you are making the applications, you go and expose them using **labels**. These labels will allow you to do all sorts of stuff, like create a load balancer for an application, making sure the traffic from a specific subdomain reaches this specific container, generate certifications for your application, and a lot more.
+The idea was simple: centralize everything. Any traffic hitting my VPS should go through Traefik, which would then decide where it needs to go. It also blocks unnecessary requests, which gives a small but useful layer of protection against random internet noise constantly poking your server.
+
+Sounds straightforward, right?
+
+Yeah… no.
+
+This step *looked* fun and easy. It was not. It took me about a week of trial, error, and mild existential dread to get it working properly.
+
+At one point, I convinced myself that exposing the Traefik dashboard publicly was a good idea (spoiler: it was not). I even managed to bypass the built-in safeguards Traefik puts in place to stop you from doing exactly that.
+
+And then, buried deep in the documentation, I found the equivalent of:
+
+> “Please don’t do this in production.”
+
+Cool. Cool cool cool.
+
+Moral of the story:
+
+Stop blindly trusting AI-generated configs and actually read the docs… you buffoon.
+
+## The “Aha!” Moment
+
+After wrestling with the documentation for what felt like a month, things finally clicked.
+
+Traefik is actually very simple conceptually:
+
+* You run a single Traefik container
+* That’s it
+* Everything else is configured using Docker labels
+
+Those labels are incredibly powerful. You can:
+
+* Route traffic based on subdomains
+* Automatically generate SSL certificates
+* Set up load balancing
+* And a lot more
+
+Once you understand this, everything becomes much easier.
+
+Here’s the config I used:
 
 ```yaml
 name: traefik
@@ -87,13 +124,26 @@ This simple config does the following things:
 5. Exposes the right ports for usage.
 6. Creates a Docker network called **traefik**. Now this network is important. You need at least one network upon which you should be able to connect your applications. This is how Traefik actually discovers your containers, by a common network. Of course, you can have an application-specific network and connect the above configuration to that network.
 
-Once you set up this proxy, your life becomes easy. You start feeling invincible. Deploying services, applications, custom websites, everything is just a piece of a YAML file😂.
+## The “I Am Invincible Now” Phase
 
-## N8N
+Once Traefik is working, something changes.
 
-At this point, I was ready to self-host some applications that are production-ready and can help me automate some tasks. The first thing I self-hosted was N8N!
+You suddenly feel unstoppable.
 
-This is the YAML file I wrote for it:
+Deploying apps? Easy.
+Routing domains? Easy.
+SSL? Automatic.
+
+Everything becomes “just another YAML file” 😂
+
+## First Deployment: N8N
+
+With my newfound (and slightly dangerous) confidence, I decided to self-host something useful.
+
+Enter: **N8N**
+
+Here’s the config I used:
+
 
 ```yaml
 name: n8n
@@ -138,9 +188,18 @@ networks:
     external: true
 ```
 
-Clearly, it simply uses labels to generate the SSL certifications, and simply runs a load balancer on the service (this is not needed for applications you will use for yourself, of course). Notice how it is exposed to the same network that I created earlier, if you miss this, you will scratch your head until you go BALD.
+This setup:
 
-and Viola we have N8N!
+- Routes traffic to n8n.osafalisayed.com
+- Automatically provisions SSL 
+- Connects to the Traefik network
+- Exposes the service correctly
+
+And just like that… it worked.
+
+Unless you forget the network part—then you’ll go bald debugging it.
+
+
 
 ![N8N home screen](/uploads/screenshot-from-2026-03-15-03-00-55.webp "N8N home screen")
 
