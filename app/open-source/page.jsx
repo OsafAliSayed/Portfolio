@@ -22,7 +22,7 @@ export default function OpenSourcePage() {
       <Navbar activeLabel="Open Source" />
 
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+      <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
         {/* Header */}
         <PageHeaderSection props={OpenSourceHeaders} />
         

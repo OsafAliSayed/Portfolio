@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar activeLabel="Home" />
 
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+      <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
         {/* Hero Section */}
         <HeroSection />
    

@@ -95,7 +95,7 @@ export default async function BlogPost({ params }) {
       <Navbar />
 
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+      <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
         <article className="mb-6">
           {/* Article header */}
           <header className="space-y-2">
