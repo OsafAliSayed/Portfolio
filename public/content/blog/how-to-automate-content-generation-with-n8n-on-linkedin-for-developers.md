@@ -7,6 +7,7 @@ tags:
   - Automation
   - AI
   - Workflow
+image: /uploads/gemini_generated_image_ytfdgsytfdgsytfd.webp
 views: "0"
 ---
 # How To Automate Content Generation with N8N on LinkedIn (For Developers)
@@ -38,7 +39,7 @@ If you are running a self-hosted version of N8N, the setup is pretty complicated
 
 Personally, this workflow is good, but it needs a few modifications. I added these based on my own usage and how I use linkedin to post updates daily:
 
-![Sample Google Sheet](/uploads/gemini_generated_image_ytfdgsytfdgsytfd.webp "Sample Google Sheet")
+![Sample Google Sheet](/uploads/screenshot-from-2026-03-28-23-03-06.webp "Sample Google Sheet")
 
 1. Post Link Tracking: After a post is created, it updates the LinkedIn Google Sheet with the post link just so I can track my posts. I use them later to send applications to clients as well. If a post does well, I keep it saved and marked so that I can share it with relevant clients on Upwork or any platform.
 2. Video Content Generation: The current pipeline does not support video content generation, so basically, if a video is provided as a link, it should download it and upload it on LinkedIn, which would also be awesome, considering I share a lot of update videos on LinkedIn.
