@@ -1,14 +1,14 @@
 ---
-title: How My VPS Went From Useless to "I Feel Invincible!"
-date: 2026-03-22T08:49:00.000+05:30
 author: Osaf Ali Sayed
-tags:
-  - devops
-  - selfhosting
-  - docker
-  - containerization
+date: 2026-03-22 08:49:00+05:30
 image: /uploads/gemini_generated_image_7z6vhe7z6vhe7z6v.webp
-views: "0"
+tags:
+- devops
+- selfhosting
+- docker
+- containerization
+title: How My VPS Went From Useless to "I Feel Invincible!"
+views: '21'
 ---
 A lot of you who follow me on LinkedIn probably remember that I bought a VPS server a while back. I paid for a full year upfront—mainly so future me wouldn’t have to think about it (great decision, by the way).
 
