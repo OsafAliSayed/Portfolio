@@ -15,7 +15,8 @@ export default function SearchClient({ posts }) {
   const filteredPosts = useMemo(() => {
     if (!query) return posts;
     return posts.filter(p => 
-      p.metadata.title.toLowerCase().includes(query.toLowerCase())
+      p.metadata.title.toLowerCase().includes(query.toLowerCase()) || 
+      p.metadata.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
     );
   }, [query, posts]);
 
@@ -24,14 +25,14 @@ export default function SearchClient({ posts }) {
     <div>
       <SearchInput />
       
-      <div className="mt-2 mb-10">
+      <div className="mt-4 mb-10 grid grid-cols-1 gap-3">
         {filteredPosts.length > 0 ? (
           filteredPosts.map(p => (
-          <PostLink key={p.slug} post={p}/>
+            <PostLink key={p.slug} post={p} />
           ))
         ) : (
-          <div className="text-center mt-10">
-            <span>No Posts Found</span>
+          <div className="py-8 text-center text-neutral-500">
+            <p className="text-sm">No posts found.</p>
           </div>
         )}
       </div>

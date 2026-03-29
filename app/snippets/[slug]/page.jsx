@@ -71,6 +71,20 @@ export default async function SnippetPage({ params }) {
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-600">
 
+              {/* Tags */}
+              {snippet.metadata.tags && snippet.metadata.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5">
+                  {snippet.metadata.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/5 text-neutral-400 border border-white/10"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               {snippet.metadata.date && (
                 <time dateTime={snippet.metadata.date}>
                   {new Date(snippet.metadata.date).toLocaleDateString("en-US", {

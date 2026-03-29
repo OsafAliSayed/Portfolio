@@ -104,11 +104,11 @@ export default async function BlogPost({ params }) {
 
               {/* Tags */}
               {post.metadata.tags && post.metadata.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {post.metadata.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/10 text-neutral-300"
+                      className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/5 text-neutral-400 border border-white/10"
                     >
                       {tag}
                     </span>

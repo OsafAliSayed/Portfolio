@@ -24,11 +24,11 @@ export default function Home() {
         {/* Work Section */}
         <ExperienceTimeline />
 
-        {/* Projects Section */}
-        <ProjectsSection />
-
         {/* Reviews Section */}
         <ReviewsSection />
+
+        {/* Projects Section */}
+        <ProjectsSection />
         
         {/* Writing Section */}
         <BlogSection />        
