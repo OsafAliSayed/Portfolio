@@ -26,22 +26,57 @@ export async function generateStaticParams() {
   }));
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://osafalisayed.com';
+
 export async function generateMetadata({ params }) {
   const snippet = getSnippetBySlug(params.slug);
 
   if (!snippet) {
     return {
-      title: "Snippet Not Found",
+      title: 'Snippet Not Found',
     };
   }
 
+  const description = snippet.metadata.excerpt || snippet.metadata.description || '';
+  const snippetUrl = `${SITE_URL}/snippets/${params.slug}/`;
+  const image = snippet.metadata.image ? `${SITE_URL}${snippet.metadata.image}` : `${SITE_URL}/favicon.jpeg`;
+
   return {
     title: `${snippet.metadata.title} | Snippets`,
-    description: snippet.metadata.excerpt || snippet.metadata.description,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: snippetUrl,
+    },
     openGraph: {
       title: snippet.metadata.title,
-      description: snippet.metadata.excerpt || snippet.metadata.description,
-      images: snippet.metadata.image ? [snippet.metadata.image] : [],
+      description,
+      url: snippetUrl,
+      siteName: 'Osaf Ali Sayed',
+      type: 'article',
+      images: [{ url: image, width: 1200, height: 630, alt: snippet.metadata.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: snippet.metadata.title,
+      description,
+      creator: '@sayedosafali',
+      images: [image],
+    },
+    icons: {
+      icon: '/favicon.jpeg',
+      shortcut: '/favicon.jpeg',
+      apple: '/favicon.jpeg',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }

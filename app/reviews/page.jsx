@@ -4,6 +4,53 @@ import Navbar from '@/components/ui/navbar';
 import PageHeaderSection from '@/components/common/page-header';
 import FooterSection from '@/components/common/footer';
 
+export const metadata = {
+  title: 'Reviews — Osaf Ali Sayed',
+  description:
+    'What clients and colleagues have said about working with me. Honest reviews reflecting my commitment to delivering quality work.',
+  keywords: [
+    'Reviews',
+    'Testimonials',
+    'Client Feedback',
+    'Osaf Ali Sayed',
+    'Freelance Developer',
+    'Upwork',
+  ],
+  openGraph: {
+    title: 'Reviews — Osaf Ali Sayed',
+    description:
+      'What clients and colleagues have said about working with me. Honest reviews reflecting my commitment to delivering quality work.',
+    url: 'https://osafalisayed.com/reviews',
+    siteName: 'Osaf Ali Sayed',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/favicon.jpeg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Reviews — Osaf Ali Sayed',
+    description:
+      'What clients and colleagues have said about working with me. Honest reviews reflecting my commitment to delivering quality work.',
+    creator: '@sayedosafali',
+    images: ['/favicon.jpeg'],
+  },
+  icons: {
+    icon: '/favicon.jpeg',
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 const ReviewsSectionHeader = {
   title: "Reviews",
   description: "What clients and colleagues have said about working with me. These reviews reflect my commitment to delivering quality work and building strong professional relationships."

@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.osafalisayed.com";
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://osafalisayed.com";
   const postUrl = `${SITE_URL}/blog/${params.slug}/`;
   const description = post.metadata.excerpt || generateExcerpt(post.content);
   const image = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : null;
