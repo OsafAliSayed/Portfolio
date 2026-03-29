@@ -7,9 +7,12 @@ tags:
 - selfhosting
 - docker
 - containerization
+description: A detailed account of my journey from buying a VPS to successfully self-hosting multiple applications using Docker and Traefik, including the challenges I faced and the lessons I learned along the way.
 title: How My VPS Went From Useless to "I Feel Invincible!"
 views: '21'
 ---
+# I Bought a VPS and Now I Am Self-Hosting Everything. Someone Stop Me!
+
 A lot of you who follow me on LinkedIn probably remember that I bought a VPS server a while back. I paid for a full year upfront—mainly so future me wouldn’t have to think about it (great decision, by the way).
 
 For the longest time, that server just sat there… existing. No real purpose. Just quietly burning money and collecting digital dust because I couldn’t get around to setting things up.

@@ -7,6 +7,55 @@ import { contributions } from '@/lib/constants';
 import PageHeaderSection from '@/components/common/page-header';
 import FooterSection from '@/components/common/footer';
 
+export const metadata = {
+  title: 'Open Source — Osaf Ali Sayed',
+  description:
+    'Contributing to the developer community by solving real problems and improving tools that developers use every day.',
+  keywords: [
+    'Open Source',
+    'Osaf Ali Sayed',
+    'Contributions',
+    'GitHub',
+    'Developer Community',
+    'Frappe',
+    'Wagtail',
+    'Python',
+  ],
+  openGraph: {
+    title: 'Open Source — Osaf Ali Sayed',
+    description:
+      'Contributing to the developer community by solving real problems and improving tools that developers use every day.',
+    url: 'https://osafalisayed.com/open-source',
+    siteName: 'Osaf Ali Sayed',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/favicon.jpeg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Open Source — Osaf Ali Sayed',
+    description:
+      'Contributing to the developer community by solving real problems and improving tools that developers use every day.',
+    creator: '@sayedosafali',
+    images: ['/favicon.jpeg'],
+  },
+  icons: {
+    icon: '/favicon.jpeg',
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 const OpenSourceHeaders = {
   title: "Open Source",
   description: "Contributing to the developer community by solving problems and improving tools that developers use every day."

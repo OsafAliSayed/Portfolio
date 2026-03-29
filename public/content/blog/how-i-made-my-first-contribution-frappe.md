@@ -7,6 +7,7 @@ tags:
 - Python
 - Frappe
 - LMS
+description: A detailed account of my first open source contribution to Frappe, including the challenges I faced and the technologies I used.
 title: How I Made My First Contribution @Frappe
 views: '62'
 ---

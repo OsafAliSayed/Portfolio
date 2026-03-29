@@ -29,12 +29,6 @@ export async function generateStaticParams() {
   }));
 }
 
-function generateExcerpt(content, length = 160) {
-  const cleanText = stripHtml(content);
-  const text = cleanText.replace(/\n+/g, ' ').trim();
-  return text.length > length ? text.substring(0, length) + '...' : text;
-}
-
 export async function generateMetadata({ params }) {
   const post = getPostBySlug(params.slug);
 
@@ -44,21 +38,21 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.osafalisayed.com";
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://osafalisayed.com";
   const postUrl = `${SITE_URL}/blog/${params.slug}/`;
-  const description = post.metadata.excerpt || generateExcerpt(post.content);
   const image = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : null;
 
   return {
     title: `${post.metadata.title} | Blog`,
-    description,
+    description: post.metadata.description,
+    keywords: post.metadata.tags || [],
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: postUrl,
     },
     openGraph: {
       title: post.metadata.title,
-      description,
+      description: post.metadata.description,
       type: "article",
       url: postUrl,
       siteName: "Osaf Ali Sayed",
@@ -70,10 +64,26 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: post.metadata.title,
-      description,
+      description: post.metadata.description,
       ...(image && { image }),
-      creator: "@osafalisayed",
+      creator: "@sayedosafali",
     },
+    icons: {
+      icon: '/favicon.jpeg',
+      shortcut: '/favicon.jpeg',
+      apple: '/favicon.jpeg',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    
   };
 }
 
@@ -86,8 +96,87 @@ export default async function BlogPost({ params }) {
 
   const contentHtml = await markdownToHtml(post.content);
 
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://osafalisayed.com';
+  const postUrl = `${SITE_URL}/blog/${params.slug}/`;
+  const coverImage = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : `${SITE_URL}/favicon.jpeg`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        '@id': postUrl,
+        headline: post.metadata.title,
+        description: post.metadata.description || '',
+        image: {
+          '@type': 'ImageObject',
+          url: coverImage,
+          width: 1200,
+          height: 630,
+        },
+        url: postUrl,
+        datePublished: post.metadata.date,
+        dateModified: post.metadata.date,
+        inLanguage: 'en-US',
+        keywords: post.metadata.tags ? post.metadata.tags.join(', ') : '',
+        author: {
+          '@type': 'Person',
+          name: post.metadata.author || 'Osaf Ali Sayed',
+          url: SITE_URL,
+          sameAs: [
+            'https://twitter.com/sayedosafali',
+            'https://github.com/OsafAliSayed',
+            'https://linkedin.com/in/osafalisayed',
+          ],
+        },
+        publisher: {
+          '@type': 'Person',
+          name: 'Osaf Ali Sayed',
+          url: SITE_URL,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_URL}/favicon.jpeg`,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': postUrl,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: `${SITE_URL}/blog/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.metadata.title,
+            item: postUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-blue-500/30 selection:text-blue-200 pb-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Grid background */}
       <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
 

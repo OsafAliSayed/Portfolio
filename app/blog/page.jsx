@@ -5,6 +5,55 @@ import PageHeaderSection from '@/components/common/page-header';
 import BlogClient from '@/components/blog/blog-client'
 import { Suspense } from 'react';
 
+export const metadata = {
+  title: 'Blog — Osaf Ali Sayed',
+  description:
+    'Thoughts on software development, technology, and everything in between. Articles on Next.js, Python, Django, and building scalable systems.',
+  keywords: [
+    'Blog',
+    'Osaf Ali Sayed',
+    'Software Development',
+    'Next.js',
+    'Python',
+    'Django',
+    'Tech Writing',
+    'Web Development',
+  ],
+  openGraph: {
+    title: 'Blog — Osaf Ali Sayed',
+    description:
+      'Thoughts on software development, technology, and everything in between.',
+    url: 'https://osafalisayed.com/blog',
+    siteName: 'Osaf Ali Sayed',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/favicon.jpeg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — Osaf Ali Sayed',
+    description:
+      'Thoughts on software development, technology, and everything in between.',
+    creator: '@sayedosafali',
+    images: ['/favicon.jpeg'],
+  },
+  icons: {
+    icon: '/favicon.jpeg',
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 const pageHeaderProps = {
   title: "My Writings",
   description: "Thoughts on development, technology, and everything in between."

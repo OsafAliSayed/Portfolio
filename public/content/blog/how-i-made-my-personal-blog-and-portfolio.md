@@ -9,6 +9,7 @@ tags:
 - next.js
 - githubactions
 - devops
+description: A detailed walkthrough of how I built my personal blog and portfolio using Next.js, GitHub Actions, and a unique architecture that emphasizes ownership and portability.
 title: How I Built My Personal Blog & Portfolio
 views: '25'
 ---
