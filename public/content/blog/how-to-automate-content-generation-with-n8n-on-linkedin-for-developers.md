@@ -1,14 +1,14 @@
 ---
-title: How To Automate Content Generation with N8N on Linkedin (For Developers)
-date: 2026-03-28T22:30:00.000+05:30
 author: Osaf Ali Sayed
-tags:
-  - N8N
-  - Automation
-  - AI
-  - Workflow
+date: 2026-03-28 22:30:00+05:30
 image: /uploads/gemini_generated_image_ytfdgsytfdgsytfd.webp
-views: "0"
+tags:
+- N8N
+- Automation
+- AI
+- Workflow
+title: How To Automate Content Generation with N8N on Linkedin (For Developers)
+views: '3'
 ---
 # How To Automate Content Generation with N8N on LinkedIn (For Developers)
 
