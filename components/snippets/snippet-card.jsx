@@ -10,7 +10,7 @@ import {
 export const SnippetCard = ({ title, desc, tags, link, logo }) => {
   return (
     <Link href={link} className="block">
-      <Card className="group bg-[rgb(10,10,10)] border-[rgb(38,38,38)] hover:border-secondary transition-all duration-200 rounded-none cursor-pointer">
+      <Card className="group bg-[rgb(12,12,12)] border-white/10 hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 rounded-3xl cursor-pointer shadow-lg">
         <CardHeader className="pb-4">
           <div className="flex items-start justify-between">
             <div className="flex-1">

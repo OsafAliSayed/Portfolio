@@ -100,7 +100,8 @@ import {
   SiChartdotjs,
   SiFrappe,
   SiWagtail,
-  SiNestjs
+  SiNestjs,
+  SiVercel
 } from 'react-icons/si';
 
 
@@ -118,6 +119,7 @@ import {
   DiOpensource 
 } from "react-icons/di";
 
+import { AiFillOpenAI } from "react-icons/ai";
 
 // Define your icon mapping
 const Icons = {
@@ -220,6 +222,8 @@ const Icons = {
   Wagtail: SiWagtail,
   NestJs: SiNestjs,
   DigitalOcean: FaDigitalOcean,
+  Vercel: SiVercel,
+  OpenAI: AiFillOpenAI,
 
   Bot: FaRobot,
   TrendingUp: FaChartBar,

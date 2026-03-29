@@ -16,7 +16,7 @@ export default function SnippetsPage() {
             <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
             <Navbar activeLabel="Snippets" />
             {/* Main Content */}
-            <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+            <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
                 {/* Page Header */}
                 <PageHeaderSection props={SnippetsHeader} />
 

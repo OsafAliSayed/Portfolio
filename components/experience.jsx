@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
@@ -7,120 +7,94 @@ import Icons from '@/components/ui/icons';
 import { experiences } from '@/lib/constants';
 import SectionHeader from '@/components/ui/section-header';
 
-const   ExperienceTimeline = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [hoverTimeout, setHoverTimeout] = useState(null);
+const ExperienceTimeline = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
-  // Debounced hover handlers to prevent flickering
-  const handleMouseEnter = useCallback((index) => {
-    // Disable hover on touch devices to prevent conflict with click
-    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
-
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-    }
-    setHoveredIndex(index);
-  }, [hoverTimeout]);
-
-  const handleMouseLeave = useCallback(() => {
-    // Disable hover on touch devices
-    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
-
-    const timeout = setTimeout(() => {
-      setHoveredIndex(null);
-    }, 200); // 200ms delay to prevent flickering
-    setHoverTimeout(timeout);
-  }, []);
-
-  // Click handler for touch devices
   const handleClick = useCallback((index) => {
-    if (hoveredIndex === index) {
-      // If already expanded, collapse it
-      setHoveredIndex(null);
-    } else {
-      // Expand the clicked item
-      setHoveredIndex(index);
-    }
-  }, [hoveredIndex]);
+    setExpandedIndex(prev => prev === index ? null : index);
+  }, []);
 
   return (
     <section id="work" className="mb-10 scroll-mt-24">
       <SectionHeader>Experience</SectionHeader>
-      
-      <div className="space-y-8  border-l-4 border-white/30 ml-6 pl-7 relative">
+
+      <div className="space-y-8">
         {experiences.map((job, i) => (
-          <div 
-            key={i} 
-            className="relative transition-all duration-400 ease-in-out group flex flex-col justify-between"
-            onMouseEnter={() => handleMouseEnter(i)}
-            onMouseLeave={handleMouseLeave}
+          <div
+            key={i}
+            className="relative mt-6 rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300 bg-[rgb(12,12,12)] shadow-lg hover:shadow-2xl cursor-pointer"
             onClick={() => handleClick(i)}
           >
-            {/* Company logo in timeline dot */}
-            <div className="absolute -left-[50px] lg:-left-[56px] w-14 h-14 rounded-full overflow-hidden bg-white border-2 border-neutral-700 flex items-center justify-center">
-              <Image
-                src={job.logo}
-                alt={job.company}
-                width={28}
-                height={28}
-                className={`w-full h-full ${job.company === "Ecomlytix" ? "object-contain p-0.5" : "object-cover"}`}
-              />
-            </div>
-            
-            {/* Basic Info (Always Visible) */}
-            <div className="pl-3 flex flex-row sm:items-center justify-between mt-1">
-              <h3 className="text-white text-lg font-medium tracking-tighter">{job.company}</h3>
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-neutral-500 font-mono hidden sm:block">{job.duration}</span>
-                <button
-                  type="button"
-                  aria-expanded={hoveredIndex === i}
-                  aria-controls={`exp-details-${job.id}`}
-                  onClick={(e) => { e.stopPropagation(); handleClick(i); }}
-                  className="p-1 rounded-md text-neutral-300  hover:bg-neutral-800 transition"
-                  title={hoveredIndex === i ? 'Collapse' : 'Expand'}
-                >
-                  {Icons.ChevronDown && (
-                    <Icons.ChevronDown className={`text-neutral-500 w-4 h-4 transition-transform ${hoveredIndex === i ? 'rotate-180' : ''}`} />
-                  )}
-                </button>
+            {/* Logo — half outside the top border */}
+            <div className="absolute -top-6 left-5 z-10">
+              <div className="w-12 h-12 rounded-full ring-[3px] ring-[rgb(12,12,12)] overflow-hidden bg-white">
+                <Image
+                  src={job.logo}
+                  alt={job.company}
+                  width={48}
+                  height={48}
+                  className={`w-full h-full ${job.company === "Ecomlytix" ? "object-contain p-0.5" : "object-cover"}`}
+                />
               </div>
             </div>
-            <p className="pl-3 text-sm italic mb-1 text-neutral-500">{job.position}</p>
-            
-            {/* Expanded Details (Only on Hover) */}
-            <div
-              id={`exp-details-${job.id}`}
-              className={`grid transition-all duration-300 ease-in-out ${
-                hoveredIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-              }`}
-            >
-              <div className="min-h-0 overflow-hidden">
-                <div className="pt-3 space-y-3">
-                {/* Description */}
-                <ul className="space-y-2">
-                  {job.description.map((desc, idx) => (
-                    <li key={idx} className="text-sm text-neutral-400 leading-relaxed">
-                      {highlightKeywords(desc.text, desc.highlights)}
-                    </li>
-                  ))}
-                </ul>
-                
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {job.technologies.map((tech) => {
-                    const IconComponent = Icons[tech];
-                    return (
-                      <span
-                        key={tech}
-                        className="flex items-center gap-1.5 px-2 py-1 font-bold text-xs bg-neutral-800 text-neutral-300 border border-neutral-700"
-                      >
-                        {IconComponent && <IconComponent className="w-4 h-4 text-secondary" />}
-                        {tech}
-                      </span>
-                    );
-                  })}
+
+            {/* Card body */}
+            <div className="px-5 pb-5 pt-10">
+
+              {/* Header row */}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-white font-semibold text-base tracking-tight">{job.company}</h3>
+                  <p className="text-xs text-neutral-500 italic mt-0.5">{job.position}</p>
                 </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className="text-xs text-neutral-500 font-mono hidden sm:block">{job.duration}</span>
+                  <button
+                    type="button"
+                    aria-expanded={expandedIndex === i}
+                    aria-controls={`exp-details-${job.id}`}
+                    onClick={(e) => { e.stopPropagation(); handleClick(i); }}
+                    className="p-1 rounded-full hover:bg-white/5 transition-colors"
+                  >
+                    <Icons.ChevronDown className={`text-neutral-500 w-4 h-4 transition-transform duration-300 ${expandedIndex === i ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Expandable details */}
+              <div
+                id={`exp-details-${job.id}`}
+                className={`grid transition-all duration-300 ease-in-out ${
+                  expandedIndex === i ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div className="min-h-0 overflow-hidden">
+                  <div className="border-t border-white/5 pt-4 space-y-3">
+
+                    <ul className="space-y-2">
+                      {job.description.map((desc, idx) => (
+                        <li key={idx} className="text-sm text-neutral-400 leading-relaxed">
+                          {highlightKeywords(desc.text, desc.highlights)}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {job.technologies.map((tech) => {
+                        const IconComponent = Icons[tech];
+                        return (
+                          <span
+                            key={tech}
+                            className="flex items-center gap-1 px-2.5 py-1.5 rounded-full text-sm font-medium bg-white/5 text-neutral-300 border border-white/10"
+                          >
+                            {IconComponent && <IconComponent className="w-4 h-4 text-secondary" />}
+                            {tech}
+                          </span>
+                        );
+                      })}
+                    </div>
+
+                  </div>
                 </div>
               </div>
             </div>

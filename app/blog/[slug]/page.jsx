@@ -95,7 +95,7 @@ export default async function BlogPost({ params }) {
       <Navbar />
 
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+      <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
         <article className="mb-6">
           {/* Article header */}
           <header className="space-y-2">
@@ -104,11 +104,11 @@ export default async function BlogPost({ params }) {
 
               {/* Tags */}
               {post.metadata.tags && post.metadata.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {post.metadata.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/10 text-neutral-300"
+                      className="px-2.5 py-1.5 rounded-full t text-sm font-medium bg-white/5 text-neutral-400 border border-white/10"
                     >
                       {tag}
                     </span>

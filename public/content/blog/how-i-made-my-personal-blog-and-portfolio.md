@@ -1,7 +1,7 @@
 ---
 author: Osaf Ali Sayed
 date: 2026-01-21 02:24:00+05:30
-image: /uploads/how-i-built-my-personal-blog-cover.png
+image: /uploads/how-i-built-my-personal-blog-cover.webp
 tags:
 - blog
 - systemdesign
@@ -37,7 +37,7 @@ In short: *I wanted a developer-first blog with full ownership.*
 
 ## System Architecture
 
-![System Architecture Diagram](/uploads/blog-system-architecture-diagram.png "System Architecture Diagram")
+![System Architecture Diagram](/uploads/blog-system-architecture-diagram.webp "System Architecture Diagram")
 
 The entire system is designed around one core idea:
 

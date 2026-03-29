@@ -205,8 +205,8 @@ export default function BlogContent({ contentHtml }) {
           prose-p:text-neutral-300 prose-p:leading-7 prose-p:font-base
           prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline hover:prose-a:text-blue-300
           prose-strong:text-neutral-200
-          prose-code:text-neutral-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono
-          prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10 prose-pre:text-neutral-300 prose-pre:relative
+          prose-code:text-neutral-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-base prose-code:font-mono prose-code:tracking-normal
+          prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10 prose-pre:text-neutral-300 prose-pre:relative prose-pre:text-sm prose-pre:tracking-normal prose-pre:leading-relaxed 
           prose-blockquote:border-l-blue-500 prose-blockquote:text-neutral-400 prose-blockquote:bg-white/5 prose-blockquote:px-4
           prose-hr:border-white/10
           prose-ul:text-neutral-300 prose-ul:list-disc prose-ul:ml-6 prose-ul:space-y-1

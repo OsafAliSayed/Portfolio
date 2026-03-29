@@ -50,7 +50,7 @@ export default function SearchInput({ initialQuery="" }) {
         placeholder="Search blogs..."
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        className="w-full pl-10 pr-10 py-2.5 bg-white/5 border border-white/20 hover:border-secondary text-neutral-200 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-secondary/50 transition-colors text-sm"
+        className="w-full pl-10 pr-10 py-3 bg-[rgb(12,12,12)] border border-white/10 hover:border-white/20 rounded-3xl text-neutral-200 placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-secondary/30 focus:border-white/30 transition-all duration-300 text-sm"
       />
     </div>
 

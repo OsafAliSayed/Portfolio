@@ -64,6 +64,7 @@ Once you understand this, everything becomes much easier.
 Here’s the config I used:
 
 ```yaml
+
 name: traefik
 
 services:
@@ -146,6 +147,7 @@ Here’s the config I used:
 
 
 ```yaml
+
 name: n8n
 
 services:

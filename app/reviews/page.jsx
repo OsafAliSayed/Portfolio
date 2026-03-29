@@ -10,21 +10,6 @@ const ReviewsSectionHeader = {
 }
 
 export default function ReviewsPage() {
-  const renderRating = (rating) => {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      stars.push(
-        <Icons.Star
-          key={i}
-          className={`w-3 h-3 ${
-            i < rating ? "text-yellow-500" : "text-neutral-800"
-          }`}
-        />
-      );
-    }
-    return <div className="flex items-center gap-0.5">{stars}</div>;
-  };
-
   return (
     <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-blue-500/30 selection:text-blue-200 pb-20">
       {/* Grid background */}
@@ -34,42 +19,49 @@ export default function ReviewsPage() {
       <Navbar activeLabel="Reviews" />
 
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-6 pt-32 relative z-10">
+      <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
         {/* Header */}
         <PageHeaderSection props={ReviewsSectionHeader} />
         
         {/* Reviews List */}
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 gap-3 mb-10">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="relative border-l border-white/10 pl-8 ml-2"
+              className="rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300 bg-[rgb(12,12,12)] shadow-lg hover:shadow-2xl px-5 py-5"
             >
-
-              {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2">
-                <div>
-                  <h2 className="text-white text-lg flex items-center gap-2" id={`${review.name.replace(/\s+/g, '-').toLowerCase()}`}>
-                    {review.name}
-                    {renderRating(review.rating)}
-                  </h2>
-                  <p className="text-md text-neutral-500 mt-0.5">
-                    {review.company}
-                  </p>
-                </div>
-                <span className="text-md text-neutral-600 font-mono">{review.date}</span>
+              {/* Stars */}
+              <div className="flex items-center gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Icons.Star
+                    key={i}
+                    className={`w-4 h-4 ${i < review.rating ? 'text-orange-500' : 'text-neutral-800'}`}
+                  />
+                ))}
               </div>
 
               {/* Review content */}
               {review.review ? (
                 <blockquote className="text-sm text-neutral-400 leading-relaxed italic mb-4">
-                  &quot;{review.review}&quot;
+                  &ldquo;{review.review}&rdquo;
                 </blockquote>
               ) : (
-                <p className="text-xs text-neutral-600 italic mb-4">
-                  No written review provided
-                </p>
+                <p className="text-xs text-neutral-600 italic mb-4">No written review provided</p>
               )}
+
+              {/* Author */}
+              <div className="border-t border-white/5 pt-4 flex items-end justify-between">
+                <div>
+                  <p
+                    className="text-sm font-semibold text-white tracking-tight"
+                    id={`${review.name.replace(/\s+/g, '-').toLowerCase()}`}
+                  >
+                    {review.name}
+                  </p>
+                  <p className="text-xs text-neutral-500">{review.company}</p>
+                </div>
+                <span className="text-xs text-neutral-600 font-mono shrink-0">{review.date}</span>
+              </div>
             </div>
           ))}
         </div>
