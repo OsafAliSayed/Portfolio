@@ -21,6 +21,7 @@ export const metadata = {
     'Wagtail',
     'Python',
   ],
+  metadataBase: new URL('https://osafalisayed.com'),
   openGraph: {
     title: 'Open Source — Osaf Ali Sayed',
     description:
@@ -29,7 +30,7 @@ export const metadata = {
     siteName: 'Osaf Ali Sayed',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/favicon.jpeg' }],
+    images: [{ url: 'https://osafalisayed.com/favicon.jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -37,7 +38,7 @@ export const metadata = {
     description:
       'Contributing to the developer community by solving real problems and improving tools that developers use every day.',
     creator: '@sayedosafali',
-    images: ['/favicon.jpeg'],
+    images: ['https://osafalisayed.com/favicon.jpeg'],
   },
   icons: {
     icon: '/favicon.jpeg',

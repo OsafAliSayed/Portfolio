@@ -18,6 +18,7 @@ export const metadata = {
     'Python',
     'Next.js',
   ],
+  metadataBase: new URL('https://osafalisayed.com'),
   openGraph: {
     title: 'Snippets — Osaf Ali Sayed',
     description:
@@ -26,7 +27,7 @@ export const metadata = {
     siteName: 'Osaf Ali Sayed',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/favicon.jpeg' }],
+    images: [{ url: 'https://osafalisayed.com/favicon.jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -34,7 +35,7 @@ export const metadata = {
     description:
       'Essential pieces of code for specific use cases — React components, GitHub Actions, automation scripts, and more.',
     creator: '@sayedosafali',
-    images: ['/favicon.jpeg'],
+    images: ['https://osafalisayed.com/favicon.jpeg'],
   },
   icons: {
     icon: '/favicon.jpeg',

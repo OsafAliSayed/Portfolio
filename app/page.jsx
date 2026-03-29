@@ -25,6 +25,7 @@ export const metadata = {
     'Software Engineer',
     'Tech Blog',
   ],
+  metadataBase: new URL('https://osafalisayed.com'),
   openGraph: {
     title: 'Osaf Ali Sayed — Full Stack Developer',
     description: 'Freelance Full-Stack Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
@@ -32,14 +33,14 @@ export const metadata = {
     siteName: 'Osaf Ali Sayed',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/favicon.jpeg' }],
+    images: [{ url: 'https://osafalisayed.com/favicon.jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Osaf Ali Sayed — Full Stack Developer',
     description: 'Freelance Full-Stack Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
     creator: '@sayedosafali',
-    images: ['/favicon.jpeg'],
+    images: ['https://osafalisayed.com/favicon.jpeg'],
   },
   icons: {
     icon: '/favicon.jpeg',
