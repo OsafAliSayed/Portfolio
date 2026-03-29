@@ -7,6 +7,7 @@ tags:
 - selfhosting
 - docker
 - containerization
+description: A detailed account of my journey from buying a VPS to successfully self-hosting multiple applications using Docker and Traefik, including the challenges I faced and the lessons I learned along the way.
 title: How My VPS Went From Useless to "I Feel Invincible!"
 views: '21'
 ---

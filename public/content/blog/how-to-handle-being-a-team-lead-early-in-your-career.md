@@ -5,6 +5,7 @@ tags:
 - management
 - team-lead
 - development
+description: A candid reflection on the challenges and lessons learned from stepping into a team lead role early in my career, including how I balanced coding responsibilities with leadership duties.
 title: How To Handle Being A Team Lead Early In Your Career
 views: '103'
 ---
