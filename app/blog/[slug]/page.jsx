@@ -108,7 +108,7 @@ export default async function BlogPost({ params }) {
                   {post.metadata.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/5 text-neutral-400 border border-white/10"
+                      className="px-2.5 py-1.5 rounded-full t text-sm font-medium bg-white/5 text-neutral-400 border border-white/10"
                     >
                       {tag}
                     </span>

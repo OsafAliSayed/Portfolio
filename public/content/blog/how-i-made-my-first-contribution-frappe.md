@@ -1,7 +1,7 @@
 ---
 author: Osaf Ali Sayed
 date: 2025-08-06 00:06:00+05:30
-image: /uploads/frappe-open-source-contribution.png
+image: /uploads/frappe-open-source-contribution.webp
 tags:
 - Vue.JS
 - Python

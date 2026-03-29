@@ -25,6 +25,7 @@ export const CommonCard = ({ title, desc, tags, link, logo }) => {
         {/* Card body */}
         <div className={`px-5 pb-5 ${logo ? 'pt-10' : 'pt-5'}`}>
           <h3 className="text-white font-semibold text-base tracking-tight mb-2">{title}</h3>
+          <p className="text-sm text-neutral-400 leading-relaxed mb-4">{desc}</p>
 
           {/* Pill tags */}
           <div className="flex flex-wrap gap-1.5 mb-3">
@@ -33,21 +34,14 @@ export const CommonCard = ({ title, desc, tags, link, logo }) => {
               return (
                 <span
                   key={tag}
-                  className="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/5 text-neutral-300 border border-white/10"
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-full text-sm font-medium bg-white/5 text-neutral-300 border border-white/10"
                 >
-                  {IconComponent && <IconComponent className="w-3 h-3 text-secondary" />}
+                  {IconComponent && <IconComponent className="w-4 h-4 text-secondary" />}
                   {tag}
                 </span>
               );
             })}
           </div>
-
-          <p className="text-sm text-neutral-400 leading-relaxed mb-4">{desc}</p>
-
-          {/* CTA */}
-          <span className="flex items-center justify-center w-full py-2.5 rounded-full bg-white text-black text-sm font-semibold transition-colors group-hover:bg-neutral-200">
-            View Project →
-          </span>
         </div>
       </div>
     </Link>
