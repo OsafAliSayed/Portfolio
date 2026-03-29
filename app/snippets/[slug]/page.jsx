@@ -26,7 +26,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://osafalisayed.com';
+const SITE_URL = 'https://osafalisayed.com';
 
 export async function generateMetadata({ params }) {
   const snippet = getSnippetBySlug(params.slug);
