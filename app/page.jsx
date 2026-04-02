@@ -26,6 +26,9 @@ export const metadata = {
     'Tech Blog',
   ],
   metadataBase: new URL('https://osafalisayed.com'),
+  alternates: {
+    canonical: 'https://osafalisayed.com/',
+  },
   openGraph: {
     title: 'Osaf Ali Sayed — Full Stack Developer',
     description: 'Freelance Full-Stack Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',

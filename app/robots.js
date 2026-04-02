@@ -1,12 +1,13 @@
 export default function robots() {
-  const baseUrl = 'https://osafalisayed.com/'
+  const baseUrl = 'https://osafalisayed.com'
   return {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/blog/', '/snippets/', '/open-source/', '/reviews/'],
+        allow: '/',
+        disallow: ['/admin/', '/api/'],
       },
     ],
-    sitemap: `${baseUrl}sitemap.xml`,
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
