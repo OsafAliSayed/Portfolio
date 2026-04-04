@@ -1,13 +1,15 @@
 ---
 author: Osaf Ali Sayed
 date: 2025-12-23 17:20:00+05:30
+description: A candid reflection on the challenges and lessons learned from stepping
+  into a team lead role early in my career, including how I balanced coding responsibilities
+  with leadership duties.
 tags:
 - management
 - team-lead
 - development
-description: A candid reflection on the challenges and lessons learned from stepping into a team lead role early in my career, including how I balanced coding responsibilities with leadership duties.
 title: How To Handle Being A Team Lead Early In Your Career
-views: '103'
+views: '105'
 ---
 # From Full-Stack Developer to Tech Lead: Lessons I Learned the Hard Way
 

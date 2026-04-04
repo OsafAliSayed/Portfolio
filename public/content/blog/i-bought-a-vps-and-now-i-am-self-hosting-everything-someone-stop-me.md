@@ -1,15 +1,17 @@
 ---
 author: Osaf Ali Sayed
 date: 2026-03-22 08:49:00+05:30
+description: A detailed account of my journey from buying a VPS to successfully self-hosting
+  multiple applications using Docker and Traefik, including the challenges I faced
+  and the lessons I learned along the way.
 image: /uploads/gemini_generated_image_7z6vhe7z6vhe7z6v.webp
 tags:
 - devops
 - selfhosting
 - docker
 - containerization
-description: A detailed account of my journey from buying a VPS to successfully self-hosting multiple applications using Docker and Traefik, including the challenges I faced and the lessons I learned along the way.
 title: How My VPS Went From Useless to "I Feel Invincible!"
-views: '21'
+views: '24'
 ---
 # I Bought a VPS and Now I Am Self-Hosting Everything. Someone Stop Me!
 

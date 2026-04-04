@@ -1,15 +1,16 @@
 ---
 author: Osaf Ali Sayed
 date: 2025-08-06 00:06:00+05:30
+description: A detailed account of my first open source contribution to Frappe, including
+  the challenges I faced and the technologies I used.
 image: /uploads/frappe-open-source-contribution.webp
 tags:
 - Vue.JS
 - Python
 - Frappe
 - LMS
-description: A detailed account of my first open source contribution to Frappe, including the challenges I faced and the technologies I used.
 title: How I Made My First Contribution @Frappe
-views: '62'
+views: '64'
 ---
 # How I Made My First Contribution @Frappe
 
