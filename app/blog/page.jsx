@@ -19,16 +19,16 @@ export const metadata = {
     'Tech Writing',
     'Web Development',
   ],
-  metadataBase: new URL('https://osafalisayed.com'),
+  metadataBase: new URL('https://www.osafalisayed.com'),
   openGraph: {
     title: 'Blog — Osaf Ali Sayed',
     description:
       'Thoughts on software development, technology, and everything in between.',
-    url: 'https://osafalisayed.com/blog',
+    url: 'https://www.osafalisayed.com/blog',
     siteName: 'Osaf Ali Sayed',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: 'https://osafalisayed.com/favicon.jpeg' }],
+    images: [{ url: 'https://www.osafalisayed.com/favicon.jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,7 +36,7 @@ export const metadata = {
     description:
       'Thoughts on software development, technology, and everything in between.',
     creator: '@sayedosafali',
-    images: ['https://osafalisayed.com/favicon.jpeg'],
+    images: ['https://www.osafalisayed.com/favicon.jpeg'],
   },
   icons: {
     icon: '/favicon.jpeg',

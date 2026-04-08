@@ -16,16 +16,16 @@ export const metadata = {
     'Freelance Developer',
     'Upwork',
   ],
-  metadataBase: new URL('https://osafalisayed.com'),
+  metadataBase: new URL('https://www.osafalisayed.com/'),
   openGraph: {
     title: 'Reviews — Osaf Ali Sayed',
     description:
       'What clients and colleagues have said about working with me. Honest reviews reflecting my commitment to delivering quality work.',
-    url: 'https://osafalisayed.com/reviews',
+    url: 'https://www.osafalisayed.com/reviews',
     siteName: 'Osaf Ali Sayed',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: 'https://osafalisayed.com/favicon.jpeg' }],
+    images: [{ url: 'https://www.osafalisayed.com/favicon.jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -33,7 +33,7 @@ export const metadata = {
     description:
       'What clients and colleagues have said about working with me. Honest reviews reflecting my commitment to delivering quality work.',
     creator: '@sayedosafali',
-    images: ['https://osafalisayed.com/favicon.jpeg'],
+    images: ['https://www.osafalisayed.com/favicon.jpeg'],
   },
   icons: {
     icon: '/favicon.jpeg',

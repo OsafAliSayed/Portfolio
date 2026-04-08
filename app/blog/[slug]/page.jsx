@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const SITE_URL = 'https://osafalisayed.com';
+  const SITE_URL = 'https://www.osafalisayed.com';
   const postUrl = `${SITE_URL}/blog/${params.slug}/`;
   const image = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : null;
 
@@ -96,7 +96,7 @@ export default async function BlogPost({ params }) {
 
   const contentHtml = await markdownToHtml(post.content);
 
-  const SITE_URL = 'https://osafalisayed.com';
+  const SITE_URL = 'https://www.osafalisayed.com';
   const postUrl = `${SITE_URL}/blog/${params.slug}/`;
   const coverImage = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : `${SITE_URL}/favicon.jpeg`;
 
