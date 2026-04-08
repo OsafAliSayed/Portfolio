@@ -1,7 +1,7 @@
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
 import { getAllSnippetSlugs } from '@/lib/snippets';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://osafalisayed.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.osafalisayed.com';
 
 export default function sitemap() {
   // Static pages

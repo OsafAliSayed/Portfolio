@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const SITE_URL = 'https://osafalisayed.com';
+  const SITE_URL = 'https://www.osafalisayed.com';
   const postUrl = `${SITE_URL}/blog/${params.slug}/`;
   const image = post.metadata.image ? `${SITE_URL}${post.metadata.image}` : null;
 
