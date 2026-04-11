@@ -9,7 +9,7 @@ tags:
 - team-lead
 - development
 title: How To Handle Being A Team Lead Early In Your Career
-views: '105'
+views: '106'
 ---
 # From Full-Stack Developer to Tech Lead: Lessons I Learned the Hard Way
 
