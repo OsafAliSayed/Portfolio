@@ -24,8 +24,8 @@ export default function HeroSection() {
     <section id="home" className="mb-10">
       <div className="rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300 bg-[rgb(12,12,12)] shadow-lg hover:shadow-2xl px-5 py-5">
 
-        <div className="flex items-center justify-between gap-4 mb-5">
-          <div className="flex items-center gap-4">
+        <div className="sm:flex items-center justify-between gap-4 mb-5">
+          <div className="flex items-center gap-4 mb-4 sm:mb-0">
             <div className="w-20 h-20 rounded-full overflow-hidden border border-white/10 ring-2 ring-secondary/10 hover:ring-secondary/40 transition-all duration-300 flex-shrink-0">
               <Image
                 src="/images/home-portfolio-img.webp"
@@ -39,7 +39,7 @@ export default function HeroSection() {
               <h1 className="text-3xl font-bold text-white tracking-tight">
                 Osaf Ali Sayed
               </h1>
-              <p className="text-sm text-neutral-400">Full Stack Developer</p>
+              <p className="text-sm text-neutral-400">Backend & DevOps Engineer</p>
               <p className="text-sm text-neutral-500">Rajasthan, India</p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function HeroSection() {
 
         <div className="border-t border-white/5 pt-4">
           <p className="text-sm text-neutral-400 leading-relaxed">
-            Freelance Full-stack engineer with expertise in <span className="text-secondary font-medium">Next.JS</span>, <span className="text-secondary font-medium">Python</span>, <span className="text-secondary font-medium">Django</span>, <span className="text-secondary font-medium">Nest.JS</span> and <span className="text-secondary font-medium">DigitalOcean</span>. Right now I am focused on building scalable AI applications.
+            <span className="text-secondary font-medium">Backend</span> & <span className="text-secondary font-medium">DevOps</span> engineer with expertise in <span className="text-secondary font-medium">AI</span>, <span className="text-secondary font-medium">Automation</span>, <span className="text-secondary font-medium">System Design</span>, <span className="text-secondary font-medium">CI/CD</span>, <span className="text-secondary font-medium">Django</span> and <span className="text-secondary font-medium">DigitalOcean</span>. 
           </p>
         </div>
 
