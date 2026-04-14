@@ -73,7 +73,7 @@ export default async function BlogPage({ searchParams }) {
       <div className="fixed inset-0 opacity-[0.03] bg-grid-pattern pointer-events-none"></div>
 
       {/* Navbar */}
-      <Navbar />
+      <Navbar activeLabel="Writing" />
 
       {/* Main Content */}
       <div className="max-w-3xl mx-auto px-6 pt-32 relative z-10">
