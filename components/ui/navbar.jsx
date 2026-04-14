@@ -1,43 +1,95 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Icons from '@/components/ui/icons';
 
 const Navbar = (props) => {
-  const activeLabel = props.activeLabel || "Writing";
+  const activeLabel = props.activeLabel || 'Home';
+  const [activeTab, setActiveTab] = useState(activeLabel);
+  const [hoveredTab, setHoveredTab] = useState(null);
+
   const navItems = [
-    { icon: Icons.Home, label: "Home", href: "/" },
-    { icon: Icons.Pen, label: "Writing", href: "/blog" },
-    { icon: Icons.Code, label: "Snippets", href: "/snippets" },
-    // { icon: Icons.Grid3X3, label: "Projects", href: "/projects" },
-    { icon: Icons.OpenSource, label: "Open Source", href: "/open-source" },
-    { icon: Icons.Star, label: "Reviews", href: "/reviews" },
-    // { icon: Icons.GraduationCap, label: "Education", href: "/education" },
-    // { icon: Icons.Briefcase, label: "Work", href: "/#work" }
+    { id: 'Home', label: 'Home', href: '/', icon: Icons.Home },
+    { id: 'Writing', label: 'Writing', href: '/blog/', icon: Icons.Pen },
+    { id: 'Snippets', label: 'Snippets', href: '/snippets/', icon: Icons.Code },
+    { id: 'Open Source', label: 'Open Source', href: '/open-source/', icon: Icons.OpenSource },
+    { id: 'Reviews', label: 'Reviews', href: '/reviews/', icon: Icons.Star },
   ];
 
   return (
-    <div className="fixed top-6 left-0 sm:left-[-10rem] right-0 z-50">
-      <div className="max-w-2xl w-full mx-auto px-6">
-        <nav className="inline-flex items-center gap-1 justify-start bg-[rgb(12,12,12)] border border-white/10 hover:border-white/20 px-2 py-2 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeLabel === item.label;
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`flex items-center gap-2 px-4 py-2 text-base rounded-2xl font-medium leading-none transition-all duration-300
-                  ${isActive
-                    ? "bg-white/5 text-secondary border border-white/10"
-                    : "text-neutral-400 border border-transparent hover:bg-white/5 hover:text-white hover:border-white/10"
-                  }`}
-              >
+    <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
+      <nav 
+        className="relative flex items-center p-1.5 bg-[rgb(12,12,12)] border border-white/10 hover:border-white/20 rounded-full shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300"
+        onMouseLeave={() => setHoveredTab(null)}
+      >
+        {/* The Single Unified Bubble - full width when no hover */}
+        {!hoveredTab && (
+          <motion.div
+            layoutId="nav-pill"
+            className="absolute bg-white/5 rounded-full z-0"
+            style={{
+              left: "6px",
+              right: "6px",
+              top: "6px",
+              bottom: "6px",
+            }}
+            transition={{
+              type: "spring",
+              bounce: 0,
+              duration: 0.4
+            }}
+          />
+        )}
+
+        {navItems.map((item) => {
+          const isActive = activeTab === item.id;
+          const isHovered = hoveredTab === item.id;
+          const Icon = item.icon;
+
+          return (
+            <Link
+              key={item.id}
+              href={item.href}
+              onClick={() => setActiveTab(item.id)}
+              onMouseEnter={() => setHoveredTab(item.id)}
+              className={`
+                relative px-3 sm:px-6 py-2.5 text-sm font-medium transition-colors duration-300 rounded-full outline-none z-10
+                ${isActive ? 'text-secondary font-semibold' : 'text-neutral-400 hover:text-white'}
+              `}
+              style={{ WebkitTapHighlightColor: 'transparent' }}
+            >
+              {/* When this button is hovered, the 'nav-pill' moves here */}
+              {isHovered && (
+                <motion.div
+                  layoutId="nav-pill"
+                  className="absolute inset-0 bg-white/5 border border-white/10 rounded-full z-0 shadow-sm"
+                  transition={{
+                    type: "spring",
+                    bounce: 0.1,
+                    duration: 0.4
+                  }}
+                />
+              )}
+
+              {/* Active Tab Indicator */}
+              {isActive && (
+                <motion.div
+                  layoutId="active-dot"
+                  className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-secondary rounded-full"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+
+              <span className="relative z-20 flex items-center gap-2">
                 <Icon className="h-4 w-4 sm:hidden" aria-hidden />
                 <span className="hidden sm:block">{item.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
+              </span>
+            </Link>
+          );
+        })}
+      </nav>
     </div>
   );
 };
