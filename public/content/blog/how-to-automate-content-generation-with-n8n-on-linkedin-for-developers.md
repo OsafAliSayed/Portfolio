@@ -10,7 +10,7 @@ tags:
 - AI
 - Workflow
 title: How To Automate Content Generation with N8N on Linkedin (For Developers)
-views: '21'
+views: '22'
 ---
 # How To Automate Content Generation with N8N on LinkedIn (For Developers)
 
