@@ -191,6 +191,20 @@ export default async function BlogPost({ params }) {
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-600">
 
+              <div className="flex items-center gap-4">
+                <time dateTime={post.metadata.date}>
+                  {new Date(post.metadata.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </time>
+
+                {post.metadata.views && <span>{post.metadata.views} Views</span>}
+
+                <ShareButtons title={post.metadata.title} />
+              </div>
+
               {/* Tags */}
               {post.metadata.tags && post.metadata.tags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5">
@@ -204,21 +218,6 @@ export default async function BlogPost({ params }) {
                   ))}
                 </div>
               )}
-
-              <time dateTime={post.metadata.date}>
-                {new Date(post.metadata.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </time>
-              
-              
-
-              {/* Views */}
-              {post.metadata.views && <span>{post.metadata.views} Views</span>}
-              
-              <ShareButtons title={post.metadata.title} />
             </div>
 
             
