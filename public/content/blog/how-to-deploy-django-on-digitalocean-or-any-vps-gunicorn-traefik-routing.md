@@ -1,18 +1,19 @@
 ---
-title: How to Deploy Django on DigitalOcean or Any VPS (Gunicorn, Traefik Routing)
-date: 2026-05-15T08:55:00.000+05:30
 author: Osaf Ali Sayed
-tags:
-  - Gunicorn
-  - Traefik
-  - deployment
-  - django
-  - digitalocean
-  - VPS
-  - Python
-description: "Learn how to deploy Django on DigitalOcean or any VPS using Gunicorn and Traefik — with automatic HTTPS, Docker, and zero Nginx config."
+date: 2026-05-15 08:55:00+05:30
+description: Learn how to deploy Django on DigitalOcean or any VPS using Gunicorn
+  and Traefik — with automatic HTTPS, Docker, and zero Nginx config.
 image: /uploads/chatgpt-image-may-15-2026-04_27_50-pm.webp
-views: "0"
+tags:
+- Gunicorn
+- Traefik
+- deployment
+- django
+- digitalocean
+- VPS
+- Python
+title: How to Deploy Django on DigitalOcean or Any VPS (Gunicorn, Traefik Routing)
+views: '6'
 ---
 # How to Deploy Django on DigitalOcean or Any VPS (Gunicorn + Traefik)
 

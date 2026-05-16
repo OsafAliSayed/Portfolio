@@ -11,7 +11,7 @@ tags:
 - docker
 - containerization
 title: How My VPS Went From Useless to "I Feel Invincible!"
-views: '39'
+views: '41'
 ---
 # I Bought a VPS and Now I Am Self-Hosting Everything. Someone Stop Me!
 
