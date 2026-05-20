@@ -8,6 +8,7 @@ import { stripHtml } from "@/lib/blog";
 import Navbar from "@/components/ui/navbar";
 import BlogContent from "@/components/blog/slug/blog-content";
 import ShareButtons from "@/components/blog/slug/share-buttons";
+import CopyForAI from "@/components/blog/slug/copy-for-ai";
 import ContactCTA from "@/components/common/contact-cta";
 import FooterSection from "@/components/common/footer";
 import Image from "next/image";
@@ -83,7 +84,7 @@ export async function generateMetadata({ params }) {
         'max-snippet': -1,
       },
     },
-    
+
   };
 }
 
@@ -203,6 +204,11 @@ export default async function BlogPost({ params }) {
                 {post.metadata.views && <span>{post.metadata.views} Views</span>}
 
                 <ShareButtons title={post.metadata.title} />
+    
+                {/* Copy for AI */}
+                <div>
+                  <CopyForAI markdown={post.content} />
+                </div>
               </div>
 
               {/* Tags */}
@@ -220,9 +226,9 @@ export default async function BlogPost({ params }) {
               )}
             </div>
 
-            
+
           </header>
-          
+
           {/* Cover Image */}
           {post.metadata.image && (
             <div className="my-6">
