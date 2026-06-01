@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import Icons from '@/components/ui/icons';
 
-export default function SearchInput({ initialQuery="" }) {
+export default function SearchInput({ initialQuery="", placeholder="Search Blogs..." }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -47,7 +47,7 @@ export default function SearchInput({ initialQuery="" }) {
       </div>
       <input
         type="text"
-        placeholder="Search blogs..."
+        placeholder={placeholder}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         className="w-full pl-10 pr-10 py-3 bg-[rgb(12,12,12)] border border-white/10 hover:border-white/20 rounded-3xl text-neutral-200 placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-secondary/30 focus:border-white/30 transition-all duration-300 text-sm"
