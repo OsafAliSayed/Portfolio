@@ -13,6 +13,7 @@ const Navbar = (props) => {
   const navItems = [
     { id: 'Home', label: 'Home', href: '/', icon: Icons.Home },
     { id: 'Writing', label: 'Writing', href: '/blog/', icon: Icons.Pen },
+    { id: 'Case Studies', label: 'Case Studies', href: '/case-studies/', icon: Icons.Briefcase},
     { id: 'Snippets', label: 'Snippets', href: '/snippets/', icon: Icons.Code },
     { id: 'Open Source', label: 'Open Source', href: '/open-source/', icon: Icons.OpenSource },
     { id: 'Reviews', label: 'Reviews', href: '/reviews/', icon: Icons.Star },
