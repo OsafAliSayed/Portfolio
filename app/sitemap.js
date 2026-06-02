@@ -1,4 +1,5 @@
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
+import { getAllCaseStudySlugs, getCaseStudyBySlug } from '@/lib/case-studies';
 import { getAllSnippetSlugs } from '@/lib/snippets';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.osafalisayed.com';
@@ -14,6 +15,12 @@ export default function sitemap() {
     },
     {
       url: `${SITE_URL}/blog/`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/case-studies/`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -50,6 +57,19 @@ export default function sitemap() {
     };
   });
 
+  // Dynamic case-studies routers
+
+  const caseStudiesSlugs = getAllCaseStudySlugs();
+  const caseStudyRoutes = caseStudiesSlugs.map((slug) => {
+    const caseStudy = getCaseStudyBySlug(slug);
+    return {
+      url: `${SITE_URL}/case-studies/${slug}/`,
+      lastModified: caseStudy?.metadata?.date ? new Date(caseStudy.metadata.date) : new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.7,
+    }
+  })
+
   // Dynamic snippet routes
   const snippetSlugs = getAllSnippetSlugs();
   const snippetRoutes = snippetSlugs.map((slug) => ({
@@ -59,5 +79,5 @@ export default function sitemap() {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...snippetRoutes];
+  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes, ...snippetRoutes];
 }
