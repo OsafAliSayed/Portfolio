@@ -1,19 +1,19 @@
 ---
-author: Osaf Ali Sayed
-date: 2026-01-21 02:24:00+05:30
-description: A detailed walkthrough of how I built my personal blog and portfolio
-  using Next.js, GitHub Actions, and a unique architecture that emphasizes ownership
-  and portability.
-image: /uploads/how-i-built-my-personal-blog-cover.webp
-tags:
-- blog
-- systemdesign
-- portfolio
-- next.js
-- githubactions
-- devops
 title: How I Built My Personal Blog & Portfolio
-views: '29'
+date: 2026-01-21 02:24:00+05:30
+author: Osaf Ali Sayed
+tags:
+  - blog
+  - systemdesign
+  - portfolio
+  - next.js
+  - githubactions
+  - devops
+description: A detailed walkthrough of how I built my personal blog and
+  portfolio using Next.js, GitHub Actions, and a unique architecture that
+  emphasizes ownership and portability.
+image: /uploads/photoshoppreview_image.webp
+views: "29"
 ---
 # How I Built My Personal Blog & Portfolio 
 
