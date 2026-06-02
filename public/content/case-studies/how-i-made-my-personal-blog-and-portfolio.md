@@ -12,7 +12,7 @@ tags:
 description: A detailed walkthrough of how I built my personal blog and
   portfolio using Next.js, GitHub Actions, and a unique architecture that
   emphasizes ownership and portability.
-image: /uploads/photoshoppreview_image.webp
+image: /uploads/how-i-built-my-personal-blog-cover.webp
 views: "29"
 ---
 # How I Built My Personal Blog & Portfolio 
