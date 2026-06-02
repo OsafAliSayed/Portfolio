@@ -114,8 +114,4 @@ Build things. Make the mistakes. Fix them. That's the actual curriculum.
 
 - - -
 
-*"أَفَلَمْ يَسِيرُوا فِي الْأَرْضِ فَتَكُونَ لَهُمْ قُلُوبٌ يَعْقِلُونَ بِهَا"*
-
-*"Have they not traveled through the land so that they may have hearts with which to reason?"*
-
-— Surah Al-Hajj (22:46)
+Alhamdulillah for everything!
