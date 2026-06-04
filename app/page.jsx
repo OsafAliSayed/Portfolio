@@ -8,8 +8,8 @@ import ContactCTA from '@/components/common/contact-cta';
 import FooterSection from '@/components/common/footer';
 
 export const metadata = {
-  title: 'Osaf Ali Sayed — Full Stack Developer',
-  description: 'Freelance Full-Stack Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
+  title: 'Osaf Ali Sayed - Software Engineer',
+  description: 'Freelance Software Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
   keywords: [
     'Osaf Ali Sayed',
     'Full Stack Developer',
@@ -30,8 +30,8 @@ export const metadata = {
     canonical: 'https://www.osafalisayed.com/',
   },
   openGraph: {
-    title: 'Osaf Ali Sayed — Full Stack Developer',
-    description: 'Freelance Full-Stack Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
+    title: 'Osaf Ali Sayed - Software Engineer',
+    description: 'Freelance Software Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
     url: 'https://www.osafalisayed.com',
     siteName: 'Osaf Ali Sayed',
     locale: 'en_US',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Osaf Ali Sayed — Full Stack Developer',
-    description: 'Freelance Full-Stack Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
+    title: 'Osaf Ali Sayed - Software Engineer',
+    description: 'Freelance Software Engineer specialising in Next.js, Python, Django, Nest.js, and DigitalOcean. Currently focused on building scalable AI applications.',
     creator: '@sayedosafali',
     images: ['https://www.osafalisayed.com/favicon.jpeg'],
   },

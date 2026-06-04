@@ -1,8 +1,8 @@
 import Icons from '@/components/ui/icons';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { contactInfo } from '@/lib/constants';
 import SectionHeader from '../ui/section-header';
+import AnimatedLink from '@/components/ui/animated-link';
 
 /**
  * Small contact CTA that offers Email and WhatsApp actions.
@@ -22,7 +22,7 @@ export default function ContactCTA({
       <div className="rounded-3xl border border-white/10 bg-[rgb(12,12,12)] px-5 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-lg">
         <p className="text-base  flex-1 leading-relaxed">
           Interested in working with me? Drop me a mail at{' '}
-          <Link href={`mailto:${email}`} className="text-secondary">{email}</Link>{' '}
+          <AnimatedLink href={`mailto:${email}`}>{email}</AnimatedLink>{' '}
           or message me on WhatsApp.
         </p>
 
