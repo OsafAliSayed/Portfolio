@@ -1,17 +1,17 @@
 ---
-title: "The $10 Mystery: How I Hunted Down My OpenAI API Leak"
-date: 2026-06-03T15:14:00.000+05:30
 author: Osaf Ali Sayed
-tags:
-  - openai
-  - debugging
-  - logtracing
-  - vercel
-  - open-claw
-description: Drained OpenAI account. Clean logs. Flawless code. So where did the
-  leak come from? I went full detective on my own server to find out.
+date: 2026-06-03 15:14:00+05:30
+description: Drained OpenAI account. Clean logs. Flawless code. So where did the leak
+  come from? I went full detective on my own server to find out.
 image: /uploads/gemini_generated_image_y5bu7by5bu7by5bu.webp
-views: "0"
+tags:
+- openai
+- debugging
+- logtracing
+- vercel
+- open-claw
+title: 'The $10 Mystery: How I Hunted Down My OpenAI API Leak'
+views: '10'
 ---
 # The $10 Mystery: How I Hunted Down My OpenAI API Leak
 

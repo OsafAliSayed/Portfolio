@@ -13,7 +13,7 @@ tags:
 - VPS
 - Python
 title: How to Deploy Django on DigitalOcean or Any VPS (Gunicorn, Traefik Routing)
-views: '12'
+views: '14'
 ---
 # How to Deploy Django on DigitalOcean or Any VPS (Gunicorn + Traefik)
 
