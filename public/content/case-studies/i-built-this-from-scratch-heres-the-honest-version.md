@@ -22,8 +22,10 @@ views: "0"
 >
 > It shipped. It runs. The rest of this page is about how.
 >
-> **Stack:** Python · PostgreSQL · DigitalOcean · GitHub Actions · CI/CD
+> **Stack:** Python, PostgreSQL, DigitalOcean, GitHub Actions, CI/CD
+>
 > **Role:** Technical Lead — architecture, infrastructure, team
+>
 > **Type:** Full SaaS platform, built from scratch
 
 Not a tech stack post. I hate those.
