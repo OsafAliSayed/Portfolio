@@ -14,17 +14,24 @@ views: "0"
 
 > **The Short Version**
 >
-> Ecomlytix is a data analytics platform for e-commerce businesses — pulling, syncing, and reconciling 20,000 to 40,000 records daily across multiple data sources.
+> I built the entire platform from scratch — frontend, backend, 
+> workers, and infrastructure. Every layer, end to end, with no 
+> existing codebase to start from.
 >
-> I came in as the sole technical owner. No existing architecture, no co-founder, no handover document. I designed the system from scratch, made every infrastructure call, led a team of junior and senior engineers, and took it from zero to production.
+> On top of building, I led the project. Architecture decisions, 
+> unblocking the team, owning delivery — that was on me too.
 >
-> What got built: a full REST API backend, PostgreSQL with a custom reconciliation system to keep data accurate at scale, background queue workers, CI/CD pipelines on DigitalOcean, and an RBAC system that made onboarding new developers clean and fast.
+> What got built: a Next.js frontend, a Nest.js REST API backend, 
+> PostgreSQL with optimised schemas, BullMQ workers handling 
+> automated background jobs, CI/CD pipelines via GitHub Actions, 
+> and a full production environment on DigitalOcean — Nginx, SSL, 
+> staging and production both configured and maintained.
 >
 > It shipped. It runs. The rest of this page is about how.
 >
 > **Stack:** Python, PostgreSQL, DigitalOcean, GitHub Actions, CI/CD
 >
-> **Role:** Technical Lead — architecture, infrastructure, team
+> **Role:** Technical Lead - architecture, infrastructure, team
 >
 > **Type:** Full SaaS platform, built from scratch
 
