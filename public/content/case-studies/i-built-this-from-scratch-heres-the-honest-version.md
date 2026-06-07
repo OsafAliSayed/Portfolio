@@ -29,7 +29,7 @@ views: "0"
 >
 > It shipped. It runs. The rest of this page is about how.
 >
-> **Stack:** Python, PostgreSQL, DigitalOcean, GitHub Actions, CI/CD
+> **Stack:** Next.JS, Nest.JS, PostgreSQL, DigitalOcean, GitHub Actions, CI/CD
 >
 > **Role:** Technical Lead - architecture, infrastructure, team
 >
