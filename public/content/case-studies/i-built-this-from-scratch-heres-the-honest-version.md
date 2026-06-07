@@ -12,6 +12,20 @@ views: "0"
 ---
 # I Built This From Scratch. Here's the Honest Version.
 
+> **The Short Version**
+>
+> Ecomlytix is a data analytics platform for e-commerce businesses — pulling, syncing, and reconciling 20,000 to 40,000 records daily across multiple data sources.
+>
+> I came in as the sole technical owner. No existing architecture, no co-founder, no handover document. I designed the system from scratch, made every infrastructure call, led a team of junior and senior engineers, and took it from zero to production.
+>
+> What got built: a full REST API backend, PostgreSQL with a custom reconciliation system to keep data accurate at scale, background queue workers, CI/CD pipelines on DigitalOcean, and an RBAC system that made onboarding new developers clean and fast.
+>
+> It shipped. It runs. The rest of this page is about how.
+>
+> **Stack:** Python · PostgreSQL · DigitalOcean · GitHub Actions · CI/CD
+> **Role:** Technical Lead — architecture, infrastructure, team
+> **Type:** Full SaaS platform, built from scratch
+
 Not a tech stack post. I hate those.
 
 This is about the real decisions, the real mistakes, and the things I learned that I couldn't have picked up from any tutorial or any job where I was just closing tickets and collecting a salary.
