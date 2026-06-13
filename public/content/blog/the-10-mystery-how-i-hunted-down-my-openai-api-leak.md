@@ -11,7 +11,7 @@ tags:
 - vercel
 - open-claw
 title: 'The $10 Mystery: How I Hunted Down My OpenAI API Leak'
-views: '10'
+views: '17'
 ---
 # The $10 Mystery: How I Hunted Down My OpenAI API Leak
 
